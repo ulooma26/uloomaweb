@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>1 Bedroom Apartment</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+<link rel="stylesheet" href="./src/output.css">
+  <style>
+    .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+    .scrollbar-hide::-webkit-scrollbar { display: none; }
+  </style>
+</head>
+<body  id="content" class="bg-white opacity-0 transition-opacity duration-1000">
+
+  <script>
+    // Wait until the DOM is fully loaded
+    document.addEventListener('DOMContentLoaded', (event) => {
+        // Find the element by its ID
+        const content = document.getElementById('content');
+        
+        // Remove the opacity-0 class and add the opacity-100 class
+        if (content) {
+            content.classList.remove('opacity-0');
+            content.classList.add('opacity-100');
+        }
+    });
+</script>
+
+  <div class=" mx-auto  rounded-3xl overflow-hidden p-10">
+
+<div class="flex justify-between items-center md:px-6 md:py-6">
+    <div class="md:w-[162px] md:h-[54px] w-[102px] h-[34px] bg-[url('/image/Logo.png')] bg-center bg-no-repeat bg-cover">
+      
+    </div>
+
+
+    <!-- Desktop Sign Up -->
+    <div>
+      <button class="bg-[#20ACB3] text-white rounded-[30px] hover:bg-black transition text-[10px] md:text-[16px] font-medium md: p-3 cursor-pointer">
+        List Property
+      </button>
+    </div>
+    </div>
+    <br>
+    <!-- Back Arrow-->
+    <div class="px-6 pt-4 text-gray-600 flex items-center gap-3 cursor-pointer">
+      <i class="bi bi-arrow-left-circle-fill cursor-pointer md:text-4xl text-lg"></i> <p class=" font-semibold md:text-2xl text-sm text-black"> Explore 1 Bedroom Apartment</p>
+    </div>
+
+    <!-- Main Picture -->
+    <div class="relative mt-5">
+      <div id="mainImg" class="w-full md:h-200 h-80 bg-gray-200 rounded-[59.71px] mx-4 bg-cover bg-center"></div>
+
+      <!-- The Arrows for the Main Picture -->
+      <button id="prev" class="absolute left-8 top-1/2 -translate-y-1/2 w-10 h-10 bg-black/40 text-white rounded-full flex items-center justify-center text-2xl hover:bg-black/60">
+        <i class="bi bi-chevron-left"></i>
+      </button>
+      <button id="next" class="absolute right-8 top-1/2 -translate-y-1/2 w-10 h-10 bg-black/40 text-white rounded-full flex items-center justify-center text-2xl hover:bg-black/60">
+<i class="bi bi-chevron-right"></i>
+      </button>
+
+      <!-- Video Button -->
+      <button id="video" class="absolute bottom-4 right-8 bg-[#20ACB3] hover:bg-[#000000] text-white px-5 py-4 cursor-pointer rounded-full text-sm font-medium flex items-center gap-2 transition">
+        Play Video <i class="bi bi-camera-video"></i>
+      </button>
+
+      <!-- The Counters -->
+      <div id="count" class="absolute top-6 right-8 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-sm font-medium">
+        1/8
+      </div>
+    </div>
+
+    <!-- 8 Pictures-->
+    <div id="thumbs" class="flex gap-2 px-5 py-4 justify-between overflow-x-auto scrollbar-hide">
+     
+    </div>
+
+    <!-- Title and Price -->
+    <div class="px-6">
+      <h1 class="text-2xl font-bold text-gray-900">1 Bedroom Flat In Aba</h1>
+      <p class="text-gray-500 text-sm mt-1">Aba (Aba North) Aba State.</p>
+      <div class="mt-3 flex items-baseline gap-2">
+        <span class="text-3xl font-bold text-[#20ACB3]">₦570,000</span>
+        <span class="text-gray-500">/ year</span>
+      </div>
+    </div>
+
+    <!-- Tags -->
+    <div class="flex flex-wrap gap-3 px-6 mt-5 bg-gray-300 p-10 rounded-2xl md:justify-around justify-start ">
+      <span class=" text-black px-4 py-2 rounded-full text-sm flex items-center md:items-center gap-2">
+        <div class="w-4 h-4 bg-cyan-100 rounded p-4 flex items-center justify-center"><i class="bi bi-people-fill text-[#20ACB3]"></i></div>Bedroom <br>1
+      </span>
+      <span class=" text-black px-4 py-2 rounded-full text-sm flex items-center gap-2">
+        <div class="w-4 h-4 bg-cyan-100 rounded p-4 flex items-center justify-center"><i class="bi bi-rulers text-[#20ACB3]"></i></div>Size <br>85 sqm
+      </span>
+      <span class=" text-black px-4 py-2 rounded-full text-sm flex items-center gap-2">
+        <div class="w-4 h-4 bg-cyan-100 rounded p-4 flex items-center justify-center"><i class="bi bi-pen-fill text-[#20ACB3]"></i></div>Tenancy <br> Long-Term
+      </span>
+      <span class=" text-black px-4 py-2 rounded-full text-sm flex items-center gap-2">
+        <div class="w-4 h-4 bg-cyan-100 rounded p-4 flex items-center justify-center"><i class="bi bi-clock text-[#20ACB3]"></i></div>Status <br> Furnished
+      </span>
+    </div>
+<hr class="mt-10 md:hidden block">
+    <!-- About -->
+    <div class="px-6 mt-7">
+      <h2 class="text-lg font-semibold">About This Apartment</h2>
+      <p class="mt-3 text-gray-600 text-[15px] leading-relaxed">
+        This cozy 1-bedroom apartment is perfect for anyone seeking comfort and simplicity in a secure environment. The bedroom is spacious and airy, with natural light streaming through well-positioned windows. The living room is stylish yet compact, while the modern kitchen is fitted with cabinets and essential space for easy cooking. With 24/7 water supply, reliable electricity, and secure parking, this apartment offers a stress-free lifestyle for young professionals, students, or individuals who value convenience and peace of mind.
+      </p>
+    </div>
+
+    <!-- Amenities -->
+    <div class="px-6 mt-7">
+      <div class="flex justify-between gap-200">
+      <h2 class="md:text-lg text-sm font-semibold">Amenities This Apartment Offers </h2>
+      <a href="#" class="hidden md:text-[#20ACB3] md:text-sm md:mt-4">See All</a>
+            </div>
+      <div class="gap-6 mt-5 text-center md:flex md:flex-row md:justify-around justify-start flex flex-wrap">
+        <div><div class="w-12 h-12 rounded-xl mx-auto mb-2 flex items-center justify-center "><i class="bi bi-droplet-fill text-[#20ACB3]"></i></div><p class="text-sm text-gray-600">Water</p></div>
+        <div><div class="w-12 h-12 rounded-xl mx-auto mb-2 flex items-center justify-center"><i class="bi bi-shield-shaded text-[#20ACB3]"></i></div><p class="text-sm text-gray-600">Security</p></div>
+        <div><div class="w-12 h-12 rounded-xl mx-auto mb-2 flex items-center justify-center"><i class="bi bi-car-front-fill text-[#20ACB3]"></i></div><p class="text-sm text-gray-600">Parking Lot</p></div>
+        <div><div class="w-12 h-12 rounded-xl mx-auto mb-2 flex items-center justify-center"><i class="bi bi-wifi text-[#20ACB3]"></i></div><p class="text-sm text-gray-600">Free Wi-Fi</p></div>
+        <div><div class="w-12 h-12  rounded-xl mx-auto mb-2 flex items-center justify-center"><i class="bi bi-box2-fill text-[#20ACB3]"></i></div><p class="text-sm text-gray-600">Wardrobe</p></div>
+        <div><div class="w-12 h-12 rounded-xl mx-auto mb-2 flex items-center justify-center"><i class="bi bi-square-half text-[#20ACB3]"></i></div><p class="text-sm text-gray-600">Tiles</p></div>
+        <div><div class="w-12 h-12  rounded-xl mx-auto mb-2 flex items-center justify-center"><i class="bi bi-lightning-charge-fill text-[#20ACB3]"></i></div><p class="text-sm text-gray-600">24/7 Electricity</p></div>
+      </div>
+
+    </div>
+
+    <!-- Reserve Button -->
+    <div class="px-6 mt-10 pb-8">
+      <button class="w-full bg-[#20ACB3] hover:bg-black cursor-pointer text-white font-semibold text-lg py-5 rounded-2xl transition">
+        Reserve Now (₦2000)
+      </button>
+      <p class="text-center text-gray-400 text-xs mt-3">
+        Reservation helps you secure this apartment easier and faster
+      </p>
+    </div>
+  </div>
+
+  <!-- Video Modal -->
+  <div id="modal" class="fixed inset-0 bg-black/90 z-50 hidden flex items-center justify-center">
+    <div class="relative w-11/12 max-w-3xl">
+      <button id="close" class="absolute -top-12 right-0 text-white text-5xl">×</button>
+      <div class="bg-gray-900 aspect-video rounded-2xl flex items-center justify-center text-white text-xl">
+        The Video
+      </div>
+    </div>
+  </div>
+
+  
+  <script>
+    // 8 images
+    const images = [
+      "./image/explore.jpg",                 
+      "./image/explore.jpg",                    
+      "./image/explore.jpg",
+      "./image/explore.jpg",
+      "./image/explore.jpg",
+      "./image/explore.jpg",
+      "./image/explore.jpg"
+    ];
+
+    const main   = document.getElementById('mainImg');
+    const thumbs = document.getElementById('thumbs');
+    const count  = document.getElementById('count');
+    let i = 0;
+
+    function show() {
+      main.style.backgroundImage = `url(${images[i]})`;
+      count.textContent = `${i+1}/8`;
+      document.querySelectorAll('.thumb').forEach((t, idx) => {
+        t.classList.toggle('ring-4', idx===i);
+        t.classList.toggle('ring-cyan-500', idx===i);
+        t.classList.toggle('opacity-60', idx!==i);
+      });
+    }
+
+    // Create 8 thumbnails
+    images.forEach((src, idx) => {
+      const t = document.createElement('div');
+      t.className = `thumb w-20 h-20 rounded-2xl flex-shrink-0 cursor-pointer transition-all bg-cover bg-center ${idx===0 ? 'ring-4 ring-cyan-500' : 'opacity-60'}`;
+      t.style.backgroundImage = `url(${src})`;
+      t.onclick = () => { i = idx; show(); };
+      thumbs.appendChild(t);
+    });
+
+    document.getElementById('prev').onclick = () => { i = i > 0 ? i-1 : 7; show(); };
+    document.getElementById('next').onclick = () => { i = i < 7 ? i+1 : 0; show(); };
+
+    // Video modal
+    document.getElementById('video').onclick = () => document.getElementById('modal').classList.remove('hidden');
+    document.getElementById('close').onclick = () => document.getElementById('modal').classList.add('hidden');
+    document.getElementById('modal').onclick = e => { if(e.target === e.currentTarget) e.currentTarget.classList.add('hidden'); };
+
+    // Touch swipe
+    let startX = 0;
+    main.addEventListener('touchstart', e => startX = e.touches[0].clientX);
+    main.addEventListener('touchend', e => {
+      if (startX - e.changedTouches[0].clientX > 50) document.getElementById('next').click();
+      if (e.changedTouches[0].clientX - startX > 50) document.getElementById('prev').click();
+    });
+
+    show(); // first load
+  </script>
+
+</body>
+</html>

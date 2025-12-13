@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/output.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <link rel="shortcut icon" href="./image/Logo.PNG" type="image/x-icon">
+    <title>Ulo Oma</title>
+  </head>
+  <body id="content" class="w-screen opacity-0 transition-opacity duration-1800">
+   <header class="sticky top-0 bg-white z-50">
+  <div class="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
+
+    <!-- Logo -->
+    <div>
+      <img src="./image/Logo.PNG" alt="Ulo Oma" class="h-12 md:h-14" />
+    </div>
+
+    <!-- Desktop Navigation -->
+    <nav class="hidden md:flex gap-10 lg:gap-16 text-[19px] font-semibold text-black">
+      <a href="#" class="hover:text-[#20ACB3] transition">Explore</a>
+      <a href="#" class="hover:text-[#20ACB3] transition">How it works</a>
+      <a href="#" class="hover:text-[#20ACB3] transition">About Us</a>
+      <a href="#" class="hover:text-[#20ACB3] transition">Help</a>
+    </nav>
+
+    <!-- Desktop Sign Up -->
+    <div class="hidden md:block">
+      <button class="bg-[#20ACB3] text-white rounded-[30px] py-[15px] px-[30px] hover:bg-black transition text-[19px] font-medium">
+        Sign Up
+      </button>
+    </div>
+
+    <!-- Mobile Toggle Button -->
+    <button id="menu-toggle" class="md:hidden text-4xl text-[#20ACB3] z-50">
+      <i id="hamburger" class="bi bi-list"></i>
+      <i id="close-x" class="bi bi-x-lg hidden"></i>
+    </button>
+  </div>
+
+  <!-- Mobile Full-Screen Menu (Vertical Only) -->
+  <div id="mobile-menu" class="fixed inset-0 bg-white hidden z-40">
+    <div class="flex flex-col items-center justify-center h-full gap-12 text-2xl font-semibold text-black">
+      <a href="#" class="hover:text-[#20ACB3] transition">Explore</a>
+      <a href="#" class="hover:text-[#20ACB3] transition">How it works</a>
+      <a href="#" class="hover:text-[#20ACB3] transition">About Us</a>
+      <a href="#" class="hover:text-[#20ACB3] transition">Help</a>
+      <button class="bg-[#20ACB3] text-white rounded-[30px] py-4 px-12 hover:bg-black cursor-pointer transition text-xl font-medium">
+        Sign Up
+      </button>
+    </div>
+  </div>
+</header>
+
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const hamburger = document.getElementById('hamburger');
+  const closeX = document.getElementById('close-x');
+  const menu = document.getElementById('mobile-menu');
+
+  toggle.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+
+    if (menu.classList.contains('hidden')) {
+      hamburger.classList.remove('hidden');
+      closeX.classList.add('hidden');
+      document.body.style.overflow = 'auto';
+    } else {
+      hamburger.classList.add('hidden');
+      closeX.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+  });
+
+
+  // Close when tapping outside
+  menu.addEventListener('click', (e) => {
+    if (e.target === menu) {
+      menu.classList.add('hidden');
+      hamburger.classList.remove('hidden');
+      closeX.classList.add('hidden');
+      document.body.style.overflow = 'auto';
+    }
+  });
+
+    //THE FADINGS//
+    // Wait until the DOM is fully loaded
+    document.addEventListener('DOMContentLoaded', (event) => {
+        // Find the element by its ID
+        const content = document.getElementById('content');
+        
+        // Remove the opacity-0 class and add the opacity-100 class
+        if (content) {
+            content.classList.remove('opacity-0');
+            content.classList.add('opacity-100');
+        }
+    });
+    //THHE FADINGS END HERE
+
+
+</script>
+    <section>
+     <!-- Hero Section with Slider -->
+  <section class="relative h-screen w-full overflow-hidden">
+    
+    <!-- Slides Container -->
+    <div class="absolute inset-0">
+      <!-- Slide 1 -->
+      <div class="slide absolute inset-0 opacity-0 transition-opacity duration-1000 ">
+        <div class="w-full h-full bg-[url('/image/Hero.png')] bg-cover bg-center"></div>
+      </div>
+      <!-- Slide 2 -->
+      <div class="slide absolute inset-0 opacity-0 transition-opacity duration-1000">
+        <div class="w-full h-full bg-[url('/image/Hero2.png')] bg-cover bg-center"></div>
+      </div>
+      <!-- Slide 3 -->
+      <div class="slide absolute inset-0 opacity-0 transition-opacity duration-1000">
+        <div class="w-full h-full bg-[url('/image/Hero3.jpg')] bg-cover bg-center"></div>
+      </div>
+    </div>
+
+  
+
+    <!-- Content Overlay -->
+    <div class="relative z-10 flex flex-col items-start justify-center h-full px-6 md:px-12 lg:px-20 xl:px-32 text-white max-w-7xl mx-auto">
+      
+      <div class="max-w-4xl">
+        <p class="text-lg md:text-xl font-semibold text-teal-400 uppercase tracking-wider mb-4 animate-fade-in">
+          Transparency
+        </p>
+
+        <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 animate-slide-up">
+          Rent with <br />
+          <span class="text-teal-400">Confidence</span>
+        </h1>
+
+        <p class="text-lg md:text-xl font-light leading-relaxed mb-10 max-w-2xl animate-slide-up animation-delay-300">
+          We connect you directly to verified landlords, ensuring no hidden fees or inflated costs.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 animate-slide-up animation-delay-600">
+          <a href="#" class="bg-teal-600 hover:bg-black cursor-pointer text-white font-semibold py-4 px-8 rounded-full text-center text-lg transition transform hover:scale-105">
+            Login
+          </a>
+          <a href="#" class="bg-white hover:bg-gray-100 cursor-pointer text-teal-900 font-semibold py-4 px-8 rounded-full text-center text-lg transition transform hover:scale-105">
+            List Property
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slider Dots Indicator (Optional - Beautiful) -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-3 z-20">
+      <span class="dot w-3 h-3 bg-white rounded-full opacity-50 cursor-pointer transition"></span>
+      <span class="dot w-3 h-3 bg-white rounded-full opacity-50 cursor-pointer transition"></span>
+      <span class="dot w-3 h-3 bg-white rounded-full opacity-50 cursor-pointer transition"></span>
+    </div>
+  </section>
+
+  <script>
+    const slides = document.querySelectorAll(".slide");
+    const dots = document.querySelectorAll(".dot");
+    let index = 0;
+
+    function showSlide(n) {
+      slides.forEach((slide, i) => {
+        slide.style.opacity = i === n ? '1' : '0';
+      });
+      dots.forEach((dot, i) => {
+        dot.style.opacity = i === n ? '1' : '0.5';
+        dot.style.transform = i === n ? 'scale(1.4)' : 'scale(1)';
+      });
+    }
+
+    // Auto-play every 5 seconds
+    setInterval(() => {
+      index = (index + 1) % slides.length;
+      showSlide(index);
+    }, 5000);
+
+    // Manual navigation with dots
+    dots.forEach((dot, i) => {
+      dot.addEventListener("click", () => {
+        index = i;
+        showSlide(index);
+      });
+    });
+
+    // Show first slide
+    showSlide(0);
+    dots[0].style.opacity = '1';
+    dots[0].style.transform = 'scale(1.4)';
+  </script>
+
+  <!-- Optional: Custom Animations -->
+  <style>
+    .animate-fade-in {
+      animation: fadeIn 1s ease-out forwards;
+    }
+    .animate-slide-up {
+      animation: slideUp 0.9s ease-out forwards;
+    }
+    .animation-delay-300 { animation-delay: 0.3s; opacity: 0; }
+    .animation-delay-600 { animation-delay: 0.6s; opacity: 0; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+      <!-- Search Bar -->
+      <div class="max-w-4xl mx-auto px-4 mt-10 mb-10 z-1 relative">
+        <div
+          class="bg-white rounded-3xl shadow-xl p-2 flex flex-wrap items-center justify-between gap-1"
+        >
+          <div
+            class="flex items-center gap-2 flex-1 min-w-[180px] bg-white p-3 rounded-3xl hover:bg-[#17716a2c]"
+          >
+            <i class="bi bi-geo-alt text-xl text-[#547B7D]"></i>
+            <div>
+              <p class="text-lg font-semibold">Location</p>
+              <p class="text-xs text-[#547B7D] font-medium">Enter an area</p>
+            </div>
+          </div>
+          <br />
+          <div class="border h-12 text-[#25595c2e]"></div>
+          <div
+            class="flex items-center gap-2 flex-1 min-w-[180px] bg-white p-3 rounded-3xl hover:bg-[#17716a2c]"
+          >
+            <i class="bi bi-tag text-xl text-[#547B7D]"></i>
+            <div>
+              <p class="text-lg font-semibold">Price</p>
+              <p class="text-xs text-[#547B7D] font-medium">
+                What's your budget?
+              </p>
+            </div>
+          </div>
+          <br />
+          <div class="border-1 h-12 text-[#25595c2e]"></div>
+          <div
+            class="flex items-center gap-2 flex-1 min-w-[180px] bg-white p-3 rounded-3xl hover:bg-[#17716a2c]"
+          >
+            <i class="bi bi-people-fill text-xl text-[#1e4042]"></i>
+            <div>
+              <p class="text-lg font-semibold">Room Count</p>
+              <p class="text-xs text-[#547B7D] font-medium">How many rooms?</p>
+            </div>
+          </div>
+          <br />
+          <div class="border-1 h-12 text-[#25595c2e]"></div>
+          <div
+            class="flex items-center gap-2 flex-1 min-w-[180px] bg-white p-3 rounded-3xl hover:bg-[#17716a2c]"
+          >
+            <i class="bi bi-clock text-xl text-[#547B7D]"></i>
+            <div>
+              <p class="text-lg font-semibold">Tenancy Type</p>
+              <p class="text-xs text-[#547B7D] font-medium">
+                Long or Short Term
+              </p>
+            </div>
+          </div>
+
+          <button
+            class="bg-[#20ACB3] text-white p-3.5 rounded-2xl w-15 hover:bg-black cursor-pointer"
+          >
+            <i class="bi bi-search text-xl"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+   <style>
+    .scroll-container {
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+    }
+    .scrollbar-hide {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    .scrollbar-hide::-webkit-scrollbar { display: none; }
+    .arrow {
+      @apply absolute top-1/2 -translate-y-1/2 w-12 h-12 bg-white/95 backdrop-blur rounded-full shadow-xl flex items-center justify-center text-2xl z-10 transition-all duration-300;
+    }
+    .arrow:disabled { opacity: 0; pointer-events: none; }
+  </style>
+</head>
+
+<div class="max-w-7xl mx-auto px-6 py-12 space-y-20">
+
+  <!-- SECTION 1: 1 Bedroom Apartments -->
+  <section>
+    <div class="flex items-baseline justify-between mb-6">
+      <p class="text-[#0F3B3D] font-semibold text-2xl">Explore 1 Bedroom Apartments</p>
+      <p class="text-[#20ACB3] cursor-pointer font-medium">See all <i class="bi bi-chevron-right"></i></p>
+    </div>
+    <p class="text-[#5C6F70] mb-8">Cozy and efficient spaces for individuals or couples.</p>
+
+    <div class="relative">
+      <div id="scroll-1" class="flex gap-[30px] overflow-x-auto scroll-container pb-6 scrollbar-hide">
+        
+        <!-- CARD 1 -->
+        <div class="shadow-lg p-7 min-w-[307px] rounded-4xl bg-white flex-shrink-0">
+          <figure class="w-[307px] h-[247px] bg-[url('/image/first.jpg')] bg-center bg-no-repeat bg-cover rounded-[20px]"></figure>
+          <figcaption class="mt-4">
+            <p class="text-[24px] font-semibold">Room in Aba</p>
+            <p class="text-[#5C6F70] flex items-center gap-2"><i class="bi bi-geo-alt text-sm"></i> Aba</p>
+            <div class="flex gap-10 text-[#5C6F70] mt-3">
+              <p class="flex items-center gap-2"><i class="bi bi-people-fill text-sm"></i> 1</p>
+              <p class="flex items-center gap-2"><i class="bi bi-clock text-sm"></i> Available now</p>
+            </div>
+            <hr class="my-5">
+            <div class="flex items-center justify-between mt-4">
+              <button class="bg-[#20ACB3] text-white rounded-[20px] w-[107px] h-[48px] hover:bg-black transition">Rent</button>
+              <div class="text-right">
+                <p class="text-xl font-semibold">N570,000</p>
+                <p class="text-xs">per year</p>
+              </div>
+            </div>
+          </figcaption>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="shadow-lg p-7 min-w-[307px] rounded-4xl bg-white flex-shrink-0">
+          <figure class="w-[307px] h-[247px] bg-[url('/image/third.png')] bg-center bg-no-repeat bg-cover rounded-[20px]"></figure>
+          <figcaption class="mt-4">
+            <p class="text-[24px] font-semibold">Loft in Abia</p>
+            <p class="text-[#5C6F70] flex items-center gap-2"><i class="bi bi-geo-alt text-sm"></i> River Layout, Aba</p>
+            <div class="flex gap-10 text-[#5C6F70] mt-3">
+              <p class="flex items-center gap-2"><i class="bi bi-people-fill text-sm"></i> 1</p>
+              <p class="flex items-center gap-2"><i class="bi bi-clock text-sm"></i> Available in 4 weeks</p>
+            </div>
+            <hr class="my-5">
+            <div class="flex items-center justify-between mt-4">
+              <button class="bg-[#20ACB3] text-white rounded-[20px] w-[107px] h-[48px] hover:bg-black transition">Rent</button>
+              <div class="text-right">
+                <p class="text-xl font-semibold">N410,000</p>
+                <p class="text-xs">per year</p>
+              </div>
+            </div>
+          </figcaption>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="shadow-lg p-7 min-w-[307px] rounded-4xl bg-white flex-shrink-0">
+          <figure class="w-[307px] h-[247px] bg-[url('/image/second.jpg')] bg-center bg-no-repeat bg-cover rounded-[20px]"></figure>
+          <figcaption class="mt-4">
+            <p class="text-[24px] font-semibold">Studio Flat in Faulks Road</p>
+            <p class="text-[#5C6F70] flex items-center gap-2"><i class="bi bi-geo-alt text-sm"></i> Aba</p>
+            <div class="flex gap-10 text-[#5C6F70] mt-3">
+              <p class="flex items-center gap-2"><i class="bi bi-people-fill text-sm"></i> 1</p>
+              <p class="flex items-center gap-2"><i class="bi bi-clock text-sm"></i> Available now</p>
+            </div>
+            <hr class="my-5">
+            <div class="flex items-center justify-between mt-4">
+              <button class="bg-[#20ACB3] text-white rounded-[20px] w-[107px] h-[48px] hover:bg-black transition">Rent</button>
+              <div class="text-right">
+                <p class="text-xl font-semibold">N550,000</p>
+                <p class="text-xs">per year</p>
+              </div>
+            </div>
+          </figcaption>
+        </div>
+      </div>
+
+      <button onclick="scrollHorizontally('scroll-1', -380)" class="arrow left-4" id="left-1"><i class="bi bi-chevron-left"></i></button>
+      <button onclick="scrollHorizontally('scroll-1', 380)" class="arrow right-4" id="right-1"><i class="bi bi-chevron-right"></i></button>
+    </div>
+  </section>
+
+  <!-- SECTION 2: 2 Bedroom Apartments -->
+  <section>
+    <div class="flex items-baseline justify-between mb-6">
+      <p class="text-[#0F3B3D] font-semibold text-2xl">Explore 2 Bedroom Apartments</p>
+      <p class="text-[#20ACB3] cursor-pointer font-medium">See all <i class="bi bi-chevron-right"></i></p>
+    </div>
+    <p class="text-[#5C6F70] mb-8">Ideal for small families or roommates seeking extra space.</p>
+
+    <div class="relative">
+      <div id="scroll-2" class="flex gap-[30px] overflow-x-auto scroll-container pb-6 scrollbar-hide">
+        <!-- All 3 cards -->
+        <div class="shadow-lg p-7 min-w-[307px] rounded-4xl bg-white flex-shrink-0">
+          <figure class="w-[307px] h-[247px] bg-[url('/image/first.jpg')] bg-center bg-no-repeat bg-cover rounded-[20px]"></figure>
+          <figcaption class="mt-4">
+            <p class="text-[24px] font-semibold">Flat in Umuahia</p>
+            <p class="text-[#5C6F70] flex items-center gap-2"><i class="bi bi-geo-alt text-sm"></i> Opp. MOUAU</p>
+            <div class="flex gap-10 text-[#5C6F70] mt-3">
+              <p class="flex items-center gap-2"><i class="bi bi-people-fill text-sm"></i> 2</p>
+              <p class="flex items-center gap-2"><i class="bi bi-clock text-sm"></i> Available now</p>
+            </div>
+            <hr class="my-5">
+            <div class="flex items-center justify-between mt-4">
+              <button class="bg-[#20ACB3] text-white rounded-[20px] w-[107px] h-[48px] hover:bg-black transition">Rent</button>
+              <div class="text-right">
+                <p class="text-xl font-semibold">N700,000</p>
+                <p class="text-xs">per year</p>
+              </div>
+            </div>
+          </figcaption>
+        </div>
+
+        <div class="shadow-lg p-7 min-w-[307px] rounded-4xl bg-white flex-shrink-0">
+          <figure class="w-[307px] h-[247px] bg-[url('/image/third.png')] bg-center bg-no-repeat bg-cover rounded-[20px]"></figure>
+          <figcaption class="mt-4">
+            <p class="text-[24px] font-semibold">Flat in Abia</p>
+            <p class="text-[#5C6F70] flex items-center gap-2"><i class="bi bi-geo-alt text-sm"></i> Federal Road, Abia</p>
+            <div class="flex gap-10 text-[#5C6F70] mt-3">
+              <p class="flex items-center gap-2"><i class="bi bi-people-fill text-sm"></i> 2</p>
+              <p class="flex items-center gap-2"><i class="bi bi-clock text-sm"></i> Available in 4 weeks</p>
+            </div>
+            <hr class="my-5">
+            <div class="flex items-center justify-between mt-4">
+              <button class="bg-[#20ACB3] text-white rounded-[20px] w-[107px] h-[48px] hover:bg-black transition">Rent</button>
+              <div class="text-right">
+                <p class="text-xl font-semibold">N680,000</p>
+                <p class="text-xs">per year</p>
+              </div>
+            </div>
+          </figcaption>
+        </div>
+
+        <div class="shadow-lg p-7 min-w-[307px] rounded-4xl bg-white flex-shrink-0">
+          <figure class="w-[307px] h-[247px] bg-[url('/image/second.jpg')] bg-center bg-no-repeat bg-cover rounded-[20px]"></figure>
+          <figcaption class="mt-4">
+            <p class="text-[24px] font-semibold">Flat in Udi</p>
+            <p class="text-[#5C6F70] flex items-center gap-2"><i class="bi bi-geo-alt text-sm"></i> Udi</p>
+            <div class="flex gap-10 text-[#5C6F70] mt-3">
+              <p class="flex items-center gap-2"><i class="bi bi-people-fill text-sm"></i> 2</p>
+              <p class="flex items-center gap-2"><i class="bi bi-clock text-sm"></i> Available now</p>
+            </div>
+            <hr class="my-5">
+            <div class="flex items-center justify-between mt-4">
+              <button class="bg-[#20ACB3] text-white rounded-[20px] w-[107px] h-[48px] hover:bg-black transition">Rent</button>
+              <div class="text-right">
+                <p class="text-xl font-semibold">N700,000</p>
+                <p class="text-xs">per year</p>
+              </div>
+            </div>
+          </figcaption>
+        </div>
+      </div>
+      <button onclick="scrollHorizontally('scroll-2', -380)" class="arrow left-4" id="left-2"><i class="bi bi-chevron-left"></i></button>
+      <button onclick="scrollHorizontally('scroll-2', 380)" class="arrow right-4" id="right-2"><i class="bi bi-chevron-right"></i></button>
+    </div>
+  </section>
+
+  <!-- SECTION 3: 3+ Bedroom Apartments -->
+  <section>
+    <div class="flex items-baseline justify-between mb-6">
+      <p class="text-[#0F3B3D] font-semibold text-2xl">Explore 3+ Bedroom Apartments</p>
+      <p class="text-[#20ACB3] cursor-pointer font-medium">See all <i class="bi bi-chevron-right"></i></p>
+    </div>
+    <p class="text-[#5C6F70] mb-8">Spacious layouts perfect for larger families or groups.</p>
+
+    <div class="relative">
+      <div id="scroll-3" class="flex gap-[30px] overflow-x-auto scroll-container pb-6 scrollbar-hide">
+        <div class="shadow-lg p-7 min-w-[307px] rounded-4xl bg-white flex-shrink-0">
+          <figure class="w-[307px] h-[247px] bg-[url('/image/first.jpg')] bg-center bg-no-repeat bg-cover rounded-[20px]"></figure>
+          <figcaption class="mt-4">
+            <p class="text-[24px] font-semibold">Flat in Nsukka</p>
+            <p class="text-[#5C6F70] flex items-center gap-2"><i class="bi bi-geo-alt text-sm"></i> New Haven, Enugu</p>
+            <div class="flex gap-10 text-[#5C6F70] mt-3">
+              <p class="flex items-center gap-2"><i class="bi bi-people-fill text-sm"></i> 4</p>
+              <p class="flex items-center gap-2"><i class="bi bi-clock text-sm"></i> Available now</p>
+            </div>
+            <hr class="my-5">
+            <div class="flex items-center justify-between mt-4">
+              <button class="bg-[#20ACB3] text-white rounded-[20px] w-[107px] h-[48px] hover:bg-black transition">Rent</button>
+              <div class="text-right">
+                <p class="text-xl font-semibold">N700,000</p>
+                <p class="text-xs">per year</p>
+              </div>
+            </div>
+          </figcaption>
+        </div>
+
+        <div class="shadow-lg p-7 min-w-[307px] rounded-4xl bg-white flex-shrink-0">
+          <figure class="w-[307px] h-[247px] bg-[url('/image/third.png')] bg-center bg-no-repeat bg-cover rounded-[20px]"></figure>
+          <figcaption class="mt-4">
+            <p class="text-[24px] font-semibold">Flat in Enugu</p>
+            <p class="text-[#5C6F70] flex items-center gap-2"><i class="bi bi-geo-alt text-sm"></i> Independence Layout, Enugu</p>
+            <div class="flex gap-10 text-[#5C6F70] mt-3">
+              <p class="flex items-center gap-2"><i class="bi bi-people-fill text-sm"></i> 3</p>
+              <p class="flex items-center gap-2"><i class="bi bi-clock text-sm"></i> Available in 4 weeks</p>
+            </div>
+            <hr class="my-5">
+            <div class="flex items-center justify-between mt-4">
+              <button class="bg-[#20ACB3] text-white rounded-[20px] w-[107px] h-[48px] hover:bg-black transition">Rent</button>
+              <div class="text-right">
+                <p class="text-xl font-semibold">N680,000</p>
+                <p class="text-xs">per year</p>
+              </div>
+            </div>
+          </figcaption>
+        </div>
+
+        <div class="shadow-lg p-7 min-w-[307px] rounded-4xl bg-white flex-shrink-0">
+          <figure class="w-[307px] h-[247px] bg-[url('/image/second.jpg')] bg-center bg-no-repeat bg-cover rounded-[20px]"></figure>
+          <figcaption class="mt-4">
+            <p class="text-[24px] font-semibold">House in Enugu</p>
+            <p class="text-[#5C6F70] flex items-center gap-2"><i class="bi bi-geo-alt text-sm"></i> GRA, Enugu</p>
+            <div class="flex gap-10 text-[#5C6F70] mt-3">
+              <p class="flex items-center gap-2"><i class="bi bi-people-fill text-sm"></i> 5</p>
+              <p class="flex items-center gap-2"><i class="bi bi-clock text-sm"></i> Available now</p>
+            </div>
+            <hr class="my-5">
+            <div class="flex items-center justify-between mt-4">
+              <button class="bg-[#20ACB3] text-white rounded-[20px] w-[107px] h-[48px] hover:bg-black transition">Rent</button>
+              <div class="text-right">
+                <p class="text-xl font-semibold">N700,000</p>
+                <p class="text-xs">per year</p>
+              </div>
+            </div>
+          </figcaption>
+        </div>
+      </div>
+      <button onclick="scrollHorizontally('scroll-3', -380)" class="arrow left-4" id="left-3"><i class="bi bi-chevron-left"></i></button>
+      <button onclick="scrollHorizontally('scroll-3', 380)" class="arrow right-4" id="right-3"><i class="bi bi-chevron-right"></i></button>
+    </div>
+  </section>
+
+  <!-- SECTION 4: Short-Term Rentals -->
+  <section>
+    <div class="flex items-baseline justify-between mb-6">
+      <p class="text-[#0F3B3D] font-semibold text-2xl">Find Short-Term Rentals</p>
+      <p class="text-[#20ACB3] cursor-pointer font-medium">See all <i class="bi bi-chevron-right"></i></p>
+    </div>
+    <p class="text-[#5C6F70] mb-8">Ideal for travelers, professionals, or quick getaways.</p>
+
+    <div class="relative">
+      <div id="scroll-4" class="flex gap-[30px] overflow-x-auto scroll-container pb-6 scrollbar-hide">
+        <div class="shadow-lg p-7 min-w-[307px] rounded-4xl bg-white flex-shrink-0">
+          <figure class="w-[307px] h-[247px] bg-[url('/image/first.jpg')] bg-center bg-no-repeat bg-cover rounded-[20px]"></figure>
+          <figcaption class="mt-4">
+            <p class="text-[24px] font-semibold">Flat in Enugu</p>
+            <p class="text-[#5C6F70] flex items-center gap-2"><i class="bi bi-geo-alt text-sm"></i> New Haven, Enugu</p>
+            <div class="flex gap-10 text-[#5C6F70] mt-3">
+              <p class="flex items-center gap-2"><i class="bi bi-people-fill text-sm"></i> 3</p>
+              <p class="flex items-center gap-2"><i class="bi bi-clock text-sm"></i> Available now</p>
+            </div>
+            <hr class="my-5">
+            <div class="flex items-center justify-between mt-4">
+              <button class="bg-[#20ACB3] text-white rounded-[20px] w-[107px] h-[48px] hover:bg-black transition">Rent</button>
+              <div class="text-right">
+                <p class="text-xl font-semibold">N25,000</p>
+                <p class="text-xs">per day</p>
+              </div>
+            </div>
+          </figcaption>
+        </div>
+
+        <div class="shadow-lg p-7 min-w-[307px] rounded-4xl bg-white flex-shrink-0">
+          <figure class="w-[307px] h-[247px] bg-[url('/image/third.png')] bg-center bg-no-repeat bg-cover rounded-[20px]"></figure>
+          <figcaption class="mt-4">
+            <p class="text-[24px] font-semibold">Room in Nsukka</p>
+            <p class="text-[#5C6F70] flex items-center gap-2"><i class="bi bi-geo-alt text-sm"></i> Independence Layout, Enugu</p>
+            <div class="flex gap-10 text-[#5C6F70] mt-3">
+              <p class="flex items-center gap-2"><i class="bi bi-people-fill text-sm"></i> 1</p>
+              <p class="flex items-center gap-2"><i class="bi bi-clock text-sm"></i> Available now</p>
+            </div>
+            <hr class="my-5">
+            <div class="flex items-center justify-between mt-4">
+              <button class="bg-[#20ACB3] text-white rounded-[20px] w-[107px] h-[48px] hover:bg-black transition">Rent</button>
+              <div class="text-right">
+                <p class="text-xl font-semibold">N15,000</p>
+                <p class="text-xs">per day</p>
+              </div>
+            </div>
+          </figcaption>
+        </div>
+
+        <div class="shadow-lg p-7 min-w-[307px] rounded-4xl bg-white flex-shrink-0">
+          <figure class="w-[307px] h-[247px] bg-[url('/image/second.jpg')] bg-center bg-no-repeat bg-cover rounded-[20px]"></figure>
+          <figcaption class="mt-4">
+            <p class="text-[24px] font-semibold">House in Enugu</p>
+            <p class="text-[#5C6F70] flex items-center gap-2"><i class="bi bi-geo-alt text-sm"></i> GRA, Enugu</p>
+            <div class="flex gap-10 text-[#5C6F70] mt-3">
+              <p class="flex items-center gap-2"><i class="bi bi-people-fill text-sm"></i> 2</p>
+              <p class="flex items-center gap-2"><i class="bi bi-clock text-sm"></i> Available now</p>
+            </div>
+            <hr class="my-5">
+            <div class="flex items-center justify-between mt-4">
+              <button class="bg-[#20ACB3] text-white rounded-[20px] w-[107px] h-[48px] hover:bg-black transition">Rent</button>
+              <div class="text-right">
+                <p class="text-xl font-semibold">N15,000</p>
+                <p class="text-xs">per day</p>
+              </div>
+            </div>
+          </figcaption>
+        </div>
+      </div>
+      <button onclick="scrollHorizontally('scroll-4', -380)" class="arrow left-4" id="left-4"><i class="bi bi-chevron-left"></i></button>
+      <button onclick="scrollHorizontally('scroll-4', 380)" class="arrow right-4" id="right-4"><i class="bi bi-chevron-right"></i></button>
+    </div>
+  </section>
+
+  <!-- SECTION 5: Workspaces -->
+  <section>
+    <div class="flex items-baseline justify-between mb-6">
+      <p class="text-[#0F3B3D] font-semibold text-2xl">Explore Workspaces</p>
+      <p class="text-[#20ACB3] cursor-pointer font-medium">See all <i class="bi bi-chevron-right"></i></p>
+    </div>
+
+    <div class="relative">
+      <div id="scroll-5" class="flex gap-[30px] overflow-x-auto scroll-container pb-6 scrollbar-hide">
+        <div class="shadow-lg p-7 min-w-[307px] rounded-4xl bg-white flex-shrink-0">
+          <figure class="w-[307px] h-[247px] bg-[url('/image/first.jpg')] bg-center bg-no-repeat bg-cover rounded-[20px]"></figure>
+          <figcaption class="mt-4">
+            <p class="text-[24px] font-semibold">Office Space</p>
+            <p class="text-[#5C6F70] flex items-center gap-2"><i class="bi bi-geo-alt text-sm"></i> New Haven, Enugu</p>
+            <div class="flex gap-10 text-[#5C6F70] mt-3">
+              <p class="flex items-center gap-2"><i class="bi bi-people-fill text-sm"></i> 2</p>
+              <p class="flex items-center gap-2"><i class="bi bi-clock text-sm"></i> Available now</p>
+            </div>
+            <hr class="my-5">
+            <div class="flex items-center justify-between mt-4">
+              <button class="bg-[#20ACB3] text-white rounded-[20px] w-[107px] h-[48px] hover:bg-black transition">Rent</button>
+              <div class="text-right">
+                <p class="text-xl font-semibold">N25,000</p>
+                <p class="text-xs">per day</p>
+              </div>
+            </div>
+          </figcaption>
+        </div>
+
+        <div class="shadow-lg p-7 min-w-[307px] rounded-4xl bg-white flex-shrink-0">
+          <figure class="w-[307px] h-[247px] bg-[url('/image/third.png')] bg-center bg-no-repeat bg-cover rounded-[20px]"></figure>
+          <figcaption class="mt-4">
+            <p class="text-[24px] font-semibold">Office Space</p>
+            <p class="text-[#5C6F70] flex items-center gap-2"><i class="bi bi-geo-alt text-sm"></i> Independence Layout, Enugu</p>
+            <div class="flex gap-10 text-[#5C6F70] mt-3">
+              <p class="flex items-center gap-2"><i class="bi bi-people-fill text-sm"></i> 2</p>
+              <p class="flex items-center gap-2"><i class="bi bi-clock text-sm"></i> Available now</p>
+            </div>
+            <hr class="my-5">
+            <div class="flex items-center justify-between mt-4">
+              <button class="bg-[#20ACB3] text-white rounded-[20px] w-[107px] h-[48px] hover:bg-black transition">Rent</button>
+              <div class="text-right">
+                <p class="text-xl font-semibold">N1,100,000</p>
+                <p class="text-xs">per year</p>
+              </div>
+            </div>
+          </figcaption>
+        </div>
+
+        <div class="shadow-lg p-7 min-w-[307px] rounded-4xl bg-white flex-shrink-0">
+          <figure class="w-[307px] h-[247px] bg-[url('/image/second.jpg')] bg-center bg-no-repeat bg-cover rounded-[20px]"></figure>
+          <figcaption class="mt-4">
+            <p class="text-[24px] font-semibold">Office Space</p>
+            <p class="text-[#5C6F70] flex items-center gap-2"><i class="bi bi-geo-alt text-sm"></i> GRA, Enugu</p>
+            <div class="flex gap-10 text-[#5C6F70] mt-3">
+              <p class="flex items-center gap-2"><i class="bi bi-people-fill text-sm"></i> 2</p>
+              <p class="flex items-center gap-2"><i class="bi bi-clock text-sm"></i> Available now</p>
+            </div>
+            <hr class="my-5">
+            <div class="flex items-center justify-between mt-4">
+              <button class="bg-[#20ACB3] text-white rounded-[20px] w-[107px] h-[48px] hover:bg-black transition">Rent</button>
+              <div class="text-right">
+                <p class="text-xl font-semibold">N850,000</p>
+                <p class="text-xs">per year</p>
+              </div>
+            </div>
+          </figcaption>
+        </div>
+      </div>
+      <button onclick="scrollHorizontally('scroll-5', -380)" class="arrow left-4" id="left-5"><i class="bi bi-chevron-left"></i></button>
+      <button onclick="scrollHorizontally('scroll-5', 380)" class="arrow right-4" id="right-5"><i class="bi bi-chevron-right"></i></button>
+    </div>
+  </section>
+
+</div>
+
+<script>
+  function scrollHorizontally(id, pixels) {
+    document.getElementById(id).scrollBy({ left: pixels, behavior: 'smooth' });
+  }
+
+  // Auto show/hide arrows
+  document.querySelectorAll('.scroll-container').forEach(container => {
+    const sectionId = container.id;
+    const leftBtn = document.getElementById('left-' + sectionId.split('-')[1]);
+    const rightBtn = document.getElementById('right-' + sectionId.split('-')[1]);
+
+    const checkArrows = () => {
+      const atStart = container.scrollLeft <= 10;
+      const atEnd = container.scrollWidth - container.clientWidth - container.scrollLeft <= 10;
+
+      leftBtn.style.opacity = atStart ? '0' : '1';
+      leftBtn.disabled = atStart;
+      rightBtn.style.opacity = atEnd ? '0' : '1';
+      rightBtn.disabled = atEnd;
+    };
+
+    container.addEventListener('scroll', checkArrows);
+    window.addEventListener('resize', checkArrows);
+    checkArrows();
+  });
+</script>
+<footer class="bg-[#0F3B3D] text-white pt-20 pb-16 relative overflow-hidden">
+
+  <!-- Upper CTA Bar – NOT fixed on mobile, stays inside footer on ALL devices -->
+  <div class="w-full max-w-4xl mx-auto px-6 mb-12">
+    <div class="bg-[#196366] rounded-2xl px-6 py-6 md:py-8 
+                flex flex-col md:flex-row items-center justify-between gap-6 
+                shadow-2xl border border-white/10">
+      <p class="text-lg md:text-xl font-medium text-center md:text-left">
+        Start creating your memories...
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
+        <button class="bg-[#20ACB3] hover:bg-[#1e9ea5] text-white font-semibold px-8 py-4 rounded-3xl transition">
+          Login
+        </button>
+        <button class="bg-white hover:bg-gray-100 text-[#0F3B3D] font-semibold px-8 py-4 rounded-3xl transition">
+          List Property
+        </button>
+      </div>
+    </div>
+  </div>
+<br>
+  <!-- Main Footer Content -->
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="bg-white/10 backdrop-blur-sm border border-white/10 rounded-3xl md:rounded-[42px] p-8 md:p-12 lg:p-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-16">
+        
+        <!-- Brand -->
+        <div class="space-y-6 lg:space-y-8">
+          <h3 class="text-2xl md:text-3xl font-bold flex items-center gap-2">
+            <i class="bi bi-camera-fill text-[#20ACB3] mr-2"></i>Ụlọ Ọma
+          </h3>
+          <p class="text-sm md:text-base leading-relaxed opacity-90">
+            Ụlọ Ọma makes finding your next home easy and transparent. From verified listings to free viewing transport and hassle-free moving, we are your trusted path to the front door.
+          </p>
+          <div class="flex gap-5 text-xl">
+            <i class="bi bi-facebook hover:text-[#20ACB3] cursor-pointer transition"></i>
+            <i class="bi bi-instagram hover:text-[#20ACB3] cursor-pointer transition"></i>
+            <i class="bi bi-twitter-x hover:text-[#20ACB3] cursor-pointer transition"></i>
+            <i class="bi bi-linkedin hover:text-[#20ACB3] cursor-pointer transition"></i>
+            <i class="bi bi-youtube hover:text-[#20ACB3] cursor-pointer transition"></i>
+          </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="space-y-6">
+          <h4 class="text-[#82E4E9] font-semibold text-lg uppercase tracking-wider">Navigation</h4>
+          <nav class="flex flex-col space-y-4 text-base">
+            <a href="#" class="hover:text-[#20ACB3] transition">Home</a>
+            <a href="#" class="hover:text-[#20ACB3] transition">Explore</a>
+            <a href="#" class="hover:text-[#20ACB3] transition">How It Works</a>
+            <a href="#" class="hover:text-[#20ACB3] transition">About Us</a>
+            <a href="#" class="hover:text-[#20ACB3] transition">Help</a>
+          </nav>
+        </div>
+
+        <!-- Help -->
+        <div class="space-y-6">
+          <h4 class="text-[#82E4E9] font-semibold text-lg uppercase tracking-wider">Help</h4>
+          <nav class="flex flex-col space-y-4 text-base">
+            <a href="#" class="hover:text-[#20ACB3] transition">Contact Us</a>
+            <a href="#" class="hover:text-[#20ACB3] transition">FAQs</a>
+            <a href="#" class="hover:text-[#20ACB3] transition">Terms & Conditions</a>
+            <a href="#" class="hover:text-[#20ACB3] transition">Privacy Policy</a>
+          </nav>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="space-y-6">
+          <h4 class="text-[#82E4E9] font-semibold text-lg uppercase tracking-wider">
+            Subscribe to Our Newsletter
+          </h4>
+          <form class="space-y-4">
+            <input type="email" placeholder="Enter your email"
+              class="w-full px-4 py-3 bg-white text-gray-800 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#20ACB3]">
+            <button class="w-full sm:w-auto bg-[#2DB2B8] hover:bg-[#28a09e] px-10 py-3 rounded-xl font-medium transition">
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="mt-16 pt-8 border-t border-white/20 text-center text-sm opacity-80">
+      © 2025 Ụlọ Ọma. All Rights Reserved.
+    </div>
+  </div>
+</footer>
+</body>
+
+
+
+
+</html>
+
