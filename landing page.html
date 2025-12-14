@@ -16,7 +16,7 @@
   <div class="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
 
     <!-- Logo -->
-    <div>
+    <div class="cursor-pointer" onclick="window.location.href='landing page.html'">
       <img src="./image/Logo.PNG" alt="Ulo Oma" class="h-12 md:h-14" />
     </div>
 
@@ -308,7 +308,7 @@
       <div id="scroll-1" class="flex gap-[30px] overflow-x-auto scroll-container pb-6 scrollbar-hide">
         
         <!-- CARD 1 -->
-        <div class="shadow-lg p-7 min-w-[307px] rounded-4xl bg-white flex-shrink-0">
+        <div class="shadow-lg p-7 min-w-[307px] rounded-4xl bg-white flex-shrink-0 cursor-pointer" onclick="window.location.href='apartment details.html'">
           <figure class="w-[307px] h-[247px] bg-[url('/image/first.jpg')] bg-center bg-no-repeat bg-cover rounded-[20px]"></figure>
           <figcaption class="mt-4">
             <p class="text-[24px] font-semibold">Room in Aba</p>
@@ -319,7 +319,7 @@
             </div>
             <hr class="my-5">
             <div class="flex items-center justify-between mt-4">
-              <button class="bg-[#20ACB3] text-white rounded-[20px] w-[107px] h-[48px] hover:bg-black transition">Rent</button>
+              <button onclick="event.stopPropagation(); window.location.href='apartment details.html'" class="bg-[#20ACB3] text-white rounded-[20px] w-[107px] h-[48px] hover:bg-black transition">Rent</button>
               <div class="text-right">
                 <p class="text-xl font-semibold">N570,000</p>
                 <p class="text-xs">per year</p>
