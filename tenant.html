@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="src/output.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
+</head>
+
+<body>
+  <header class="flex justify-between gap-5 font-semibold py-4 mx-32">
+    <div class="hover:animate-bounce hover:underline underline-offset-8 transition duration-200 hover:text-[green] decoration-2">
+      <span i class="bi bi-camera-fill"></i></span>Ulo Oma
+    </div>
+    <nav class="flex gap-5">
+      <a class="hover:animate-bounce hover:underline underline-offset-8 transition duration-200 hover:text-[green] decoration-2" href="#explore">Explore</a>
+      <a class="hover:animate-bounce hover:underline underline-offset-8 transition duration-200 hover:text-[green] decoration-2 text-[green]" href="#howitworks">How It Works</a>
+      <a class="hover:animate-bounce hover:underline underline-offset-8 transition duration-200 hover:text-[green] decoration-2" href="#aboutus">About Us</a>
+      <a class="hover:animate-bounce hover:underline underline-offset-8 transition duration-200 hover:text-[green] decoration-2" href="#help">Help</a>
+    </nav>
+    <div>
+      <button class="rounded-full text-white bg-[#20ACB3] p-2 hover:animate-pulse cursor-pointer font-semibold">Sign Up</button>
+    </div>
+  </header>
+
+<!-- .................................Hero Section................................................... -->
+  <main class="relative w-10/12 h-8/12 overflow-hidden p-4 mt-4 mx-auto focus:outline-none shadow-[0_35px_60px_-15px_rgba(0,0,0,0.5)]">
+    <video
+      class="border-0 rounded-2xl outline-none absolute top-1/2 left-1/2 min-w-full min-h-full w-10/12 h-8/12 -translate-x-1/2 -translate-y-1/2 object-cover"
+      src="/videos/Whisk_cauajdazotcwztfmlwyzodutndezmc05otm4lwu.mp4" autoplay muted loop playsinline></video>
+
+    <section class="relative z-10 flex flex-col items-center justify-center h-80 text-center px-4 mt-5 font-serif">
+      <h1 class="text-4xl font-bold mb-4 mt-8 text-white">How It Works</h1>
+      <p class="font-bold mb-6 text-white text-lg">Looking For A place? Or Renting One Out? Here's How We Bring <br>
+        Landlords & Tenants Together</p>
+    </section>
+
+    <section class="flex justify-center items-center font-bold">
+      <div class="relative border border-white rounded-3xl focus:outline-none p-2">
+        <a href="tenant.html"><button class="text-white bg-[#20ACB3] p-2 rounded-3xl cursor-pointer">For Tenants</button></a>
+        <a href="landlord.html"><button class="text-white p-2 cursor-pointer">For Landlords</button></a>
+      </div>
+    </section>
+  </main>
+
+<!-- .................................Features Section....................................................... -->
+  <section class="py-4 my-8">
+    <section class="flex gap-5 justify-around items-center">
+      <div>
+        <h1 class="text-lg font-bold mb-2.5">Search and Reserve</h1>
+        <p class="font-light">Browse verified listings across your location. Use <br>filters to find the right fit. Pay a Little
+          reservation <br>fee to lock in your interest.</p>
+      </div>
+
+      <div class="flex flex-col">
+        <img class="w-96 h-80" src="images/searchandreserve.png" alt="">
+      </div>
+    </section>
+
+    <section class="flex gap-5 justify-around items-center">
+      <div>
+        <img class="w-96 h-80" src="images/freeinspection.png" alt="">
+      </div>
+
+      <div>
+        <h1 class="text-lg font-bold mb-2.5">Free Inspection</h1>
+        <p class="font-light">Get picked up by our agent for a <br>scheduled house tour. No hidden fees, <br>no pressure just real homes,<br>
+        real-time.</p>
+      </div>
+    </section>
+
+    <section class="flex gap-5 justify-around items-center">
+      <div>
+        <h1 class="text-lg font-bold mb-2.5">Secure Your New Home</h1>
+        <p class="font-light">If what you see fits your preference, pay the <br>landlord directly. We'll handle free logistics within <br>Aba
+        or get a 50% discount if you're moving <br>in from outside.</p>
+      </div>
+
+      <div>
+        <img class="w-96 h-80" src="images/secure.png" alt="">
+      </div>
+    </section>
+  </section>
+<!-- ..................................Footer Section................................................................... -->
+
+    <footer class="bg-[#0F3B3D] pt-32 pb-10 text-white relative font-serif">
+      <section
+        class="absolute -top-14 left-1/2 transform -translate-x-1/2 w-[60%] rounded-3xl shadow-lg flex justify-center items-center p-6 gap-4 bg-[#196366]"
+      >
+        <div>
+          <p class="text-white text-lg font-bold italic">Start Creating Your Memories...</p>
+        </div>
+        <div class="flex gap-3">
+          <button
+            class="bg-[#20ACB3] text-white px-6 py-2 font-medium rounded-full cursor-pointer"
+          >
+            Login
+          </button>
+          <button
+            class="bg-white text-black px-6 py-2 font-medium rounded-full cursor-pointer"
+          >
+            List Property
+          </button>
+        </div>
+      </section>
+
+      <section
+        class="rounded-md bg-linear-[#164C4633, #30A49633] px-10 flex gap-20 justify-between"
+      >
+        <section>
+          <div class="bi bi-camera-fill font-semibold mb-3">Ulo Oma</div>
+          <p>
+            Ulo Oma makes finding <br />your next home easy <br />and
+            transparent. From <br />verified listings to free <br />viewing
+            transport and <br />hassle-free moving, <br />we’re your trusted
+            path <br />to the front door.
+          </p>
+          <div class="space-x-2 my-3">
+            <i class="bi bi-facebook hover:text-[blue] cursor-pointer"></i>
+            <i class="bi bi-instagram hover:text-pink-800 cursor-pointer"></i>
+            <i class="bi bi-twitter-x cursor-pointer"></i>
+            <i class="bi bi-linkedin hover:text-[blue] cursor-pointer"></i>
+            <i class="bi bi-youtube hover:text-[red] cursor-pointer"></i>
+          </div>
+        </section>
+
+        <section>
+          <h2 class="font-semibold text-[#82E4E9] mb-3">NAVIGATION</h2>
+          <nav class="flex flex-col gap-3">
+            <a href="#home" class="hover:text-[green] decoration-2">Home</a>
+            <a href="#explore" class="hover:text-[green] decoration-2">Explore</a>
+            <a href="#howitworks" class="hover:text-[green] decoration-2">How it works</a>
+            <a href="#aboutus" class="hover:text-[green] decoration-2">About Us</a>
+            <a href="#help" class="hover:text-[green] decoration-2">Help</a>
+          </nav>
+        </section>
+
+        <section>
+          <h2 class="font-semibold text-[#82E4E9] mb-3">HELP</h2>
+          <nav class="flex flex-col gap-3">
+            <a href="#" class="hover:text-[green] decoration-2">Contact Us</a>
+            <a href="#" class="hover:text-[green] decoration-2">FAQs</a>
+            <a href="#" class="hover:text-[green] decoration-2">Terms & Conditions</a>
+            <a href="#" class="hover:text-[green] decoration-2">Privacy Policy</a>
+          </nav>
+        </section>
+
+        <section>
+          <h2 class="font-semibold text-[#82E4E9] mb-3">
+            SUBSCRIBE TO OUR NEWSLETTER
+          </h2>
+          <div class="flex flex-col gap-3">
+            <input
+              class="p-2 rounded-l-md bg-white w-60 text-black"
+              type="text"
+              placeholder="Enter your email"
+            />
+            <button
+              class="text-black bg-[#3b959a] py-2 rounded-lg font-semibold font-sans mt-3 w-20 cursor-pointer"
+            >
+              Subscribe
+            </button>
+          </div>
+        </section>
+      </section>
+
+      <section>
+        <div class="mt-10 border-t pt-4 mx-auto font-bold"></div>
+          <p class="text-white text-center">&copy;2025 Ulo Oma. All Rights Reserved.</p>
+        </div>
+      </section>
+    </footer>
+
+</body>
+
+</html>
