@@ -56,53 +56,6 @@
   </div>
 </header>
 
-<script>
-  const toggle = document.getElementById('menu-toggle');
-  const hamburger = document.getElementById('hamburger');
-  const closeX = document.getElementById('close-x');
-  const menu = document.getElementById('mobile-menu');
-
-  toggle.addEventListener('click', () => {
-    menu.classList.toggle('hidden');
-
-    if (menu.classList.contains('hidden')) {
-      hamburger.classList.remove('hidden');
-      closeX.classList.add('hidden');
-      document.body.style.overflow = 'auto';
-    } else {
-      hamburger.classList.add('hidden');
-      closeX.classList.remove('hidden');
-      document.body.style.overflow = 'hidden';
-    }
-  });
-
-
-  // Close when tapping outside
-  menu.addEventListener('click', (e) => {
-    if (e.target === menu) {
-      menu.classList.add('hidden');
-      hamburger.classList.remove('hidden');
-      closeX.classList.add('hidden');
-      document.body.style.overflow = 'auto';
-    }
-  });
-
-    //THE FADINGS//
-    // Wait until the DOM is fully loaded
-    document.addEventListener('DOMContentLoaded', (event) => {
-        // Find the element by its ID
-        const content = document.getElementById('content');
-        
-        // Remove the opacity-0 class and add the opacity-100 class
-        if (content) {
-            content.classList.remove('opacity-0');
-            content.classList.add('opacity-100');
-        }
-    });
-    //THHE FADINGS END HERE
-
-
-</script>
     <section>
      <!-- Hero Section with Slider -->
   <section class="relative h-screen w-full overflow-hidden">
@@ -162,64 +115,7 @@
     </div>
   </section>
 
-  <script>
-    const slides = document.querySelectorAll(".slide");
-    const dots = document.querySelectorAll(".dot");
-    let index = 0;
-
-    const slideContent = [
-      {
-        subtitle: "TRANSPARENCY",
-        title: "Rent with Confidence",
-        description: "We connect you directly to verified landlords, ensuring no hidden fees or inflated costs."
-      },
-      {
-        subtitle: "SEAMLESS INSPECTION",
-        title: "Visit Before You Commit",
-        description: "Free transportation to view properties, See it, Love it, then move in!."
-      },
-      {
-        subtitle: "Convenience",
-        title: "Move In Hassle-Free",
-        description: "From virtual tours to seamless paperwork, we make your rental journey smooth and stress-free."
-      }
-    ];
-
-    function showSlide(n) {
-      slides.forEach((slide, i) => {
-        slide.style.opacity = i === n ? '1' : '0';
-      });
-      dots.forEach((dot, i) => {
-        dot.style.opacity = i === n ? '1' : '0.5';
-        dot.style.transform = i === n ? 'scale(1.4)' : 'scale(1)';
-      });
-      
-      // Update text content
-      document.getElementById('slide-subtitle').textContent = slideContent[n].subtitle;
-      document.getElementById('slide-title').innerHTML = slideContent[n].title;
-      document.getElementById('slide-description').textContent = slideContent[n].description;
-    }
-
-    // Auto-play every 5 seconds
-    setInterval(() => {
-      index = (index + 1) % slides.length;
-      showSlide(index);
-    }, 5000);
-
-    // Manual navigation with dots
-    dots.forEach((dot, i) => {
-      dot.addEventListener("click", () => {
-        index = i;
-        showSlide(index);
-      });
-    });
-
-    // Show first slide
-    showSlide(0);
-    dots[0].style.opacity = '1';
-    dots[0].style.transform = 'scale(1.4)';
-  </script>
-
+  
   <!-- Optional: Custom Animations -->
   <style>
     .animate-fade-in {
@@ -337,51 +233,7 @@
         </div>
       </div>
 
-      <script>
-        function openFilters() {
-          document.getElementById('search-bar').classList.add('hidden');
-          document.getElementById('filter-interface').classList.remove('hidden');
-        }
-        
-        function closeFilters() {
-          document.getElementById('search-bar').classList.remove('hidden');
-          document.getElementById('filter-interface').classList.add('hidden');
-        }
-        
-        function applyFilters() {
-          // Apply filter logic here
-          alert('Filters applied!');
-          closeFilters();
-        }
-        
-        function selectRoom(button, value) {
-          document.querySelectorAll('#filter-interface .flex.gap-2 button').forEach(btn => {
-            btn.classList.remove('bg-[#20ACB3]', 'text-white');
-            btn.classList.add('border-gray-300');
-          });
-          button.classList.add('bg-[#20ACB3]', 'text-white');
-          button.classList.remove('border-gray-300');
-        }
-        
-        function selectTenancy(button, value) {
-          document.querySelectorAll('#filter-interface .flex.gap-3 button').forEach(btn => {
-            btn.classList.remove('bg-[#20ACB3]', 'text-white');
-            btn.classList.add('border-gray-300');
-          });
-          button.classList.add('bg-[#20ACB3]', 'text-white');
-          button.classList.remove('border-gray-300');
-        }
-        
-        function clearFilters() {
-          document.querySelectorAll('#filter-interface input').forEach(input => input.value = '');
-          document.querySelectorAll('#filter-interface button').forEach(btn => {
-            if (btn.classList.contains('bg-[#20ACB3]')) {
-              btn.classList.remove('bg-[#20ACB3]', 'text-white');
-              btn.classList.add('border-gray-300');
-            }
-          });
-        }
-      </script>
+      
     </section>
    <style>
     .scroll-container {
@@ -784,32 +636,7 @@
 
 </div>
 
-<script>
-  function scrollHorizontally(id, pixels) {
-    document.getElementById(id).scrollBy({ left: pixels, behavior: 'smooth' });
-  }
 
-  // Auto show/hide arrows
-  document.querySelectorAll('.scroll-container').forEach(container => {
-    const sectionId = container.id;
-    const leftBtn = document.getElementById('left-' + sectionId.split('-')[1]);
-    const rightBtn = document.getElementById('right-' + sectionId.split('-')[1]);
-
-    const checkArrows = () => {
-      const atStart = container.scrollLeft <= 10;
-      const atEnd = container.scrollWidth - container.clientWidth - container.scrollLeft <= 10;
-
-      leftBtn.style.opacity = atStart ? '0' : '1';
-      leftBtn.disabled = atStart;
-      rightBtn.style.opacity = atEnd ? '0' : '1';
-      rightBtn.disabled = atEnd;
-    };
-
-    container.addEventListener('scroll', checkArrows);
-    window.addEventListener('resize', checkArrows);
-    checkArrows();
-  });
-</script>
 <footer class="bg-[#0F3B3D] text-white pt-20 pb-16 relative overflow-hidden">
 
   <!-- Upper CTA Bar – NOT fixed on mobile, stays inside footer on ALL devices -->
@@ -898,6 +725,178 @@
     </div>
   </div>
 </footer>
+    <script>
+  const toggle = document.getElementById('menu-toggle');
+  const hamburger = document.getElementById('hamburger');
+  const closeX = document.getElementById('close-x');
+  const menu = document.getElementById('mobile-menu');
+
+  toggle.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+
+    if (menu.classList.contains('hidden')) {
+      hamburger.classList.remove('hidden');
+      closeX.classList.add('hidden');
+      document.body.style.overflow = 'auto';
+    } else {
+      hamburger.classList.add('hidden');
+      closeX.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+  });
+
+
+  // Close when tapping outside
+  menu.addEventListener('click', (e) => {
+    if (e.target === menu) {
+      menu.classList.add('hidden');
+      hamburger.classList.remove('hidden');
+      closeX.classList.add('hidden');
+      document.body.style.overflow = 'auto';
+    }
+  });
+
+    //THE FADINGS//
+    // Wait until the DOM is fully loaded
+    document.addEventListener('DOMContentLoaded', (event) => {
+        // Find the element by its ID
+        const content = document.getElementById('content');
+        
+        // Remove the opacity-0 class and add the opacity-100 class
+        if (content) {
+            content.classList.remove('opacity-0');
+            content.classList.add('opacity-100');
+        }
+    });
+    //THHE FADINGS END HERE
+
+    const slides = document.querySelectorAll(".slide");
+    const dots = document.querySelectorAll(".dot");
+    let index = 0;
+
+    const slideContent = [
+      {
+        subtitle: "TRANSPARENCY",
+        title: "Rent with Confidence",
+        description: "We connect you directly to verified landlords, ensuring no hidden fees or inflated costs."
+      },
+      {
+        subtitle: "SEAMLESS INSPECTION",
+        title: "Visit Before You Commit",
+        description: "Free transportation to view properties, See it, Love it, then move in!."
+      },
+      {
+        subtitle: "Convenience",
+        title: "Move In Hassle-Free",
+        description: "From virtual tours to seamless paperwork, we make your rental journey smooth and stress-free."
+      }
+    ];
+
+    function showSlide(n) {
+      slides.forEach((slide, i) => {
+        slide.style.opacity = i === n ? '1' : '0';
+      });
+      dots.forEach((dot, i) => {
+        dot.style.opacity = i === n ? '1' : '0.5';
+        dot.style.transform = i === n ? 'scale(1.4)' : 'scale(1)';
+      });
+      
+      // Update text content
+      document.getElementById('slide-subtitle').textContent = slideContent[n].subtitle;
+      document.getElementById('slide-title').innerHTML = slideContent[n].title;
+      document.getElementById('slide-description').textContent = slideContent[n].description;
+    }
+
+    // Auto-play every 5 seconds
+    setInterval(() => {
+      index = (index + 1) % slides.length;
+      showSlide(index);
+    }, 5000);
+
+    // Manual navigation with dots
+    dots.forEach((dot, i) => {
+      dot.addEventListener("click", () => {
+        index = i;
+        showSlide(index);
+      });
+    });
+
+    // Show first slide
+    showSlide(0);
+    dots[0].style.opacity = '1';
+    dots[0].style.transform = 'scale(1.4)';
+ 
+        function openFilters() {
+          document.getElementById('search-bar').classList.add('hidden');
+          document.getElementById('filter-interface').classList.remove('hidden');
+        }
+        
+        function closeFilters() {
+          document.getElementById('search-bar').classList.remove('hidden');
+          document.getElementById('filter-interface').classList.add('hidden');
+        }
+        
+        function applyFilters() {
+          // Apply filter logic here
+          alert('Filters applied!');
+          closeFilters();
+        }
+        
+        function selectRoom(button, value) {
+          document.querySelectorAll('#filter-interface .flex.gap-2 button').forEach(btn => {
+            btn.classList.remove('bg-[#20ACB3]', 'text-white');
+            btn.classList.add('border-gray-300');
+          });
+          button.classList.add('bg-[#20ACB3]', 'text-white');
+          button.classList.remove('border-gray-300');
+        }
+        
+        function selectTenancy(button, value) {
+          document.querySelectorAll('#filter-interface .flex.gap-3 button').forEach(btn => {
+            btn.classList.remove('bg-[#20ACB3]', 'text-white');
+            btn.classList.add('border-gray-300');
+          });
+          button.classList.add('bg-[#20ACB3]', 'text-white');
+          button.classList.remove('border-gray-300');
+        }
+        
+        function clearFilters() {
+          document.querySelectorAll('#filter-interface input').forEach(input => input.value = '');
+          document.querySelectorAll('#filter-interface button').forEach(btn => {
+            if (btn.classList.contains('bg-[#20ACB3]')) {
+              btn.classList.remove('bg-[#20ACB3]', 'text-white');
+              btn.classList.add('border-gray-300');
+            }
+          });
+        }
+     
+  function scrollHorizontally(id, pixels) {
+    document.getElementById(id).scrollBy({ left: pixels, behavior: 'smooth' });
+  }
+
+  // Auto show/hide arrows
+  document.querySelectorAll('.scroll-container').forEach(container => {
+    const sectionId = container.id;
+    const leftBtn = document.getElementById('left-' + sectionId.split('-')[1]);
+    const rightBtn = document.getElementById('right-' + sectionId.split('-')[1]);
+
+    const checkArrows = () => {
+      const atStart = container.scrollLeft <= 10;
+      const atEnd = container.scrollWidth - container.clientWidth - container.scrollLeft <= 10;
+
+      leftBtn.style.opacity = atStart ? '0' : '1';
+      leftBtn.disabled = atStart;
+      rightBtn.style.opacity = atEnd ? '0' : '1';
+      rightBtn.disabled = atEnd;
+    };
+
+    container.addEventListener('scroll', checkArrows);
+    window.addEventListener('resize', checkArrows);
+    checkArrows();
+  });
+</script>
+
+
 </body>
 
 
