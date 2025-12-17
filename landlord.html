@@ -10,20 +10,49 @@
 </head>
 
 <body>
-  <header class="flex justify-between gap-5 font-semibold p-3 mx-3">
-    <div class="hover:animate-bounce hover:underline underline-offset-8 transition duration-200 hover:text-[green] decoration-2">
-      <span i class="bi bi-camera-fill"></i></span>Ulo Oma
+  <header class="sticky top-0 bg-white z-50">
+  <div class="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
+
+    <!-- Logo -->
+    <div class="cursor-pointer" onclick="window.location.href='index.html'">
+      <img src="./images/Logo.PNG" alt="Ulo Oma" class="h-12 md:h-14" />
     </div>
-    <nav class="flex gap-5">
-      <a class="hover:animate-bounce hover:underline underline-offset-8 transition duration-200 hover:text-[green] decoration-2" href="#explore">Explore</a>
-      <a class="hover:animate-bounce hover:underline underline-offset-8 transition duration-200 hover:text-[green] decoration-2 text-[green]" href="#howitworks">How It Works</a>
-      <a class="hover:animate-bounce hover:underline underline-offset-8 transition duration-200 hover:text-[green] decoration-2" href="#aboutus">About Us</a>
-      <a class="hover:animate-bounce hover:underline underline-offset-8 transition duration-200 hover:text-[green] decoration-2" href="#help">Help</a>
+
+    <!-- Desktop Navigation -->
+    <nav class="hidden md:flex gap-10 lg:gap-16 text-[19px] font-semibold text-black">
+      <a href="apartment details.html" class="hover:text-[#20ACB3] transition">Explore</a>
+      <a href="#how-it-works" class="hover:text-[#20ACB3] transition">How it works</a>
+      <a href="#about" class="hover:text-[#20ACB3] transition">About Us</a>
+      <a href="#help" class="hover:text-[#20ACB3] transition">Help</a>
     </nav>
-    <div>
-      <button class="rounded-full text-white bg-[#20ACB3] p-2 hover:animate-pulse cursor-pointer font-semibold">Sign Up</button>
+
+    <!-- Desktop Sign Up -->
+    <div class="hidden md:block">
+      <button onclick="window.location.href='tenant.html'" class="bg-[#20ACB3] text-white rounded-[30px] py-[15px] px-[30px] hover:bg-black transition text-[19px] font-medium cursor-pointer">
+        Sign Up
+      </button>
     </div>
-  </header>
+
+    <!-- Mobile Toggle Button -->
+    <button id="menu-toggle" class="md:hidden text-4xl text-[#20ACB3] z-50">
+      <i id="hamburger" class="bi bi-list"></i>
+      <i id="close-x" class="bi bi-x-lg hidden"></i>
+    </button>
+  </div>
+
+  <!-- Mobile Full-Screen Menu (Vertical Only) -->
+  <div id="mobile-menu" class="fixed inset-0 bg-white hidden z-40">
+    <div class="flex flex-col items-center justify-center h-full gap-12 text-2xl font-semibold text-black">
+      <a href="apartment details.html" class="hover:text-[#20ACB3] transition">Explore</a>
+      <a href="#how-it-works" class="hover:text-[#20ACB3] transition">How it works</a>
+      <a href="#about" class="hover:text-[#20ACB3] transition">About Us</a>
+      <a href="#help" class="hover:text-[#20ACB3] transition">Help</a>
+      <button onclick="window.location.href='tenant.html'" class="bg-[#20ACB3] text-white rounded-[30px] py-4 px-12 hover:bg-black cursor-pointer transition text-xl font-medium">
+        Sign Up
+      </button>
+    </div>
+  </div>
+</header>
 
 <!-- .................................Hero Section................................................... -->
   <main class="relative w-10/12 h-8/12 overflow-hidden p-4 mt-4 mx-auto focus:outline-none shadow-[0_35px_60px_-15px_rgba(0,0,0,0.5)]">

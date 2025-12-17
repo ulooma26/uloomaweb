@@ -16,21 +16,21 @@
   <div class="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
 
     <!-- Logo -->
-    <div class="cursor-pointer" onclick="window.location.href='landing page.html'">
+    <div class="cursor-pointer" onclick="window.location.href='index.html'">
       <img src="./images/Logo.PNG" alt="Ulo Oma" class="h-12 md:h-14" />
     </div>
 
     <!-- Desktop Navigation -->
     <nav class="hidden md:flex gap-10 lg:gap-16 text-[19px] font-semibold text-black">
-      <a href="#" class="hover:text-[#20ACB3] transition">Explore</a>
-      <a href="#" class="hover:text-[#20ACB3] transition">How it works</a>
-      <a href="#" class="hover:text-[#20ACB3] transition">About Us</a>
-      <a href="#" class="hover:text-[#20ACB3] transition">Help</a>
+      <a href="apartment details.html" class="hover:text-[#20ACB3] transition">Explore</a>
+      <a href="#how-it-works" class="hover:text-[#20ACB3] transition">How it works</a>
+      <a href="#about" class="hover:text-[#20ACB3] transition">About Us</a>
+      <a href="#help" class="hover:text-[#20ACB3] transition">Help</a>
     </nav>
 
     <!-- Desktop Sign Up -->
     <div class="hidden md:block">
-      <button class="bg-[#20ACB3] text-white rounded-[30px] py-[15px] px-[30px] hover:bg-black transition text-[19px] font-medium">
+      <button onclick="window.location.href='signup.html'" class="bg-[#20ACB3] text-white rounded-[30px] py-[15px] px-[30px] hover:bg-black transition text-[19px] font-medium cursor-pointer">
         Sign Up
       </button>
     </div>
@@ -45,11 +45,11 @@
   <!-- Mobile Full-Screen Menu (Vertical Only) -->
   <div id="mobile-menu" class="fixed inset-0 bg-white hidden z-40">
     <div class="flex flex-col items-center justify-center h-full gap-12 text-2xl font-semibold text-black">
-      <a href="#" class="hover:text-[#20ACB3] transition">Explore</a>
-      <a href="#" class="hover:text-[#20ACB3] transition">How it works</a>
-      <a href="#" class="hover:text-[#20ACB3] transition">About Us</a>
-      <a href="#" class="hover:text-[#20ACB3] transition">Help</a>
-      <button class="bg-[#20ACB3] text-white rounded-[30px] py-4 px-12 hover:bg-black cursor-pointer transition text-xl font-medium">
+      <a href="apartment details.html" class="hover:text-[#20ACB3] transition">Explore</a>
+      <a href="#how-it-works" class="hover:text-[#20ACB3] transition">How it works</a>
+      <a href="#about" class="hover:text-[#20ACB3] transition">About Us</a>
+      <a href="#help" class="hover:text-[#20ACB3] transition">Help</a>
+      <button onclick="window.location.href='signup.html'" class="bg-[#20ACB3] text-white rounded-[30px] py-4 px-12 hover:bg-black cursor-pointer transition text-xl font-medium">
         Sign Up
       </button>
     </div>
@@ -97,10 +97,10 @@
 
         <!-- CTA Buttons -->
         <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 animate-slide-up animation-delay-600">
-          <a href="#" class="bg-teal-600 hover:bg-black cursor-pointer text-white font-semibold py-4 px-8 rounded-full text-center text-lg transition transform hover:scale-105">
+          <a href="login.html" class="bg-teal-600 hover:bg-black cursor-pointer text-white font-semibold py-4 px-8 rounded-full text-center text-lg transition transform hover:scale-105">
             Login
           </a>
-          <a href="#" class="bg-white hover:bg-gray-100 cursor-pointer text-teal-900 font-semibold py-4 px-8 rounded-full text-center text-lg transition transform hover:scale-105">
+          <a href="landlord.html" class="bg-white hover:bg-gray-100 cursor-pointer text-teal-900 font-semibold py-4 px-8 rounded-full text-center text-lg transition transform hover:scale-105">
             List Property
           </a>
         </div>
@@ -137,50 +137,65 @@
     }
   </style>
       <!-- Search Bar -->
-      <div class="max-w-4xl mx-auto px-4 mt-10 mb-10 z-1 relative">
+      <div class="max-w-6xl mx-auto px-4 mt-10 mb-10 z-1 relative">
         <!-- Initial Search Bar -->
-        <div id="search-bar" class="bg-white rounded-3xl shadow-xl p-2 flex flex-wrap items-center justify-between gap-1">
-          <div class="flex items-center gap-2 flex-1 min-w-[180px] bg-white p-3 rounded-3xl hover:bg-[#17716a2c]">
+        <form id="search-form" class="bg-white rounded-3xl shadow-xl p-2 flex flex-wrap items-center justify-between gap-1">
+          <div class="flex items-center gap-2 flex-1 min-w-[180px] bg-white p-3 rounded-3xl hover:bg-[#17716a2c] cursor-pointer" onclick="focusInput('location')">
             <i class="bi bi-geo-alt text-xl text-[#547B7D]"></i>
-            <div>
-              <p class="text-lg font-semibold">Location</p>
+            <div class="flex-1">
+              <input type="text" id="location" name="location" placeholder="Enter location" class="w-full bg-transparent border-none outline-none text-lg font-semibold placeholder-gray-400">
               <p class="text-xs text-[#547B7D] font-medium">Enter an area</p>
             </div>
           </div>
           <div class="border h-12 text-[#25595c2e]"></div>
-          <div class="flex items-center gap-2 flex-1 min-w-[180px] bg-white p-3 rounded-3xl hover:bg-[#17716a2c]">
+          <div class="flex items-center gap-2 flex-1 min-w-[180px] bg-white p-3 rounded-3xl hover:bg-[#17716a2c] cursor-pointer" onclick="focusInput('price')">
             <i class="bi bi-tag text-xl text-[#547B7D]"></i>
-            <div>
-              <p class="text-lg font-semibold">Price</p>
+            <div class="flex-1">
+              <input type="number" id="price" name="price" placeholder="Budget" class="w-full bg-transparent border-none outline-none text-lg font-semibold placeholder-gray-400">
               <p class="text-xs text-[#547B7D] font-medium">What's your budget?</p>
             </div>
           </div>
           <div class="border-1 h-12 text-[#25595c2e]"></div>
-          <div class="flex items-center gap-2 flex-1 min-w-[180px] bg-white p-3 rounded-3xl hover:bg-[#17716a2c]">
+          <div class="flex items-center gap-2 flex-1 min-w-[180px] bg-white p-3 rounded-3xl hover:bg-[#17716a2c] cursor-pointer" onclick="focusInput('rooms')">
             <i class="bi bi-people-fill text-xl text-[#1e4042]"></i>
-            <div>
-              <p class="text-lg font-semibold">Room Count</p>
+            <div class="flex-1">
+              <select id="rooms" name="rooms" class="w-full bg-transparent border-none outline-none text-lg font-semibold">
+                <option value="">Rooms</option>
+                <option value="1">1 Room</option>
+                <option value="2">2 Rooms</option>
+                <option value="3">3 Rooms</option>
+                <option value="4+">4+ Rooms</option>
+              </select>
               <p class="text-xs text-[#547B7D] font-medium">How many rooms?</p>
             </div>
           </div>
           <div class="border-1 h-12 text-[#25595c2e]"></div>
-          <div class="flex items-center gap-2 flex-1 min-w-[180px] bg-white p-3 rounded-3xl hover:bg-[#17716a2c]">
+          <div class="flex items-center gap-2 flex-1 min-w-[180px] bg-white p-3 rounded-3xl hover:bg-[#17716a2c] cursor-pointer" onclick="focusInput('tenancy')">
             <i class="bi bi-clock text-xl text-[#547B7D]"></i>
-            <div>
-              <p class="text-lg font-semibold">Tenancy Type</p>
+            <div class="flex-1">
+              <select id="tenancy" name="tenancy" class="w-full bg-transparent border-none outline-none text-lg font-semibold">
+                <option value="">Tenancy</option>
+                <option value="long">Long Term</option>
+                <option value="short">Short Term</option>
+              </select>
               <p class="text-xs text-[#547B7D] font-medium">Long or Short Term</p>
             </div>
           </div>
-          <button onclick="openFilters()" class="bg-[#20ACB3] text-white p-3.5 rounded-2xl w-15 hover:bg-black cursor-pointer">
-            <i class="bi bi-search text-xl"></i>
-          </button>
-        </div>
+          <div class="flex gap-2">
+            <button type="submit" class="bg-[#20ACB3] text-white p-3.5 rounded-2xl w-15 hover:bg-black cursor-pointer">
+              <i class="bi bi-search text-xl"></i>
+            </button>
+            <button type="button" onclick="openFilters()" class="bg-gray-500 text-white p-3.5 rounded-2xl w-15 hover:bg-gray-600 cursor-pointer">
+              <i class="bi bi-funnel text-xl"></i>
+            </button>
+          </div>
+        </form>
 
         <!-- Filter Interface (Hidden by default) -->
         <div id="filter-interface" class="bg-white rounded-3xl shadow-xl p-6 hidden">
           <div class="flex justify-between items-center mb-6">
             <h3 class="text-2xl font-semibold text-[#0F3B3D]">Filter Properties</h3>
-            <button onclick="closeFilters()" class="text-gray-500 hover:text-gray-700">
+            <button type="button" onclick="closeFilters()" class="text-gray-500 hover:text-gray-700">
               <i class="bi bi-x-lg text-2xl"></i>
             </button>
           </div>
@@ -189,7 +204,7 @@
             <!-- Location Filter -->
             <div>
               <label class="block text-lg font-semibold mb-3">Location</label>
-              <input type="text" placeholder="Enter location" class="w-full p-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#20ACB3]">
+              <input type="text" id="filter-location" placeholder="Enter location" class="w-full p-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#20ACB3]">
             </div>
             
             <!-- Price Range -->
@@ -648,7 +663,7 @@
         Start creating your memories...
       </p>
       <div class="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
-        <button class="bg-[#20ACB3] hover:bg-[#1e9ea5] text-white font-semibold px-8 py-4 rounded-3xl transition">
+        <button onclick="window.location.href='login.html'" class="bg-[#20ACB3] hover:bg-[#1e9ea5] text-white font-semibold px-8 py-4 rounded-3xl transition">
           Login
         </button>
         <button class="bg-white hover:bg-gray-100 text-[#0F3B3D] font-semibold px-8 py-4 rounded-3xl transition">
@@ -826,19 +841,54 @@
     dots[0].style.opacity = '1';
     dots[0].style.transform = 'scale(1.4)';
  
+        function focusInput(inputId) {
+          document.getElementById(inputId).focus();
+        }
+
+        // Handle form submission
+        document.getElementById('search-form').addEventListener('submit', function(e) {
+          e.preventDefault();
+          
+          const location = document.getElementById('location').value.trim();
+          const price = document.getElementById('price').value.trim();
+          const rooms = document.getElementById('rooms').value;
+          const tenancy = document.getElementById('tenancy').value;
+          
+          // Check if at least one field is filled
+          if (!location && !price && !rooms && !tenancy) {
+            alert('Please fill at least one search field to continue.');
+            return;
+          }
+          
+          // Perform search (redirect to results page or filter current results)
+          console.log('Search params:', { location, price, rooms, tenancy });
+          alert(`Searching for properties...\nLocation: ${location || 'Any'}\nPrice: ${price || 'Any'}\nRooms: ${rooms || 'Any'}\nTenancy: ${tenancy || 'Any'}`);
+          
+          // You can redirect to a results page here:
+          // window.location.href = `results.html?location=${location}&price=${price}&rooms=${rooms}&tenancy=${tenancy}`;
+        });
+
         function openFilters() {
-          document.getElementById('search-bar').classList.add('hidden');
+          document.getElementById('search-form').classList.add('hidden');
           document.getElementById('filter-interface').classList.remove('hidden');
         }
         
         function closeFilters() {
-          document.getElementById('search-bar').classList.remove('hidden');
+          document.getElementById('search-form').classList.remove('hidden');
           document.getElementById('filter-interface').classList.add('hidden');
         }
         
         function applyFilters() {
-          // Apply filter logic here
-          alert('Filters applied!');
+          const location = document.querySelector('#filter-interface input[type="text"]').value.trim();
+          const minPrice = document.querySelector('#filter-interface input[placeholder="Min"]').value.trim();
+          const maxPrice = document.querySelector('#filter-interface input[placeholder="Max"]').value.trim();
+          
+          if (!location && !minPrice && !maxPrice) {
+            alert('Please fill at least one filter field.');
+            return;
+          }
+          
+          alert('Filters applied successfully!');
           closeFilters();
         }
         

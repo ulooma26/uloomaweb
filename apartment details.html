@@ -11,7 +11,7 @@
     .scrollbar-hide::-webkit-scrollbar { display: none; }
   </style>
 </head>
-<body  id="content" class="bg-white opacity-0 transition-opacity duration-1000">
+<body class="bg-white">
 
   <script>
     // Wait until the DOM is fully loaded
@@ -29,28 +29,60 @@
 
   <div class=" mx-auto  rounded-3xl overflow-hidden p-10">
 
-<div class="flex justify-between items-center md:px-6 md:py-6">
-    <div class="md:w-[162px] md:h-[54px] w-[102px] h-[34px] bg-[url('/images/Logo.png')] bg-center bg-no-repeat bg-cover">
-      
+<header class="sticky top-0 bg-white z-50">
+  <div class="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
+
+    <!-- Logo -->
+    <div class="cursor-pointer" onclick="window.location.href='index.html'">
+      <img src="./images/Logo.PNG" alt="Ulo Oma" class="h-12 md:h-14" />
     </div>
 
+    <!-- Desktop Navigation -->
+    <nav class="hidden md:flex gap-10 lg:gap-16 text-[19px] font-semibold text-black">
+      <a href="apartment details.html" class="hover:text-[#20ACB3] transition">Explore</a>
+      <a href="#how-it-works" class="hover:text-[#20ACB3] transition">How it works</a>
+      <a href="#about" class="hover:text-[#20ACB3] transition">About Us</a>
+      <a href="#help" class="hover:text-[#20ACB3] transition">Help</a>
+    </nav>
 
     <!-- Desktop Sign Up -->
-    <div>
-      <button class="bg-[#20ACB3] text-white rounded-[30px] hover:bg-black transition text-[10px] md:text-[16px] font-medium md: p-3 cursor-pointer">
-        List Property
+    <div class="hidden md:block">
+      <button onclick="window.location.href='signup.html'" class="bg-[#20ACB3] text-white rounded-[30px] py-[15px] px-[30px] hover:bg-black transition text-[19px] font-medium cursor-pointer">
+        Sign Up
       </button>
     </div>
+
+    <!-- Mobile Toggle Button -->
+    <button id="menu-toggle" class="md:hidden text-4xl text-[#20ACB3] z-50">
+      <i id="hamburger" class="bi bi-list"></i>
+      <i id="close-x" class="bi bi-x-lg hidden"></i>
+    </button>
+  </div>
+
+  <!-- Mobile Full-Screen Menu (Vertical Only) -->
+  <div id="mobile-menu" class="fixed inset-0 bg-white hidden z-40">
+    <div class="flex flex-col items-center justify-center h-full gap-12 text-2xl font-semibold text-black">
+      <a href="apartment details.html" class="hover:text-[#20ACB3] transition">Explore</a>
+      <a href="#how-it-works" class="hover:text-[#20ACB3] transition">How it works</a>
+      <a href="#about" class="hover:text-[#20ACB3] transition">About Us</a>
+      <a href="#help" class="hover:text-[#20ACB3] transition">Help</a>
+      <button onclick="window.location.href='signup.html'" class="bg-[#20ACB3] text-white rounded-[30px] py-4 px-12 hover:bg-black cursor-pointer transition text-xl font-medium">
+        Sign Up
+      </button>
     </div>
+  </div>
+</header>
     <br>
+    
     <!-- Back Arrow-->
-    <div class="px-6 pt-4 text-gray-600 flex items-center gap-3 cursor-pointer" onclick="window.location.href='landing page.html'">
+    <div class="px-6 pt-4 text-gray-600 flex items-center gap-3 cursor-pointer " onclick="window.location.href='index.html'">
       <i class="bi bi-arrow-left-circle-fill cursor-pointer md:text-4xl text-lg"></i> <p class=" font-semibold md:text-2xl text-sm text-black"> Explore 1 Bedroom Apartment</p>
     </div>
 
+    <section class="max-w-4xl mx-auto mt-6 mb-10 opacity-0 transition-opacity duration-500" id="content">
     <!-- Main Picture -->
     <div class="relative mt-5">
-      <div id="mainImg" class="w-full md:h-200 h-80 bg-gray-200 rounded-[59.71px] mx-4 bg-cover bg-center"></div>
+      <div id="mainImg" class="relative bg-gray-200 rounded-3xl overflow-hidden aspect-video bg-cover bg-center md:cursor-default cursor-pointer" onclick="openFullscreen()"></div>
 
       <!-- The Arrows for the Main Picture -->
       <button id="prev" class="absolute left-8 top-1/2 -translate-y-1/2 w-10 h-10 bg-black/40 text-white rounded-full flex items-center justify-center text-2xl hover:bg-black/60">
@@ -137,6 +169,14 @@
         Reservation helps you secure this apartment easier and faster
       </p>
     </div>
+  </div>
+
+  <!-- Fullscreen Image Modal -->
+  <div id="fullscreenModal" class="fixed inset-0 bg-black/95 z-50 hidden flex items-center justify-center">
+    <button id="closeFullscreen" class="absolute top-4 right-4 text-white text-4xl hover:text-gray-300 z-60">
+      <i class="bi bi-x-lg"></i>
+    </button>
+    <img id="fullscreenImg" class="max-w-full max-h-full object-contain">
   </div>
 
   <!-- Video Modal -->
@@ -227,6 +267,25 @@
     });
 
     show(); // first load
+
+    // Fullscreen image functionality (mobile only)
+    function openFullscreen() {
+      if (window.innerWidth >= 768) return; // Disable on larger screens
+      const currentImage = images[i];
+      document.getElementById('fullscreenImg').src = currentImage;
+      document.getElementById('fullscreenModal').classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeFullscreen() {
+      document.getElementById('fullscreenModal').classList.add('hidden');
+      document.body.style.overflow = 'auto';
+    }
+
+    document.getElementById('closeFullscreen').onclick = closeFullscreen;
+    document.getElementById('fullscreenModal').onclick = (e) => {
+      if (e.target === e.currentTarget) closeFullscreen();
+    };
   </script>
 
   <script>
@@ -259,6 +318,8 @@
     // Close when clicking outside modal content
     document.getElementById('paymentModal').onclick = function(e){ if(e.target === e.currentTarget) closePaymentModal(); };
   </script>
-
+</section>
 </body>
+
+
 </html>

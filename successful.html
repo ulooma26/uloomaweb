@@ -15,18 +15,49 @@
     <title>Document</title>
   </head>
   <body class="max-w-screen overflow-x-hidden">
-    <header class="text-[#0F3B3D] flex justify-between max-w-screen sm:p-10 p-6">
-      <div>
-        <p class="w-[162px] h-[51px] gap-[9px] p-2.5 text-2xl font-semibold">
-          <span><i class="bi bi-camera-fill mr-1"></i></span>Ụlọ Ọma
-        </p>
-      </div>
-      <button
-        class="rounded-[28.66px] mt-2.5 sm:mt-0 px-4 sm:text-[21.49px] text-[15px] font-semibold text-white bg-[#20ACB3] h-[41px] sm:h-[50.65px]"
-      >
-        View Wallet
+    <header class="sticky top-0 bg-white z-50">
+  <div class="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
+
+    <!-- Logo -->
+    <div class="cursor-pointer" onclick="window.location.href='index.html'">
+      <img src="./images/Logo.PNG" alt="Ulo Oma" class="h-12 md:h-14" />
+    </div>
+
+    <!-- Desktop Navigation -->
+    <nav class="hidden md:flex gap-10 lg:gap-16 text-[19px] font-semibold text-black">
+      <a href="apartment details.html" class="hover:text-[#20ACB3] transition">Explore</a>
+      <a href="#how-it-works" class="hover:text-[#20ACB3] transition">How it works</a>
+      <a href="#about" class="hover:text-[#20ACB3] transition">About Us</a>
+      <a href="#help" class="hover:text-[#20ACB3] transition">Help</a>
+    </nav>
+
+    <!-- Desktop Sign Up -->
+    <div class="hidden md:block">
+      <button onclick="window.location.href='tenant.html'" class="bg-[#20ACB3] text-white rounded-[30px] py-[15px] px-[30px] hover:bg-black transition text-[19px] font-medium cursor-pointer">
+        Sign Up
       </button>
-    </header>
+    </div>
+
+    <!-- Mobile Toggle Button -->
+    <button id="menu-toggle" class="md:hidden text-4xl text-[#20ACB3] z-50">
+      <i id="hamburger" class="bi bi-list"></i>
+      <i id="close-x" class="bi bi-x-lg hidden"></i>
+    </button>
+  </div>
+
+  <!-- Mobile Full-Screen Menu (Vertical Only) -->
+  <div id="mobile-menu" class="fixed inset-0 bg-white hidden z-40">
+    <div class="flex flex-col items-center justify-center h-full gap-12 text-2xl font-semibold text-black">
+      <a href="apartment details.html" class="hover:text-[#20ACB3] transition">Explore</a>
+      <a href="#how-it-works" class="hover:text-[#20ACB3] transition">How it works</a>
+      <a href="#about" class="hover:text-[#20ACB3] transition">About Us</a>
+      <a href="#help" class="hover:text-[#20ACB3] transition">Help</a>
+      <button onclick="window.location.href='tenant.html'" class="bg-[#20ACB3] text-white rounded-[30px] py-4 px-12 hover:bg-black cursor-pointer transition text-xl font-medium">
+        Sign Up
+      </button>
+    </div>
+  </div>
+</header>
     <main>
       <section class="flex flex-col  mt-7 sm:mt-0 w-screen items-center space-y-5">
         <div
