@@ -8,10 +8,10 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
     />
-    <link rel="shortcut icon" href="./images/Logo.PNG" type="images/x-icon">
+    <link rel="shortcut icon" href="./images/image.png" type="images/x-icon">
     <title>Ulo Oma</title>
   </head>
-  <body id="content" class="w-screen opacity-0 transition-opacity duration-1800">
+  <body id="content" class="w-screen opacity-0 transition-opacity duration-1800 font-sans">
    <header class="sticky top-0 bg-white z-50">
   <div class="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
 
@@ -22,10 +22,11 @@
 
     <!-- Desktop Navigation -->
     <nav class="hidden md:flex gap-10 lg:gap-16 text-[19px] font-semibold text-black">
-      <a href="apartment details.html" class="hover:text-[#20ACB3] transition">Explore</a>
-      <a href="#how-it-works" class="hover:text-[#20ACB3] transition">How it works</a>
-      <a href="#about" class="hover:text-[#20ACB3] transition">About Us</a>
-      <a href="#help" class="hover:text-[#20ACB3] transition">Help</a>
+      <a href="index.html" class="hover:text-[#20ACB3] transition">Home</a>
+      <a href="explore.html" class="hover:text-[#20ACB3] transition">Explore</a>
+      <a href="landlord.html" class="hover:text-[#20ACB3] transition">How it works</a>
+      <a href="about.html" class="hover:text-[#20ACB3] transition">About Us</a>
+      <a href="contact.html" class="hover:text-[#20ACB3] transition">Contact Us</a>
     </nav>
 
     <!-- Desktop Sign Up -->
@@ -45,10 +46,11 @@
   <!-- Mobile Full-Screen Menu (Vertical Only) -->
   <div id="mobile-menu" class="fixed inset-0 bg-white hidden z-40">
     <div class="flex flex-col items-center justify-center h-full gap-12 text-2xl font-semibold text-black">
-      <a href="apartment details.html" class="hover:text-[#20ACB3] transition">Explore</a>
-      <a href="#how-it-works" class="hover:text-[#20ACB3] transition">How it works</a>
-      <a href="#about" class="hover:text-[#20ACB3] transition">About Us</a>
-      <a href="#help" class="hover:text-[#20ACB3] transition">Help</a>
+      <a href="index.html" class="hover:text-[#20ACB3] transition">Home</a>
+      <a href="explore.html" class="hover:text-[#20ACB3] transition">Explore</a>
+      <a href="landlord.html" class="hover:text-[#20ACB3] transition">How it works</a>
+      <a href="about.html" class="hover:text-[#20ACB3] transition">About Us</a>
+      <a href="help.html" class="hover:text-[#20ACB3] transition">Contact Us</a>
       <button onclick="window.location.href='signup.html'" class="bg-[#20ACB3] text-white rounded-[30px] py-4 px-12 hover:bg-black cursor-pointer transition text-xl font-medium">
         Sign Up
       </button>
@@ -100,7 +102,7 @@
           <a href="login.html" class="bg-teal-600 hover:bg-black cursor-pointer text-white font-semibold py-4 px-8 rounded-full text-center text-lg transition transform hover:scale-105">
             Login
           </a>
-          <a href="landlord.html" class="bg-white hover:bg-gray-100 cursor-pointer text-teal-900 font-semibold py-4 px-8 rounded-full text-center text-lg transition transform hover:scale-105">
+          <a href="signup.html" class="bg-white hover:bg-gray-100 cursor-pointer text-teal-900 font-semibold py-4 px-8 rounded-full text-center text-lg transition transform hover:scale-105">
             List Property
           </a>
         </div>
@@ -137,7 +139,7 @@
     }
   </style>
       <!-- Search Bar -->
-      <div class="max-w-6xl mx-auto px-4 mt-10 mb-10 z-1 relative">
+      <div id="search-section" class="max-w-6xl mx-auto px-4 mt-10 mb-10 z-1 relative">
         <!-- Initial Search Bar -->
         <form id="search-form" class="bg-white rounded-3xl shadow-xl p-2 flex flex-wrap items-center justify-between gap-1">
           <div class="flex items-center gap-2 flex-1 min-w-[180px] bg-white p-3 rounded-3xl hover:bg-[#17716a2c] cursor-pointer" onclick="focusInput('location')">
@@ -270,7 +272,7 @@
 <div class="max-w-7xl mx-auto px-6 py-12 space-y-20">
 
   <!-- SECTION 1: 1 Bedroom Apartments -->
-  <section>
+  <section id="explore-apartments">
     <div class="flex items-baseline justify-between mb-6">
       <p class="text-[#0F3B3D] font-semibold text-2xl">Explore 1 Bedroom Apartments</p>
       <p class="text-[#20ACB3] cursor-pointer font-medium">See all <i class="bi bi-chevron-right"></i></p>
@@ -651,7 +653,6 @@
 
 </div>
 
-
 <footer class="bg-[#0F3B3D] text-white pt-20 pb-16 relative overflow-hidden">
 
   <!-- Upper CTA Bar – NOT fixed on mobile, stays inside footer on ALL devices -->
@@ -666,7 +667,7 @@
         <button onclick="window.location.href='login.html'" class="bg-[#20ACB3] hover:bg-[#1e9ea5] text-white font-semibold px-8 py-4 rounded-3xl transition">
           Login
         </button>
-        <button class="bg-white hover:bg-gray-100 text-[#0F3B3D] font-semibold px-8 py-4 rounded-3xl transition">
+        <button onclick="window.location.href='signup.html'" class="bg-white hover:bg-gray-100 text-[#0F3B3D] font-semibold px-8 py-4 rounded-3xl transition">
           List Property
         </button>
       </div>
@@ -860,12 +861,8 @@
             return;
           }
           
-          // Perform search (redirect to results page or filter current results)
-          console.log('Search params:', { location, price, rooms, tenancy });
-          alert(`Searching for properties...\nLocation: ${location || 'Any'}\nPrice: ${price || 'Any'}\nRooms: ${rooms || 'Any'}\nTenancy: ${tenancy || 'Any'}`);
-          
-          // You can redirect to a results page here:
-          // window.location.href = `results.html?location=${location}&price=${price}&rooms=${rooms}&tenancy=${tenancy}`;
+          // Filter properties based on search criteria
+          filterProperties(location, null, price, rooms, tenancy);
         });
 
         function openFilters() {
@@ -878,17 +875,49 @@
           document.getElementById('filter-interface').classList.add('hidden');
         }
         
+        // Property data for filtering
+        const propertyData = [
+          { element: document.querySelectorAll('.shadow-lg')[0], location: 'aba', price: 570000, rooms: 1, tenancy: 'long' },
+          { element: document.querySelectorAll('.shadow-lg')[1], location: 'aba', price: 410000, rooms: 1, tenancy: 'long' },
+          { element: document.querySelectorAll('.shadow-lg')[2], location: 'aba', price: 550000, rooms: 1, tenancy: 'long' },
+          { element: document.querySelectorAll('.shadow-lg')[3], location: 'umuahia', price: 700000, rooms: 2, tenancy: 'long' },
+          { element: document.querySelectorAll('.shadow-lg')[4], location: 'abia', price: 680000, rooms: 2, tenancy: 'long' },
+          { element: document.querySelectorAll('.shadow-lg')[5], location: 'udi', price: 700000, rooms: 2, tenancy: 'long' },
+          { element: document.querySelectorAll('.shadow-lg')[6], location: 'nsukka', price: 700000, rooms: 4, tenancy: 'long' },
+          { element: document.querySelectorAll('.shadow-lg')[7], location: 'enugu', price: 680000, rooms: 3, tenancy: 'long' },
+          { element: document.querySelectorAll('.shadow-lg')[8], location: 'enugu', price: 700000, rooms: 5, tenancy: 'long' },
+          { element: document.querySelectorAll('.shadow-lg')[9], location: 'enugu', price: 25000, rooms: 3, tenancy: 'short' },
+          { element: document.querySelectorAll('.shadow-lg')[10], location: 'nsukka', price: 15000, rooms: 1, tenancy: 'short' },
+          { element: document.querySelectorAll('.shadow-lg')[11], location: 'enugu', price: 15000, rooms: 2, tenancy: 'short' }
+        ];
+
+        function filterProperties(location, minPrice, maxPrice, rooms, tenancy) {
+          propertyData.forEach(property => {
+            let show = true;
+            
+            if (location && !property.location.toLowerCase().includes(location.toLowerCase())) show = false;
+            if (minPrice && property.price < parseInt(minPrice)) show = false;
+            if (maxPrice && property.price > parseInt(maxPrice)) show = false;
+            if (rooms && rooms !== 'any') {
+              if (rooms === '4+' && property.rooms < 4) show = false;
+              else if (rooms !== '4+' && property.rooms !== parseInt(rooms)) show = false;
+            }
+            if (tenancy && property.tenancy !== tenancy) show = false;
+            
+            if (property.element) {
+              property.element.style.display = show ? 'block' : 'none';
+            }
+          });
+        }
+
         function applyFilters() {
           const location = document.querySelector('#filter-interface input[type="text"]').value.trim();
           const minPrice = document.querySelector('#filter-interface input[placeholder="Min"]').value.trim();
           const maxPrice = document.querySelector('#filter-interface input[placeholder="Max"]').value.trim();
+          const selectedRoom = document.querySelector('#filter-interface .bg-\[\#20ACB3\]')?.textContent || '';
+          const selectedTenancy = document.querySelector('#filter-interface .flex.gap-3 .bg-\[\#20ACB3\]')?.textContent.toLowerCase().includes('long') ? 'long' : 'short';
           
-          if (!location && !minPrice && !maxPrice) {
-            alert('Please fill at least one filter field.');
-            return;
-          }
-          
-          alert('Filters applied successfully!');
+          filterProperties(location, minPrice, maxPrice, selectedRoom, selectedTenancy);
           closeFilters();
         }
         
@@ -917,6 +946,10 @@
               btn.classList.remove('bg-[#20ACB3]', 'text-white');
               btn.classList.add('border-gray-300');
             }
+          });
+          // Show all properties
+          propertyData.forEach(property => {
+            if (property.element) property.element.style.display = 'block';
           });
         }
      

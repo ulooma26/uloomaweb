@@ -11,7 +11,7 @@
     .scrollbar-hide::-webkit-scrollbar { display: none; }
   </style>
 </head>
-<body class="bg-white">
+<body class="bg-white font-sans">
 
   <script>
     // Wait until the DOM is fully loaded
@@ -39,15 +39,16 @@
 
     <!-- Desktop Navigation -->
     <nav class="hidden md:flex gap-10 lg:gap-16 text-[19px] font-semibold text-black">
-      <a href="apartment details.html" class="hover:text-[#20ACB3] transition">Explore</a>
-      <a href="#how-it-works" class="hover:text-[#20ACB3] transition">How it works</a>
-      <a href="#about" class="hover:text-[#20ACB3] transition">About Us</a>
-      <a href="#help" class="hover:text-[#20ACB3] transition">Help</a>
+      <a href="index.html" class="hover:text-[#20ACB3] transition">Home</a>
+      <a href="index.html#explore-apartments" class="hover:text-[#20ACB3] transition">Explore</a>
+      <a href="index.html#how-it-works" class="hover:text-[#20ACB3] transition">How it works</a>
+      <a href="index.html#about" class="hover:text-[#20ACB3] transition">About Us</a>
+      <a href="index.html#help" class="hover:text-[#20ACB3] transition">Help</a>
     </nav>
 
     <!-- Desktop Sign Up -->
     <div class="hidden md:block">
-      <button onclick="window.location.href='signup.html'" class="bg-[#20ACB3] text-white rounded-[30px] py-[15px] px-[30px] hover:bg-black transition text-[19px] font-medium cursor-pointer">
+      <button onclick="window.location.href='tenant.html'" class="bg-[#20ACB3] text-white rounded-[30px] py-[15px] px-[30px] hover:bg-black transition text-[19px] font-medium cursor-pointer">
         Sign Up
       </button>
     </div>
@@ -62,11 +63,12 @@
   <!-- Mobile Full-Screen Menu (Vertical Only) -->
   <div id="mobile-menu" class="fixed inset-0 bg-white hidden z-40">
     <div class="flex flex-col items-center justify-center h-full gap-12 text-2xl font-semibold text-black">
-      <a href="apartment details.html" class="hover:text-[#20ACB3] transition">Explore</a>
-      <a href="#how-it-works" class="hover:text-[#20ACB3] transition">How it works</a>
-      <a href="#about" class="hover:text-[#20ACB3] transition">About Us</a>
-      <a href="#help" class="hover:text-[#20ACB3] transition">Help</a>
-      <button onclick="window.location.href='signup.html'" class="bg-[#20ACB3] text-white rounded-[30px] py-4 px-12 hover:bg-black cursor-pointer transition text-xl font-medium">
+      <a href="index.html" class="hover:text-[#20ACB3] transition">Home</a>
+      <a href="index.html#explore-apartments" class="hover:text-[#20ACB3] transition">Explore</a>
+      <a href="index.html#how-it-works" class="hover:text-[#20ACB3] transition">How it works</a>
+      <a href="index.html#about" class="hover:text-[#20ACB3] transition">About Us</a>
+      <a href="index.html#help" class="hover:text-[#20ACB3] transition">Help</a>
+      <button onclick="window.location.href='tenant.html'" class="bg-[#20ACB3] text-white rounded-[30px] py-4 px-12 hover:bg-black cursor-pointer transition text-xl font-medium">
         Sign Up
       </button>
     </div>
@@ -305,8 +307,8 @@
       window.location.href = 'card payment reservation.html';
     };
     document.getElementById('bankOption').onclick = function(){
-      // show bank transfer details
-      document.getElementById('bankInfo').classList.remove('hidden');
+      // redirect to bank transfer page
+      window.location.href = 'bank_transfer.html';
     };
     document.getElementById('doneBank').onclick = closePaymentModal;
     document.getElementById('copyAcct').onclick = function(){

@@ -14,7 +14,7 @@
     />
     <title>Document</title>
   </head>
-  <body class="max-w-screen overflow-x-hidden">
+  <body id="fund" class="max-w-screen overflow-x-hidden font-sans">
     <header class="sticky top-0 bg-white z-50">
   <div class="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
 
@@ -25,10 +25,11 @@
 
     <!-- Desktop Navigation -->
     <nav class="hidden md:flex gap-10 lg:gap-16 text-[19px] font-semibold text-black">
-      <a href="apartment details.html" class="hover:text-[#20ACB3] transition">Explore</a>
-      <a href="#how-it-works" class="hover:text-[#20ACB3] transition">How it works</a>
-      <a href="#about" class="hover:text-[#20ACB3] transition">About Us</a>
-      <a href="#help" class="hover:text-[#20ACB3] transition">Help</a>
+      <a href="index.html" class="hover:text-[#20ACB3] transition">Home</a>
+      <a href="index.html#explore-apartments" class="hover:text-[#20ACB3] transition">Explore</a>
+      <a href="index.html#how-it-works" class="hover:text-[#20ACB3] transition">How it works</a>
+      <a href="index.html#about" class="hover:text-[#20ACB3] transition">About Us</a>
+      <a href="index.html#help" class="hover:text-[#20ACB3] transition">Help</a>
     </nav>
 
     <!-- Desktop Sign Up -->
@@ -48,10 +49,11 @@
   <!-- Mobile Full-Screen Menu (Vertical Only) -->
   <div id="mobile-menu" class="fixed inset-0 bg-white hidden z-40">
     <div class="flex flex-col items-center justify-center h-full gap-12 text-2xl font-semibold text-black">
-      <a href="apartment details.html" class="hover:text-[#20ACB3] transition">Explore</a>
-      <a href="#how-it-works" class="hover:text-[#20ACB3] transition">How it works</a>
-      <a href="#about" class="hover:text-[#20ACB3] transition">About Us</a>
-      <a href="#help" class="hover:text-[#20ACB3] transition">Help</a>
+      <a href="index.html" class="hover:text-[#20ACB3] transition">Home</a>
+      <a href="index.html#explore-apartments" class="hover:text-[#20ACB3] transition">Explore</a>
+      <a href="index.html#how-it-works" class="hover:text-[#20ACB3] transition">How it works</a>
+      <a href="index.html#about" class="hover:text-[#20ACB3] transition">About Us</a>
+      <a href="index.html#help" class="hover:text-[#20ACB3] transition">Help</a>
       <button onclick="window.location.href='tenant.html'" class="bg-[#20ACB3] text-white rounded-[30px] py-4 px-12 hover:bg-black cursor-pointer transition text-xl font-medium">
         Sign Up
       </button>
@@ -92,8 +94,9 @@
                 >
                   <path
                     d="M40-200v-600h80v400h320v-320h320q66 0 113 47t47 113v360h-80v-120H120v120H40Zm240-240q-50 0-85-35t-35-85q0-50 35-85t85-35q50 0 85 35t35 85q0 50-35 85t-85 35Zm240 40h320v-160q0-33-23.5-56.5T760-640H520v240ZM280-520q17 0 28.5-11.5T320-560q0-17-11.5-28.5T280-600q-17 0-28.5 11.5T240-560q0 17 11.5 28.5T280-520Zm0-40Zm240-80v240-240Z"
-                  /></svg
-                >Apartment Type:
+                  ></path>
+                </svg>
+                Apartment Type:
               </p>
               <p class="text-[#5C6F70] text-[18px]">1 Bedroom Apartment</p>
             </div>
@@ -138,7 +141,7 @@
             class="bg-[#20ACB3] rounded-[20px] sm:w-[547px] w-[350px] h-[57px] text-white"
           >
             My Reservations</button
-          ><button class="bg-[#C7D1D1] rounded-[20px] sm:w-[547px] w-[350px] h-[57px]">
+          ><button onclick="window.location.href='index.html#explore-apartments'" class="bg-[#C7D1D1] rounded-[20px] sm:w-[547px] w-[350px] h-[57px]">
             Explore More Apartment
           </button>
         </div>

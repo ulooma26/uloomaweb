@@ -19,10 +19,11 @@
 
     <!-- Desktop Navigation -->
     <nav class="hidden md:flex gap-10 lg:gap-16 text-[19px] font-semibold text-black">
-      <a href="apartment details.html" class="hover:text-[#20ACB3] transition">Explore</a>
-      <a href="#how-it-works" class="hover:text-[#20ACB3] transition">How it works</a>
-      <a href="#about" class="hover:text-[#20ACB3] transition">About Us</a>
-      <a href="#help" class="hover:text-[#20ACB3] transition">Help</a>
+      <a href="index.html" class="hover:text-[#20ACB3] transition">Home</a>
+      <a href="index.html#explore-apartments" class="hover:text-[#20ACB3] transition">Explore</a>
+      <a href="index.html#how-it-works" class="hover:text-[#20ACB3] transition">How it works</a>
+      <a href="index.html#about" class="hover:text-[#20ACB3] transition">About Us</a>
+      <a href="index.html#help" class="hover:text-[#20ACB3] transition">Help</a>
     </nav>
 
     <!-- Desktop Sign Up -->
@@ -42,10 +43,11 @@
   <!-- Mobile Full-Screen Menu (Vertical Only) -->
   <div id="mobile-menu" class="fixed inset-0 bg-white hidden z-40">
     <div class="flex flex-col items-center justify-center h-full gap-12 text-2xl font-semibold text-black">
-      <a href="apartment details.html" class="hover:text-[#20ACB3] transition">Explore</a>
-      <a href="#how-it-works" class="hover:text-[#20ACB3] transition">How it works</a>
-      <a href="#about" class="hover:text-[#20ACB3] transition">About Us</a>
-      <a href="#help" class="hover:text-[#20ACB3] transition">Help</a>
+      <a href="index.html" class="hover:text-[#20ACB3] transition">Home</a>
+      <a href="index.html#explore-apartments" class="hover:text-[#20ACB3] transition">Explore</a>
+      <a href="index.html#how-it-works" class="hover:text-[#20ACB3] transition">How it works</a>
+      <a href="index.html#about" class="hover:text-[#20ACB3] transition">About Us</a>
+      <a href="index.html#help" class="hover:text-[#20ACB3] transition">Help</a>
       <button onclick="window.location.href='tenant.html'" class="bg-[#20ACB3] text-white rounded-[30px] py-4 px-12 hover:bg-black cursor-pointer transition text-xl font-medium">
         Sign Up
       </button>
@@ -157,20 +159,31 @@
       <!-- Payment Type -->
       <div>
         <label class="block text-lg font-medium text-gray-800 mb-3">Payment Type</label>
-        <div class="bg-teal-50 border-2 border-teal-200 rounded-xl p-4 flex items-center justify-between cursor-pointer hover:bg-teal-100 transition">
-          <div class="flex items-center gap-4">
-            <i class="fas fa-credit-card text-xl text-gray-700"></i>
-            <div>
-              <p class="font-medium text-gray-800">Credit or Debit Card</p>
-              <div class="flex gap-2 mt-1">
-                <img src="https://img.icons8.com/color/48/000000/visa.png" alt="Visa" class="h-6"/>
-                <img src="https://img.icons8.com/color/48/000000/mastercard.png" alt="Mastercard" class="h-6"/>
-                <img src="./images/verve.png" alt="Verve" class="h-6"/>
+        <div class="space-y-3">
+          <div class="bg-teal-50 border-2 border-teal-200 rounded-xl p-4 flex items-center justify-between cursor-pointer hover:bg-teal-100 transition">
+            <div class="flex items-center gap-4">
+              <i class="fas fa-credit-card text-xl text-gray-700"></i>
+              <div>
+                <p class="font-medium text-gray-800">Credit or Debit Card</p>
+                <div class="flex gap-2 mt-1">
+                  <img src="https://img.icons8.com/color/48/000000/visa.png" alt="Visa" class="h-6"/>
+                  <img src="https://img.icons8.com/color/48/000000/mastercard.png" alt="Mastercard" class="h-6"/>
+                  <img src="./images/verve.png" alt="Verve" class="h-6"/>
+                </div>
               </div>
             </div>
+            <div class="w-6 h-6 bg-teal-500 rounded-full flex items-center justify-center">
+              <i class="fas fa-check text-white text-xs"></i>
+            </div>
           </div>
-          <div class="w-6 h-6 bg-teal-500 rounded-full flex items-center justify-center">
-            <i class="fas fa-check text-white text-xs"></i>
+          <div onclick="window.location.href='bank_transfer.html'" class="bg-gray-50 border-2 border-gray-200 rounded-xl p-4 flex items-center justify-between cursor-pointer hover:bg-gray-100 transition">
+            <div class="flex items-center gap-4">
+              <i class="bi bi-arrow-left-right text-xl text-gray-700"></i>
+              <div>
+                <p class="font-medium text-gray-800">Bank Transfer</p>
+                <p class="text-sm text-gray-600">Transfer from any Nigerian bank</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -232,7 +245,8 @@
 
       <!-- Submit Button -->
       <button
-        type="submit"
+        type="button"
+        onclick="window.location.href='successful.html'"
         class="w-full bg-teal-600 hover:bg-black cursor-pointer text-white font-semibold py-4 rounded-xl transition duration-200 shadow-md hover:shadow-lg"
       >
         Fund Wallet & Reserve
@@ -283,8 +297,8 @@
         alert('Amount cannot exceed ₦10,000');
         return;
       }
-      alert(`Funding wallet with ₦${amount.toLocaleString()}`);
-      // Process payment here
+      // Redirect to successful payment page
+      window.location.href = 'successful.html';
     });
   </script>
 
