@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify OTP - Ulo Oma</title>
+    <link rel="stylesheet" href="./src/output.css">
+</head>
+<body class="bg-gray-50 min-h-screen flex items-center justify-center font-sans">
+    <div class="bg-white rounded-2xl shadow-lg p-8 w-full max-w-md">
+        <div class="text-center mb-8">
+            <h1 class="text-2xl font-bold text-gray-900 mb-2">Verify Your Phone</h1>
+            <p class="text-gray-600">Enter the 6-digit code sent to your phone</p>
+        </div>
+        
+        <form id="otpForm" class="space-y-6">
+            <div class="flex gap-3 justify-center">
+                <input type="text" maxlength="1" class="otp-input w-12 h-12 text-center border-2 border-gray-300 rounded-lg text-xl font-bold focus:border-[#20ACB3] focus:outline-none">
+                <input type="text" maxlength="1" class="otp-input w-12 h-12 text-center border-2 border-gray-300 rounded-lg text-xl font-bold focus:border-[#20ACB3] focus:outline-none">
+                <input type="text" maxlength="1" class="otp-input w-12 h-12 text-center border-2 border-gray-300 rounded-lg text-xl font-bold focus:border-[#20ACB3] focus:outline-none">
+                <input type="text" maxlength="1" class="otp-input w-12 h-12 text-center border-2 border-gray-300 rounded-lg text-xl font-bold focus:border-[#20ACB3] focus:outline-none">
+                <input type="text" maxlength="1" class="otp-input w-12 h-12 text-center border-2 border-gray-300 rounded-lg text-xl font-bold focus:border-[#20ACB3] focus:outline-none">
+                <input type="text" maxlength="1" class="otp-input w-12 h-12 text-center border-2 border-gray-300 rounded-lg text-xl font-bold focus:border-[#20ACB3] focus:outline-none">
+            </div>
+            
+            <button type="submit" class="w-full bg-[#20ACB3] text-white py-3 rounded-lg font-semibold hover:bg-black transition">
+                Verify & Continue
+            </button>
+        </form>
+        
+        <div class="text-center mt-6">
+            <p class="text-gray-600 text-sm">
+                Didn't receive code? 
+                <button class="text-[#20ACB3] font-semibold hover:underline">Resend</button>
+            </p>
+        </div>
+    </div>
+    
+    <script>
+        // OTP input handling
+        document.querySelectorAll('.otp-input').forEach((input, index) => {
+            input.addEventListener('input', function() {
+                if (this.value && index < 5) {
+                    document.querySelectorAll('.otp-input')[index + 1].focus();
+                }
+            });
+            
+            input.addEventListener('keydown', function(e) {
+                if (e.key === 'Backspace' && !this.value && index > 0) {
+                    document.querySelectorAll('.otp-input')[index - 1].focus();
+                }
+            });
+        });
+        
+        // Form submission
+        document.getElementById('otpForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const otp = Array.from(document.querySelectorAll('.otp-input')).map(i => i.value).join('');
+            
+            if (otp.length === 6) {
+                window.location.href = 'index.html';
+            } else {
+                alert('Please enter all 6 digits');
+            }
+        });
+        
+        // Focus first input on load
+        document.querySelectorAll('.otp-input')[0].focus();
+    </script>
+</body>
+</html>

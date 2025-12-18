@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+@theme {
+    --animate-loader: loader 3s ease-in-out forwards;
+    --animate-loaded: loaded 3s ease-in-out forwards;
+}
+@keyframes loader {
+        0% {
+          width: 30px;
+          opacity: 1;
+        }
+        100% {
+          width: 80vw;
+          border-radius: 20px;
+          opacity: 1;
+        }
+      }
+@keyframes loaded {
+        0% {
+          width: 30px;
+          opacity: 1;
+        }
+        100% {
+          width: 40vw;
+          border-radius: 20px;
+          opacity: 1;
+        }
+      }

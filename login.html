@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Ulo Oma</title>
+    <link rel="stylesheet" href="./src/output.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+</head>
+<body class="bg-gray-50 min-h-screen font-sans">
+    <header class="sticky top-0 bg-white z-50">
+        <div class="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
+            <div class="cursor-pointer" onclick="window.location.href='index.html'">
+                <img src="./images/Logo.PNG" alt="Ulo Oma" class="h-12 md:h-14" />
+            </div>
+            <nav class="hidden md:flex gap-10 lg:gap-16 text-[19px] font-semibold text-black">
+                <a href="index.html" class="hover:text-[#20ACB3] transition">Home</a>
+                <a href="index.html#explore-apartments" class="hover:text-[#20ACB3] transition">Explore</a>
+                <a href="how it works.html" class="hover:text-[#20ACB3] transition">How it works</a>
+                <a href="about.html" class="hover:text-[#20ACB3] transition">About Us</a>
+                <a href="contact.html" class="hover:text-[#20ACB3] transition">Contact Us</a>
+            </nav>
+            <div class="hidden md:block">
+                <button onclick="window.location.href='signup.html'" class="bg-[#20ACB3] text-white rounded-[30px] py-[15px] px-[30px] hover:bg-black transition text-[19px] font-medium cursor-pointer">
+                    Sign Up
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Screen 1: Login - Welcome Back -->
+    <div id="loginScreen1" class="flex min-h-screen">
+        <!-- Left Side - Form -->
+        <div class="w-full lg:w-1/2 flex flex-col justify-center px-8 sm:px-12 lg:px-16 bg-gradient-to-b from-white to-gray-50">
+          
+
+            <!-- Heading -->
+            <div class="mb-10">
+                <h1 class="text-4xl font-bold text-teal-900 mb-3">Welcome Back Again!!!</h1>
+                <p class="text-gray-600 text-sm leading-relaxed max-w-sm">Quickly Log into your account to enjoy your time finding apartments to the fullest.</p>
+            </div>
+
+            <!-- Form -->
+            <form id="loginForm" class="space-y-6 mb-8 max-w-sm">
+                <!-- Phone Number -->
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
+                    <input 
+                        type="tel" 
+                        placeholder="Enter your verified phone number"
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:border-teal-600 focus:ring-2 focus:ring-teal-100 transition"
+                        required
+                    >
+                </div>
+
+                <!-- Continue Button -->
+                <button 
+                    type="submit"
+                    class="w-full bg-teal-700 hover:bg-black text-white font-semibold py-3 rounded-lg transition duration-200 mt-8"
+                >
+                    Continue
+                </button>
+            </form>
+        </div>
+
+        <!-- Right Side - Image with Icon -->
+        <div class="hidden lg:flex lg:w-1/2 bg-teal-900 relative overflow-hidden items-center justify-center">
+            <div class="text-center">
+                <div class="inline-flex items-center justify-center w-32 h-32 bg-white rounded-3xl">
+                    <svg class="w-16 h-16 text-teal-900" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Screen 2: Login - Enter OTP -->
+    <div id="loginScreen2" class="hidden flex min-h-screen">
+        <!-- Left Side - Form -->
+        <div class="w-full lg:w-1/2 flex flex-col justify-center px-8 sm:px-12 lg:px-16 bg-gradient-to-b from-white to-gray-50">
+            <!-- Back Button -->
+            <button onclick="goBackLogin(2)" class="mb-4 flex items-center text-gray-600 hover:text-gray-800 transition">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back
+            </button>
+
+            <!-- Heading -->
+            <div class="mb-10">
+                <h1 class="text-4xl font-bold text-teal-900 mb-3">Enter OTP</h1>
+                <p class="text-gray-600 text-sm leading-relaxed max-w-sm">Input the 6-digits OTP we have sent to your phone number so as to keep your account secured</p>
+            </div>
+
+            <!-- OTP Input Fields -->
+            <form id="loginOtpForm" class="space-y-10 max-w-sm">
+                <!-- OTP Input Boxes -->
+                <div class="flex gap-3 justify-start">
+                    <input type="text" maxlength="1" inputmode="numeric" class="login-otp-input w-14 h-14 text-center border-2 border-gray-300 rounded-lg text-xl font-bold text-gray-900 focus:outline-none focus:border-teal-600 focus:ring-2 focus:ring-teal-100 transition" />
+                    <input type="text" maxlength="1" inputmode="numeric" class="login-otp-input w-14 h-14 text-center border-2 border-gray-300 rounded-lg text-xl font-bold text-gray-900 focus:outline-none focus:border-teal-600 focus:ring-2 focus:ring-teal-100 transition" />
+                    <input type="text" maxlength="1" inputmode="numeric" class="login-otp-input w-14 h-14 text-center border-2 border-gray-300 rounded-lg text-xl font-bold text-gray-900 focus:outline-none focus:border-teal-600 focus:ring-2 focus:ring-teal-100 transition" />
+                    <input type="text" maxlength="1" inputmode="numeric" class="login-otp-input w-14 h-14 text-center border-2 border-gray-300 rounded-lg text-xl font-bold text-gray-900 focus:outline-none focus:border-teal-600 focus:ring-2 focus:ring-teal-100 transition" />
+                    <input type="text" maxlength="1" inputmode="numeric" class="login-otp-input w-14 h-14 text-center border-2 border-gray-300 rounded-lg text-xl font-bold text-gray-900 focus:outline-none focus:border-teal-600 focus:ring-2 focus:ring-teal-100 transition" />
+                    <input type="text" maxlength="1" inputmode="numeric" class="login-otp-input w-14 h-14 text-center border-2 border-gray-300 rounded-lg text-xl font-bold text-gray-900 focus:outline-none focus:border-teal-600 focus:ring-2 focus:ring-teal-100 transition" />
+                </div>
+
+                <!-- Resend OTP Section -->
+                <div class="text-center">
+                    <p class="text-gray-700 text-sm">
+                        Didn't Get OTP? 
+                        <button type="button" id="loginResendBtn" class="text-teal-600 font-semibold hover:text-teal-700 transition ml-1">Resend in <span id="loginTimer">0:59</span></button>
+                    </p>
+                </div>
+
+                <!-- Login Button -->
+                <button 
+                    type="submit"
+                    class="w-full bg-teal-700 hover:bg-black text-white font-semibold py-3 rounded-lg transition duration-200"
+                >
+                    Login
+                </button>
+            </form>
+        </div>
+
+        <!-- Right Side - Image with Icon -->
+        <div class="hidden lg:flex lg:w-1/2 bg-teal-900 relative overflow-hidden items-center justify-center">
+            <div class="text-center">
+                <div class="inline-flex items-center justify-center w-32 h-32 bg-white rounded-3xl">
+                    <svg class="w-16 h-16 text-teal-900" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function goToLoginScreen(screenNumber) {
+            document.getElementById('loginScreen1').classList.add('hidden');
+            document.getElementById('loginScreen2').classList.add('hidden');
+            document.getElementById(`loginScreen${screenNumber}`).classList.remove('hidden');
+        }
+
+        // Login form submission
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            goToLoginScreen(2);
+            startLoginTimer();
+        });
+
+        // OTP auto-advance functionality
+        document.querySelectorAll('.login-otp-input').forEach((input, index, inputs) => {
+            input.addEventListener('input', function() {
+                if (this.value && index < inputs.length - 1) {
+                    inputs[index + 1].focus();
+                }
+            });
+
+            input.addEventListener('keydown', function(e) {
+                if (e.key === 'Backspace' && !this.value && index > 0) {
+                    inputs[index - 1].focus();
+                }
+            });
+        });
+
+        // Login OTP form submission
+        document.getElementById('loginOtpForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const otpValues = Array.from(document.querySelectorAll('.login-otp-input'))
+                .map(input => input.value)
+                .join('');
+            
+            if (otpValues.length === 6) {
+                alert('Login successful! OTP: ' + otpValues);
+                // Reset to first screen
+                document.querySelectorAll('.login-otp-input').forEach(input => input.value = '');
+                goToLoginScreen(1);
+            }
+        });
+
+        // Resend timer for login
+        let loginTimerInterval;
+        function startLoginTimer() {
+            let timeLeft = 59;
+            document.getElementById('loginTimer').textContent = '0:' + (timeLeft < 10 ? '0' : '') + timeLeft;
+            
+            loginTimerInterval = setInterval(() => {
+                timeLeft--;
+                const minutes = Math.floor(timeLeft / 60);
+                const seconds = timeLeft % 60;
+                document.getElementById('loginTimer').textContent = minutes + ':' + (seconds < 10 ? '0' : '') + seconds;
+                
+                if (timeLeft <= 0) {
+                    clearInterval(loginTimerInterval);
+                    document.getElementById('loginResendBtn').innerHTML = 'Resend';
+                    document.getElementById('loginResendBtn').onclick = function() {
+                        startLoginTimer();
+                        return false;
+                    };
+                }
+            }, 1000);
+        }
+
+        function goBackLogin(currentScreen) {
+            const previousScreen = currentScreen - 1;
+            if (previousScreen >= 1) {
+                document.getElementById(`loginScreen${currentScreen}`).classList.add('hidden');
+                document.getElementById(`loginScreen${previousScreen}`).classList.remove('hidden');
+                
+                // Clear timer if going back from OTP screen
+                if (currentScreen === 2 && loginTimerInterval) {
+                    clearInterval(loginTimerInterval);
+                }
+            }
+        }
+
+        // Initialize first screen
+        goToLoginScreen(1);
+    </script>
+</body>
+</html>

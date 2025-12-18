@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Payment Reservation</title>
+    <link rel="stylesheet" href="./src/output.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+</head>
+<body id="content" class="opacity-0 transition-opacity duration-1000 min-h-screen">
+
+  <header class="sticky top-0 bg-white z-50">
+  <div class="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
+
+    <!-- Logo -->
+    <div class="cursor-pointer" onclick="window.location.href='index.html'">
+      <img src="./images/Logo.PNG" alt="Ulo Oma" class="h-12 md:h-14" />
+    </div>
+
+    <!-- Desktop Navigation -->
+    <nav class="hidden md:flex gap-10 lg:gap-16 text-[19px] font-semibold text-black">
+      <a href="index.html" class="hover:text-[#20ACB3] transition">Home</a>
+      <a href="index.html#explore-apartments" class="hover:text-[#20ACB3] transition">Explore</a>
+      <a href="index.html#how-it-works" class="hover:text-[#20ACB3] transition">How it works</a>
+      <a href="index.html#about" class="hover:text-[#20ACB3] transition">About Us</a>
+      <a href="index.html#help" class="hover:text-[#20ACB3] transition">Help</a>
+    </nav>
+
+    <!-- Desktop Sign Up -->
+    <div class="hidden md:block">
+      <button onclick="window.location.href='tenant.html'" class="bg-[#20ACB3] text-white rounded-[30px] py-[15px] px-[30px] hover:bg-black transition text-[19px] font-medium cursor-pointer">
+        Sign Up
+      </button>
+    </div>
+
+    <!-- Mobile Toggle Button -->
+    <button id="menu-toggle" class="md:hidden text-4xl text-[#20ACB3] z-50">
+      <i id="hamburger" class="bi bi-list"></i>
+      <i id="close-x" class="bi bi-x-lg hidden"></i>
+    </button>
+  </div>
+
+  <!-- Mobile Full-Screen Menu (Vertical Only) -->
+  <div id="mobile-menu" class="fixed inset-0 bg-white hidden z-40">
+    <div class="flex flex-col items-center justify-center h-full gap-12 text-2xl font-semibold text-black">
+      <a href="index.html" class="hover:text-[#20ACB3] transition">Home</a>
+      <a href="index.html#explore-apartments" class="hover:text-[#20ACB3] transition">Explore</a>
+      <a href="index.html#how-it-works" class="hover:text-[#20ACB3] transition">How it works</a>
+      <a href="index.html#about" class="hover:text-[#20ACB3] transition">About Us</a>
+      <a href="index.html#help" class="hover:text-[#20ACB3] transition">Help</a>
+      <button onclick="window.location.href='tenant.html'" class="bg-[#20ACB3] text-white rounded-[30px] py-4 px-12 hover:bg-black cursor-pointer transition text-xl font-medium">
+        Sign Up
+      </button>
+    </div>
+  </div>
+</header>
+
+  <main class="max-w-6xl mx-auto px-4 md:px-8 lg:px-12 pb-16">
+
+    <!-- Back Button + Title -->
+    <div class="flex items-center gap-3 md:gap-4 mt-6 cursor-pointer hover:opacity-80 transition" onclick="window.location.href='apartment details.html'">
+      <i class="bi bi-arrow-left-circle-fill text-teal-600 text-2xl md:text-4xl"></i>
+      <div>
+        <h1 class="font-bold text-xl md:text-3xl text-gray-900">
+          Fund Your Wallet 
+          <span class="font-medium text-lg md:text-2xl text-gray-700">(Card Payment)</span>
+        </h1>
+      </div>
+    </div>
+
+    <!-- Info Text -->
+    <div class="mt-6 bg-teal-50 border border-teal-200 rounded-2xl p-5 md:p-8 text-teal-800">
+      <p class="text-base md:text-lg leading-relaxed">
+        Secure your reservation by funding your wallet with <strong>₦2,000 (minimum)</strong> for one apartment reservation and up to <strong>₦10,000 (maximum)</strong> for 5 apartment reservations.
+      </p>
+      <p class="mt-4 font-semibold text-teal-900">
+        NOTE: If you make a transfer above ₦2,000, the system will automatically add the balance to your wallet after reserving this apartment.
+      </p>
+      <p class="mt-2 font-semibold text-teal-900">
+        NOTE: You can only have a maximum wallet account balance of ₦10,000
+      </p>
+    </div>
+
+    <!-- Apartment Card -->
+    <div class="mt-10 flex justify-center">
+      <div class="bg-white rounded-3xl shadow-2xl overflow-hidden w-full max-w-5xl">
+        <div class="p-6 md:p-10 lg:p-12">
+          <div class="grid md:grid-cols-3 gap-8 lg:gap-12 items-center">
+            
+            <!-- Image -->
+            <div class="relative">
+              <div class="w-full h-52 md:h-64 lg:h-72 bg-[url('/images/explore.jpg')] bg-center bg-cover rounded-2xl shadow-lg"></div>
+            </div>
+
+            <!-- Labels -->
+            <div class="space-y-6 text-gray-600">
+              <div class="flex items-center gap-3">
+                <i class="bi bi-house-door-fill text-2xl text-teal-600"></i>
+                <span class="font-medium text-lg">Apartment Type:</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <i class="bi bi-geo-alt text-2xl text-teal-600"></i>
+                <span class="font-medium text-lg">Location:</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <i class="bi bi-tags-fill text-2xl text-teal-600"></i>
+                <span class="font-medium text-lg">Apartment Price:</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <i class="bi bi-shield-check text-2xl text-teal-600"></i>
+                <span class="font-medium text-lg">Reservation Fee:</span>
+              </div>
+            </div>
+
+            <!-- Values -->
+            <div class="space-y-6 text-gray-800 font-medium text-lg">
+              <p>1 Bedroom Apartment</p>
+              <p>Aba, Aba North, Abia State</p>
+              <p class="text-xl font-bold text-teal-700">₦570,000/year</p>
+              <p class="text-2xl font-bold text-teal-600">₦2,000</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Fade-in Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('content').classList.remove('opacity-0');
+      document.getElementById('content').classList.add('opacity-100');
+    });
+  </script>
+
+<div class="w-full md:w-screen md:px-25 md:py-5 px-3 py-2">
+    <form id="fundForm" class="p-6 space-y-6">
+      <!-- Amount to Fund -->
+      <div>
+        <label class="block text-lg font-medium text-gray-800 mb-2">Amount To Fund</label>
+        <div class="relative">
+          <select class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500">
+            <option>₦</option>
+          </select>
+          <input
+            type="text"
+            inputmode="numeric"
+            id="amount"
+            placeholder="Enter amount (maximum ₦10,000)"
+            class="w-full pl-12 pr-4 py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-teal-500 focus:border-transparent outline-none transition"
+            maxlength="11"
+            required
+          />
+        </div>
+        <p class="text-xs text-gray-500 mt-1">Maximum: ₦10,000</p>
+      </div>
+
+      <!-- Payment Type -->
+      <div>
+        <label class="block text-lg font-medium text-gray-800 mb-3">Payment Type</label>
+        <div class="space-y-3">
+          <div class="bg-teal-50 border-2 border-teal-200 rounded-xl p-4 flex items-center justify-between cursor-pointer hover:bg-teal-100 transition">
+            <div class="flex items-center gap-4">
+              <i class="fas fa-credit-card text-xl text-gray-700"></i>
+              <div>
+                <p class="font-medium text-gray-800">Credit or Debit Card</p>
+                <div class="flex gap-2 mt-1">
+                  <img src="https://img.icons8.com/color/48/000000/visa.png" alt="Visa" class="h-6"/>
+                  <img src="https://img.icons8.com/color/48/000000/mastercard.png" alt="Mastercard" class="h-6"/>
+                  <img src="./images/verve.png" alt="Verve" class="h-6"/>
+                </div>
+              </div>
+            </div>
+            <div class="w-6 h-6 bg-teal-500 rounded-full flex items-center justify-center">
+              <i class="fas fa-check text-white text-xs"></i>
+            </div>
+          </div>
+          <div onclick="window.location.href='bank_transfer.html'" class="bg-gray-50 border-2 border-gray-200 rounded-xl p-4 flex items-center justify-between cursor-pointer hover:bg-gray-100 transition">
+            <div class="flex items-center gap-4">
+              <i class="bi bi-arrow-left-right text-xl text-gray-700"></i>
+              <div>
+                <p class="font-medium text-gray-800">Bank Transfer</p>
+                <p class="text-sm text-gray-600">Transfer from any Nigerian bank</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card Number -->
+      <div>
+        <label for="cardNumber" class="block text-sm font-medium text-gray-700 mb-1">
+          Card Number <i class="fas fa-lock text-gray-400 ml-1"></i>
+        </label>
+        <input
+          type="text"
+          id="cardNumber"
+          placeholder="1234 5678 9012 3456"
+          class="w-full px-4 py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-teal-500 focus:border-transparent outline-none transition"
+          maxlength="19"
+          required
+        />
+      </div>
+
+      <!-- Expiry & CVV -->
+      <div class="grid grid-cols-2 gap-4">
+        <div>
+          <label for="expiry" class="block text-sm font-medium text-gray-700 mb-1">Expiry Date</label>
+          <input
+            type="text"
+            id="expiry"
+            placeholder="MM/YY"
+            class="w-full px-4 py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-teal-500 focus:border-transparent outline-none transition"
+            maxlength="5"
+            required
+          />
+        </div>
+        <div>
+          <label for="cvv" class="block text-sm font-medium text-gray-700 mb-1">CVV</label>
+          <input
+            type="text"
+            id="cvv"
+            placeholder="123"
+            class="w-full px-4 py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-teal-500 focus:border-transparent outline-none transition"
+            maxlength="4"
+            inputmode="numeric"
+            required
+          />
+        </div>
+      </div>
+
+      <!-- Card Holder Name -->
+      <div>
+        <label for="cardName" class="block text-sm font-medium text-gray-700 mb-1">
+          Card Holder's Name <span class="text-gray-400">(Optional)</span>
+        </label>
+        <input
+          type="text"
+          id="cardName"
+          placeholder="John Doe"
+          class="w-full px-4 py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-teal-500 focus:border-transparent outline-none transition"
+        />
+      </div>
+
+      <!-- Submit Button -->
+      <button
+        type="button"
+        onclick="window.location.href='successful.html'"
+        class="w-full bg-teal-600 hover:bg-black cursor-pointer text-white font-semibold py-4 rounded-xl transition duration-200 shadow-md hover:shadow-lg"
+      >
+        Fund Wallet & Reserve
+      </button>
+    </form>
+  </div>
+
+  
+  <script>
+    // Format card number with spaces
+    const cardNumber = document.getElementById('cardNumber');
+    const cardMask = IMask(cardNumber, {
+      mask: '0000 0000 0000 0000',
+      placeholder: { show: 'always' }
+    });
+
+    // Expiry date mask (MM/YY)
+    const expiry = document.getElementById('expiry');
+    const expiryMask = IMask(expiry, {
+      mask: 'MM/YY',
+      blocks: {
+        MM: { mask: IMask.MaskedRange, from: 1, to: 12 },
+        YY: { mask: IMask.MaskedRange, from: 23, to: 35 }
+      }
+    });
+
+    // CVV only numbers
+    const cvv = document.getElementById('cvv');
+    IMask(cvv, { mask: '000[0]' });
+
+    // Amount formatting (adds comma)
+    const amountInput = document.getElementById('amount');
+    const amountMask = IMask(amountInput, {
+      mask: Number,
+      scale: 0,
+      thousandsSeparator: ',',
+      radix: '.',
+      mapToRadix: ['.'],
+      min: 100,
+      max: 10000
+    });
+
+    // Form submission
+    document.getElementById('fundForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const amount = amountMask.unmaskedValue;
+      if (parseInt(amount) > 10000) {
+        alert('Amount cannot exceed ₦10,000');
+        return;
+      }
+      // Redirect to successful payment page
+      window.location.href = 'successful.html';
+    });
+  </script>
+
+    
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/output.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=hotel" />
+    <title>Document</title>
+</head>
+<body class="max-w-screen overflow-x-hidden font-sans">
+    <header class="sticky top-0 bg-white z-50">
+  <div class="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
+
+    <!-- Logo -->
+    <div class="cursor-pointer" onclick="window.location.href='index.html'">
+      <img src="./images/Logo.PNG" alt="Ulo Oma" class="h-12 md:h-14" />
+    </div>
+
+    <!-- Desktop Navigation -->
+    <nav class="hidden md:flex gap-10 lg:gap-16 text-[19px] font-semibold text-black">
+      <a href="index.html" class="hover:text-[#20ACB3] transition">Home</a>
+      <a href="index.html#explore-apartments" class="hover:text-[#20ACB3] transition">Explore</a>
+      <a href="index.html#how-it-works" class="hover:text-[#20ACB3] transition">How it works</a>
+      <a href="index.html#about" class="hover:text-[#20ACB3] transition">About Us</a>
+      <a href="index.html#help" class="hover:text-[#20ACB3] transition">Help</a>
+    </nav>
+
+    <!-- Desktop Sign Up -->
+    <div class="hidden md:block">
+      <button onclick="window.location.href='tenant.html'" class="bg-[#20ACB3] text-white rounded-[30px] py-[15px] px-[30px] hover:bg-black transition text-[19px] font-medium cursor-pointer">
+        Sign Up
+      </button>
+    </div>
+
+    <!-- Mobile Toggle Button -->
+    <button id="menu-toggle" class="md:hidden text-4xl text-[#20ACB3] z-50">
+      <i id="hamburger" class="bi bi-list"></i>
+      <i id="close-x" class="bi bi-x-lg hidden"></i>
+    </button>
+  </div>
+
+  <!-- Mobile Full-Screen Menu (Vertical Only) -->
+  <div id="mobile-menu" class="fixed inset-0 bg-white hidden z-40">
+    <div class="flex flex-col items-center justify-center h-full gap-12 text-2xl font-semibold text-black">
+      <a href="index.html" class="hover:text-[#20ACB3] transition">Home</a>
+      <a href="index.html#explore-apartments" class="hover:text-[#20ACB3] transition">Explore</a>
+      <a href="index.html#how-it-works" class="hover:text-[#20ACB3] transition">How it works</a>
+      <a href="index.html#about" class="hover:text-[#20ACB3] transition">About Us</a>
+      <a href="index.html#help" class="hover:text-[#20ACB3] transition">Help</a>
+      <button onclick="window.location.href='tenant.html'" class="bg-[#20ACB3] text-white rounded-[30px] py-4 px-12 hover:bg-black cursor-pointer transition text-xl font-medium">
+        Sign Up
+      </button>
+    </div>
+  </div>
+</header>
+    <main>
+        <section class="flex flex-col w-screen items-center text-center space-y-5 ">
+            <div class="flex justify-center items-center  h-[150px] w-[150px] sm:w-[214px] sm:h-[214px] bg-[#DC2626] text-white rounded-full">
+                <i class="bi bi-x-lg text-8xl font-bold"></i>
+            </div>
+            <p class="text-[#DC2626] text-[28px] font-bold">Reservation Failed!</p>
+            <p class="text-[#2E3838] font-semibold text-[18px]"> We are sorry, your payment couldn’t be confirmed at the moment. <br> This can happen if the bank delay verification or the transfer wasn’t completed properly. <br> If the amount has been deducted from your account, don’t worry , your reservation will be updated automatically once confirmed</p>
+            <section class="flex flex-col sm:flex-row w-[80vw] min-h-[242px] items-center space-x-10 bg-[#ffffff] drop-shadow-2xl rounded-[20px] mt-10 px-3 sm:py-4 ">
+                <img src="./images/pic-room.jpg" alt="" class="w-[90%] sm:w-[50%] sm:h-[300px] lg:w-[45%] h-[202px] rounded-[20px] sm:ml-7 ml-10 my-4">
+                <div class="w-[90%] sm:w-[50%] min-h-[188px] space-y-5 text-[18px] sm:text-[18px] gap-3 flex flex-col items-center sm:items-start">
+                    <div class="flex space-x-10 justify-between w-full">
+                        <p class="flex text-[#5C6F70]  gap-1 w-[50%]"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#238B8F"><path d="M40-200v-600h80v400h320v-320h320q66 0 113 47t47 113v360h-80v-120H120v120H40Zm240-240q-50 0-85-35t-35-85q0-50 35-85t85-35q50 0 85 35t35 85q0 50-35 85t-85 35Zm240 40h320v-160q0-33-23.5-56.5T760-640H520v240ZM280-520q17 0 28.5-11.5T320-560q0-17-11.5-28.5T280-600q-17 0-28.5 11.5T240-560q0 17 11.5 28.5T280-520Zm0-40Zm240-80v240-240Z"/></svg>Apartment Type:</p>
+                        <p class="text-[#5C6F70] w-[50%] ">1 Bedroom Apartment</p>
+                    </div>
+                    <div class="flex space-x-10 justify-between w-full">
+                        <p class="flex gap-1 text-[#5C6F70] w-[50%]"><i class="bi bi-geo-alt text-[#238B8F]"></i>City, LGA, State</p>
+                        <p class="text-[#5C6F70] w-[50%] ">Aba, Aba North, Abia State</p>
+                    </div>
+                    <div class="flex space-x-10 justify-between w-full">
+                        <p class="flex gap-1 text-[#5C6F70] w-[50%]"><i class="bi bi-tags-fill transform scale-x-[-1] text-[#238B8F] "></i>Reservation Fee:</p>
+                        <p class="text-[#DC2626] w-[50%] "> ₦2,000 <span class="font-bold text-[24px]">Failed</span></p>
+                    </div>
+                    <div class="flex space-x-10 justify-between w-full">
+                        <p class="flex gap-2 text-[#5C6F70] w-[50%]"> <i class="bi bi-wallet text-[#238B8F]"></i>Wallet ballance:</p>
+                        <p class="font-semibold text-[#5C6F70] text-[16.8px] w-[50%] ">N/A</p>
+                    </div>
+                </div>
+            </section>
+            <p class="font-bold text-[24px] text-[#0F3B3D]">Next Step?</p>
+            <p class="font-semibold text-[14px] sm:px-0 px-4 sm:text-start text-center sm:text-[18px] text-[#0F3B3D] mx-4">You will get an email that includes full apartment details and an inspection schedule once the payment is confirmed. <br>You can also try again or contact support if this takes longer than expected.</p>
+            <div class="flex flex-col sm:flex-col lg:flex-row gap-5 mb-7 text-[18px] font-semibold">
+                <button class="bg-[#20ACB3] rounded-[20px] sm:w-[547px] w-[350px] h-[57px] text-white">Try Again</button><button  class="bg-[#20ACB3] rounded-[20px] sm:w-[547px] w-[350px] h-[57px] text-white">Contact Support</button>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <section class="bg-[#0F3B3D] text-white min-h-[737.1px] max-w-screen sm:pt-20 pt-5 flex flex-col items-center relative">
+        
+        <!-- upper side begins here -->
+        
+        <section class="sm:hidden hidden lg:flex min-w-[898.5] min-h-[80.4px] rounded-[21px] bg-[#196366]  items-center justify-between absolute top-[30px] p-[15.2px] drop-shadow-2xl drop-shadow-[rgba(0,0,0,0.25)] px-10">
+            <p class="w-[298.1px] h-[25.2px] gap-[10.5px]">Start creating your memories...</p>
+            <div class="flex min-w-[360px] min-h-[60px] gap-[34px]">
+            <button class="w-[150px] h-[60px] bg-[#20ACB3] rounded-3xl">Login</button>
+            <button class="w-44 h-[60px] bg-[#FFFFFF] rounded-3xl text-black">List Property</button>
+            </div>
+        </section>
+
+        <!-- end of upper side.. middle side begins here -->
+
+        <section class="flex flex-col sm:flex-col lg:flex-row bg-[rgba(0,0,0,0.1)] min-h-[90vh] sm:pt-[102.9px] max-w-[95vw] justify-around rounded-[42px] border-[1.05px] border-[rgba(255,255,255,0.1)] space-x-6 sm:px-[30px] mb-5 items-center">
+            <div class="md:w-[325.5px] sm:w-[200px] sm:space-y-[32.55px] h-[260.65px] flex flex-col items-center space-y-4 sm:px-0 px-4 mb-6">
+                <p class="w-[162px] h-[54px] gap-[9px] p-2.5 text-2xl font-semibold ml-4 sm:ml-0 "><span><i class="bi bi-camera-fill mr-1"></i></span>Ụlọ Ọma</p>
+                <p class="text-[14px] space-y-0.5 text-justify font-medium ml-7 sm:ml-0">Ụlọ Ọma makes finding your next home easy and transparent. From verified listings to free viewing transport and hassle-free moving, We are your trusted path to the front door</p>
+                <div class="flex gap-[15.75px] w-[283.5px] h-[44.1px] sm:justify-start justify-center">
+                    <i class="bi bi-facebook"></i>
+                    <i class="bi bi-instagram"></i>
+                    <i class="bi bi-twitter-x"></i>
+                    <i class="bi bi-linkedin"></i>
+                    <i class="bi bi-youtube"></i>
+                </div>
+            </div>
+            <div class="flex justify-center gap-5 px-10 ml-5">
+            <div class="w-[131.25px] min-h-[260.65px] space-y-[34.65px]">
+                <p class="text-[#82E4E9]">NAVIGATION</p>
+                <nav class="flex flex-col decoration-0 space-y-[34.65px]">
+                    <a href="">Home</a>
+                    <a href="">Explore</a>
+                    <a href="">How It Works</a>
+                    <a href="">About Us</a>
+                    <a href="">Help</a>
+                </nav>
+            </div>
+            <div class="w-[156.1px] min-h-[215.45px] space-y-[34.65px]">
+                <p class="text-[#82E4E9]">HELP</p>
+                <nav class="flex flex-col space-y-[34.65px]">
+                    <a href=""> Contact Us</a>
+                    <a href="">FAQs</a>
+                    <a href="">Terms & Conditions</a>
+                    <a href="">Privacy Policy</a>
+                    <a href=""></a>
+                </nav>
+            </div>
+            </div>
+            <div class="w-[327.44px] h-[158.55px] space-y-[34.65px] my-6">
+                <p class="text-[#82E4E9] space-y-[34.65px]">SUBSCRIBE TO OUR NEWSLETTER</p>
+                <div class="flex flex-col space-y-[12.6px]">
+                    <input type="email" placeholder="Enter your email" class="bg-[#FFFFFF] w-[327.44px] h-[44.1px] rounded-[10.5px] text-[#90ADC6] pl-2">
+                    <button class="bg-[#2DB2B8] w-[142px] rounded-[10.5px] h-[44.1px]">Subscribe</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- end of middle side... last side begins -->
+
+        <div>
+            <hr class="w-[95vw]">
+            <p class="text-center mt-[30px]">&copy; 2025 Ụlọ Ọma. All Rights Reserved.  </p>
+        </div>
+        </section>
+    </footer>
+<!-- ---------------------FOOTER SECTION HAS ENDED------------------------------ -->
+</body>
+</html>

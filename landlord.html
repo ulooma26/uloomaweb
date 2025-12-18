@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="src/output.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
+</head>
+
+<body class="font-sans">
+  <header class="sticky top-0 bg-white z-50">
+  <div class="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
+
+    <!-- Logo -->
+    <div class="cursor-pointer" onclick="window.location.href='index.html'">
+      <img src="./images/Logo.PNG" alt="Ulo Oma" class="h-12 md:h-14" />
+    </div>
+
+    <!-- Desktop Navigation -->
+    <nav class="hidden md:flex gap-10 lg:gap-16 text-[19px] font-semibold text-black">
+      <a href="index.html" class="hover:text-[#20ACB3] transition">Home</a>
+      <a href="index.html#explore-apartments" class="hover:text-[#20ACB3] transition">Explore</a>
+      <a href="how it works.html" class="hover:text-[#20ACB3] transition">How it works</a>
+      <a href="about.html" class="hover:text-[#20ACB3] transition">About Us</a>
+      <a href="contact.html" class="hover:text-[#20ACB3] transition">Contact Us</a>
+    </nav>
+
+    <!-- Desktop Sign Up -->
+    <div class="hidden md:block">
+      <button onclick="window.location.href='tenant.html'" class="bg-[#20ACB3] text-white rounded-[30px] py-[15px] px-[30px] hover:bg-black transition text-[19px] font-medium cursor-pointer">
+        Sign Up
+      </button>
+    </div>
+
+    <!-- Mobile Toggle Button -->
+    <button id="menu-toggle" class="md:hidden text-4xl text-[#20ACB3] z-50">
+      <i id="hamburger" class="bi bi-list"></i>
+      <i id="close-x" class="bi bi-x-lg hidden"></i>
+    </button>
+  </div>
+
+  <!-- Mobile Full-Screen Menu (Vertical Only) -->
+  <div id="mobile-menu" class="fixed inset-0 bg-white hidden z-40">
+    <div class="flex flex-col items-center justify-center h-full gap-12 text-2xl font-semibold text-black">
+      <a href="index.html" class="hover:text-[#20ACB3] transition">Home</a>
+      <a href="index.html#explore-apartments" class="hover:text-[#20ACB3] transition">Explore</a>
+      <a href="how it works.html" class="hover:text-[#20ACB3] transition">How it works</a>
+      <a href="index.html#about" class="hover:text-[#20ACB3] transition">About Us</a>
+      <a href="index.html#help" class="hover:text-[#20ACB3] transition">Contact Us</a>
+      <button onclick="window.location.href='tenant.html'" class="bg-[#20ACB3] text-white rounded-[30px] py-4 px-12 hover:bg-black cursor-pointer transition text-xl font-medium">
+        Sign Up
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- .................................Hero Section................................................... -->
+  <main class="relative w-10/12 h-8/12 overflow-hidden p-4 mt-4 mx-auto focus:outline-none shadow-[0_35px_60px_-15px_rgba(0,0,0,0.5)]">
+    <video
+      class="border-0 rounded-2xl outline-none absolute top-1/2 left-1/2 min-w-full min-h-full w-10/12 h-8/12 -translate-x-1/2 -translate-y-1/2 object-cover"
+      src="./images/Whisk_cauajdazotcwztfmlwyzodutndezmc05otm4lwu (1).mp4" autoplay muted loop playsinline></video>
+
+    <section class="relative z-10 flex flex-col items-center justify-center h-80 text-center px-4 mt-5 font-serif">
+      <h1 class="text-4xl font-bold mb-4 mt-8 text-black">How It Works</h1>
+      <p class="font-bold mb-6 text-white text-lg">Looking For A place? Or Renting One Out? Here's How We Bring <br>
+        Landlords & Tenants Together</p>
+    </section>
+
+    <section class="flex justify-center items-center font-bold">
+      <div class="relative border border-white rounded-3xl focus:outline-none p-2">
+        <a href="tenant.html"><button class="text-white  p-2 rounded-3xl cursor-pointer">For Tenants</button></a>
+        <a href="landlord.html"><button class="text-white p-2 cursor-pointer rounded-3xl bg-[#20ACB3]">For Landlords</button></a>
+      </div>
+    </section>
+  </main>
+
+<!-- .................................Features Section....................................................... -->
+  <section class="py-4 my-8">
+    <section class="flex gap-5 justify-around items-center">
+      <div>
+        <h1 class="text-lg font-bold mb-2.5">Get Verified and List</h1>
+        <p class="font-light">Apply to list your property. We verify landlords <br>for authenticity and send our team to take clean, <br>professional photos.</p>
+      </div>
+
+      <div class="flex flex-col">
+        <img class="w-96 h-80" src="images/getverified.png" alt="">
+      </div>
+    </section>
+
+    <section class="flex gap-5 justify-around items-center">
+      <div>
+        <img class="w-96 h-80" src="images/wehandle.png" alt="">
+      </div>
+
+      <div>
+        <h1 class="text-lg font-bold mb-2.5">We Handle The Viewings</h1>
+        <p class="font-light">We schedule viewings with interested renters <br> or landlords and send agents to handle all <br> inspections. No stress for you.</p>
+      </div>
+    </section>
+
+    <section class="flex gap-5 justify-around items-center">
+      <div>
+        <h1 class="text-lg font-bold mb-2.5">Get Paid Seamlessly</h1>
+        <p class="font-light">Once a tenant confirms, payment is made directly <br>to you. We keep things transparent, <br>simple and fast.</p>
+      </div>
+
+      <div>
+        <img class="w-96 h-80" src="images/getpaid.png" alt="">
+      </div>
+    </section>
+  </section>
+<!-- ..................................Footer Section................................................................... -->
+
+   <footer class="bg-[#0F3B3D] text-white pt-20 pb-16 relative overflow-hidden">
+
+  <!-- Upper CTA Bar – NOT fixed on mobile, stays inside footer on ALL devices -->
+  <div class="w-full max-w-4xl mx-auto px-6 mb-12">
+    <div class="bg-[#196366] rounded-2xl px-6 py-6 md:py-8 
+                flex flex-col md:flex-row items-center justify-between gap-6 
+                shadow-2xl border border-white/10">
+      <p class="text-lg md:text-xl font-medium text-center md:text-left">
+        Start creating your memories...
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
+        <button onclick="window.location.href='login.html'" class="bg-[#20ACB3] hover:bg-[#1e9ea5] text-white font-semibold px-8 py-4 rounded-3xl transition">
+          Login
+        </button>
+        <button class="bg-white hover:bg-gray-100 text-[#0F3B3D] font-semibold px-8 py-4 rounded-3xl transition">
+          List Property
+        </button>
+      </div>
+    </div>
+  </div>
+<br>
+  <!-- Main Footer Content -->
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="bg-white/10 backdrop-blur-sm border border-white/10 rounded-3xl md:rounded-[42px] p-8 md:p-12 lg:p-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-16">
+        
+        <!-- Brand -->
+        <div class="space-y-6 lg:space-y-8">
+          <h3 class="text-2xl md:text-3xl font-bold flex items-center gap-2">
+            <i class="bi bi-camera-fill text-[#20ACB3] mr-2"></i>Ụlọ Ọma
+          </h3>
+          <p class="text-sm md:text-base leading-relaxed opacity-90">
+            Ụlọ Ọma makes finding your next home easy and transparent. From verified listings to free viewing transport and hassle-free moving, we are your trusted path to the front door.
+          </p>
+          <div class="flex gap-5 text-xl">
+            <i class="bi bi-facebook hover:text-[#20ACB3] cursor-pointer transition"></i>
+            <i class="bi bi-instagram hover:text-[#20ACB3] cursor-pointer transition"></i>
+            <i class="bi bi-twitter-x hover:text-[#20ACB3] cursor-pointer transition"></i>
+            <i class="bi bi-linkedin hover:text-[#20ACB3] cursor-pointer transition"></i>
+            <i class="bi bi-youtube hover:text-[#20ACB3] cursor-pointer transition"></i>
+          </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="space-y-6">
+          <h4 class="text-[#82E4E9] font-semibold text-lg uppercase tracking-wider">Navigation</h4>
+          <nav class="flex flex-col space-y-4 text-base">
+            <a href="#" class="hover:text-[#20ACB3] transition">Home</a>
+            <a href="#" class="hover:text-[#20ACB3] transition">Explore</a>
+            <a href="#" class="hover:text-[#20ACB3] transition">How It Works</a>
+            <a href="#" class="hover:text-[#20ACB3] transition">About Us</a>
+            <a href="#" class="hover:text-[#20ACB3] transition">Help</a>
+          </nav>
+        </div>
+
+        <!-- Help -->
+        <div class="space-y-6">
+          <h4 class="text-[#82E4E9] font-semibold text-lg uppercase tracking-wider">Help</h4>
+          <nav class="flex flex-col space-y-4 text-base">
+            <a href="#" class="hover:text-[#20ACB3] transition">Contact Us</a>
+            <a href="#" class="hover:text-[#20ACB3] transition">FAQs</a>
+            <a href="#" class="hover:text-[#20ACB3] transition">Terms & Conditions</a>
+            <a href="#" class="hover:text-[#20ACB3] transition">Privacy Policy</a>
+          </nav>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="space-y-6">
+          <h4 class="text-[#82E4E9] font-semibold text-lg uppercase tracking-wider">
+            Subscribe to Our Newsletter
+          </h4>
+          <form class="space-y-4">
+            <input type="email" placeholder="Enter your email"
+              class="w-full px-4 py-3 bg-white text-gray-800 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#20ACB3]">
+            <button class="w-full sm:w-auto bg-[#2DB2B8] hover:bg-[#28a09e] px-10 py-3 rounded-xl font-medium transition">
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="mt-16 pt-8 border-t border-white/20 text-center text-sm opacity-80">
+      © 2025 Ụlọ Ọma. All Rights Reserved.
+    </div>
+  </div>
+</footer>
+
+</body>
+
+</html>

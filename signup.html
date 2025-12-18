@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Ulo Oma</title>
+    <link rel="stylesheet" href="./src/output.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+</head>
+<body class="bg-gray-50 min-h-screen font-sans">
+    <header class="sticky top-0 bg-white z-50">
+        <div class="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
+            <div class="cursor-pointer" onclick="window.location.href='index.html'">
+                <img src="./images/Logo.PNG" alt="Ulo Oma" class="h-12 md:h-14" />
+            </div>
+            <nav class="hidden md:flex gap-10 lg:gap-16 text-[19px] font-semibold text-black">
+                <a href="index.html" class="hover:text-[#20ACB3] transition">Home</a>
+                <a href="index.html#explore-apartments" class="hover:text-[#20ACB3] transition">Explore</a>
+                <a href="how it works.html" class="hover:text-[#20ACB3] transition">How it works</a>
+                <a href="about.html" class="hover:text-[#20ACB3] transition">About Us</a>
+                <a href="contact.html" class="hover:text-[#20ACB3] transition">Contact Us</a>
+            </nav>
+            <div class="hidden md:block">
+                <button onclick="window.location.href='login.html'" class="bg-[#20ACB3] text-white rounded-[30px] py-[15px] px-[30px] hover:bg-black transition text-[19px] font-medium cursor-pointer">
+                    Login
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Screen 1: Create Account -->
+    <div id="screen1" class="flex min-h-screen">
+        <!-- Left Side - Form -->
+        <div class="w-full lg:w-1/2 flex flex-col justify-center px-8 sm:px-12 lg:px-16 bg-gradient-to-b from-white to-gray-50">
+
+            <!-- Heading -->
+            <div class="mb-10">
+                <h1 class="text-4xl font-bold text-teal-900 mb-3">Create Your Account</h1>
+                <p class="text-gray-600 text-sm leading-relaxed max-w-sm">Sign Up now to begin the best experience in apartment finding, renting and also listing</p>
+            </div>
+
+            <!-- Form -->
+            <form id="signupForm" class="space-y-6 mb-8 max-w-sm">
+                <!-- Full Name -->
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
+                    <input 
+                        type="text" 
+                        placeholder="Enter your full name"
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:border-teal-600 focus:ring-2 focus:ring-teal-100 transition"
+                        required
+                    >
+                </div>
+
+                <!-- Phone Number -->
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
+                    <input 
+                        type="tel" 
+                        placeholder="For Payment Verifications"
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:border-teal-600 focus:ring-2 focus:ring-teal-100 transition"
+                        required
+                    >
+                </div>
+
+                <!-- Continue Button -->
+                <button 
+                    type="submit"
+                    class="w-full bg-teal-700 hover:bg-black text-white font-semibold py-3 rounded-lg transition duration-200 mt-8"
+                >
+                    Continue
+                </button>
+            </form>
+
+            <!-- Divider -->
+            <div class="flex items-center gap-4 my-8 max-w-sm">
+                <div class="flex-1 h-px bg-gray-300"></div>
+                <span class="text-gray-500 text-xs font-medium uppercase">OR</span>
+                <div class="flex-1 h-px bg-gray-300"></div>
+            </div>
+
+            <!-- Social Sign Up -->
+            <div class="space-y-3 max-w-sm">
+                <button type="button" class="social-btn w-full bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium py-3 rounded-lg transition duration-200 flex items-center justify-center gap-3">
+                    <i class="bi bi-google"></i>
+                    Sign Up With Google
+                </button>
+
+                <button type="button" class="social-btn w-full bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium py-3 rounded-lg transition duration-200 flex items-center justify-center gap-3">
+                    <i class="bi bi-apple"></i>
+                    Sign Up With Apple
+                </button>
+            </div>
+        </div>
+
+        <!-- Right Side - Image with Overlay -->
+        <div class="hidden lg:flex lg:w-1/2 relative overflow-hidden">
+            <img 
+                src="./images/explore.jpg"
+                alt="Apartment Interior"
+                class="w-full h-full object-cover"
+            >
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+            <div class="absolute bottom-0 left-0 right-0 p-12">
+                <h2 class="text-5xl font-bold text-white mb-4 leading-tight">Find Or List Verified Apartment Without Stress</h2>
+                <p class="text-white/90 text-lg">Begin your journey today</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Screen 2: Verify Phone Number -->
+    <div id="screen2" class="hidden flex min-h-screen">
+        <!-- Left Side - Form -->
+        <div class="w-full lg:w-1/2 flex flex-col justify-center px-8 sm:px-12 lg:px-16 bg-gradient-to-b from-white to-gray-50">
+            <!-- Back Button -->
+            <button onclick="goBack(2)" class="mb-4 flex items-center text-gray-600 hover:text-gray-800 transition">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back
+            </button>
+
+            <!-- Progress indicator -->
+            <div class="flex gap-3 mb-12">
+                <div class="flex-1 h-1 bg-teal-600 rounded-full"></div>
+                <div class="flex-1 h-1 bg-teal-600 rounded-full"></div>
+                <div class="flex-1 h-1 bg-teal-600 rounded-full"></div>
+            </div>
+
+            <!-- Heading -->
+            <div class="mb-10">
+                <h1 class="text-4xl font-bold text-teal-900 mb-3">Verify Your Phone Number</h1>
+                <p class="text-gray-600 text-sm leading-relaxed max-w-sm">Input the 6-digits OTP we have sent to the phone number you provided</p>
+            </div>
+
+            <!-- OTP Input Fields -->
+            <form id="otpForm" class="space-y-10 max-w-sm">
+                <!-- OTP Input Boxes -->
+                <div class="flex gap-3 justify-start">
+                    <input type="text" maxlength="1" inputmode="numeric" class="otp-input w-14 h-14 text-center border-2 border-gray-300 rounded-lg text-xl font-bold text-gray-900 focus:outline-none focus:border-teal-600 focus:ring-2 focus:ring-teal-100 transition" />
+                    <input type="text" maxlength="1" inputmode="numeric" class="otp-input w-14 h-14 text-center border-2 border-gray-300 rounded-lg text-xl font-bold text-gray-900 focus:outline-none focus:border-teal-600 focus:ring-2 focus:ring-teal-100 transition" />
+                    <input type="text" maxlength="1" inputmode="numeric" class="otp-input w-14 h-14 text-center border-2 border-gray-300 rounded-lg text-xl font-bold text-gray-900 focus:outline-none focus:border-teal-600 focus:ring-2 focus:ring-teal-100 transition" />
+                    <input type="text" maxlength="1" inputmode="numeric" class="otp-input w-14 h-14 text-center border-2 border-gray-300 rounded-lg text-xl font-bold text-gray-900 focus:outline-none focus:border-teal-600 focus:ring-2 focus:ring-teal-100 transition" />
+                    <input type="text" maxlength="1" inputmode="numeric" class="otp-input w-14 h-14 text-center border-2 border-gray-300 rounded-lg text-xl font-bold text-gray-900 focus:outline-none focus:border-teal-600 focus:ring-2 focus:ring-teal-100 transition" />
+                    <input type="text" maxlength="1" inputmode="numeric" class="otp-input w-14 h-14 text-center border-2 border-gray-300 rounded-lg text-xl font-bold text-gray-900 focus:outline-none focus:border-teal-600 focus:ring-2 focus:ring-teal-100 transition" />
+                </div>
+
+                <!-- Resend OTP Section -->
+                <div class="text-center">
+                    <p class="text-gray-700 text-sm">
+                        Didn't get OTP? 
+                        <button type="button" id="resendBtn" class="text-teal-600 font-semibold hover:text-teal-700 transition ml-1">Resend in <span id="timer">0:59</span></button>
+                    </p>
+                </div>
+
+                <!-- Verify Button -->
+                <button 
+                    type="submit"
+                    class="w-full bg-teal-700 hover:bg-black text-white font-semibold py-3 rounded-lg transition duration-200"
+                >
+                    Verify & Continue
+                </button>
+            </form>
+        </div>
+
+        <!-- Right Side - Image with Overlay -->
+        <div class="hidden lg:flex lg:w-1/2 relative overflow-hidden">
+            <img 
+                src="./images/explore.jpg"
+                alt="Apartment Interior"
+                class="w-full h-full object-cover"
+            >
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+            <div class="absolute bottom-0 left-0 right-0 p-12">
+                <h2 class="text-5xl font-bold text-white mb-4 leading-tight">Verify Your Phone Number</h2>
+                <p class="text-white/90 text-lg">Just 1 more step and you are done</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Screen 3: Add Email -->
+    <div id="screen3" class="hidden flex min-h-screen">
+        <!-- Left Side - Form -->
+        <div class="w-full lg:w-1/2 flex flex-col justify-center px-8 sm:px-12 lg:px-16 bg-gradient-to-b from-white to-gray-50">
+            <!-- Back Button -->
+            <button onclick="goBack(3)" class="mb-4 flex items-center text-gray-600 hover:text-gray-800 transition">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back
+            </button>
+
+            <!-- Progress indicator updated to show 3rd screen -->
+            <div class="flex gap-3 mb-12">
+                <div class="flex-1 h-1 bg-teal-600 rounded-full"></div>
+                <div class="flex-1 h-1 bg-teal-600 rounded-full"></div>
+                <div class="flex-1 h-1 bg-teal-600 rounded-full"></div>
+            </div>
+
+            <!-- Heading -->
+            <div class="mb-10">
+                <h1 class="text-4xl font-bold text-teal-900 mb-3">Add Your Email</h1>
+                <p class="text-gray-600 text-sm leading-relaxed max-w-sm">Continue the signup by adding your email as we will send important informations there</p>
+            </div>
+
+            <!-- Email Form -->
+            <form id="emailForm" class="space-y-8 max-w-sm">
+                <!-- Email Address -->
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+                    <input 
+                        type="email" 
+                        placeholder="Enter your email address"
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:border-teal-600 focus:ring-2 focus:ring-teal-100 transition"
+                        required
+                    >
+                    <p class="text-xs text-gray-500 mt-2">Add a valid email address</p>
+                </div>
+
+                <!-- Continue Button -->
+                <button 
+                    type="submit"
+                    class="w-full bg-teal-700 hover:bg-black text-white font-semibold py-3 rounded-lg transition duration-200 mt-8"
+                >
+                    Continue
+                </button>
+            </form>
+        </div>
+
+        <!-- Right Side - Image with Overlay -->
+        <div class="hidden lg:flex lg:w-1/2 relative overflow-hidden">
+            <img 
+                src="./images/explore.jpg"
+                alt="Apartment Interior"
+                class="w-full h-full object-cover"
+            >
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+            <div class="absolute bottom-0 left-0 right-0 p-12">
+                <h2 class="text-5xl font-bold text-white mb-4 leading-tight">Continue With Your Email Address</h2>
+                <p class="text-white/90 text-lg">Begin your journey today</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pop-up Modal for List Property -->
+    <div id="listPropertyModal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center">
+        <div class="bg-white rounded-3xl p-8 max-w-md mx-4 text-center">
+            <h2 class="text-2xl font-bold text-teal-900 mb-4">Congratulations!</h2>
+            <p class="text-gray-600 mb-6">Your account has been created successfully. Would you like to list your property now?</p>
+            <div class="flex gap-4">
+                <button onclick="window.location.href='list-property.html'" class="flex-1 bg-teal-700 hover:bg-black text-white font-semibold py-3 rounded-lg transition">
+                    List Property
+                </button>
+                <button onclick="closeModal()" class="flex-1 border border-gray-300 text-gray-700 font-semibold py-3 rounded-lg hover:bg-gray-50 transition">
+                    Maybe Later
+                </button>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <script>
+        // Screen 1: Form submission
+        document.getElementById('signupForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const fullName = this.querySelector('input[type="text"]').value;
+            const phone = this.querySelector('input[type="tel"]').value;
+            
+            if (fullName && phone) {
+                document.getElementById('screen1').classList.add('hidden');
+                document.getElementById('screen2').classList.remove('hidden');
+                startTimer();
+                document.querySelectorAll('.otp-input')[0].focus();
+            }
+        });
+
+        // Screen 1: Social buttons
+        document.querySelectorAll('#screen1 .social-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const method = this.textContent.includes('Google') ? 'Google' : 'Apple';
+                alert(`Redirecting to ${method} sign-up...`);
+            });
+        });
+
+        // Screen 2: OTP auto-advance
+        document.querySelectorAll('.otp-input').forEach((input, index) => {
+            input.addEventListener('input', function(e) {
+                if (this.value) {
+                    this.value = this.value.replace(/[^0-9]/g, '');
+                    if (index < 5) {
+                        document.querySelectorAll('.otp-input')[index + 1].focus();
+                    }
+                }
+            });
+
+            input.addEventListener('keydown', function(e) {
+                if (e.key === 'Backspace' && !this.value && index > 0) {
+                    document.querySelectorAll('.otp-input')[index - 1].focus();
+                }
+            });
+        });
+
+        // Screen 2: Timer
+        let timerInterval;
+        function startTimer() {
+            let seconds = 59;
+            const timerDisplay = document.getElementById('timer');
+            const resendBtn = document.getElementById('resendBtn');
+            
+            resendBtn.disabled = true;
+            resendBtn.classList.add('opacity-50', 'cursor-not-allowed');
+
+            timerInterval = setInterval(() => {
+                seconds--;
+                const min = Math.floor(seconds / 60);
+                const sec = seconds % 60;
+                timerDisplay.textContent = `0:${sec.toString().padStart(2, '0')}`;
+
+                if (seconds === 0) {
+                    clearInterval(timerInterval);
+                    resendBtn.disabled = false;
+                    resendBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+                    timerDisplay.textContent = 'Resend';
+                }
+            }, 1000);
+        }
+
+        // Screen 2: Resend button
+        document.getElementById('resendBtn').addEventListener('click', function(e) {
+            e.preventDefault();
+            if (!this.disabled) {
+                document.querySelectorAll('.otp-input').forEach(input => input.value = '');
+                document.querySelectorAll('.otp-input')[0].focus();
+                startTimer();
+            }
+        });
+
+        // Screen 2: Form submission
+        document.getElementById('otpForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const otp = Array.from(document.querySelectorAll('.otp-input')).map(i => i.value).join('');
+            
+            if (otp.length === 6 && /^\d+$/.test(otp)) {
+                document.getElementById('screen2').classList.add('hidden');
+                document.getElementById('screen3').classList.remove('hidden');
+            } else {
+                alert('Please enter all 6 digits');
+            }
+        });
+
+        function goToScreen(screenNum) {
+            document.querySelectorAll('[id^="screen"]').forEach(screen => {
+                screen.classList.add('hidden');
+            });
+            document.getElementById(`screen${screenNum}`).classList.remove('hidden');
+        }
+
+        document.getElementById('emailForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = this.querySelector('input[type="email"]').value;
+            
+            if (email) {
+                document.getElementById('screen3').classList.add('hidden');
+                document.getElementById('listPropertyModal').classList.remove('hidden');
+            }
+        });
+
+        function closeModal() {
+            document.getElementById('listPropertyModal').classList.add('hidden');
+            window.location.href = 'index.html';
+        }
+
+        function goBack(currentScreen) {
+            const previousScreen = currentScreen - 1;
+            if (previousScreen >= 1) {
+                document.getElementById(`screen${currentScreen}`).classList.add('hidden');
+                document.getElementById(`screen${previousScreen}`).classList.remove('hidden');
+                
+                // Clear timer if going back from OTP screen
+                if (currentScreen === 2 && timerInterval) {
+                    clearInterval(timerInterval);
+                }
+            }
+        }
+    </script>
+
+    
+</body>
+</html>

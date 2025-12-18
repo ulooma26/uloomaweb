@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List Your Property - Ụlọ Ọma</title>
+    <link rel="stylesheet" href="./src/output.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+</head>
+<body class="bg-gray-50 font-sans">
+    <header class="sticky top-0 bg-white z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
+            <div class="cursor-pointer" onclick="window.location.href='index.html'">
+                <img src="./images/Logo.PNG" alt="Ulo Oma" class="h-12 md:h-14" />
+            </div>
+            <nav class="hidden md:flex gap-10 lg:gap-16 text-[19px] font-semibold text-black">
+                <a href="index.html" class="hover:text-[#20ACB3] transition">Home</a>
+                <a href="explore.html" class="hover:text-[#20ACB3] transition">Explore</a>
+                <a href="how it works.html" class="hover:text-[#20ACB3] transition">How it works</a>
+                <a href="about.html" class="hover:text-[#20ACB3] transition">About Us</a>
+                <a href="contact.html" class="hover:text-[#20ACB3] transition">Contact Us</a>
+            </nav>
+            <div class="hidden md:block">
+                <button onclick="window.location.href='signup.html'" class="bg-[#20ACB3] text-white rounded-[30px] py-[15px] px-[30px] hover:bg-black transition text-[19px] font-medium cursor-pointer">
+                    Sign Up
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-[#0F3B3D] text-white py-20">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h1 class="text-5xl font-bold mb-6">List Your Property</h1>
+            <p class="text-xl text-gray-300">
+                Connect directly with verified tenants and earn more from your property
+            </p>
+        </div>
+    </section>
+
+    <!-- Form Section -->
+    <section class="py-16">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="bg-white rounded-3xl shadow-xl p-8">
+                <form class="space-y-8">
+                    <!-- Property Details -->
+                    <div>
+                        <h2 class="text-2xl font-bold text-[#0F3B3D] mb-6">Property Details</h2>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Property Title</label>
+                                <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#20ACB3]" placeholder="e.g., Modern 2BR Apartment" required>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Property Type</label>
+                                <select class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#20ACB3]" required>
+                                    <option value="">Select Property Type</option>
+                                    <option value="apartment">Apartment</option>
+                                    <option value="house">House</option>
+                                    <option value="studio">Studio</option>
+                                    <option value="duplex">Duplex</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Bedrooms</label>
+                                <select class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#20ACB3]" required>
+                                    <option value="">Select Bedrooms</option>
+                                    <option value="studio">Studio</option>
+                                    <option value="1">1 Bedroom</option>
+                                    <option value="2">2 Bedrooms</option>
+                                    <option value="3">3 Bedrooms</option>
+                                    <option value="4">4+ Bedrooms</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Bathrooms</label>
+                                <select class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#20ACB3]" required>
+                                    <option value="">Select Bathrooms</option>
+                                    <option value="1">1 Bathroom</option>
+                                    <option value="2">2 Bathrooms</option>
+                                    <option value="3">3 Bathrooms</option>
+                                    <option value="4">4+ Bathrooms</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Location -->
+                    <div>
+                        <h2 class="text-2xl font-bold text-[#0F3B3D] mb-6">Location</h2>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">State</label>
+                                <select class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#20ACB3]" required>
+                                    <option value="">Select State</option>
+                                    <option value="abia">Abia</option>
+                                    <option value="lagos">Lagos</option>
+                                    <option value="abuja">Abuja</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">City/Area</label>
+                                <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#20ACB3]" placeholder="e.g., Aba, Umuahia" required>
+                            </div>
+                        </div>
+                        <div class="mt-6">
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Full Address</label>
+                            <textarea rows="3" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#20ACB3]" placeholder="Enter complete address" required></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Pricing -->
+                    <div>
+                        <h2 class="text-2xl font-bold text-[#0F3B3D] mb-6">Pricing</h2>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Rent Amount (₦)</label>
+                                <input type="number" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#20ACB3]" placeholder="e.g., 150000" required>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Payment Frequency</label>
+                                <select class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#20ACB3]" required>
+                                    <option value="">Select Frequency</option>
+                                    <option value="monthly">Monthly</option>
+                                    <option value="yearly">Yearly</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Property Features -->
+                    <div>
+                        <h2 class="text-2xl font-bold text-[#0F3B3D] mb-6">Property Features</h2>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                            <label class="flex items-center gap-2">
+                                <input type="checkbox" class="w-4 h-4 text-[#20ACB3] border-gray-300 rounded focus:ring-[#20ACB3]">
+                                <span class="text-sm">Parking</span>
+                            </label>
+                            <label class="flex items-center gap-2">
+                                <input type="checkbox" class="w-4 h-4 text-[#20ACB3] border-gray-300 rounded focus:ring-[#20ACB3]">
+                                <span class="text-sm">Furnished</span>
+                            </label>
+                            <label class="flex items-center gap-2">
+                                <input type="checkbox" class="w-4 h-4 text-[#20ACB3] border-gray-300 rounded focus:ring-[#20ACB3]">
+                                <span class="text-sm">WiFi</span>
+                            </label>
+                            <label class="flex items-center gap-2">
+                                <input type="checkbox" class="w-4 h-4 text-[#20ACB3] border-gray-300 rounded focus:ring-[#20ACB3]">
+                                <span class="text-sm">Security</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Contact Information -->
+                    <div>
+                        <h2 class="text-2xl font-bold text-[#0F3B3D] mb-6">Contact Information</h2>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
+                                <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#20ACB3]" required>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
+                                <input type="tel" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#20ACB3]" required>
+                            </div>
+                            <div class="md:col-span-2">
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                                <input type="email" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#20ACB3]" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Description -->
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Property Description</label>
+                        <textarea rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#20ACB3]" placeholder="Describe your property, amenities, and any special features..." required></textarea>
+                    </div>
+
+                    <!-- Pictures and Videos Upload -->
+                    <div>
+                        <h2 class="text-2xl font-bold text-[#0F3B3D] mb-6">Upload Photos and Videos</h2>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <!-- Photo Upload -->
+                            <div class="bg-gray-100 border-2 border-dashed border-gray-300 rounded-xl p-8 text-center hover:border-[#20ACB3] transition">
+                                <input type="file" id="photos" accept="image/*" multiple class="hidden">
+                                <label for="photos" class="cursor-pointer">
+                                    <i class="bi bi-image text-4xl text-gray-400 mb-4 block"></i>
+                                    <p class="text-lg font-semibold text-gray-600">Add Photos</p>
+                                    <p class="text-sm text-gray-500 mt-2">Upload clear photos of your property</p>
+                                </label>
+                            </div>
+                            <!-- Video Upload -->
+                            <div class="bg-gray-100 border-2 border-dashed border-gray-300 rounded-xl p-8 text-center hover:border-[#20ACB3] transition">
+                                <input type="file" id="videos" accept="video/*" class="hidden">
+                                <label for="videos" class="cursor-pointer">
+                                    <i class="bi bi-camera-video text-4xl text-gray-400 mb-4 block"></i>
+                                    <p class="text-lg font-semibold text-gray-600">Add Video</p>
+                                    <p class="text-sm text-gray-500 mt-2">Upload at least one short video</p>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="text-center">
+                        <button type="submit" class="bg-[#20ACB3] text-white font-semibold py-4 px-12 rounded-xl hover:bg-black transition text-lg">
+                            List My Property
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Your Property has been successfully listed');
+            window.location.href = 'explore.html';
+        });
+    </script>
+
+    <!-- Footer -->
+    <footer class="bg-[#0F3B3D] text-white py-16">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <p class="text-lg opacity-80">© 2025 Ụlọ Ọma. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

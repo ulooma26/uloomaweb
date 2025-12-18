@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>1 Bedroom Apartment</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+<link rel="stylesheet" href="./src/output.css">
+  <style>
+    .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+    .scrollbar-hide::-webkit-scrollbar { display: none; }
+  </style>
+</head>
+<body class="bg-white font-sans">
+
+  <script>
+    // Wait until the DOM is fully loaded
+    document.addEventListener('DOMContentLoaded', (event) => {
+        // Find the element by its ID
+        const content = document.getElementById('content');
+        
+        // Remove the opacity-0 class and add the opacity-100 class
+        if (content) {
+            content.classList.remove('opacity-0');
+            content.classList.add('opacity-100');
+        }
+    });
+</script>
+
+  <div class=" mx-auto  rounded-3xl overflow-hidden p-10">
+
+<header class="sticky top-0 bg-white z-50">
+  <div class="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
+
+    <!-- Logo -->
+    <div class="cursor-pointer" onclick="window.location.href='index.html'">
+      <img src="./images/Logo.PNG" alt="Ulo Oma" class="h-12 md:h-14" />
+    </div>
+
+    <!-- Desktop Navigation -->
+    <nav class="hidden md:flex gap-10 lg:gap-16 text-[19px] font-semibold text-black">
+      <a href="index.html" class="hover:text-[#20ACB3] transition">Home</a>
+      <a href="index.html#explore-apartments" class="hover:text-[#20ACB3] transition">Explore</a>
+      <a href="index.html#how-it-works" class="hover:text-[#20ACB3] transition">How it works</a>
+      <a href="index.html#about" class="hover:text-[#20ACB3] transition">About Us</a>
+      <a href="index.html#help" class="hover:text-[#20ACB3] transition">Help</a>
+    </nav>
+
+    <!-- Desktop Sign Up -->
+    <div class="hidden md:block">
+      <button onclick="window.location.href='tenant.html'" class="bg-[#20ACB3] text-white rounded-[30px] py-[15px] px-[30px] hover:bg-black transition text-[19px] font-medium cursor-pointer">
+        Sign Up
+      </button>
+    </div>
+
+    <!-- Mobile Toggle Button -->
+    <button id="menu-toggle" class="md:hidden text-4xl text-[#20ACB3] z-50">
+      <i id="hamburger" class="bi bi-list"></i>
+      <i id="close-x" class="bi bi-x-lg hidden"></i>
+    </button>
+  </div>
+
+  <!-- Mobile Full-Screen Menu (Vertical Only) -->
+  <div id="mobile-menu" class="fixed inset-0 bg-white hidden z-40">
+    <div class="flex flex-col items-center justify-center h-full gap-12 text-2xl font-semibold text-black">
+      <a href="index.html" class="hover:text-[#20ACB3] transition">Home</a>
+      <a href="index.html#explore-apartments" class="hover:text-[#20ACB3] transition">Explore</a>
+      <a href="index.html#how-it-works" class="hover:text-[#20ACB3] transition">How it works</a>
+      <a href="index.html#about" class="hover:text-[#20ACB3] transition">About Us</a>
+      <a href="index.html#help" class="hover:text-[#20ACB3] transition">Help</a>
+      <button onclick="window.location.href='tenant.html'" class="bg-[#20ACB3] text-white rounded-[30px] py-4 px-12 hover:bg-black cursor-pointer transition text-xl font-medium">
+        Sign Up
+      </button>
+    </div>
+  </div>
+</header>
+    <br>
+    
+    <!-- Back Arrow-->
+    <div class="px-6 pt-4 text-gray-600 flex items-center gap-3 cursor-pointer " onclick="window.location.href='index.html'">
+      <i class="bi bi-arrow-left-circle-fill cursor-pointer md:text-4xl text-lg"></i> <p class=" font-semibold md:text-2xl text-sm text-black"> Explore 1 Bedroom Apartment</p>
+    </div>
+
+    <section class="max-w-4xl mx-auto mt-6 mb-10 opacity-0 transition-opacity duration-500" id="content">
+    <!-- Main Picture -->
+    <div class="relative mt-5">
+      <div id="mainImg" class="relative bg-gray-200 rounded-3xl overflow-hidden aspect-video bg-cover bg-center md:cursor-default cursor-pointer" onclick="openFullscreen()"></div>
+
+      <!-- The Arrows for the Main Picture -->
+      <button id="prev" class="absolute left-8 top-1/2 -translate-y-1/2 w-10 h-10 bg-black/40 text-white rounded-full flex items-center justify-center text-2xl hover:bg-black/60">
+        <i class="bi bi-chevron-left"></i>
+      </button>
+      <button id="next" class="absolute right-8 top-1/2 -translate-y-1/2 w-10 h-10 bg-black/40 text-white rounded-full flex items-center justify-center text-2xl hover:bg-black/60">
+<i class="bi bi-chevron-right"></i>
+      </button>
+
+      <!-- Video Button -->
+      <button id="video" class="absolute bottom-4 right-8 bg-[#20ACB3] hover:bg-[#000000] text-white px-5 py-4 cursor-pointer rounded-full text-sm font-medium flex items-center gap-2 transition">
+        Play Video <i class="bi bi-camera-video"></i>
+      </button>
+
+      <!-- The Counters -->
+      <div id="count" class="absolute top-6 right-8 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-sm font-medium">
+        1/8
+      </div>
+    </div>
+
+    <!-- 8 Pictures-->
+    <div id="thumbs" class="flex gap-2 px-5 py-4 justify-between overflow-x-auto scrollbar-hide">
+     
+    </div>
+
+    <!-- Title and Price -->
+    <div class="px-6">
+      <h1 class="text-2xl font-bold text-gray-900">1 Bedroom Flat In Aba</h1>
+      <p class="text-gray-500 text-sm mt-1">Aba (Aba North) Aba State.</p>
+      <div class="mt-3 flex items-baseline gap-2">
+        <span class="text-3xl font-bold text-[#20ACB3]">₦570,000</span>
+        <span class="text-gray-500">/ year</span>
+      </div>
+    </div>
+
+    <!-- Tags -->
+    <div class="flex flex-wrap gap-3 px-6 mt-5 bg-gray-300 p-10 rounded-2xl md:justify-around justify-start ">
+      <span class=" text-black px-4 py-2 rounded-full text-sm flex items-center md:items-center gap-2">
+        <div class="w-4 h-4 bg-cyan-100 rounded p-4 flex items-center justify-center"><i class="bi bi-people-fill text-[#20ACB3]"></i></div>Bedroom <br>1
+      </span>
+      <span class=" text-black px-4 py-2 rounded-full text-sm flex items-center gap-2">
+        <div class="w-4 h-4 bg-cyan-100 rounded p-4 flex items-center justify-center"><i class="bi bi-rulers text-[#20ACB3]"></i></div>Size <br>85 sqm
+      </span>
+      <span class=" text-black px-4 py-2 rounded-full text-sm flex items-center gap-2">
+        <div class="w-4 h-4 bg-cyan-100 rounded p-4 flex items-center justify-center"><i class="bi bi-pen-fill text-[#20ACB3]"></i></div>Tenancy <br> Long-Term
+      </span>
+      <span class=" text-black px-4 py-2 rounded-full text-sm flex items-center gap-2">
+        <div class="w-4 h-4 bg-cyan-100 rounded p-4 flex items-center justify-center"><i class="bi bi-clock text-[#20ACB3]"></i></div>Status <br> Furnished
+      </span>
+    </div>
+<hr class="mt-10 md:hidden block">
+    <!-- About -->
+    <div class="px-6 mt-7">
+      <h2 class="text-lg font-semibold">About This Apartment</h2>
+      <p class="mt-3 text-gray-600 text-[15px] leading-relaxed">
+        This cozy 1-bedroom apartment is perfect for anyone seeking comfort and simplicity in a secure environment. The bedroom is spacious and airy, with natural light streaming through well-positioned windows. The living room is stylish yet compact, while the modern kitchen is fitted with cabinets and essential space for easy cooking. With 24/7 water supply, reliable electricity, and secure parking, this apartment offers a stress-free lifestyle for young professionals, students, or individuals who value convenience and peace of mind.
+      </p>
+    </div>
+
+    <!-- Amenities -->
+    <div class="px-6 mt-7">
+      <div class="flex justify-between gap-200">
+      <h2 class="md:text-lg text-sm font-semibold">Amenities This Apartment Offers </h2>
+      <a href="#" class="hidden md:text-[#20ACB3] md:text-sm md:mt-4">See All</a>
+            </div>
+      <div class="gap-6 mt-5 text-center md:flex md:flex-row md:justify-around justify-start flex flex-wrap">
+        <div><div class="w-12 h-12 rounded-xl mx-auto mb-2 flex items-center justify-center "><i class="bi bi-droplet-fill text-[#20ACB3]"></i></div><p class="text-sm text-gray-600">Water</p></div>
+        <div><div class="w-12 h-12 rounded-xl mx-auto mb-2 flex items-center justify-center"><i class="bi bi-shield-shaded text-[#20ACB3]"></i></div><p class="text-sm text-gray-600">Security</p></div>
+        <div><div class="w-12 h-12 rounded-xl mx-auto mb-2 flex items-center justify-center"><i class="bi bi-car-front-fill text-[#20ACB3]"></i></div><p class="text-sm text-gray-600">Parking Lot</p></div>
+        <div><div class="w-12 h-12 rounded-xl mx-auto mb-2 flex items-center justify-center"><i class="bi bi-wifi text-[#20ACB3]"></i></div><p class="text-sm text-gray-600">Free Wi-Fi</p></div>
+        <div><div class="w-12 h-12  rounded-xl mx-auto mb-2 flex items-center justify-center"><i class="bi bi-box2-fill text-[#20ACB3]"></i></div><p class="text-sm text-gray-600">Wardrobe</p></div>
+        <div><div class="w-12 h-12 rounded-xl mx-auto mb-2 flex items-center justify-center"><i class="bi bi-square-half text-[#20ACB3]"></i></div><p class="text-sm text-gray-600">Tiles</p></div>
+        <div><div class="w-12 h-12  rounded-xl mx-auto mb-2 flex items-center justify-center"><i class="bi bi-lightning-charge-fill text-[#20ACB3]"></i></div><p class="text-sm text-gray-600">24/7 Electricity</p></div>
+      </div>
+
+    </div>
+
+    <!-- Reserve Button -->
+    <div class="px-6 mt-10 pb-8">
+      <button onclick="openPaymentModal()" class="w-full bg-[#20ACB3] hover:bg-black cursor-pointer text-white font-semibold text-lg py-5 rounded-2xl transition">
+        Reserve Now (₦2000)
+      </button>
+      <p class="text-center text-gray-400 text-xs mt-3">
+        Reservation helps you secure this apartment easier and faster
+      </p>
+    </div>
+  </div>
+
+  <!-- Fullscreen Image Modal -->
+  <div id="fullscreenModal" class="fixed inset-0 bg-black/95 z-50 hidden flex items-center justify-center">
+    <button id="closeFullscreen" class="absolute top-4 right-4 text-white text-4xl hover:text-gray-300 z-60">
+      <i class="bi bi-x-lg"></i>
+    </button>
+    <img id="fullscreenImg" class="max-w-full max-h-full object-contain">
+  </div>
+
+  <!-- Video Modal -->
+  <div id="modal" class="fixed inset-0 bg-black/90 z-50 hidden flex items-center justify-center">
+    <div class="relative w-11/12 max-w-3xl">
+      <button id="close" class="absolute -top-12 right-0 text-white text-5xl">×</button>
+      <div class="bg-gray-900 aspect-video rounded-2xl flex items-center justify-center text-white text-xl">
+        The Video
+      </div>
+    </div>
+  </div>
+
+  <!-- Payment Choice Modal -->
+  <div id="paymentModal" class="fixed inset-0 bg-black/50 z-50 hidden items-center justify-center">
+    <div class="relative w-11/12 max-w-md">
+      <div class="bg-white rounded-2xl p-6 shadow-lg">
+        <button id="paymentClose" class="absolute -top-4 right-4 text-gray-700 text-3xl">×</button>
+        <h3 class="text-lg font-semibold mb-4">Choose payment method</h3>
+        <div class="flex flex-col gap-3">
+          <button id="cardOption" class="w-full bg-[#20ACB3] text-white py-3 rounded-xl">Pay with Card</button>
+          <button id="bankOption" class="w-full border-2 border-[#20ACB3] text-[#20ACB3] py-3 rounded-xl">Bank Transfer</button>
+        </div>
+        <div id="bankInfo" class="mt-4 hidden bg-gray-50 p-4 rounded">
+          <p class="text-sm text-gray-700">Account Name: ULO OMA</p>
+          <p class="text-sm text-gray-700">Account Number: <span id="acct">1234567890</span></p>
+          <p class="text-sm text-gray-700">Bank: Signature Bank</p>
+          <div class="mt-3 flex gap-2">
+            <button id="copyAcct" class="bg-[#20ACB3] text-white px-3 py-2 rounded">Copy</button>
+            <button id="doneBank" class="border border-gray-300 px-3 py-2 rounded">Done</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <script>
+    // 8 images
+    const images = [
+      "./images/explore.jpg",                 
+      "./images/first.jpg",                    
+      "./images/second.jpg",
+      "./images/third.png",
+      "./images/Hero.png",
+      "./images/Hero2.png",
+      "./images/Hero3.jpg",
+      "./images/explore.jpg"
+    ];
+
+    const main   = document.getElementById('mainImg');
+    const thumbs = document.getElementById('thumbs');
+    const count  = document.getElementById('count');
+    let i = 0;
+
+    function show() {
+      main.style.backgroundImage = `url(${images[i]})`;
+      count.textContent = `${i+1}/8`;
+      document.querySelectorAll('.thumb').forEach((t, idx) => {
+        t.classList.toggle('ring-4', idx===i);
+        t.classList.toggle('ring-cyan-500', idx===i);
+        t.classList.toggle('opacity-60', idx!==i);
+      });
+    }
+
+    // Create 8 thumbnails
+    images.forEach((src, idx) => {
+      const t = document.createElement('div');
+      t.className = `thumb w-20 h-20 rounded-2xl flex-shrink-0 cursor-pointer transition-all bg-cover bg-center ${idx===0 ? 'ring-4 ring-cyan-500' : 'opacity-60'}`;
+      t.style.backgroundImage = `url(${src})`;
+      t.onclick = () => { i = idx; show(); };
+      thumbs.appendChild(t);
+    });
+
+    document.getElementById('prev').onclick = () => { i = i > 0 ? i-1 : 7; show(); };
+    document.getElementById('next').onclick = () => { i = i < 7 ? i+1 : 0; show(); };
+
+    // Video modal
+    document.getElementById('video').onclick = () => document.getElementById('modal').classList.remove('hidden');
+    document.getElementById('close').onclick = () => document.getElementById('modal').classList.add('hidden');
+    document.getElementById('modal').onclick = e => { if(e.target === e.currentTarget) e.currentTarget.classList.add('hidden'); };
+
+    // Touch swipe
+    let startX = 0;
+    main.addEventListener('touchstart', e => startX = e.touches[0].clientX);
+    main.addEventListener('touchend', e => {
+      if (startX - e.changedTouches[0].clientX > 50) document.getElementById('next').click();
+      if (e.changedTouches[0].clientX - startX > 50) document.getElementById('prev').click();
+    });
+
+    show(); // first load
+
+    // Fullscreen image functionality (mobile only)
+    function openFullscreen() {
+      if (window.innerWidth >= 768) return; // Disable on larger screens
+      const currentImage = images[i];
+      document.getElementById('fullscreenImg').src = currentImage;
+      document.getElementById('fullscreenModal').classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeFullscreen() {
+      document.getElementById('fullscreenModal').classList.add('hidden');
+      document.body.style.overflow = 'auto';
+    }
+
+    document.getElementById('closeFullscreen').onclick = closeFullscreen;
+    document.getElementById('fullscreenModal').onclick = (e) => {
+      if (e.target === e.currentTarget) closeFullscreen();
+    };
+  </script>
+
+  <script>
+    // Payment modal handlers
+    function openPaymentModal(){
+      document.getElementById('paymentModal').classList.remove('hidden');
+    }
+    function closePaymentModal(){
+      document.getElementById('paymentModal').classList.add('hidden');
+      // reset bank info view
+      document.getElementById('bankInfo').classList.add('hidden');
+    }
+
+    document.getElementById('paymentClose').onclick = closePaymentModal;
+    document.getElementById('cardOption').onclick = function(){
+      // go to card payment page
+      window.location.href = 'card payment reservation.html';
+    };
+    document.getElementById('bankOption').onclick = function(){
+      // redirect to bank transfer page
+      window.location.href = 'bank_transfer.html';
+    };
+    document.getElementById('doneBank').onclick = closePaymentModal;
+    document.getElementById('copyAcct').onclick = function(){
+      const acct = document.getElementById('acct').textContent;
+      navigator.clipboard?.writeText(acct).then(()=>{
+        alert('Account number copied');
+      }).catch(()=>{ alert('Copy failed'); });
+    };
+    // Close when clicking outside modal content
+    document.getElementById('paymentModal').onclick = function(e){ if(e.target === e.currentTarget) closePaymentModal(); };
+  </script>
+</section>
+</body>
+
+
+</html>
