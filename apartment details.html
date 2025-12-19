@@ -40,10 +40,10 @@
     <!-- Desktop Navigation -->
     <nav class="hidden md:flex gap-10 lg:gap-16 text-[19px] font-semibold text-black">
       <a href="index.html" class="hover:text-[#20ACB3] transition">Home</a>
-      <a href="index.html#explore-apartments" class="hover:text-[#20ACB3] transition">Explore</a>
-      <a href="index.html#how-it-works" class="hover:text-[#20ACB3] transition">How it works</a>
-      <a href="index.html#about" class="hover:text-[#20ACB3] transition">About Us</a>
-      <a href="index.html#help" class="hover:text-[#20ACB3] transition">Help</a>
+      <a href="explore.html" class="hover:text-[#20ACB3] transition">Explore</a>
+      <a href="tenant.html" class="hover:text-[#20ACB3] transition">How it works</a>
+      <a href="about.html" class="hover:text-[#20ACB3] transition">About Us</a>
+      <a href="contact.html" class="hover:text-[#20ACB3] transition">Contact Us</a>
     </nav>
 
     <!-- Desktop Sign Up -->
@@ -64,10 +64,10 @@
   <div id="mobile-menu" class="fixed inset-0 bg-white hidden z-40">
     <div class="flex flex-col items-center justify-center h-full gap-12 text-2xl font-semibold text-black">
       <a href="index.html" class="hover:text-[#20ACB3] transition">Home</a>
-      <a href="index.html#explore-apartments" class="hover:text-[#20ACB3] transition">Explore</a>
-      <a href="index.html#how-it-works" class="hover:text-[#20ACB3] transition">How it works</a>
-      <a href="index.html#about" class="hover:text-[#20ACB3] transition">About Us</a>
-      <a href="index.html#help" class="hover:text-[#20ACB3] transition">Help</a>
+      <a href="explore.html" class="hover:text-[#20ACB3] transition">Explore</a>
+      <a href="tenant.html" class="hover:text-[#20ACB3] transition">How it works</a>
+      <a href="about.html" class="hover:text-[#20ACB3] transition">About Us</a>
+      <a href="contact.html" class="hover:text-[#20ACB3] transition">Contact Us</a>
       <button onclick="window.location.href='tenant.html'" class="bg-[#20ACB3] text-white rounded-[30px] py-4 px-12 hover:bg-black cursor-pointer transition text-xl font-medium">
         Sign Up
       </button>
@@ -77,7 +77,7 @@
     <br>
     
     <!-- Back Arrow-->
-    <div class="px-6 pt-4 text-gray-600 flex items-center gap-3 cursor-pointer " onclick="window.location.href='index.html'">
+    <div class="px-6 pt-4 text-gray-600 flex items-center gap-3 cursor-pointer ml-80 " onclick="window.location.href='index.html'">
       <i class="bi bi-arrow-left-circle-fill cursor-pointer md:text-4xl text-lg"></i> <p class=" font-semibold md:text-2xl text-sm text-black"> Explore 1 Bedroom Apartment</p>
     </div>
 
@@ -112,10 +112,10 @@
 
     <!-- Title and Price -->
     <div class="px-6">
-      <h1 class="text-2xl font-bold text-gray-900">1 Bedroom Flat In Aba</h1>
-      <p class="text-gray-500 text-sm mt-1">Aba (Aba North) Aba State.</p>
+      <h1 id="propertyTitle" class="text-2xl font-bold text-gray-900">1 Bedroom Flat In Aba</h1>
+      <p id="propertyLocation" class="text-gray-500 text-sm mt-1">Aba (Aba North) Aba State.</p>
       <div class="mt-3 flex items-baseline gap-2">
-        <span class="text-3xl font-bold text-[#20ACB3]">₦570,000</span>
+        <span id="propertyPrice" class="text-3xl font-bold text-[#20ACB3]">₦570,000</span>
         <span class="text-gray-500">/ year</span>
       </div>
     </div>
@@ -123,7 +123,7 @@
     <!-- Tags -->
     <div class="flex flex-wrap gap-3 px-6 mt-5 bg-gray-300 p-10 rounded-2xl md:justify-around justify-start ">
       <span class=" text-black px-4 py-2 rounded-full text-sm flex items-center md:items-center gap-2">
-        <div class="w-4 h-4 bg-cyan-100 rounded p-4 flex items-center justify-center"><i class="bi bi-people-fill text-[#20ACB3]"></i></div>Bedroom <br>1
+        <div class="w-4 h-4 bg-cyan-100 rounded p-4 flex items-center justify-center"><i class="bi bi-people-fill text-[#20ACB3]"></i></div>Bedroom <br><span id="propertyRooms">1</span>
       </span>
       <span class=" text-black px-4 py-2 rounded-full text-sm flex items-center gap-2">
         <div class="w-4 h-4 bg-cyan-100 rounded p-4 flex items-center justify-center"><i class="bi bi-rulers text-[#20ACB3]"></i></div>Size <br>85 sqm
@@ -164,12 +164,17 @@
 
     <!-- Reserve Button -->
     <div class="px-6 mt-10 pb-8">
-      <button onclick="openPaymentModal()" class="w-full bg-[#20ACB3] hover:bg-black cursor-pointer text-white font-semibold text-lg py-5 rounded-2xl transition">
-        Reserve Now (₦2000)
+      <button id="reserveButton" class="w-full bg-[#20ACB3] hover:bg-black cursor-pointer text-white font-semibold text-lg py-5 rounded-2xl transition">
+        Reserve Now (₦<span id="reservationFee">2000</span>)
       </button>
       <p class="text-center text-gray-400 text-xs mt-3">
         Reservation helps you secure this apartment easier and faster
       </p>
+      
+      <!-- Explore More Apartments Button -->
+      <button onclick="window.location.href='explore.html'" class="w-full mt-4 border-2 border-[#20ACB3] text-[#20ACB3] hover:bg-[#20ACB3] hover:text-white cursor-pointer font-semibold text-lg py-5 rounded-2xl transition">
+        Explore More Apartments
+      </button>
     </div>
   </div>
 
@@ -192,7 +197,7 @@
   </div>
 
   <!-- Payment Choice Modal -->
-  <div id="paymentModal" class="fixed inset-0 bg-black/50 z-50 hidden items-center justify-center">
+  <div id="paymentModal" class="fixed inset-0 bg-black/50 z-50 hidden flex items-center justify-center">
     <div class="relative w-11/12 max-w-md">
       <div class="bg-white rounded-2xl p-6 shadow-lg">
         <button id="paymentClose" class="absolute -top-4 right-4 text-gray-700 text-3xl">×</button>
@@ -290,37 +295,116 @@
     };
   </script>
 
+  </section>
+  
   <script>
-    // Payment modal handlers
-    function openPaymentModal(){
-      document.getElementById('paymentModal').classList.remove('hidden');
-    }
-    function closePaymentModal(){
-      document.getElementById('paymentModal').classList.add('hidden');
-      // reset bank info view
-      document.getElementById('bankInfo').classList.add('hidden');
-    }
+    document.addEventListener('DOMContentLoaded', function() {
+      // Update property details from URL parameters
+      const urlParams = new URLSearchParams(window.location.search);
+      const property = urlParams.get('property');
+      const price = urlParams.get('price');
+      const title = urlParams.get('title');
+      const location = urlParams.get('location');
+      const rooms = urlParams.get('rooms');
 
-    document.getElementById('paymentClose').onclick = closePaymentModal;
-    document.getElementById('cardOption').onclick = function(){
-      // go to card payment page
-      window.location.href = 'card payment reservation.html';
-    };
-    document.getElementById('bankOption').onclick = function(){
-      // redirect to bank transfer page
-      window.location.href = 'bank_transfer.html';
-    };
-    document.getElementById('doneBank').onclick = closePaymentModal;
-    document.getElementById('copyAcct').onclick = function(){
-      const acct = document.getElementById('acct').textContent;
-      navigator.clipboard?.writeText(acct).then(()=>{
-        alert('Account number copied');
-      }).catch(()=>{ alert('Copy failed'); });
-    };
-    // Close when clicking outside modal content
-    document.getElementById('paymentModal').onclick = function(e){ if(e.target === e.currentTarget) closePaymentModal(); };
+      if (title) document.getElementById('propertyTitle').textContent = title;
+      if (location) document.getElementById('propertyLocation').textContent = location;
+      if (price) {
+        document.getElementById('propertyPrice').textContent = `₦${parseInt(price).toLocaleString()}`;
+        const reservationFee = Math.max(2000, Math.round(parseInt(price) * 0.0035));
+        document.getElementById('reservationFee').textContent = reservationFee.toLocaleString();
+      }
+      if (rooms) document.getElementById('propertyRooms').textContent = rooms;
+
+      // Payment modal handlers
+      function openPaymentModal(){
+        console.log('Opening payment modal');
+        document.getElementById('paymentModal').classList.remove('hidden');
+      }
+      function closePaymentModal(){
+        document.getElementById('paymentModal').classList.add('hidden');
+        // reset bank info view
+        document.getElementById('bankInfo').classList.add('hidden');
+      }
+
+      // Add event listener to reserve button
+      const reserveButton = document.getElementById('reserveButton');
+      if (reserveButton) {
+        reserveButton.addEventListener('click', function() {
+          console.log('Reserve button clicked');
+          openPaymentModal();
+        });
+      }
+
+      const paymentClose = document.getElementById('paymentClose');
+      if (paymentClose) paymentClose.onclick = closePaymentModal;
+      
+      const cardOption = document.getElementById('cardOption');
+      if (cardOption) {
+        cardOption.onclick = function(){
+          // go to card payment page
+          window.location.href = 'card payment reservation.html';
+        };
+      }
+      
+      const bankOption = document.getElementById('bankOption');
+      if (bankOption) {
+        bankOption.onclick = function(){
+          // redirect to bank transfer page
+          window.location.href = 'bank_transfer.html';
+        };
+      }
+      
+      const doneBank = document.getElementById('doneBank');
+      if (doneBank) doneBank.onclick = closePaymentModal;
+      
+      const copyAcct = document.getElementById('copyAcct');
+      if (copyAcct) {
+        copyAcct.onclick = function(){
+          const acct = document.getElementById('acct').textContent;
+          navigator.clipboard?.writeText(acct).then(()=>{
+            alert('Account number copied');
+          }).catch(()=>{ alert('Copy failed'); });
+        };
+      }
+      
+      // Close when clicking outside modal content
+      const paymentModal = document.getElementById('paymentModal');
+      if (paymentModal) {
+        paymentModal.onclick = function(e){ 
+          if(e.target === e.currentTarget) closePaymentModal(); 
+        };
+      }
+    });
   </script>
-</section>
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const hamburger = document.getElementById('hamburger');
+  const closeX = document.getElementById('close-x');
+  const menu = document.getElementById('mobile-menu');
+
+  toggle.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+    if (menu.classList.contains('hidden')) {
+      hamburger.classList.remove('hidden');
+      closeX.classList.add('hidden');
+      document.body.style.overflow = 'auto';
+    } else {
+      hamburger.classList.add('hidden');
+      closeX.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+  });
+
+  menu.addEventListener('click', (e) => {
+    if (e.target === menu) {
+      menu.classList.add('hidden');
+      hamburger.classList.remove('hidden');
+      closeX.classList.add('hidden');
+      document.body.style.overflow = 'auto';
+    }
+  });
+</script>
 </body>
 
 

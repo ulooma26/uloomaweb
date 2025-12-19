@@ -15,13 +15,33 @@
             </div>
             <nav class="hidden md:flex gap-10 lg:gap-16 text-[19px] font-semibold text-black">
                 <a href="index.html" class="hover:text-[#20ACB3] transition">Home</a>
-                <a href="index.html#explore-apartments" class="hover:text-[#20ACB3] transition">Explore</a>
-                <a href="landlord.html" class="hover:text-[#20ACB3] transition">How it works</a>
+                <a href="explore.html" class="hover:text-[#20ACB3] transition">Explore</a>
+                <a href="tenant.html" class="hover:text-[#20ACB3] transition">How it works</a>
                 <a href="about.html" class="hover:text-[#20ACB3] transition">About Us</a>
                 <a href="contact.html" class="text-[#20ACB3]">Contact Us</a>
             </nav>
             <div class="hidden md:block">
                 <button onclick="window.location.href='signup.html'" class="bg-[#20ACB3] text-white rounded-[30px] py-[15px] px-[30px] hover:bg-black transition text-[19px] font-medium cursor-pointer">
+                    Sign Up
+                </button>
+            </div>
+
+            <!-- Mobile Toggle Button -->
+            <button id="menu-toggle" class="md:hidden text-4xl text-[#20ACB3] z-50">
+                <i id="hamburger" class="bi bi-list"></i>
+                <i id="close-x" class="bi bi-x-lg hidden"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Full-Screen Menu -->
+        <div id="mobile-menu" class="fixed inset-0 bg-white hidden z-40">
+            <div class="flex flex-col items-center justify-center h-full gap-12 text-2xl font-semibold text-black">
+                <a href="index.html" class="hover:text-[#20ACB3] transition">Home</a>
+                <a href="explore.html" class="hover:text-[#20ACB3] transition">Explore</a>
+                <a href="tenant.html" class="hover:text-[#20ACB3] transition">How it works</a>
+                <a href="about.html" class="hover:text-[#20ACB3] transition">About Us</a>
+                <a href="contact.html" class="text-[#20ACB3]">Contact Us</a>
+                <button onclick="window.location.href='signup.html'" class="bg-[#20ACB3] text-white rounded-[30px] py-4 px-12 hover:bg-black cursor-pointer transition text-xl font-medium">
                     Sign Up
                 </button>
             </div>
@@ -80,7 +100,7 @@
                             <textarea rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#20ACB3]" placeholder="Tell us how we can help you..." required></textarea>
                         </div>
                         <button type="submit" class="w-full bg-[#20ACB3] text-white font-semibold py-4 rounded-xl hover:bg-black transition">
-                            Send Message
+                            Send Message <i class="bi bi-chevron-right"></i>
                         </button>
                     </form>
                 </div>
@@ -141,5 +161,34 @@
             <p class="text-lg opacity-80">© 2025 Ụlọ Ọma. All Rights Reserved.</p>
         </div>
     </footer>
+
+    <script>
+        const toggle = document.getElementById('menu-toggle');
+        const hamburger = document.getElementById('hamburger');
+        const closeX = document.getElementById('close-x');
+        const menu = document.getElementById('mobile-menu');
+
+        toggle.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+            if (menu.classList.contains('hidden')) {
+                hamburger.classList.remove('hidden');
+                closeX.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            } else {
+                hamburger.classList.add('hidden');
+                closeX.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            }
+        });
+
+        menu.addEventListener('click', (e) => {
+            if (e.target === menu) {
+                menu.classList.add('hidden');
+                hamburger.classList.remove('hidden');
+                closeX.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }
+        });
+    </script>
 </body>
 </html>

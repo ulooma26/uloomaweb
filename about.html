@@ -16,12 +16,32 @@
             <nav class="hidden md:flex gap-10 lg:gap-16 text-[19px] font-semibold text-black">
                 <a href="index.html" class="hover:text-[#20ACB3] transition">Home</a>
                 <a href="explore.html" class="hover:text-[#20ACB3] transition">Explore</a>
-                <a href="how it works.html" class="hover:text-[#20ACB3] transition">How it works</a>
+                <a href="tenant.html" class="hover:text-[#20ACB3] transition">How it works</a>
                 <a href="about.html" class="text-[#20ACB3]">About Us</a>
                 <a href="contact.html" class="hover:text-[#20ACB3] transition">Contact Us</a>
             </nav>
             <div class="hidden md:block">
                 <button onclick="window.location.href='signup.html'" class="bg-[#20ACB3] text-white rounded-[30px] py-[15px] px-[30px] hover:bg-black transition text-[19px] font-medium cursor-pointer">
+                    Sign Up
+                </button>
+            </div>
+
+            <!-- Mobile Toggle Button -->
+            <button id="menu-toggle" class="md:hidden text-4xl text-[#20ACB3] z-50">
+                <i id="hamburger" class="bi bi-list"></i>
+                <i id="close-x" class="bi bi-x-lg hidden"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Full-Screen Menu -->
+        <div id="mobile-menu" class="fixed inset-0 bg-white hidden z-40">
+            <div class="flex flex-col items-center justify-center h-full gap-12 text-2xl font-semibold text-black">
+                <a href="index.html" class="hover:text-[#20ACB3] transition">Home</a>
+                <a href="explore.html" class="hover:text-[#20ACB3] transition">Explore</a>
+                <a href="tenant.html" class="hover:text-[#20ACB3] transition">How it works</a>
+                <a href="about.html" class="text-[#20ACB3]">About Us</a>
+                <a href="contact.html" class="hover:text-[#20ACB3] transition">Contact Us</a>
+                <button onclick="window.location.href='signup.html'" class="bg-[#20ACB3] text-white rounded-[30px] py-4 px-12 hover:bg-black cursor-pointer transition text-xl font-medium">
                     Sign Up
                 </button>
             </div>
@@ -221,10 +241,10 @@
             </p>
             <div class="flex flex-col sm:flex-row gap-6 justify-center">
                 <button onclick="window.location.href='tenant.html'" class="bg-white text-[#20ACB3] font-bold py-4 px-12 rounded-full text-lg hover:bg-gray-100 transition">
-                    Find a Home
+                    Find a Home <i class="bi bi-chevron-right"></i>
                 </button>
                 <button onclick="window.location.href='landlord.html'" class="border-2 border-white text-white font-bold py-4 px-12 rounded-full text-lg hover:bg-white hover:text-[#20ACB3] transition">
-                    List Property
+                    List Property <i class="bi bi-chevron-right"></i>
                 </button>
             </div>
         </div>
@@ -235,5 +255,34 @@
             <p class="text-lg opacity-80">© 2025 Ụlọ Ọma. All Rights Reserved.</p>
         </div>
     </footer>
+
+    <script>
+        const toggle = document.getElementById('menu-toggle');
+        const hamburger = document.getElementById('hamburger');
+        const closeX = document.getElementById('close-x');
+        const menu = document.getElementById('mobile-menu');
+
+        toggle.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+            if (menu.classList.contains('hidden')) {
+                hamburger.classList.remove('hidden');
+                closeX.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            } else {
+                hamburger.classList.add('hidden');
+                closeX.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            }
+        });
+
+        menu.addEventListener('click', (e) => {
+            if (e.target === menu) {
+                menu.classList.add('hidden');
+                hamburger.classList.remove('hidden');
+                closeX.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }
+        });
+    </script>
 </body>
 </html>

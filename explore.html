@@ -16,12 +16,32 @@
             <nav class="hidden md:flex gap-10 lg:gap-16 text-[19px] font-semibold text-black">
                 <a href="index.html" class="hover:text-[#20ACB3] transition">Home</a>
                 <a href="explore.html" class="text-[#20ACB3]">Explore</a>
-                <a href="how it works.html" class="hover:text-[#20ACB3] transition">How it works</a>
+                <a href="tenant.html" class="hover:text-[#20ACB3] transition">How it works</a>
                 <a href="about.html" class="hover:text-[#20ACB3] transition">About Us</a>
                 <a href="contact.html" class="hover:text-[#20ACB3] transition">Contact Us</a>
             </nav>
             <div class="hidden md:block">
                 <button onclick="window.location.href='signup.html'" class="bg-[#20ACB3] text-white rounded-[30px] py-[15px] px-[30px] hover:bg-black transition text-[19px] font-medium cursor-pointer">
+                    Sign Up
+                </button>
+            </div>
+
+            <!-- Mobile Toggle Button -->
+            <button id="menu-toggle" class="md:hidden text-4xl text-[#20ACB3] z-50">
+                <i id="hamburger" class="bi bi-list"></i>
+                <i id="close-x" class="bi bi-x-lg hidden"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Full-Screen Menu -->
+        <div id="mobile-menu" class="fixed inset-0 bg-white hidden z-40">
+            <div class="flex flex-col items-center justify-center h-full gap-12 text-2xl font-semibold text-black">
+                <a href="index.html" class="hover:text-[#20ACB3] transition">Home</a>
+                <a href="explore.html" class="text-[#20ACB3]">Explore</a>
+                <a href="tenant.html" class="hover:text-[#20ACB3] transition">How it works</a>
+                <a href="about.html" class="hover:text-[#20ACB3] transition">About Us</a>
+                <a href="contact.html" class="hover:text-[#20ACB3] transition">Contact Us</a>
+                <button onclick="window.location.href='signup.html'" class="bg-[#20ACB3] text-white rounded-[30px] py-4 px-12 hover:bg-black cursor-pointer transition text-xl font-medium">
                     Sign Up
                 </button>
             </div>
@@ -101,7 +121,7 @@
             <div class="flex justify-between items-center mb-8">
                 <h2 class="text-2xl font-bold text-gray-800">Available Properties</h2>
                 <div class="flex items-center gap-4">
-                    <span class="text-gray-600">Showing 24 of 156 properties</span>
+                    <span class="text-gray-600">Showing 24 of 156 properties <i class="bi bi-chevron-right"></i></span>
                     <select class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#20ACB3] focus:border-transparent">
                         <option>Sort by: Newest</option>
                         <option>Price: Low to High</option>
@@ -149,7 +169,7 @@
                                 <img src="./images/Logo.PNG" alt="Landlord" class="w-8 h-8 rounded-full object-cover">
                                 <span class="text-sm text-gray-600">John Doe</span>
                             </div>
-                            <button onclick="window.location.href='apartment details.html'" class="bg-[#20ACB3] text-white px-4 py-2 rounded-lg hover:bg-[#1e9ea5] transition font-semibold">
+                            <button class="bg-[#20ACB3] text-white px-4 py-2 rounded-lg hover:bg-[#1e9ea5] transition font-semibold">
                                 View Details
                             </button>
                         </div>
@@ -192,7 +212,7 @@
                                 <img src="./images/Logo.PNG" alt="Landlord" class="w-8 h-8 rounded-full object-cover">
                                 <span class="text-sm text-gray-600">Sarah Johnson</span>
                             </div>
-                            <button onclick="window.location.href='apartment details.html'" class="bg-[#20ACB3] text-white px-4 py-2 rounded-lg hover:bg-[#1e9ea5] transition font-semibold">
+                            <button class="bg-[#20ACB3] text-white px-4 py-2 rounded-lg hover:bg-[#1e9ea5] transition font-semibold">
                                 View Details
                             </button>
                         </div>
@@ -235,7 +255,7 @@
                                 <img src="./images/Logo.PNG" alt="Landlord" class="w-8 h-8 rounded-full object-cover">
                                 <span class="text-sm text-gray-600">Mike Chen</span>
                             </div>
-                            <button onclick="window.location.href='apartment details.html'" class="bg-[#20ACB3] text-white px-4 py-2 rounded-lg hover:bg-[#1e9ea5] transition font-semibold">
+                            <button class="bg-[#20ACB3] text-white px-4 py-2 rounded-lg hover:bg-[#1e9ea5] transition font-semibold">
                                 View Details
                             </button>
                         </div>
@@ -278,7 +298,7 @@
                                 <img src="./images/Logo.PNG" alt="Landlord" class="w-8 h-8 rounded-full object-cover">
                                 <span class="text-sm text-gray-600">Ada Okafor</span>
                             </div>
-                            <button onclick="window.location.href='apartment details.html'" class="bg-[#20ACB3] text-white px-4 py-2 rounded-lg hover:bg-[#1e9ea5] transition font-semibold">
+                            <button class="bg-[#20ACB3] text-white px-4 py-2 rounded-lg hover:bg-[#1e9ea5] transition font-semibold">
                                 View Details
                             </button>
                         </div>
@@ -321,7 +341,7 @@
                                 <img src="./images/Logo.PNG" alt="Landlord" class="w-8 h-8 rounded-full object-cover">
                                 <span class="text-sm text-gray-600">Emeka Nwankwo</span>
                             </div>
-                            <button onclick="window.location.href='apartment details.html'" class="bg-[#20ACB3] text-white px-4 py-2 rounded-lg hover:bg-[#1e9ea5] transition font-semibold">
+                            <button class="bg-[#20ACB3] text-white px-4 py-2 rounded-lg hover:bg-[#1e9ea5] transition font-semibold">
                                 View Details
                             </button>
                         </div>
@@ -364,7 +384,7 @@
                                 <img src="./images/Logo.PNG" alt="Landlord" class="w-8 h-8 rounded-full object-cover">
                                 <span class="text-sm text-gray-600">Fatima Bello</span>
                             </div>
-                            <button onclick="window.location.href='apartment details.html'" class="bg-[#20ACB3] text-white px-4 py-2 rounded-lg hover:bg-[#1e9ea5] transition font-semibold">
+                            <button class="bg-[#20ACB3] text-white px-4 py-2 rounded-lg hover:bg-[#1e9ea5] transition font-semibold">
                                 View Details
                             </button>
                         </div>
@@ -435,20 +455,20 @@
                 <div>
                     <h4 class="text-lg font-semibold mb-6">Quick Links</h4>
                     <ul class="space-y-3">
-                        <li><a href="index.html" class="text-gray-300 hover:text-[#20ACB3] transition">Home</a></li>
-                        <li><a href="explore.html" class="text-gray-300 hover:text-[#20ACB3] transition">Explore</a></li>
-                        <li><a href="how it works.html" class="text-gray-300 hover:text-[#20ACB3] transition">How it Works</a></li>
-                        <li><a href="about.html" class="text-gray-300 hover:text-[#20ACB3] transition">About Us</a></li>
+                        <li><a href="index.html" class="text-gray-300 hover:text-[#20ACB3] transition">Home <i class="bi bi-chevron-right"></i></a></li>
+                        <li><a href="explore.html" class="text-gray-300 hover:text-[#20ACB3] transition">Explore <i class="bi bi-chevron-right"></i></a></li>
+                        <li><a href="tenant.html" class="text-gray-300 hover:text-[#20ACB3] transition">How it Works <i class="bi bi-chevron-right"></i></a></li>
+                        <li><a href="about.html" class="text-gray-300 hover:text-[#20ACB3] transition">About Us <i class="bi bi-chevron-right"></i></a></li>
                     </ul>
                 </div>
                 
                 <div>
                     <h4 class="text-lg font-semibold mb-6">Support</h4>
                     <ul class="space-y-3">
-                        <li><a href="contact.html" class="text-gray-300 hover:text-[#20ACB3] transition">Contact Us</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-[#20ACB3] transition">Help Center</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-[#20ACB3] transition">Privacy Policy</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-[#20ACB3] transition">Terms of Service</a></li>
+                        <li><a href="contact.html" class="text-gray-300 hover:text-[#20ACB3] transition">Contact Us <i class="bi bi-chevron-right"></i></a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-[#20ACB3] transition">Help Center <i class="bi bi-chevron-right"></i></a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-[#20ACB3] transition">Privacy Policy <i class="bi bi-chevron-right"></i></a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-[#20ACB3] transition">Terms of Service <i class="bi bi-chevron-right"></i></a></li>
                     </ul>
                 </div>
                 
@@ -586,6 +606,34 @@ sortSelect.onchange = function() {
     container.appendChild(property.element);
   });
 };
+
+// Mobile menu toggle
+const toggle = document.getElementById('menu-toggle');
+const hamburger = document.getElementById('hamburger');
+const closeX = document.getElementById('close-x');
+const menu = document.getElementById('mobile-menu');
+
+toggle.addEventListener('click', () => {
+  menu.classList.toggle('hidden');
+  if (menu.classList.contains('hidden')) {
+    hamburger.classList.remove('hidden');
+    closeX.classList.add('hidden');
+    document.body.style.overflow = 'auto';
+  } else {
+    hamburger.classList.add('hidden');
+    closeX.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+  }
+});
+
+menu.addEventListener('click', (e) => {
+  if (e.target === menu) {
+    menu.classList.add('hidden');
+    hamburger.classList.remove('hidden');
+    closeX.classList.add('hidden');
+    document.body.style.overflow = 'auto';
+  }
+});
 </script>
 </body>
 </html>
