@@ -294,7 +294,7 @@
             </div>
             <hr class="my-5">
             <div class="flex items-center justify-between mt-4">
-              <button onclick="event.stopPropagation(); window.location.href='apartment details.html?property=room-aba&price=570000&title=Room in Aba&location=Aba&rooms=1'" class="bg-[#20ACB3] text-white rounded-[20px] w-[107px] h-[48px] hover:bg-black transition">Rent</button>
+              <button onclick="event.stopPropagation(); handleRentClick('apartment details.html?property=room-aba&price=570000&title=Room in Aba&location=Aba&rooms=1')" class="bg-[#20ACB3] text-white rounded-[20px] w-[107px] h-[48px] hover:bg-black transition">Rent</button>
               <div class="text-right">
                 <p class="text-xl font-semibold">N570,000</p>
                 <p class="text-xs">per year</p>
@@ -315,7 +315,7 @@
             </div>
             <hr class="my-5">
             <div class="flex items-center justify-between mt-4">
-              <button onclick="event.stopPropagation();" class="bg-[#20ACB3] text-white rounded-[20px] w-[107px] h-[48px] hover:bg-black transition">Rent</button>
+              <button onclick="event.stopPropagation(); handleRentClick('apartment details.html')" class="bg-[#20ACB3] text-white rounded-[20px] w-[107px] h-[48px] hover:bg-black transition">Rent</button>
               <div class="text-right">
                 <p class="text-xl font-semibold">N410,000</p>
                 <p class="text-xs">per year</p>
@@ -336,7 +336,7 @@
             </div>
             <hr class="my-5">
             <div class="flex items-center justify-between mt-4">
-              <button onclick="event.stopPropagation();" class="bg-[#20ACB3] text-white rounded-[20px] w-[107px] h-[48px] hover:bg-black transition">Rent</button>
+              <button onclick="event.stopPropagation(); handleRentClick('apartment details.html')" class="bg-[#20ACB3] text-white rounded-[20px] w-[107px] h-[48px] hover:bg-black transition">Rent</button>
               <div class="text-right">
                 <p class="text-xl font-semibold">N550,000</p>
                 <p class="text-xs">per year</p>
@@ -1062,6 +1062,14 @@
   chatInput.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') sendMessage();
   });
+
+  // Handle rent button clicks - redirect through signup and login
+  function handleRentClick(apartmentUrl) {
+    // Store the apartment URL in sessionStorage
+    sessionStorage.setItem('targetApartment', apartmentUrl);
+    // Redirect to signup first
+    window.location.href = 'signup.html';
+  }
 </script>
 
 

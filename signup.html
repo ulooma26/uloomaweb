@@ -361,8 +361,17 @@
             const email = this.querySelector('input[type="email"]').value;
             
             if (email) {
-                document.getElementById('screen3').classList.add('hidden');
-                document.getElementById('listPropertyModal').classList.remove('hidden');
+                // Check if there's a stored apartment URL from rent button click
+                const targetApartment = sessionStorage.getItem('targetApartment');
+                if (targetApartment) {
+                    // Clear the stored URL and redirect to apartment details
+                    sessionStorage.removeItem('targetApartment');
+                    window.location.href = targetApartment;
+                } else {
+                    // Normal signup flow - show list property modal
+                    document.getElementById('screen3').classList.add('hidden');
+                    document.getElementById('listPropertyModal').classList.remove('hidden');
+                }
             }
         });
 
