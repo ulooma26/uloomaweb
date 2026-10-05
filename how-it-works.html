@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="How Ụlọ Ọma works for Tenants and Landlords" />
+  <title>How it Works — Ụlọ Ọma</title>
+  <link rel="stylesheet" href="src/output.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
+</head>
+
+<body class="font-sans">
+  <header class="sticky top-0 bg-white z-50">
+    <div class="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
+      <div class="cursor-pointer" onclick="window.location.href='index.html'">
+        <img src="./images/Logo.PNG" alt="Ụlọ Ọma" class="h-12 md:h-14" />
+      </div>
+      <nav class="hidden md:flex gap-10 lg:gap-16 text-[19px] font-semibold text-black">
+        <a href="index.html" class="hover:text-[#20ACB3] transition">Home</a>
+        <a href="explore.html" class="hover:text-[#20ACB3] transition">Explore</a>
+        <a href="how-it-works.html" class="text-[#20ACB3]">How it works</a>
+        <a href="about.html" class="hover:text-[#20ACB3] transition">About Us</a>
+        <a href="contact.html" class="hover:text-[#20ACB3] transition">Contact Us</a>
+      </nav>
+      <div class="hidden md:block">
+        <button onclick="window.location.href='signup.html'" class="bg-[#20ACB3] text-white rounded-[30px] py-[15px] px-[30px] hover:bg-black transition text-[19px] font-medium cursor-pointer">
+          Sign Up
+        </button>
+      </div>
+      <button id="menu-toggle" class="md:hidden text-4xl text-[#20ACB3] z-50">
+        <i id="hamburger" class="bi bi-list"></i>
+        <i id="close-x" class="bi bi-x-lg hidden"></i>
+      </button>
+    </div>
+    <div id="mobile-menu" class="fixed inset-0 bg-white hidden z-40">
+      <div class="flex flex-col items-center justify-center h-full gap-12 text-2xl font-semibold text-black">
+        <a href="index.html" class="hover:text-[#20ACB3] transition">Home</a>
+        <a href="explore.html" class="hover:text-[#20ACB3] transition">Explore</a>
+        <a href="how-it-works.html" class="text-[#20ACB3]">How it works</a>
+        <a href="about.html" class="hover:text-[#20ACB3] transition">About Us</a>
+        <a href="contact.html" class="hover:text-[#20ACB3] transition">Contact Us</a>
+        <button onclick="window.location.href='signup.html'" class="bg-[#20ACB3] text-white rounded-[30px] py-4 px-12 hover:bg-black cursor-pointer transition text-xl font-medium">
+          Sign Up
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="relative w-10/12 h-8/12 overflow-hidden p-4 mt-4 mx-auto focus:outline-none shadow-lg rounded-4xl bg-[#0F3B3D]">
+    <section class="relative z-10 flex flex-col items-center justify-center h-80 text-center px-4 mt-5">
+      <h1 class="text-4xl font-bold mb-4 mt-8 text-white">How It Works</h1>
+      <p class="font-bold mb-6 text-gray-200 text-lg">Looking For A place? Or Renting One Out? Here's How We Bring Landlords & Tenants Together</p>
+    </section>
+    <section class="flex justify-center items-center font-bold mb-8">
+      <div class="relative border border-white rounded-[30px] p-2 flex">
+        <button id="tab-tenant" onclick="switchTab('tenant')" class="text-white bg-[#20ACB3] p-2 px-6 rounded-[20px] cursor-pointer transition-all">For Tenants</button>
+        <button id="tab-landlord" onclick="switchTab('landlord')" class="text-white p-2 px-6 cursor-pointer transition-all rounded-[20px]">For Landlords</button>
+      </div>
+    </section>
+  </main>
+
+  <section id="content-tenant" class="py-10 my-14 max-w-7xl mx-auto">
+    <!-- Tenants Content -->
+    <section class="flex flex-wrap gap-8 justify-around items-center px-8 py-12 mb-16">
+      <div class="px-6 w-full md:w-5/12">
+        <h1 class="text-2xl font-bold mb-4 text-[#0F3B3D]">Search and Access</h1>
+        <p class="text-[#5C6F70] text-lg">Browse verified listings across your location. Use filters to find the right fit. Pay a small ₦2,000 access fee to unlock all property details and landlord direct contacts.</p>
+      </div>
+      <div class="w-full md:w-5/12 px-6 flex justify-center">
+        <img class="w-full max-w-md rounded-4xl shadow-lg" src="images/searchandreserve.png" alt="Search">
+      </div>
+    </section>
+
+    <section class="flex flex-wrap flex-row-reverse gap-8 justify-around items-center px-8 py-12 mb-16">
+      <div class="px-6 w-full md:w-5/12">
+        <h1 class="text-2xl font-bold mb-4 text-[#0F3B3D]">Free Inspection & Transport</h1>
+        <p class="text-[#5C6F70] text-lg">Get picked up by our agent for a scheduled house tour. No hidden fees, no pressure just real homes, real-time.</p>
+      </div>
+      <div class="w-full md:w-5/12 px-6 flex justify-center">
+        <img class="w-full max-w-md rounded-4xl shadow-lg" src="images/freeinspection.png" alt="Inspection">
+      </div>
+    </section>
+
+    <section class="flex flex-wrap gap-8 justify-around items-center px-8 py-12">
+      <div class="px-6 w-full md:w-5/12">
+        <h1 class="text-2xl font-bold mb-4 text-[#0F3B3D]">Secure Your New Home & Get Rewarded</h1>
+        <p class="text-[#5C6F70] text-lg mb-4">If what you see fits your preference, pay the landlord directly.</p>
+        <p class="text-[#5C6F70] text-lg mb-4">We'll handle free moving logistics within Aba or get a 50% discount if you're moving in from outside.</p>
+        <p class="text-[#20ACB3] font-bold text-lg">Plus, get a ₦20,000 cash reward when you successfully rent through Ụlọ Ọma!</p>
+      </div>
+      <div class="w-full md:w-5/12 px-6 flex justify-center">
+        <img class="w-full max-w-md rounded-4xl shadow-lg" src="images/secure.png" alt="Secure">
+      </div>
+    </section>
+  </section>
+
+  <section id="content-landlord" class="py-10 my-14 max-w-7xl mx-auto hidden">
+    <!-- Landlords Content -->
+    <section class="flex flex-wrap gap-5 justify-around items-center px-8 py-12 mb-16">
+      <div class="px-6 w-full md:w-5/12">
+        <h1 class="text-2xl font-bold mb-4 text-[#0F3B3D]">Get Verified and List</h1>
+        <p class="text-[#5C6F70] text-lg">Apply to list your property. We verify landlords for authenticity and send our team to take clean, professional photos.</p>
+      </div>
+      <div class="w-full md:w-5/12 px-6 flex justify-center">
+        <img class="w-full max-w-md rounded-4xl shadow-lg" src="images/getverified.png" alt="Get Verified">
+      </div>
+    </section>
+
+    <section class="flex flex-wrap flex-row-reverse gap-5 justify-around items-center px-8 py-12 mb-16">
+      <div class="px-6 w-full md:w-5/12">
+        <h1 class="text-2xl font-bold mb-4 text-[#0F3B3D]">We Handle The Viewings</h1>
+        <p class="text-[#5C6F70] text-lg">We schedule viewings with interested renters and send agents to handle all inspections. No stress for you.</p>
+      </div>
+      <div class="w-full md:w-5/12 px-6 flex justify-center">
+        <img class="w-full max-w-md rounded-4xl shadow-lg" src="images/wehandle.png" alt="Viewings">
+      </div>
+    </section>
+
+    <section class="flex flex-wrap gap-5 justify-around items-center px-8 py-12">
+      <div class="px-6 w-full md:w-5/12">
+        <h1 class="text-2xl font-bold mb-4 text-[#0F3B3D]">Get Paid Seamlessly</h1>
+        <p class="text-[#5C6F70] text-lg">Once a tenant confirms, payment is made directly to you. We keep things transparent, simple and fast.</p>
+      </div>
+      <div class="w-full md:w-5/12 px-6 flex justify-center">
+        <img class="w-full max-w-md rounded-4xl shadow-lg" src="images/getpaid.png" alt="Get Paid">
+      </div>
+    </section>
+  </section>
+
+  <footer class="bg-[#0F3B3D] text-white pt-20 pb-16 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div>
+          <img src="./images/Logo.PNG" alt="Ụlọ Ọma" class="h-12 mb-6" />
+          <p class="text-gray-300 mb-6">Connecting tenants directly with verified landlords across Nigeria.</p>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold mb-6">Quick Links</h4>
+          <ul class="space-y-3">
+            <li><a href="index.html" class="text-gray-300 hover:text-[#20ACB3] transition">Home</a></li>
+            <li><a href="explore.html" class="text-gray-300 hover:text-[#20ACB3] transition">Explore</a></li>
+            <li><a href="how-it-works.html" class="text-gray-300 hover:text-[#20ACB3] transition">How it Works</a></li>
+            <li><a href="about.html" class="text-gray-300 hover:text-[#20ACB3] transition">About Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold mb-6">Support</h4>
+          <ul class="space-y-3">
+            <li><a href="contact.html" class="text-gray-300 hover:text-[#20ACB3] transition">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-gray-700 mt-12 pt-8 text-center text-gray-300">
+        <p>&copy; 2025 Ụlọ Ọma. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function switchTab(tab) {
+      document.getElementById('content-tenant').classList.add('hidden');
+      document.getElementById('content-landlord').classList.add('hidden');
+      
+      document.getElementById('tab-tenant').classList.remove('bg-[#20ACB3]');
+      document.getElementById('tab-landlord').classList.remove('bg-[#20ACB3]');
+      
+      document.getElementById(`content-${tab}`).classList.remove('hidden');
+      document.getElementById(`tab-${tab}`).classList.add('bg-[#20ACB3]');
+    }
+
+    const toggle = document.getElementById('menu-toggle');
+    const hamburger = document.getElementById('hamburger');
+    const closeX = document.getElementById('close-x');
+    const menu = document.getElementById('mobile-menu');
+
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+      if (menu.classList.contains('hidden')) {
+        hamburger.classList.remove('hidden');
+        closeX.classList.add('hidden');
+        document.body.style.overflow = 'auto';
+      } else {
+        hamburger.classList.add('hidden');
+        closeX.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      }
+    });
+  </script>
+</body>
+</html>

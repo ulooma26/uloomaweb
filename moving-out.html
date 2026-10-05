@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Moving Out? Earn ₦20,000 — Ụlọ Ọma</title>
+  <link rel="stylesheet" href="./src/output.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
+  <link rel="icon" href="./images/image.png" type="image/png" />
+</head>
+<body class="bg-gray-50 font-sans text-[#5C6F70]">
+  <!-- Header -->
+  <header class="sticky top-0 bg-white z-50 shadow-sm">
+    <div class="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
+      <div class="cursor-pointer" onclick="window.location.href='index.html'">
+        <img src="./images/Logo.PNG" alt="Ụlọ Ọma" class="h-12 md:h-14" />
+      </div>
+      <nav class="hidden md:flex gap-10 lg:gap-16 text-[19px] font-semibold text-black">
+        <a href="index.html" class="hover:text-[#20ACB3] transition">Home</a>
+        <a href="explore.html" class="hover:text-[#20ACB3] transition">Explore</a>
+        <a href="how-it-works.html" class="hover:text-[#20ACB3] transition">How it works</a>
+        <a href="about.html" class="hover:text-[#20ACB3] transition">About Us</a>
+        <a href="contact.html" class="hover:text-[#20ACB3] transition">Contact Us</a>
+      </nav>
+      <div class="hidden md:block">
+        <button onclick="window.location.href='signup.html'" class="bg-[#20ACB3] text-white rounded-[30px] py-[15px] px-[30px] hover:bg-black transition text-[19px] font-medium cursor-pointer">Sign Up</button>
+      </div>
+      <button id="menu-toggle" class="md:hidden text-4xl text-[#20ACB3] z-50">
+        <i id="hamburger" class="bi bi-list"></i>
+        <i id="close-x" class="bi bi-x-lg hidden"></i>
+      </button>
+    </div>
+    <div id="mobile-menu" class="fixed inset-0 bg-white hidden z-40">
+      <div class="flex flex-col items-center justify-center h-full gap-12 text-2xl font-semibold text-black">
+        <a href="index.html" class="hover:text-[#20ACB3] transition">Home</a>
+        <a href="explore.html" class="hover:text-[#20ACB3] transition">Explore</a>
+        <a href="how-it-works.html" class="hover:text-[#20ACB3] transition">How it works</a>
+        <a href="about.html" class="hover:text-[#20ACB3] transition">About Us</a>
+        <a href="contact.html" class="hover:text-[#20ACB3] transition">Contact Us</a>
+        <button onclick="window.location.href='signup.html'" class="bg-[#20ACB3] text-white rounded-[30px] py-4 px-12 hover:bg-black cursor-pointer transition text-xl font-medium">Sign Up</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="content" class="opacity-0 transition-opacity duration-500 ease-in-out">
+    
+    <!-- Hero Section -->
+    <section class="bg-[#0F3B3D] text-white py-20 px-6">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="text-4xl md:text-6xl font-bold mb-6">Moving out? Earn <span class="text-[#82E4E9]">₦20,000.</span></h1>
+        <p class="text-lg md:text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
+          List your current apartment. When a new tenant moves in through Ụlọ Ọma, you earn ₦20,000. It's that simple.
+        </p>
+        <button onclick="document.getElementById('listing-form-section').scrollIntoView({behavior: 'smooth'})" class="bg-[#20ACB3] text-white rounded-[30px] py-[15px] px-[40px] hover:bg-black transition text-lg font-medium cursor-pointer inline-flex items-center gap-2">
+          List Your Apartment <i class="bi bi-arrow-down"></i>
+        </button>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="py-20 px-6 bg-white">
+      <div class="max-w-7xl mx-auto">
+        <h2 class="text-3xl font-bold text-center text-[#0F3B3D] mb-16">How it works</h2>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
+          <!-- Connector line -->
+          <div class="hidden md:block absolute top-8 left-1/8 right-1/8 h-0.5 bg-gray-200"></div>
+          
+          <!-- Step 1 -->
+          <div class="relative z-10 flex flex-col items-center text-center">
+            <div class="w-16 h-16 rounded-full bg-[#20ACB3] text-white flex items-center justify-center text-2xl font-bold mb-4 shadow-lg">1</div>
+            <h3 class="text-lg font-bold text-black mb-2">List details</h3>
+            <p class="text-sm">Provide photos and details of the apartment you're leaving.</p>
+          </div>
+          <!-- Step 2 -->
+          <div class="relative z-10 flex flex-col items-center text-center">
+            <div class="w-16 h-16 rounded-full bg-white border-4 border-[#20ACB3] text-[#20ACB3] flex items-center justify-center text-2xl font-bold mb-4 shadow-lg">2</div>
+            <h3 class="text-lg font-bold text-black mb-2">We verify</h3>
+            <p class="text-sm">We review your listing and publish it to thousands of renters.</p>
+          </div>
+          <!-- Step 3 -->
+          <div class="relative z-10 flex flex-col items-center text-center">
+            <div class="w-16 h-16 rounded-full bg-white border-4 border-[#20ACB3] text-[#20ACB3] flex items-center justify-center text-2xl font-bold mb-4 shadow-lg">3</div>
+            <h3 class="text-lg font-bold text-black mb-2">Tenant moves in</h3>
+            <p class="text-sm">A new tenant finds and moves into the apartment.</p>
+          </div>
+          <!-- Step 4 -->
+          <div class="relative z-10 flex flex-col items-center text-center">
+            <div class="w-16 h-16 rounded-full bg-[#0F3B3D] text-[#82E4E9] flex items-center justify-center text-2xl font-bold mb-4 shadow-lg"><i class="bi bi-cash-stack"></i></div>
+            <h3 class="text-lg font-bold text-black mb-2">You get paid</h3>
+            <p class="text-sm">You receive ₦20,000 directly to your bank account!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Form Section -->
+    <section id="listing-form-section" class="py-20 px-6">
+      <div class="max-w-3xl mx-auto bg-white shadow-lg p-8 md:p-12 rounded-4xl border border-gray-100">
+        <h2 class="text-3xl font-bold text-[#0F3B3D] mb-8">List Your Apartment</h2>
+        
+        <form id="apartment-form" class="space-y-6" onsubmit="submitForm(event)">
+          
+          <div>
+            <label class="block text-sm font-bold text-black mb-2">Property Address</label>
+            <input type="text" required placeholder="Full street address and area" class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:border-[#20ACB3]" />
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label class="block text-sm font-bold text-black mb-2">Property Type</label>
+              <select required class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:border-[#20ACB3] bg-white">
+                <option value="">Select type</option>
+                <option value="apartment">Apartment</option>
+                <option value="house">House</option>
+                <option value="studio">Studio</option>
+                <option value="duplex">Duplex</option>
+                <option value="room">Room</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-sm font-bold text-black mb-2">Current Rent (₦/year)</label>
+              <input type="number" required placeholder="e.g. 1500000" class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:border-[#20ACB3]" />
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+            <div>
+              <label class="block text-sm font-bold text-black mb-2">Bedrooms</label>
+              <input type="number" min="0" required class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:border-[#20ACB3]" />
+            </div>
+            <div>
+              <label class="block text-sm font-bold text-black mb-2">Bathrooms</label>
+              <input type="number" min="0" required class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:border-[#20ACB3]" />
+            </div>
+            <div class="col-span-2 md:col-span-1">
+              <label class="block text-sm font-bold text-black mb-2">Available Date</label>
+              <input type="date" required class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:border-[#20ACB3]" />
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-sm font-bold text-black mb-2">Features & Amenities</label>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+              <label class="flex items-center gap-2"><input type="checkbox" class="accent-[#20ACB3] w-4 h-4" /> Electricity</label>
+              <label class="flex items-center gap-2"><input type="checkbox" class="accent-[#20ACB3] w-4 h-4" /> Water</label>
+              <label class="flex items-center gap-2"><input type="checkbox" class="accent-[#20ACB3] w-4 h-4" /> Parking</label>
+              <label class="flex items-center gap-2"><input type="checkbox" class="accent-[#20ACB3] w-4 h-4" /> Security</label>
+              <label class="flex items-center gap-2"><input type="checkbox" class="accent-[#20ACB3] w-4 h-4" /> Furnished</label>
+              <label class="flex items-center gap-2"><input type="checkbox" class="accent-[#20ACB3] w-4 h-4" /> Gated Estate</label>
+              <label class="flex items-center gap-2"><input type="checkbox" class="accent-[#20ACB3] w-4 h-4" /> Internet</label>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-sm font-bold text-black mb-2">Photos (Up to 10)</label>
+            <div class="border-2 border-dashed border-gray-300 rounded-xl p-8 text-center hover:bg-gray-50 transition cursor-pointer">
+              <i class="bi bi-camera text-4xl text-gray-400"></i>
+              <p class="mt-2 text-sm text-gray-500">Click to upload photos or drag and drop</p>
+              <input type="file" multiple accept="image/*" class="hidden" />
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label class="block text-sm font-bold text-black mb-2">Landlord Name (Optional)</label>
+              <input type="text" placeholder="For verification purposes" class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:border-[#20ACB3]" />
+            </div>
+            <div>
+              <label class="block text-sm font-bold text-black mb-2">Landlord Phone (Optional)</label>
+              <input type="tel" class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:border-[#20ACB3]" />
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-sm font-bold text-black mb-2">Description</label>
+            <textarea rows="4" required placeholder="Describe the apartment and neighborhood..." class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:border-[#20ACB3]"></textarea>
+          </div>
+
+          <div class="bg-blue-50 p-4 rounded-xl border border-blue-100">
+            <label class="flex items-start gap-3 cursor-pointer">
+              <input type="checkbox" required class="accent-[#20ACB3] w-5 h-5 mt-0.5" />
+              <span class="text-sm font-medium text-black">I confirm that I currently live here or have permission to list this property. I understand that false listings will result in a ban.</span>
+            </label>
+          </div>
+
+          <button id="submit-btn" type="submit" class="w-full bg-[#20ACB3] text-white rounded-[30px] py-[15px] px-[30px] hover:bg-black transition text-lg font-medium cursor-pointer">
+            Submit Listing
+          </button>
+          
+          <div id="success-msg" class="hidden bg-green-100 text-green-800 p-4 rounded-xl text-center font-medium">
+            Listing submitted successfully! We will review it shortly.
+          </div>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-[#0F3B3D] text-white pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="bg-[#196366] rounded-3xl p-8 md:p-12 mb-16 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
+        <div>
+          <h2 class="text-2xl md:text-3xl font-bold mb-2">Ready to find your next home?</h2>
+          <p class="text-[#82E4E9]">Join thousands of Nigerians using Ụlọ Ọma.</p>
+        </div>
+        <button onclick="window.location.href='explore.html'" class="bg-[#20ACB3] text-white rounded-[30px] py-[15px] px-[30px] hover:bg-black transition text-lg font-medium whitespace-nowrap">Explore Properties</button>
+      </div>
+      <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-400">
+        <p>&copy; 2024 Ụlọ Ọma. All rights reserved.</p>
+        <div class="flex gap-4">
+          <a href="#" class="hover:text-[#82E4E9] transition">Privacy Policy</a>
+          <a href="#" class="hover:text-[#82E4E9] transition">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile Menu Toggle
+    const toggle = document.getElementById('menu-toggle');
+    const hamburger = document.getElementById('hamburger');
+    const closeX = document.getElementById('close-x');
+    const menu = document.getElementById('mobile-menu');
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+      if (menu.classList.contains('hidden')) {
+        hamburger.classList.remove('hidden');
+        closeX.classList.add('hidden');
+        document.body.style.overflow = 'auto';
+      } else {
+        hamburger.classList.add('hidden');
+        closeX.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      }
+    });
+    menu.addEventListener('click', (e) => {
+      if (e.target === menu) {
+        menu.classList.add('hidden');
+        hamburger.classList.remove('hidden');
+        closeX.classList.add('hidden');
+        document.body.style.overflow = 'auto';
+      }
+    });
+
+    // Page Fade In
+    document.addEventListener('DOMContentLoaded', () => {
+      const content = document.getElementById('content');
+      if (content) { content.classList.remove('opacity-0'); content.classList.add('opacity-100'); }
+    });
+
+    // Form Submission Simulation
+    function submitForm(e) {
+      e.preventDefault();
+      const btn = document.getElementById('submit-btn');
+      const msg = document.getElementById('success-msg');
+      
+      btn.innerHTML = '<i class="bi bi-arrow-repeat animate-spin inline-block"></i> Submitting...';
+      btn.classList.add('opacity-75', 'cursor-not-allowed');
+      btn.disabled = true;
+      
+      setTimeout(() => {
+        btn.classList.add('hidden');
+        msg.classList.remove('hidden');
+      }, 1500);
+    }
+  </script>
+</body>
+</html>

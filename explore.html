@@ -16,7 +16,7 @@
             <nav class="hidden md:flex gap-10 lg:gap-16 text-[19px] font-semibold text-black">
                 <a href="index.html" class="hover:text-[#20ACB3] transition">Home</a>
                 <a href="explore.html" class="text-[#20ACB3]">Explore</a>
-                <a href="tenant.html" class="hover:text-[#20ACB3] transition">How it works</a>
+                <a href="how-it-works.html" class="hover:text-[#20ACB3] transition">How it works</a>
                 <a href="about.html" class="hover:text-[#20ACB3] transition">About Us</a>
                 <a href="contact.html" class="hover:text-[#20ACB3] transition">Contact Us</a>
             </nav>
@@ -38,7 +38,7 @@
             <div class="flex flex-col items-center justify-center h-full gap-12 text-2xl font-semibold text-black">
                 <a href="index.html" class="hover:text-[#20ACB3] transition">Home</a>
                 <a href="explore.html" class="text-[#20ACB3]">Explore</a>
-                <a href="tenant.html" class="hover:text-[#20ACB3] transition">How it works</a>
+                <a href="how-it-works.html" class="hover:text-[#20ACB3] transition">How it works</a>
                 <a href="about.html" class="hover:text-[#20ACB3] transition">About Us</a>
                 <a href="contact.html" class="hover:text-[#20ACB3] transition">Contact Us</a>
                 <button onclick="window.location.href='signup.html'" class="bg-[#20ACB3] text-white rounded-[30px] py-4 px-12 hover:bg-black cursor-pointer transition text-xl font-medium">
@@ -131,6 +131,25 @@
                 </div>
             </div>
 
+            <!-- Access Entitlement Status Banner (Section 5) -->
+            <div id="exploreEntitlement" class="mb-8 p-5 bg-teal-50 border border-teal-200 rounded-3xl flex flex-col md:flex-row justify-between items-center gap-4">
+                <div class="flex items-center gap-3">
+                    <i class="bi bi-shield-check text-3xl text-[#20ACB3]"></i>
+                    <div>
+                        <p class="font-bold text-[#0F3B3D]">Verified Properties Access: <span id="exploreRemainingText" class="text-[#20ACB3]">Properties remaining: 3</span></p>
+                        <p class="text-xs text-gray-600">Your ₦2,000 Explorer Access pass lets you reserve 3 verified apartments with accompanied inspection transport.</p>
+                    </div>
+                </div>
+                <div class="flex gap-2">
+                    <button onclick="window.location.href='card-payment.html'" class="px-5 py-2.5 bg-[#20ACB3] text-white rounded-full text-xs font-semibold hover:bg-black transition cursor-pointer">
+                        Refresh Access (₦2,000)
+                    </button>
+                    <button onclick="window.location.href='tenant-dashboard.html'" class="px-5 py-2.5 border border-[#20ACB3] text-[#20ACB3] rounded-full text-xs font-semibold hover:bg-teal-50 transition cursor-pointer">
+                        My Dashboard
+                    </button>
+                </div>
+            </div>
+
             <!-- Property Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Property Card 1 -->
@@ -169,7 +188,7 @@
                                 <img src="./images/Logo.PNG" alt="Landlord" class="w-8 h-8 rounded-full object-cover">
                                 <span class="text-sm text-gray-600">John Doe</span>
                             </div>
-                            <button class="bg-[#20ACB3] text-white px-4 py-2 rounded-lg hover:bg-[#1e9ea5] transition font-semibold">
+                            <button onclick="window.location.href='property-details.html?property=modern-2br&price=150000&title=Modern%202BR%20Apartment&location=Aba,%20Abia%20State&rooms=2'" class="bg-[#20ACB3] text-white px-4 py-2 rounded-lg hover:bg-black transition font-semibold cursor-pointer">
                                 View Details
                             </button>
                         </div>
@@ -212,7 +231,7 @@
                                 <img src="./images/Logo.PNG" alt="Landlord" class="w-8 h-8 rounded-full object-cover">
                                 <span class="text-sm text-gray-600">Sarah Johnson</span>
                             </div>
-                            <button class="bg-[#20ACB3] text-white px-4 py-2 rounded-lg hover:bg-[#1e9ea5] transition font-semibold">
+                            <button onclick="window.location.href='property-details.html?property=luxury-4br&price=450000&title=Luxury%204BR%20House&location=Umuahia,%20Abia%20State&rooms=4'" class="bg-[#20ACB3] text-white px-4 py-2 rounded-lg hover:bg-black transition font-semibold cursor-pointer">
                                 View Details
                             </button>
                         </div>
@@ -255,7 +274,7 @@
                                 <img src="./images/Logo.PNG" alt="Landlord" class="w-8 h-8 rounded-full object-cover">
                                 <span class="text-sm text-gray-600">Mike Chen</span>
                             </div>
-                            <button class="bg-[#20ACB3] text-white px-4 py-2 rounded-lg hover:bg-[#1e9ea5] transition font-semibold">
+                            <button onclick="window.location.href='property-details.html?property=cozy-studio&price=85000&title=Cozy%20Studio%20Apartment&location=Arochukwu,%20Abia%20State&rooms=1'" class="bg-[#20ACB3] text-white px-4 py-2 rounded-lg hover:bg-black transition font-semibold cursor-pointer">
                                 View Details
                             </button>
                         </div>
@@ -298,7 +317,7 @@
                                 <img src="./images/Logo.PNG" alt="Landlord" class="w-8 h-8 rounded-full object-cover">
                                 <span class="text-sm text-gray-600">Ada Okafor</span>
                             </div>
-                            <button class="bg-[#20ACB3] text-white px-4 py-2 rounded-lg hover:bg-[#1e9ea5] transition font-semibold">
+                            <button onclick="window.location.href='property-details.html?property=family-3br&price=280000&title=Family%203BR%20House&location=Ohafia,%20Abia%20State&rooms=3'" class="bg-[#20ACB3] text-white px-4 py-2 rounded-lg hover:bg-black transition font-semibold cursor-pointer">
                                 View Details
                             </button>
                         </div>
@@ -341,7 +360,7 @@
                                 <img src="./images/Logo.PNG" alt="Landlord" class="w-8 h-8 rounded-full object-cover">
                                 <span class="text-sm text-gray-600">Emeka Nwankwo</span>
                             </div>
-                            <button class="bg-[#20ACB3] text-white px-4 py-2 rounded-lg hover:bg-[#1e9ea5] transition font-semibold">
+                            <button onclick="window.location.href='property-details.html?property=executive-duplex&price=650000&title=Executive%20Duplex&location=Bende,%20Abia%20State&rooms=5'" class="bg-[#20ACB3] text-white px-4 py-2 rounded-lg hover:bg-black transition font-semibold cursor-pointer">
                                 View Details
                             </button>
                         </div>
@@ -384,7 +403,7 @@
                                 <img src="./images/Logo.PNG" alt="Landlord" class="w-8 h-8 rounded-full object-cover">
                                 <span class="text-sm text-gray-600">Fatima Bello</span>
                             </div>
-                            <button class="bg-[#20ACB3] text-white px-4 py-2 rounded-lg hover:bg-[#1e9ea5] transition font-semibold">
+                            <button onclick="window.location.href='property-details.html?property=affordable-1br&price=95000&title=Affordable%201BR%20Flat&location=Ikwuano,%20Abia%20State&rooms=1'" class="bg-[#20ACB3] text-white px-4 py-2 rounded-lg hover:bg-black transition font-semibold cursor-pointer">
                                 View Details
                             </button>
                         </div>
@@ -457,7 +476,7 @@
                     <ul class="space-y-3">
                         <li><a href="index.html" class="text-gray-300 hover:text-[#20ACB3] transition">Home <i class="bi bi-chevron-right"></i></a></li>
                         <li><a href="explore.html" class="text-gray-300 hover:text-[#20ACB3] transition">Explore <i class="bi bi-chevron-right"></i></a></li>
-                        <li><a href="tenant.html" class="text-gray-300 hover:text-[#20ACB3] transition">How it Works <i class="bi bi-chevron-right"></i></a></li>
+                        <li><a href="how-it-works.html" class="text-gray-300 hover:text-[#20ACB3] transition">How it Works <i class="bi bi-chevron-right"></i></a></li>
                         <li><a href="about.html" class="text-gray-300 hover:text-[#20ACB3] transition">About Us <i class="bi bi-chevron-right"></i></a></li>
                     </ul>
                 </div>
@@ -632,6 +651,14 @@ menu.addEventListener('click', (e) => {
     hamburger.classList.remove('hidden');
     closeX.classList.add('hidden');
     document.body.style.overflow = 'auto';
+  }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const rem = localStorage.getItem('ulooma_properties_remaining');
+  if (rem !== null) {
+    const el = document.getElementById('exploreRemainingText');
+    if (el) el.textContent = `Properties remaining: ${rem}`;
   }
 });
 </script>

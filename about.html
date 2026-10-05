@@ -16,7 +16,7 @@
             <nav class="hidden md:flex gap-10 lg:gap-16 text-[19px] font-semibold text-black">
                 <a href="index.html" class="hover:text-[#20ACB3] transition">Home</a>
                 <a href="explore.html" class="hover:text-[#20ACB3] transition">Explore</a>
-                <a href="tenant.html" class="hover:text-[#20ACB3] transition">How it works</a>
+                <a href="how-it-works.html" class="hover:text-[#20ACB3] transition">How it works</a>
                 <a href="about.html" class="text-[#20ACB3]">About Us</a>
                 <a href="contact.html" class="hover:text-[#20ACB3] transition">Contact Us</a>
             </nav>
@@ -38,7 +38,7 @@
             <div class="flex flex-col items-center justify-center h-full gap-12 text-2xl font-semibold text-black">
                 <a href="index.html" class="hover:text-[#20ACB3] transition">Home</a>
                 <a href="explore.html" class="hover:text-[#20ACB3] transition">Explore</a>
-                <a href="tenant.html" class="hover:text-[#20ACB3] transition">How it works</a>
+                <a href="how-it-works.html" class="hover:text-[#20ACB3] transition">How it works</a>
                 <a href="about.html" class="text-[#20ACB3]">About Us</a>
                 <a href="contact.html" class="hover:text-[#20ACB3] transition">Contact Us</a>
                 <button onclick="window.location.href='signup.html'" class="bg-[#20ACB3] text-white rounded-[30px] py-4 px-12 hover:bg-black cursor-pointer transition text-xl font-medium">
@@ -232,27 +232,193 @@
         </div>
     </section>
 
+    <!-- Company Verification & CAC Credentials Section -->
+    <section class="py-24 bg-gray-50 border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center gap-2 bg-[#20ACB3]/10 text-[#0F3B3D] px-4 py-2 rounded-full text-sm font-semibold mb-4">
+                    <i class="bi bi-patch-check-fill text-[#20ACB3]"></i> Official Corporate Credentials
+                </div>
+                <h2 class="text-4xl md:text-5xl font-bold text-[#0F3B3D] mb-4">Company Verification</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Ụlọ Ọma operates with full legal incorporation and regulatory compliance in the Federal Republic of Nigeria.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                <div class="lg:col-span-6 space-y-6">
+                    <div class="bg-white p-8 rounded-3xl shadow-lg border border-gray-100">
+                        <div class="space-y-5">
+                            <div class="flex items-center justify-between border-b border-gray-100 pb-4">
+                                <span class="text-gray-500 font-medium">Registered Entity</span>
+                                <span class="text-[#0F3B3D] font-bold text-lg">Ụlọ Ọma Technologies Ltd</span>
+                            </div>
+                            <div class="flex items-center justify-between border-b border-gray-100 pb-4">
+                                <span class="text-gray-500 font-medium">Registration Status</span>
+                                <span class="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1 rounded-full bg-green-100 text-green-800">
+                                    <i class="bi bi-check-circle-fill"></i> Incorporated Under CAC
+                                </span>
+                            </div>
+                            <div class="flex items-center justify-between border-b border-gray-100 pb-4">
+                                <span class="text-gray-500 font-medium">Regulatory Body</span>
+                                <span class="text-gray-800 font-medium">Corporate Affairs Commission (CAC), Nigeria</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-gray-500 font-medium">Operating Headquarters</span>
+                                <span class="text-gray-800 font-medium">Aba, Abia State, Nigeria</span>
+                            </div>
+                        </div>
+
+                        <div class="mt-8 p-4 bg-teal-50/60 rounded-2xl border border-teal-100 text-sm text-[#0F3B3D]">
+                            <p class="flex items-start gap-2">
+                                <i class="bi bi-info-circle-fill text-[#20ACB3] mt-0.5"></i>
+                                <span>Official documents and certificate files are maintained and verified via our administrative compliance layer. You can view or inspect the incorporation credentials below.</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6">
+                    <div class="bg-white p-8 rounded-3xl shadow-xl border border-gray-100 text-center relative overflow-hidden group">
+                        <div class="aspect-[4/3] bg-gray-100 rounded-2xl border-2 border-dashed border-gray-300 flex flex-col items-center justify-center p-6 relative cursor-pointer" onclick="openCertificateModal()">
+                            <i class="bi bi-file-earmark-pdf text-6xl text-[#20ACB3] mb-3 group-hover:scale-110 transition-transform"></i>
+                            <h4 class="font-bold text-lg text-[#0F3B3D]">Official CAC Certificate Document</h4>
+                            <p class="text-xs text-gray-500 mt-1">Federal Republic of Nigeria — Certificate of Incorporation</p>
+                            <span class="mt-4 inline-flex items-center gap-2 bg-[#20ACB3] text-white text-xs font-semibold px-4 py-2 rounded-full hover:bg-black transition">
+                                <i class="bi bi-eye"></i> Inspect Certificate
+                            </span>
+                        </div>
+                        <p class="text-xs text-gray-400 mt-4">Document ref: CAC/RC/ULO-OMA-OFFICIAL</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificate Modal / Lightbox -->
+    <div id="certModal" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-[100] hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-2xl w-full p-8 relative shadow-2xl">
+            <button onclick="closeCertificateModal()" class="absolute top-6 right-6 text-gray-400 hover:text-black text-2xl">
+                <i class="bi bi-x-lg"></i>
+            </button>
+            <div class="flex items-center gap-3 mb-6">
+                <i class="bi bi-patch-check-fill text-2xl text-[#20ACB3]"></i>
+                <div>
+                    <h3 class="text-xl font-bold text-[#0F3B3D]">Corporate Affairs Commission</h3>
+                    <p class="text-xs text-gray-500">Official Certificate of Incorporation Viewer</p>
+                </div>
+            </div>
+            <div class="border border-gray-200 rounded-2xl p-8 bg-gray-50 text-center space-y-4">
+                <div class="w-16 h-16 rounded-full bg-[#0F3B3D] text-[#82E4E9] flex items-center justify-center mx-auto text-2xl font-bold">
+                    <i class="bi bi-building-check"></i>
+                </div>
+                <h4 class="text-lg font-bold text-gray-900">Ụlọ Ọma Technologies Ltd</h4>
+                <p class="text-sm text-gray-600 max-w-md mx-auto">
+                    Incorporated under the Companies and Allied Matters Act 2020 by the Corporate Affairs Commission, Federal Republic of Nigeria.
+                </p>
+                <div class="inline-block bg-white px-6 py-3 rounded-xl border border-gray-200 shadow-sm">
+                    <span class="text-xs text-gray-500 block uppercase tracking-wider font-semibold">Status</span>
+                    <span class="text-[#20ACB3] font-bold text-sm">Verified & In Good Standing</span>
+                </div>
+            </div>
+            <div class="mt-6 flex justify-end gap-3">
+                <button onclick="closeCertificateModal()" class="px-6 py-2.5 rounded-full border border-gray-300 text-gray-700 hover:bg-gray-100 text-sm font-medium">Close</button>
+            </div>
+        </div>
+    </div>
+
     <!-- CTA Section -->
-    <section class="py-32 bg-gradient-to-r from-[#20ACB3] to-[#0F3B3D] text-white">
+    <section class="py-24 bg-gradient-to-r from-[#20ACB3] to-[#0F3B3D] text-white">
         <div class="max-w-4xl mx-auto px-6 text-center">
-            <h2 class="text-5xl font-bold mb-8">Join Our Community</h2>
-            <p class="text-xl mb-12 leading-relaxed">
-                Be part of the revolution that's making rental experiences better for everyone
+            <h2 class="text-4xl md:text-5xl font-bold mb-6">Join Our Community</h2>
+            <p class="text-xl mb-10 leading-relaxed opacity-95">
+                Be part of the platform that is making rental experiences transparent, reliable, and stress-free.
             </p>
             <div class="flex flex-col sm:flex-row gap-6 justify-center">
-                <button onclick="window.location.href='tenant.html'" class="bg-white text-[#20ACB3] font-bold py-4 px-12 rounded-full text-lg hover:bg-gray-100 transition">
+                <button onclick="window.location.href='explore.html'" class="bg-white text-[#20ACB3] font-bold py-4 px-12 rounded-full text-lg hover:bg-gray-100 transition shadow-lg">
                     Find a Home <i class="bi bi-chevron-right"></i>
                 </button>
-                <button onclick="window.location.href='landlord.html'" class="border-2 border-white text-white font-bold py-4 px-12 rounded-full text-lg hover:bg-white hover:text-[#20ACB3] transition">
+                <button onclick="window.location.href='list-property.html'" class="border-2 border-white text-white font-bold py-4 px-12 rounded-full text-lg hover:bg-white hover:text-[#20ACB3] transition">
                     List Property <i class="bi bi-chevron-right"></i>
                 </button>
             </div>
         </div>
     </section>
 
-    <footer class="bg-[#0F3B3D] text-white py-16">
-        <div class="max-w-7xl mx-auto px-6 text-center">
-            <p class="text-lg opacity-80">© 2025 Ụlọ Ọma. All Rights Reserved.</p>
+    <!-- Branded Footer -->
+    <footer class="bg-[#0F3B3D] text-white pt-20 pb-16 relative overflow-hidden">
+        <div class="w-full max-w-4xl mx-auto px-6 mb-12">
+            <div class="bg-[#196366] rounded-2xl px-6 py-6 md:py-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl border border-white/10">
+                <p class="text-lg md:text-xl font-medium text-center md:text-left">
+                    Start creating your memories...
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
+                    <button onclick="window.location.href='login.html'" class="bg-[#20ACB3] hover:bg-[#1e9ea5] text-white font-semibold px-8 py-4 rounded-3xl transition">
+                        Login
+                    </button>
+                    <button onclick="window.location.href='list-property.html'" class="bg-white hover:bg-gray-100 text-[#0F3B3D] font-semibold px-8 py-4 rounded-3xl transition">
+                        List Property
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="bg-white/10 backdrop-blur-sm border border-white/10 rounded-3xl md:rounded-[42px] p-8 md:p-12 lg:p-16">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-16">
+                    <div class="space-y-6 lg:space-y-8">
+                        <h3 class="text-2xl md:text-3xl font-bold flex items-center gap-2">
+                            <i class="bi bi-house-door-fill text-[#20ACB3] mr-2"></i>Ụlọ Ọma
+                        </h3>
+                        <p class="text-sm md:text-base leading-relaxed opacity-90">
+                            Ụlọ Ọma makes finding your next home easy and transparent. From verified listings to free viewing transport and hassle-free moving, we are your trusted path to the front door.
+                        </p>
+                        <div class="flex gap-5 text-xl">
+                            <a href="#" class="hover:text-[#20ACB3] transition"><i class="bi bi-facebook"></i></a>
+                            <a href="#" class="hover:text-[#20ACB3] transition"><i class="bi bi-instagram"></i></a>
+                            <a href="#" class="hover:text-[#20ACB3] transition"><i class="bi bi-twitter-x"></i></a>
+                            <a href="#" class="hover:text-[#20ACB3] transition"><i class="bi bi-linkedin"></i></a>
+                            <a href="#" class="hover:text-[#20ACB3] transition"><i class="bi bi-youtube"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="space-y-6">
+                        <h4 class="text-[#82E4E9] font-semibold text-lg uppercase tracking-wider">Navigation</h4>
+                        <nav class="flex flex-col space-y-4 text-base">
+                            <a href="index.html" class="hover:text-[#20ACB3] transition">Home</a>
+                            <a href="explore.html" class="hover:text-[#20ACB3] transition">Explore</a>
+                            <a href="how-it-works.html" class="hover:text-[#20ACB3] transition">How It Works</a>
+                            <a href="about.html" class="hover:text-[#20ACB3] transition">About Us</a>
+                            <a href="contact.html" class="hover:text-[#20ACB3] transition">Contact Us</a>
+                        </nav>
+                    </div>
+
+                    <div class="space-y-6">
+                        <h4 class="text-[#82E4E9] font-semibold text-lg uppercase tracking-wider">Help</h4>
+                        <nav class="flex flex-col space-y-4 text-base">
+                            <a href="contact.html" class="hover:text-[#20ACB3] transition">Contact Us</a>
+                            <a href="how-it-works.html" class="hover:text-[#20ACB3] transition">FAQs</a>
+                            <a href="#" class="hover:text-[#20ACB3] transition">Terms & Conditions</a>
+                            <a href="#" class="hover:text-[#20ACB3] transition">Privacy Policy</a>
+                        </nav>
+                    </div>
+
+                    <div class="space-y-6">
+                        <h4 class="text-[#82E4E9] font-semibold text-lg uppercase tracking-wider">
+                            Subscribe to Our Newsletter
+                        </h4>
+                        <form class="space-y-4" onsubmit="event.preventDefault(); alert('Thank you for subscribing to Ụlọ Ọma updates!');">
+                            <input type="email" placeholder="Enter your email" required
+                                class="w-full px-4 py-3 bg-white text-gray-800 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#20ACB3]">
+                            <button type="submit" class="w-full sm:w-auto bg-[#2DB2B8] hover:bg-[#28a09e] px-10 py-3 rounded-xl font-medium transition cursor-pointer">
+                                Subscribe
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-16 pt-8 border-t border-white/20 text-center text-sm opacity-80">
+                © 2025 Ụlọ Ọma. All Rights Reserved.
+            </div>
         </div>
     </footer>
 
@@ -283,6 +449,14 @@
                 document.body.style.overflow = 'auto';
             }
         });
+
+        function openCertificateModal() {
+            document.getElementById('certModal').classList.remove('hidden');
+        }
+
+        function closeCertificateModal() {
+            document.getElementById('certModal').classList.add('hidden');
+        }
     </script>
 </body>
 </html>

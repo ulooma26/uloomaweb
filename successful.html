@@ -12,7 +12,7 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=hotel"
     />
-    <title>Document</title>
+    <title>Payment Successful — Ụlọ Ọma</title>
   </head>
   <body id="fund" class="max-w-screen overflow-x-hidden font-sans">
     <header class="sticky top-0 bg-white z-50">
@@ -27,14 +27,14 @@
     <nav class="hidden md:flex gap-10 lg:gap-16 text-[19px] font-semibold text-black">
       <a href="index.html" class="hover:text-[#20ACB3] transition">Home</a>
       <a href="explore.html" class="hover:text-[#20ACB3] transition">Explore</a>
-      <a href="tenant.html" class="hover:text-[#20ACB3] transition">How it works</a>
+      <a href="how-it-works.html" class="hover:text-[#20ACB3] transition">How it works</a>
       <a href="about.html" class="hover:text-[#20ACB3] transition">About Us</a>
       <a href="contact.html" class="hover:text-[#20ACB3] transition">Contact Us</a>
     </nav>
 
     <!-- Desktop Sign Up -->
     <div class="hidden md:block">
-      <button onclick="window.location.href='tenant.html'" class="bg-[#20ACB3] text-white rounded-[30px] py-[15px] px-[30px] hover:bg-black transition text-[19px] font-medium cursor-pointer">
+      <button onclick="window.location.href='signup.html'" class="bg-[#20ACB3] text-white rounded-[30px] py-[15px] px-[30px] hover:bg-black transition text-[19px] font-medium cursor-pointer">
         Sign Up
       </button>
     </div>
@@ -51,10 +51,10 @@
     <div class="flex flex-col items-center justify-center h-full gap-12 text-2xl font-semibold text-black">
       <a href="index.html" class="hover:text-[#20ACB3] transition">Home</a>
       <a href="explore.html" class="hover:text-[#20ACB3] transition">Explore</a>
-      <a href="tenant.html" class="hover:text-[#20ACB3] transition">How it works</a>
+      <a href="how-it-works.html" class="hover:text-[#20ACB3] transition">How it works</a>
       <a href="about.html" class="hover:text-[#20ACB3] transition">About Us</a>
       <a href="contact.html" class="hover:text-[#20ACB3] transition">Contact Us</a>
-      <button onclick="window.location.href='tenant.html'" class="bg-[#20ACB3] text-white rounded-[30px] py-4 px-12 hover:bg-black cursor-pointer transition text-xl font-medium">
+      <button onclick="window.location.href='signup.html'" class="bg-[#20ACB3] text-white rounded-[30px] py-4 px-12 hover:bg-black cursor-pointer transition text-xl font-medium">
         Sign Up
       </button>
     </div>
@@ -138,11 +138,13 @@
         </p>
         <div class="lg:flex-row sm:flex-col flex flex-col gap-5 mb-7 text-[18px] font-semibold">
           <button
-            class="bg-[#20ACB3] rounded-[20px] sm:w-[547px] w-[350px] h-[57px] text-white"
+            onclick="window.location.href='tenant-dashboard.html'"
+            class="bg-[#20ACB3] hover:bg-black transition rounded-[20px] sm:w-[547px] w-[350px] h-[57px] text-white cursor-pointer"
           >
-            My Reservations</button
-          ><button onclick="window.location.href='index.html#explore-apartments'" class="bg-[#C7D1D1] rounded-[20px] sm:w-[547px] w-[350px] h-[57px]">
-            Explore More Apartment
+            My Reservations & Dashboard
+          </button>
+          <button onclick="window.location.href='explore.html'" class="bg-[#C7D1D1] hover:bg-gray-300 transition rounded-[20px] sm:w-[547px] w-[350px] h-[57px] cursor-pointer">
+            Explore More Apartments
           </button>
         </div>
       </section>

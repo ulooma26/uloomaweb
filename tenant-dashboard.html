@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard — Ụlọ Ọma</title>
+  <link rel="stylesheet" href="./src/output.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
+  <link rel="icon" href="./images/image.png" type="image/png" />
+  <script src="https://checkout.flutterwave.com/v3.js"></script>
+</head>
+<body class="bg-gray-50 font-sans text-[#5C6F70]">
+  <!-- Header -->
+  <header class="sticky top-0 bg-white z-50 shadow-sm">
+    <div class="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
+      <div class="cursor-pointer" onclick="window.location.href='index.html'">
+        <img src="./images/Logo.PNG" alt="Ụlọ Ọma" class="h-12 md:h-14" />
+      </div>
+      <nav class="hidden md:flex gap-10 lg:gap-16 text-[19px] font-semibold text-black">
+        <a href="index.html" class="hover:text-[#20ACB3] transition">Home</a>
+        <a href="explore.html" class="hover:text-[#20ACB3] transition">Explore</a>
+        <a href="how-it-works.html" class="hover:text-[#20ACB3] transition">How it works</a>
+        <a href="about.html" class="hover:text-[#20ACB3] transition">About Us</a>
+        <a href="contact.html" class="hover:text-[#20ACB3] transition">Contact Us</a>
+      </nav>
+      <div class="hidden md:flex items-center gap-4">
+        <span class="font-medium text-black">John Doe</span>
+        <button onclick="window.location.href='index.html'" class="bg-gray-200 text-black rounded-[30px] py-[10px] px-[20px] hover:bg-gray-300 transition font-medium cursor-pointer">Logout</button>
+      </div>
+      <button id="menu-toggle" class="md:hidden text-4xl text-[#20ACB3] z-50">
+        <i id="hamburger" class="bi bi-list"></i>
+        <i id="close-x" class="bi bi-x-lg hidden"></i>
+      </button>
+    </div>
+    <div id="mobile-menu" class="fixed inset-0 bg-white hidden z-40">
+      <div class="flex flex-col items-center justify-center h-full gap-12 text-2xl font-semibold text-black">
+        <a href="index.html" class="hover:text-[#20ACB3] transition">Home</a>
+        <a href="explore.html" class="hover:text-[#20ACB3] transition">Explore</a>
+        <a href="how-it-works.html" class="hover:text-[#20ACB3] transition">How it works</a>
+        <a href="about.html" class="hover:text-[#20ACB3] transition">About Us</a>
+        <a href="contact.html" class="hover:text-[#20ACB3] transition">Contact Us</a>
+        <button onclick="window.location.href='index.html'" class="bg-gray-200 text-black rounded-[30px] py-4 px-12 hover:bg-gray-300 cursor-pointer transition text-xl font-medium">Logout</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="content" class="max-w-7xl mx-auto px-6 py-12 opacity-0 transition-opacity duration-500 ease-in-out min-h-screen">
+    <!-- Welcome Banner -->
+    <div class="mb-10">
+      <h1 class="text-4xl font-bold text-[#0F3B3D]">Welcome back, John 👋</h1>
+      <p class="text-lg mt-2">Manage your property search, reservations, and moving status.</p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      
+      <!-- Left Column (Main Content) -->
+      <div class="lg:col-span-2 space-y-8">
+        
+        <!-- Access Status Card -->
+        <div class="bg-white shadow-lg p-7 rounded-4xl border border-gray-100">
+          <div class="flex justify-between items-center mb-4">
+            <h2 class="text-2xl font-bold text-[#0F3B3D]">Platform Access Status</h2>
+            <span class="bg-[#82E4E9]/30 text-[#0F3B3D] px-4 py-1 rounded-full text-sm font-semibold">Active</span>
+          </div>
+          <p class="mb-6">Your ₦2,000 access payment is active. You can reserve up to 3 properties for viewing.</p>
+          
+          <div class="bg-gray-50 p-5 rounded-2xl mb-6 flex justify-between items-center">
+            <span id="remainingCountLabel" class="font-medium text-black">Properties remaining: 3</span>
+            <div id="dotsContainer" class="flex gap-2">
+              <span class="w-4 h-4 rounded-full bg-[#20ACB3]"></span>
+              <span class="w-4 h-4 rounded-full bg-[#20ACB3]"></span>
+              <span class="w-4 h-4 rounded-full bg-[#20ACB3]"></span>
+            </div>
+          </div>
+          
+          <button onclick="payWithFlutterwave()" class="bg-[#20ACB3] text-white rounded-[30px] py-[15px] px-[30px] hover:bg-black transition font-medium cursor-pointer w-full md:w-auto">
+            Pay ₦2,000 to Refresh Access
+          </button>
+        </div>
+
+        <!-- My Reservations -->
+        <div class="bg-white shadow-lg p-7 rounded-4xl border border-gray-100">
+          <h2 class="text-2xl font-bold text-[#0F3B3D] mb-6">My Reservations</h2>
+          
+          <div id="reservationsList" class="space-y-4">
+            <!-- Reservation Card 1 -->
+            <div class="flex flex-col md:flex-row gap-4 p-4 border border-gray-100 rounded-2xl items-center hover:shadow-md transition">
+              <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=300&h=200&fit=crop" alt="Property" class="w-full md:w-32 h-24 object-cover rounded-xl" />
+              <div class="flex-1">
+                <h3 class="font-bold text-black text-lg">2 Bedroom Apartment</h3>
+                <p class="text-sm">Lekki Phase 1, Lagos</p>
+                <p class="font-bold text-[#20ACB3] mt-1">₦2,500,000 / year</p>
+              </div>
+              <div class="text-right">
+                <span class="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium mb-2">Viewing Scheduled</span>
+                <p class="text-xs">Oct 12, 10:00 AM</p>
+              </div>
+            </div>
+            
+            <!-- Reservation Card 2 -->
+            <div class="flex flex-col md:flex-row gap-4 p-4 border border-gray-100 rounded-2xl items-center hover:shadow-md transition">
+              <img src="https://images.unsplash.com/photo-1502672260266-1c1c24240f57?w=300&h=200&fit=crop" alt="Property" class="w-full md:w-32 h-24 object-cover rounded-xl opacity-75" />
+              <div class="flex-1">
+                <h3 class="font-bold text-black text-lg">Luxury Studio</h3>
+                <p class="text-sm">Yaba, Lagos</p>
+                <p class="font-bold text-[#20ACB3] mt-1">₦800,000 / year</p>
+              </div>
+              <div class="text-right">
+                <span class="inline-block bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-medium mb-2">Cancelled</span>
+              </div>
+            </div>
+          </div>
+          
+          <button onclick="window.location.href='explore.html'" class="mt-6 text-[#20ACB3] font-medium hover:text-[#0F3B3D] transition">Find more properties →</button>
+        </div>
+
+        <!-- Moving Status -->
+        <div class="bg-white shadow-lg p-7 rounded-4xl border border-gray-100">
+          <h2 class="text-2xl font-bold text-[#0F3B3D] mb-6">Moving Status</h2>
+          
+          <div class="relative pt-4 pl-4 md:pl-0">
+            <div class="hidden md:block absolute top-8 left-6 right-6 h-1 bg-gray-200"></div>
+            <div class="hidden md:block absolute top-8 left-6 w-1/3 h-1 bg-[#20ACB3]"></div>
+            
+            <div class="md:hidden absolute top-4 bottom-4 left-6 w-1 bg-gray-200"></div>
+            <div class="md:hidden absolute top-4 h-1/3 left-6 w-1 bg-[#20ACB3]"></div>
+
+            <div class="flex flex-col md:flex-row justify-between gap-6 md:gap-0 relative z-10">
+              <div class="flex md:flex-col items-center gap-4 md:gap-2 text-center">
+                <div class="w-8 h-8 rounded-full bg-[#20ACB3] text-white flex items-center justify-center shrink-0"><i class="bi bi-check"></i></div>
+                <div>
+                  <p class="font-bold text-sm text-black">Payment</p>
+                  <p class="text-xs">Confirmed</p>
+                </div>
+              </div>
+              <div class="flex md:flex-col items-center gap-4 md:gap-2 text-center">
+                <div class="w-8 h-8 rounded-full bg-[#20ACB3] text-white flex items-center justify-center shrink-0"><i class="bi bi-check"></i></div>
+                <div>
+                  <p class="font-bold text-sm text-black">Request</p>
+                  <p class="text-xs">Submitted</p>
+                </div>
+              </div>
+              <div class="flex md:flex-col items-center gap-4 md:gap-2 text-center">
+                <div class="w-8 h-8 rounded-full bg-white border-2 border-[#20ACB3] text-[#20ACB3] flex items-center justify-center shrink-0"><i class="bi bi-clock"></i></div>
+                <div>
+                  <p class="font-bold text-sm text-black">Scheduled</p>
+                  <p class="text-xs">Pending</p>
+                </div>
+              </div>
+              <div class="flex md:flex-col items-center gap-4 md:gap-2 text-center opacity-50">
+                <div class="w-8 h-8 rounded-full bg-gray-200 text-gray-500 flex items-center justify-center shrink-0">4</div>
+                <div>
+                  <p class="font-bold text-sm text-black">In Transit</p>
+                  <p class="text-xs">Pending</p>
+                </div>
+              </div>
+              <div class="flex md:flex-col items-center gap-4 md:gap-2 text-center opacity-50">
+                <div class="w-8 h-8 rounded-full bg-gray-200 text-gray-500 flex items-center justify-center shrink-0">5</div>
+                <div>
+                  <p class="font-bold text-sm text-black">Completed</p>
+                  <p class="text-xs">Pending</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right Column (Sidebar) -->
+      <div class="space-y-8">
+        
+        <!-- Notifications -->
+        <div class="bg-white shadow-lg p-7 rounded-4xl border border-gray-100">
+          <h2 class="text-xl font-bold text-[#0F3B3D] mb-4 flex items-center gap-2">
+            <i class="bi bi-bell"></i> Notifications
+          </h2>
+          <div class="space-y-4">
+            <div class="border-l-4 border-[#20ACB3] pl-3 py-1">
+              <p class="text-sm font-medium text-black">Viewing Reminder</p>
+              <p class="text-xs mt-1">Your viewing for 2 Bedroom Apartment in Lekki is tomorrow at 10:00 AM.</p>
+            </div>
+            <div class="border-l-4 border-yellow-400 pl-3 py-1">
+              <p class="text-sm font-medium text-black">Action Required</p>
+              <p class="text-xs mt-1">Please confirm your moving dates for scheduling.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ₦20,000 Reward Tracking -->
+        <div class="bg-gradient-to-br from-[#0F3B3D] to-[#196366] shadow-lg p-7 rounded-4xl text-white">
+          <h2 class="text-xl font-bold mb-2 text-[#82E4E9]">₦20,000 Reward Program</h2>
+          <p class="text-sm mb-4 opacity-90">You've listed your old apartment. Track your reward status below.</p>
+          
+          <div class="bg-white/10 rounded-2xl p-4">
+            <div class="flex justify-between items-center mb-2">
+              <span class="text-sm font-medium">Status:</span>
+              <span class="bg-[#82E4E9] text-[#0F3B3D] text-xs px-2 py-1 rounded font-bold">New Tenant Found</span>
+            </div>
+            <div class="w-full bg-black/20 rounded-full h-2 mb-2">
+              <div class="bg-[#82E4E9] h-2 rounded-full" style="width: 50%"></div>
+            </div>
+            <p class="text-xs opacity-80 text-center">Awaiting move-in confirmation to process payment.</p>
+          </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="bg-white shadow-lg p-7 rounded-4xl border border-gray-100">
+          <h2 class="text-xl font-bold text-[#0F3B3D] mb-4">Quick Actions</h2>
+          <div class="flex flex-col gap-3">
+            <button onclick="window.location.href='explore.html'" class="text-left px-4 py-3 rounded-xl border border-gray-200 hover:bg-gray-50 transition font-medium text-black flex items-center justify-between">
+              Find an Apartment <i class="bi bi-search text-[#20ACB3]"></i>
+            </button>
+            <button onclick="window.location.href='moving-out.html'" class="text-left px-4 py-3 rounded-xl border border-gray-200 hover:bg-gray-50 transition font-medium text-black flex items-center justify-between">
+              List Old Apartment <i class="bi bi-house-add text-[#20ACB3]"></i>
+            </button>
+            <button onclick="window.location.href='contact.html'" class="text-left px-4 py-3 rounded-xl border border-gray-200 hover:bg-gray-50 transition font-medium text-black flex items-center justify-between">
+              Contact Support <i class="bi bi-headset text-[#20ACB3]"></i>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-[#0F3B3D] text-white pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="bg-[#196366] rounded-3xl p-8 md:p-12 mb-16 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
+        <div>
+          <h2 class="text-2xl md:text-3xl font-bold mb-2">Ready to find your next home?</h2>
+          <p class="text-[#82E4E9]">Join thousands of Nigerians using Ụlọ Ọma.</p>
+        </div>
+        <button onclick="window.location.href='explore.html'" class="bg-[#20ACB3] text-white rounded-[30px] py-[15px] px-[30px] hover:bg-black transition text-lg font-medium whitespace-nowrap">Explore Properties</button>
+      </div>
+      <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-400">
+        <p>&copy; 2024 Ụlọ Ọma. All rights reserved.</p>
+        <div class="flex gap-4">
+          <a href="#" class="hover:text-[#82E4E9] transition">Privacy Policy</a>
+          <a href="#" class="hover:text-[#82E4E9] transition">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile Menu Toggle
+    const toggle = document.getElementById('menu-toggle');
+    const hamburger = document.getElementById('hamburger');
+    const closeX = document.getElementById('close-x');
+    const menu = document.getElementById('mobile-menu');
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+      if (menu.classList.contains('hidden')) {
+        hamburger.classList.remove('hidden');
+        closeX.classList.add('hidden');
+        document.body.style.overflow = 'auto';
+      } else {
+        hamburger.classList.add('hidden');
+        closeX.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      }
+    });
+    menu.addEventListener('click', (e) => {
+      if (e.target === menu) {
+        menu.classList.add('hidden');
+        hamburger.classList.remove('hidden');
+        closeX.classList.add('hidden');
+        document.body.style.overflow = 'auto';
+      }
+    });
+
+    // Dynamic Data Loader
+    document.addEventListener('DOMContentLoaded', () => {
+      const content = document.getElementById('content');
+      if (content) { content.classList.remove('opacity-0'); content.classList.add('opacity-100'); }
+
+      // Read remaining entitlement
+      let remaining = parseInt(localStorage.getItem('ulooma_properties_remaining') || '3');
+      const counterContainer = document.getElementById('dotsContainer');
+      const remainingLabel = document.getElementById('remainingCountLabel');
+
+      if (remainingLabel) remainingLabel.textContent = `Properties remaining: ${remaining}`;
+      if (counterContainer) {
+        counterContainer.innerHTML = '';
+        for (let j = 0; j < 3; j++) {
+          const dot = document.createElement('span');
+          dot.className = `w-4 h-4 rounded-full ${j < remaining ? 'bg-[#20ACB3]' : 'bg-gray-300'}`;
+          counterContainer.appendChild(dot);
+        }
+      }
+
+      // Read dynamic reservations
+      const storedRes = JSON.parse(localStorage.getItem('ulooma_reservations') || '[]');
+      const resContainer = document.getElementById('reservationsList');
+      if (resContainer && storedRes.length > 0) {
+        storedRes.forEach(r => {
+          const card = document.createElement('div');
+          card.className = 'flex flex-col md:flex-row gap-4 p-4 border border-teal-100 bg-teal-50/30 rounded-2xl items-center hover:shadow-md transition';
+          card.innerHTML = `
+            <div class="w-12 h-12 rounded-xl bg-[#20ACB3] text-white flex items-center justify-center text-xl shrink-0">
+              <i class="bi bi-house-check"></i>
+            </div>
+            <div class="flex-1">
+              <h3 class="font-bold text-black text-lg">${r.propertyTitle || 'Verified Property'}</h3>
+              <p class="text-sm text-gray-500">${r.propertyLocation || 'Aba, Abia State'}</p>
+              <p class="font-bold text-[#20ACB3] mt-1">${r.price || '₦570,000 / year'}</p>
+            </div>
+            <div class="text-right">
+              <span class="inline-block bg-teal-100 text-[#0F3B3D] px-3 py-1 rounded-full text-xs font-bold mb-1">${r.status || 'Viewing Scheduled'}</span>
+              <p class="text-xs text-gray-500">${r.date || 'Tomorrow'}, ${r.time || '10:00 AM'}</p>
+              <p class="text-[11px] text-[#20ACB3] font-medium">Rep: ${r.representative || 'Emeka Nwankwo'}</p>
+            </div>
+          `;
+          resContainer.prepend(card);
+        });
+      }
+    });
+
+    // Flutterwave payment function
+    function payWithFlutterwave() {
+      window.location.href = 'card-payment.html';
+    }
+  </script>
+</body>
+</html>

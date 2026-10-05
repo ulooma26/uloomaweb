@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard — Ụlọ Ọma</title>
+  <link rel="stylesheet" href="../src/output.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
+  <link rel="icon" href="../images/image.png" type="image/png" />
+</head>
+<body class="bg-gray-50 font-sans text-[#5C6F70] flex h-screen overflow-hidden">
+  
+  <!-- Sidebar -->
+  <aside class="w-64 bg-[#0F3B3D] text-white flex flex-col h-full flex-shrink-0 transition-all duration-300">
+    <div class="p-6 border-b border-white/10 flex items-center justify-center">
+      <img src="../images/Logo.PNG" alt="Ụlọ Ọma" class="h-10 brightness-0 invert" />
+    </div>
+    <div class="flex-1 overflow-y-auto py-4">
+      <nav class="space-y-1 px-3">
+        <a href="#" onclick="showTab('dashboard')" class="tab-btn active bg-[#196366] text-white flex items-center gap-3 px-4 py-3 rounded-xl transition">
+          <i class="bi bi-grid-1x2"></i> Dashboard
+        </a>
+        <a href="#" onclick="showTab('users')" class="tab-btn text-gray-300 hover:bg-white/5 hover:text-white flex items-center gap-3 px-4 py-3 rounded-xl transition">
+          <i class="bi bi-people"></i> Users
+        </a>
+        <a href="#" onclick="showTab('properties')" class="tab-btn text-gray-300 hover:bg-white/5 hover:text-white flex items-center gap-3 px-4 py-3 rounded-xl transition">
+          <i class="bi bi-house"></i> Properties
+        </a>
+        <a href="#" onclick="showTab('reservations')" class="tab-btn text-gray-300 hover:bg-white/5 hover:text-white flex items-center gap-3 px-4 py-3 rounded-xl transition">
+          <i class="bi bi-calendar-check"></i> Reservations
+        </a>
+        <a href="#" onclick="showTab('payments')" class="tab-btn text-gray-300 hover:bg-white/5 hover:text-white flex items-center gap-3 px-4 py-3 rounded-xl transition">
+          <i class="bi bi-credit-card"></i> Payments
+        </a>
+        <a href="#" onclick="showTab('moving')" class="tab-btn text-gray-300 hover:bg-white/5 hover:text-white flex items-center gap-3 px-4 py-3 rounded-xl transition">
+          <i class="bi bi-truck"></i> Moving
+        </a>
+        <a href="#" onclick="showTab('rewards')" class="tab-btn text-gray-300 hover:bg-white/5 hover:text-white flex items-center gap-3 px-4 py-3 rounded-xl transition">
+          <i class="bi bi-gift"></i> Rewards
+        </a>
+        <a href="#" onclick="showTab('cac')" class="tab-btn text-gray-300 hover:bg-white/5 hover:text-white flex items-center gap-3 px-4 py-3 rounded-xl transition">
+          <i class="bi bi-file-earmark-text"></i> CAC Certificate
+        </a>
+      </nav>
+    </div>
+    <div class="p-4 border-t border-white/10">
+      <div class="flex items-center gap-3 px-4 py-2">
+        <div class="w-8 h-8 rounded-full bg-[#20ACB3] flex items-center justify-center font-bold text-sm">A</div>
+        <div class="text-sm">
+          <p class="font-bold">Admin User</p>
+          <a href="../index.html" class="text-xs text-gray-400 hover:text-white">Logout</a>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="flex-1 flex flex-col h-full overflow-hidden bg-gray-50 relative">
+    <!-- Topbar -->
+    <header class="bg-white shadow-sm px-8 py-4 flex justify-between items-center z-10">
+      <h1 id="page-title" class="text-2xl font-bold text-[#0F3B3D]">Dashboard</h1>
+      <div class="flex items-center gap-4">
+        <button class="text-xl text-gray-500 hover:text-black"><i class="bi bi-bell"></i></button>
+      </div>
+    </header>
+
+    <!-- Scrollable Content Area -->
+    <div class="flex-1 overflow-y-auto p-8" id="content">
+      
+      <!-- TAB: Dashboard -->
+      <div id="tab-dashboard" class="tab-content block space-y-6">
+        <!-- Stats -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex items-center gap-4">
+            <div class="w-12 h-12 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-xl"><i class="bi bi-people"></i></div>
+            <div><p class="text-sm text-gray-500">Total Users</p><p class="text-2xl font-bold text-black">1,245</p></div>
+          </div>
+          <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex items-center gap-4">
+            <div class="w-12 h-12 rounded-full bg-green-100 text-green-600 flex items-center justify-center text-xl"><i class="bi bi-house"></i></div>
+            <div><p class="text-sm text-gray-500">Active Properties</p><p class="text-2xl font-bold text-black">342</p></div>
+          </div>
+          <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex items-center gap-4">
+            <div class="w-12 h-12 rounded-full bg-yellow-100 text-yellow-600 flex items-center justify-center text-xl"><i class="bi bi-calendar"></i></div>
+            <div><p class="text-sm text-gray-500">Pending Reservations</p><p class="text-2xl font-bold text-black">28</p></div>
+          </div>
+          <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex items-center gap-4">
+            <div class="w-12 h-12 rounded-full bg-purple-100 text-purple-600 flex items-center justify-center text-xl"><i class="bi bi-truck"></i></div>
+            <div><p class="text-sm text-gray-500">Active Moves</p><p class="text-2xl font-bold text-black">15</p></div>
+          </div>
+        </div>
+        <!-- Recent Activity -->
+        <div class="bg-white p-6 rounded-4xl shadow-sm border border-gray-100">
+          <h2 class="text-xl font-bold text-black mb-4">Recent Activity</h2>
+          <div class="space-y-4">
+            <div class="flex gap-4 items-start border-b border-gray-100 pb-4">
+              <div class="w-2 h-2 mt-2 rounded-full bg-[#20ACB3]"></div>
+              <div><p class="text-sm text-black">New property listed by <strong>Jane D.</strong> requires verification.</p><p class="text-xs text-gray-500 mt-1">2 mins ago</p></div>
+            </div>
+            <div class="flex gap-4 items-start border-b border-gray-100 pb-4">
+              <div class="w-2 h-2 mt-2 rounded-full bg-green-500"></div>
+              <div><p class="text-sm text-black">Access fee payment of ₦2,000 received from <strong>Michael A.</strong></p><p class="text-xs text-gray-500 mt-1">15 mins ago</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB: Users -->
+      <div id="tab-users" class="tab-content hidden space-y-6">
+        <div class="bg-white p-6 rounded-4xl shadow-sm border border-gray-100">
+          <div class="flex justify-between items-center mb-6">
+            <h2 class="text-xl font-bold text-black">Manage Users</h2>
+            <input type="text" placeholder="Search users..." class="border border-gray-300 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-[#20ACB3]" />
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse">
+              <thead><tr class="bg-gray-50 text-gray-600 text-sm"><th class="p-3">Name</th><th class="p-3">Email</th><th class="p-3">Role</th><th class="p-3">Status</th><th class="p-3">Actions</th></tr></thead>
+              <tbody>
+                <tr class="border-b border-gray-100 text-sm">
+                  <td class="p-3 font-medium text-black">John Doe</td><td class="p-3">john@example.com</td><td class="p-3">Tenant</td>
+                  <td class="p-3"><span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">Active</span></td>
+                  <td class="p-3"><button class="text-[#20ACB3] hover:underline">Edit</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB: Properties -->
+      <div id="tab-properties" class="tab-content hidden space-y-6">
+        <div class="bg-white p-6 rounded-4xl shadow-sm border border-gray-100">
+          <h2 class="text-xl font-bold text-black mb-6">Property Listings</h2>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse">
+              <thead><tr class="bg-gray-50 text-gray-600 text-sm"><th class="p-3">Title</th><th class="p-3">Location</th><th class="p-3">Landlord</th><th class="p-3">Status</th><th class="p-3">Actions</th></tr></thead>
+              <tbody>
+                <tr class="border-b border-gray-100 text-sm">
+                  <td class="p-3 font-medium text-black">3 Bed Flat</td><td class="p-3">Lekki</td><td class="p-3">Jane D.</td>
+                  <td class="p-3"><span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-xs">Pending Review</span></td>
+                  <td class="p-3 flex gap-2">
+                    <button class="bg-green-500 text-white px-3 py-1 rounded text-xs">Approve</button>
+                    <button class="bg-red-500 text-white px-3 py-1 rounded text-xs">Reject</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB: Reservations -->
+      <div id="tab-reservations" class="tab-content hidden space-y-6">
+        <div class="bg-white p-6 rounded-4xl shadow-sm border border-gray-100">
+          <h2 class="text-xl font-bold text-black mb-6">Reservations & Viewings</h2>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse">
+              <thead><tr class="bg-gray-50 text-gray-600 text-sm"><th class="p-3">Property</th><th class="p-3">Tenant</th><th class="p-3">Status</th><th class="p-3">Rep Assigned</th><th class="p-3">Actions</th></tr></thead>
+              <tbody>
+                <tr class="border-b border-gray-100 text-sm">
+                  <td class="p-3">Studio Apt, Yaba</td><td class="p-3">Michael A.</td>
+                  <td class="p-3"><span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">Requested</span></td>
+                  <td class="p-3 text-gray-400">None</td>
+                  <td class="p-3"><button class="bg-[#20ACB3] text-white px-3 py-1 rounded text-xs">Assign Rep</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB: Payments -->
+      <div id="tab-payments" class="tab-content hidden space-y-6">
+        <div class="bg-white p-6 rounded-4xl shadow-sm border border-gray-100">
+          <h2 class="text-xl font-bold text-black mb-6">Transaction History</h2>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse">
+              <thead><tr class="bg-gray-50 text-gray-600 text-sm"><th class="p-3">Ref</th><th class="p-3">User</th><th class="p-3">Amount</th><th class="p-3">Type</th><th class="p-3">Status</th><th class="p-3">Date</th></tr></thead>
+              <tbody>
+                <tr class="border-b border-gray-100 text-sm">
+                  <td class="p-3">TX-12345</td><td class="p-3">John Doe</td><td class="p-3">₦2,000</td><td class="p-3">Access Fee</td>
+                  <td class="p-3"><span class="text-green-600 font-medium">Successful</span></td><td class="p-3">Oct 12, 2024</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB: Moving -->
+      <div id="tab-moving" class="tab-content hidden space-y-6">
+        <div class="bg-white p-6 rounded-4xl shadow-sm border border-gray-100">
+          <h2 class="text-xl font-bold text-black mb-6">Moving Logistics</h2>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse">
+              <thead><tr class="bg-gray-50 text-gray-600 text-sm"><th class="p-3">Tenant</th><th class="p-3">Route</th><th class="p-3">Status</th><th class="p-3">Date</th><th class="p-3">Actions</th></tr></thead>
+              <tbody>
+                <tr class="border-b border-gray-100 text-sm">
+                  <td class="p-3">Sarah T.</td><td class="p-3">Surulere → Lekki</td>
+                  <td class="p-3"><span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-xs">Pending Scheduling</span></td><td class="p-3">TBD</td>
+                  <td class="p-3"><button class="text-[#20ACB3] hover:underline">Schedule</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB: Rewards -->
+      <div id="tab-rewards" class="tab-content hidden space-y-6">
+        <div class="bg-white p-6 rounded-4xl shadow-sm border border-gray-100">
+          <h2 class="text-xl font-bold text-black mb-6">₦20,000 Rewards Program</h2>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse">
+              <thead><tr class="bg-gray-50 text-gray-600 text-sm"><th class="p-3">Outgoing Tenant</th><th class="p-3">Property</th><th class="p-3">Status</th><th class="p-3">Actions</th></tr></thead>
+              <tbody>
+                <tr class="border-b border-gray-100 text-sm">
+                  <td class="p-3">David K.</td><td class="p-3">2 Bed, Ikeja</td>
+                  <td class="p-3"><span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">Eligible for Payout</span></td>
+                  <td class="p-3"><button class="bg-green-500 text-white px-3 py-1 rounded text-xs">Process Payout</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB: CAC -->
+      <div id="tab-cac" class="tab-content hidden space-y-6">
+        <div class="bg-white p-6 rounded-4xl shadow-sm border border-gray-100 max-w-2xl">
+          <h2 class="text-xl font-bold text-black mb-2">Corporate Affairs Commission (CAC) Details</h2>
+          <p class="text-sm mb-6">Manage platform legal incorporation documents.</p>
+          
+          <form class="space-y-4">
+            <div>
+              <label class="block text-sm font-medium text-black mb-1">Company Name</label>
+              <input type="text" value="Ụlọ Ọma Technologies Ltd" class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:border-[#20ACB3]" />
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-black mb-1">CAC Registration Number (RC)</label>
+              <input type="text" value="RC-1234567" class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:border-[#20ACB3]" />
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-black mb-1">Certificate Document</label>
+              <div class="border-2 border-dashed border-gray-300 rounded-xl p-6 text-center hover:bg-gray-50 transition">
+                <i class="bi bi-cloud-arrow-up text-3xl text-gray-400"></i>
+                <p class="text-sm text-gray-500 mt-2">Click to upload new certificate (PDF, JPG, PNG)</p>
+              </div>
+            </div>
+            <button type="button" class="bg-[#20ACB3] text-white rounded-[30px] py-3 px-8 hover:bg-black transition font-medium mt-4">Save Details</button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <script>
+    function showTab(tabName) {
+      // Hide all tabs
+      document.querySelectorAll('.tab-content').forEach(el => {
+        el.classList.add('hidden');
+        el.classList.remove('block');
+      });
+      // Show selected tab
+      document.getElementById('tab-' + tabName).classList.remove('hidden');
+      document.getElementById('tab-' + tabName).classList.add('block');
+      
+      // Update sidebar styling
+      document.querySelectorAll('.tab-btn').forEach(el => {
+        el.classList.remove('bg-[#196366]', 'text-white', 'active');
+        el.classList.add('text-gray-300');
+      });
+      event.currentTarget.classList.remove('text-gray-300');
+      event.currentTarget.classList.add('bg-[#196366]', 'text-white', 'active');
+      
+      // Update page title
+      const titles = {
+        'dashboard': 'Dashboard',
+        'users': 'Manage Users',
+        'properties': 'Property Listings',
+        'reservations': 'Reservations',
+        'payments': 'Payments',
+        'moving': 'Moving Logistics',
+        'rewards': 'Rewards Program',
+        'cac': 'CAC Settings'
+      };
+      document.getElementById('page-title').innerText = titles[tabName] || 'Dashboard';
+    }
+  </script>
+</body>
+</html>

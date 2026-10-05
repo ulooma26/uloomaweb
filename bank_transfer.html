@@ -21,14 +21,14 @@
     <nav class="hidden md:flex gap-10 lg:gap-16 text-[19px] font-semibold text-black">
       <a href="index.html" class="hover:text-[#20ACB3] transition">Home</a>
       <a href="explore.html" class="hover:text-[#20ACB3] transition">Explore</a>
-      <a href="tenant.html" class="hover:text-[#20ACB3] transition">How it works</a>
+      <a href="how-it-works.html" class="hover:text-[#20ACB3] transition">How it works</a>
       <a href="about.html" class="hover:text-[#20ACB3] transition">About Us</a>
       <a href="contact.html" class="hover:text-[#20ACB3] transition">Contact Us</a>
     </nav>
 
     <!-- Desktop Sign Up -->
     <div class="hidden md:block">
-      <button onclick="window.location.href='tenant.html'" class="bg-[#20ACB3] text-white rounded-[30px] py-[15px] px-[30px] hover:bg-black transition text-[19px] font-medium cursor-pointer">
+      <button onclick="window.location.href='signup.html'" class="bg-[#20ACB3] text-white rounded-[30px] py-[15px] px-[30px] hover:bg-black transition text-[19px] font-medium cursor-pointer">
         Sign Up
       </button>
     </div>
@@ -45,10 +45,10 @@
     <div class="flex flex-col items-center justify-center h-full gap-12 text-2xl font-semibold text-black">
       <a href="index.html" class="hover:text-[#20ACB3] transition">Home</a>
       <a href="explore.html" class="hover:text-[#20ACB3] transition">Explore</a>
-      <a href="tenant.html" class="hover:text-[#20ACB3] transition">How it works</a>
+      <a href="how-it-works.html" class="hover:text-[#20ACB3] transition">How it works</a>
       <a href="about.html" class="hover:text-[#20ACB3] transition">About Us</a>
       <a href="contact.html" class="hover:text-[#20ACB3] transition">Contact Us</a>
-      <button onclick="window.location.href='tenant.html'" class="bg-[#20ACB3] text-white rounded-[30px] py-4 px-12 hover:bg-black cursor-pointer transition text-xl font-medium">
+      <button onclick="window.location.href='signup.html'" class="bg-[#20ACB3] text-white rounded-[30px] py-4 px-12 hover:bg-black cursor-pointer transition text-xl font-medium">
         Sign Up
       </button>
     </div>
@@ -129,19 +129,31 @@
                     <p class="text-[18px] font-semibold text-[#5C6F70]">Account Name:</p>
                     <p class="text-[18px] font-bold text-[#2E3838]">Ulo Oma Housing Agency LTD.</p>
                 </div>
-                <div class="flex justify-between">
+                <div class="flex justify-between items-center">
                     <p class="text-[18px] font-semibold text-[#5C6F70]">Account Number:</p>
-                    <p class="text-[24px] font-extrabold text-[#2E3838]">1234567890 <i class="bi bi-copy text-2xl text-teal-700 "></i></p>
+                    <div class="flex items-center gap-3">
+                        <span id="accountNumber" class="text-[24px] font-extrabold text-[#2E3838]">1234567890</span>
+                        <button id="copyBtn" onclick="copyAccountNumber()" class="p-2 rounded-lg bg-teal-50 text-teal-700 hover:bg-teal-100 transition cursor-pointer" title="Copy Account Number">
+                            <i class="bi bi-copy text-2xl"></i>
+                        </button>
+                    </div>
                 </div>
+            </div>
+            <div id="copyToast" class="hidden mt-3 text-sm text-green-700 bg-green-50 p-2.5 rounded-xl border border-green-200 text-center font-medium">
+                <i class="bi bi-check-circle-fill"></i> Account number copied to clipboard!
             </div>
         </section>
         <section class="space-y-6">
             <p class="my-10 text-[#2E3838] text-[24px] font-semibold">Instructions To Follow</p>
-            <p><span class="text-[#196366] font-bold text-3xl">—</span><span class="text-[#5C6F70] text-[18px] font-medium"> Send an exact amount</span> (₦2,000– ₦4,000 - ₦6,000 - ₦8,000 - ₦10,000) <span class="text-[#5C6F70] text-[18px] font-medium"> the account shown above.</span></p>
-            <p><span class="text-[#196366] font-bold text-3xl">—</span> <span class="text-[#5C6F70] text-[18px] font-medium">Use your phone number as transfer note or description as this will help us to confirm your payment faster.</span></p>
+            <p><span class="text-[#196366] font-bold text-3xl">—</span><span class="text-[#5C6F70] text-[18px] font-medium"> Send an exact amount</span> (₦2,000 for 3 verified property viewings) <span class="text-[#5C6F70] text-[18px] font-medium">to the account shown above.</span></p>
+            <p><span class="text-[#196366] font-bold text-3xl">—</span> <span class="text-[#5C6F70] text-[18px] font-medium">Use your phone number as transfer note or narration to speed up verification.</span></p>
             <p><span class="text-[#196366] font-bold text-3xl">—</span><span class="text-[#5C6F70] text-[18px] font-medium"> Click “I Have Made The Transfer” after sending.</span></p>
         </section>
-        <div><button onclick="window.location.href='successful.html'" class="bg-[#196366] w-[75vw] rounded-[20px] p-3 text-white text-[18px] font-semibold mt-10">I Have Made The Transfer</button></div>
+        <div>
+            <button onclick="handleTransferDone()" class="bg-[#196366] hover:bg-black transition w-[75vw] rounded-[20px] p-4 text-white text-[18px] font-semibold mt-10 cursor-pointer shadow-lg">
+                I Have Made The Transfer
+            </button>
+        </div>
         </section>
         
     </main>
@@ -240,6 +252,27 @@
       document.body.style.overflow = 'auto';
     }
   });
+
+  function copyAccountNumber() {
+    const acct = document.getElementById('accountNumber').textContent.trim();
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(acct).then(() => {
+        const toast = document.getElementById('copyToast');
+        if (toast) {
+          toast.classList.remove('hidden');
+          setTimeout(() => toast.classList.add('hidden'), 3000);
+        }
+      });
+    } else {
+      alert('Account Number: ' + acct);
+    }
+  }
+
+  function handleTransferDone() {
+    localStorage.setItem('ulooma_properties_remaining', '3');
+    localStorage.setItem('ulooma_access_active', 'true');
+    window.location.href = 'successful.html?purpose=bank_transfer&amount=2000';
+  }
 </script>
 </body>
 </html>
