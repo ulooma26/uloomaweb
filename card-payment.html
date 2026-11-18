@@ -3,261 +3,340 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Secure Payment — Ụlọ Ọma</title>
+    <title>Tenant Access Checkout — Ụlọ Ọma</title>
     <link rel="stylesheet" href="./src/output.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="icon" href="./images/image.png" type="image/png">
     <script src="https://checkout.flutterwave.com/v3.js"></script>
 </head>
-<body id="content" class="bg-gray-50 opacity-0 transition-opacity duration-500 min-h-screen font-sans">
+<body class="bg-[#F8FBFB] font-sans text-[#5C6F70]">
 
-  <header class="sticky top-0 bg-white z-50 shadow-sm">
-    <div class="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
-      <div class="cursor-pointer" onclick="window.location.href='index.html'">
-        <img src="./images/Logo.PNG" alt="Ụlọ Ọma" class="h-12 md:h-14" />
-      </div>
-
-      <!-- Desktop Navigation -->
-      <nav class="hidden md:flex gap-10 lg:gap-16 text-[19px] font-semibold text-black">
-        <a href="index.html" class="hover:text-[#20ACB3] transition">Home</a>
-        <a href="explore.html" class="hover:text-[#20ACB3] transition">Explore</a>
-        <a href="how-it-works.html" class="hover:text-[#20ACB3] transition">How it works</a>
-        <a href="about.html" class="hover:text-[#20ACB3] transition">About Us</a>
-        <a href="contact.html" class="hover:text-[#20ACB3] transition">Contact Us</a>
-      </nav>
-
-      <!-- Desktop Sign Up -->
-      <div class="hidden md:block">
-        <button onclick="window.location.href='signup.html'" class="bg-[#20ACB3] text-white rounded-[30px] py-[15px] px-[30px] hover:bg-black transition text-[19px] font-medium cursor-pointer">
-          Sign Up
-        </button>
-      </div>
-
-      <!-- Mobile Toggle Button -->
-      <button id="menu-toggle" class="md:hidden text-4xl text-[#20ACB3] z-50">
-        <i id="hamburger" class="bi bi-list"></i>
-        <i id="close-x" class="bi bi-x-lg hidden"></i>
-      </button>
+    <!-- Top Announcement Bar -->
+    <div class="bg-[#0F3B3D] text-[#82E4E9] text-xs md:text-sm py-2 px-4 text-center font-medium border-b border-[#196366]/40 flex items-center justify-center gap-2">
+        <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-bold bg-[#20ACB3] text-white">SECURE CHECKOUT</span>
+        <span>Verified Escrow & Card Processing powered by Flutterwave.</span>
     </div>
 
-    <!-- Mobile Full-Screen Menu -->
-    <div id="mobile-menu" class="fixed inset-0 bg-white hidden z-40">
-      <div class="flex flex-col items-center justify-center h-full gap-12 text-2xl font-semibold text-black">
-        <a href="index.html" class="hover:text-[#20ACB3] transition">Home</a>
-        <a href="explore.html" class="hover:text-[#20ACB3] transition">Explore</a>
-        <a href="how-it-works.html" class="hover:text-[#20ACB3] transition">How it works</a>
-        <a href="about.html" class="hover:text-[#20ACB3] transition">About Us</a>
-        <a href="contact.html" class="hover:text-[#20ACB3] transition">Contact Us</a>
-        <button onclick="window.location.href='signup.html'" class="bg-[#20ACB3] text-white rounded-[30px] py-4 px-12 hover:bg-black cursor-pointer transition text-xl font-medium">
-          Sign Up
-        </button>
-      </div>
-    </div>
-  </header>
+    <!-- Header -->
+    <header class="sticky top-0 bg-white z-50 shadow-sm border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="index.html" class="flex flex-col items-start group">
+                <img src="./images/Logo.PNG" alt="Ụlọ Ọma Logo" class="h-10 md:h-12 w-auto object-contain" />
+            </a>
 
-  <main class="max-w-4xl mx-auto px-4 md:px-8 py-12">
-    <!-- Back Button + Title -->
-    <div class="flex items-center gap-3 md:gap-4 mb-8 cursor-pointer hover:opacity-80 transition" onclick="window.location.href='property-details.html'">
-      <i class="bi bi-arrow-left-circle-fill text-[#20ACB3] text-3xl md:text-4xl"></i>
-      <div>
-        <h1 class="font-bold text-2xl md:text-3xl text-[#0F3B3D]">
-          Payment & Access Checkout
-        </h1>
-        <p class="text-sm text-gray-500">Secured via Flutterwave Gateway</p>
-      </div>
-    </div>
+            <nav class="hidden md:flex gap-8 lg:gap-12 text-[17px] font-semibold text-gray-800">
+                <a href="index.html" class="hover:text-[#20ACB3] transition">Home</a>
+                <a href="explore.html" class="hover:text-[#20ACB3] transition">Explore</a>
+                <a href="how-it-works.html" class="hover:text-[#20ACB3] transition">How it works</a>
+                <a href="about.html" class="hover:text-[#20ACB3] transition">About Us</a>
+                <a href="contact.html" class="hover:text-[#20ACB3] transition">Contact Us</a>
+            </nav>
 
-    <!-- Info Banner (Section 5) -->
-    <div class="mb-8 bg-teal-50 border border-teal-200 rounded-3xl p-6 text-[#0F3B3D]">
-      <div class="flex items-start gap-3">
-        <i class="bi bi-patch-check-fill text-2xl text-[#20ACB3] mt-0.5"></i>
-        <div>
-          <h3 class="font-bold text-lg">₦2,000 — Explore 3 Verified Properties</h3>
-          <p class="text-sm text-gray-700 mt-1 leading-relaxed">
-            Your payment grants full access to explore 3 verified properties, accompanied inspections with an assigned Ụlọ Ọma representative, and priority scheduling.
-          </p>
-          <p class="text-xs text-gray-500 mt-2 font-medium">
-            * ₦2,000 purchases access to explore 3 verified listings. It does not purchase or guarantee a tenancy agreement.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Checkout Card -->
-    <div class="bg-white rounded-3xl shadow-xl p-8 md:p-10 border border-gray-100">
-      <form id="paymentForm" class="space-y-6">
-        <div>
-          <label class="block text-sm font-semibold text-gray-700 mb-2">Access Plan</label>
-          <div class="p-4 rounded-2xl border-2 border-[#20ACB3] bg-[#20ACB3]/5 flex items-center justify-between">
-            <div class="flex items-center gap-3">
-              <i class="bi bi-house-check text-2xl text-[#20ACB3]"></i>
-              <div>
-                <p class="font-bold text-gray-900">Tenant Access Pass (3 Properties)</p>
-                <p class="text-xs text-gray-500">Includes free viewing transport within coverage zones</p>
-              </div>
+            <div class="hidden md:flex items-center gap-3">
+                <button onclick="window.location.href='tenant-dashboard.html'" class="text-[#0F3B3D] font-semibold px-4 py-2 hover:text-[#20ACB3] transition text-base">
+                    Tenant Portal
+                </button>
             </div>
-            <span class="text-xl font-bold text-[#20ACB3]">₦2,000</span>
-          </div>
+
+            <!-- Mobile Toggle Button -->
+            <button id="menu-toggle" class="md:hidden text-3xl text-[#20ACB3] focus:outline-none p-1">
+                <i id="hamburger" class="bi bi-list"></i>
+                <i id="close-x" class="bi bi-x-lg hidden"></i>
+            </button>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div>
-            <label class="block text-sm font-semibold text-gray-700 mb-2">Your Full Name</label>
-            <input type="text" id="custName" required placeholder="e.g. Chinedu Okeke" class="w-full px-4 py-3.5 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#20ACB3]">
-          </div>
-          <div>
-            <label class="block text-sm font-semibold text-gray-700 mb-2">Email Address</label>
-            <input type="email" id="custEmail" required placeholder="chinedu@example.com" class="w-full px-4 py-3.5 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#20ACB3]">
-          </div>
-        </div>
-
-        <div>
-          <label class="block text-sm font-semibold text-gray-700 mb-2">Phone Number</label>
-          <input type="tel" id="custPhone" required placeholder="08012345678" class="w-full px-4 py-3.5 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#20ACB3]">
-        </div>
-
-        <!-- Payment Method Cards -->
-        <div>
-          <label class="block text-sm font-semibold text-gray-700 mb-2">Payment Channels</label>
-          <div class="p-4 bg-gray-50 rounded-2xl border border-gray-200 text-sm text-gray-600 flex items-center justify-between">
-            <span class="flex items-center gap-2">
-              <i class="bi bi-shield-lock-fill text-green-600"></i> Supported: Cards, Bank Transfer, USSD, Barter
-            </span>
-            <div class="flex items-center gap-2">
-              <img src="https://img.icons8.com/color/48/000000/visa.png" alt="Visa" class="h-5"/>
-              <img src="https://img.icons8.com/color/48/000000/mastercard.png" alt="Mastercard" class="h-5"/>
-              <span class="font-bold text-xs text-gray-700">VERVE</span>
+        <!-- Mobile Drawer Menu -->
+        <div id="mobile-menu" class="fixed inset-0 bg-white hidden z-40 flex flex-col justify-between p-8">
+            <div class="flex items-center justify-between border-b pb-4">
+                <img src="./images/Logo.PNG" alt="Ụlọ Ọma" class="h-10 w-auto" />
+                <button id="close-drawer" class="text-3xl text-gray-700"><i class="bi bi-x-lg"></i></button>
             </div>
-          </div>
+            <div class="flex flex-col gap-6 text-xl font-semibold text-gray-800 my-auto text-center">
+                <a href="index.html" class="hover:text-[#20ACB3] transition">Home</a>
+                <a href="explore.html" class="hover:text-[#20ACB3] transition">Explore Properties</a>
+                <a href="how-it-works.html" class="hover:text-[#20ACB3] transition">How It Works</a>
+                <a href="tenant-dashboard.html" class="text-[#20ACB3]">Tenant Dashboard</a>
+                <a href="contact.html" class="hover:text-[#20ACB3] transition">Contact Us</a>
+            </div>
+            <div class="space-y-3">
+                <button onclick="window.location.href='explore.html'" class="w-full bg-[#20ACB3] text-white rounded-full py-4 font-bold text-lg">
+                    Return to Explore
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Checkout Container -->
+    <main class="max-w-4xl mx-auto px-4 md:px-8 py-12">
+        
+        <!-- Back Navigation -->
+        <div class="flex items-center gap-3 mb-8 cursor-pointer hover:opacity-80 transition" onclick="window.location.href='explore.html'">
+            <i class="bi bi-arrow-left-circle-fill text-[#20ACB3] text-3xl"></i>
+            <div>
+                <h1 class="font-extrabold text-2xl md:text-3xl text-[#0F3B3D]">
+                    Tenant Access Pass Checkout
+                </h1>
+                <p class="text-xs md:text-sm text-gray-500">₦2,000 — Explore 3 Verified Properties with Accompanied Inspections</p>
+            </div>
         </div>
 
-        <button type="submit" id="payButton" class="w-full bg-[#20ACB3] hover:bg-black text-white font-bold text-lg py-5 rounded-2xl transition shadow-lg cursor-pointer flex items-center justify-center gap-2">
-          <i class="bi bi-lock-fill"></i>
-          <span id="btnPayText">Pay ₦2,000 with Flutterwave</span>
-          <i id="btnPaySpinner" class="bi bi-arrow-repeat animate-spin hidden text-xl"></i>
-        </button>
+        <!-- Section 5 Entitlement Clarity Box -->
+        <div class="bg-gradient-to-r from-teal-50 to-emerald-50 border border-teal-200 rounded-4xl p-6 md:p-8 mb-8 text-[#0F3B3D]">
+            <div class="flex items-start gap-4">
+                <div class="w-12 h-12 rounded-2xl bg-[#20ACB3] text-white flex items-center justify-center text-2xl flex-shrink-0">
+                    <i class="bi bi-patch-check-fill"></i>
+                </div>
+                <div>
+                    <h3 class="font-extrabold text-lg md:text-xl">What your ₦2,000 Tenant Access Pass includes:</h3>
+                    <ul class="mt-3 space-y-2 text-xs md:text-sm text-gray-700">
+                        <li class="flex items-center gap-2">
+                            <i class="bi bi-check-circle-fill text-[#20ACB3]"></i>
+                            <span><strong>Full access to explore 3 verified property listings</strong> (exact compound addresses, verified landlords, video tours).</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="bi bi-check-circle-fill text-[#20ACB3]"></i>
+                            <span><strong>Assigned Ụlọ Ọma viewing representative</strong> to accompany you on physical inspections.</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="bi bi-check-circle-fill text-[#20ACB3]"></i>
+                            <span><strong>Free inspection transport</strong> within our operational service coverage.</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="bi bi-check-circle-fill text-[#20ACB3]"></i>
+                            <span><strong>100% Free moving truck fulfillment</strong> once you choose and rent any apartment.</span>
+                        </li>
+                    </ul>
+                    <p class="text-[11px] text-gray-500 mt-3 pt-3 border-t border-teal-200/60 font-medium italic">
+                        * Note: ₦2,000 purchases access to explore 3 verified listings. It does not purchase or guarantee tenancy.
+                    </p>
+                </div>
+            </div>
+        </div>
 
-        <p class="text-xs text-center text-gray-500">
-          Payment is verified server-side. Your entitlement is activated immediately upon successful transaction confirmation.
-        </p>
-      </form>
-    </div>
-  </main>
+        <!-- Checkout Form Card -->
+        <div class="bg-white rounded-4xl shadow-xl p-8 md:p-10 border border-gray-100">
+            
+            <!-- Plan Summary Bar -->
+            <div class="p-5 rounded-2xl border-2 border-[#20ACB3] bg-[#20ACB3]/5 flex items-center justify-between mb-8">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-[#20ACB3] text-white flex items-center justify-center text-xl">
+                        <i class="bi bi-house-door-fill"></i>
+                    </div>
+                    <div>
+                        <p class="font-extrabold text-gray-900 text-base">3-Property Verified Access Pass</p>
+                        <p class="text-xs text-gray-500">Properties remaining entitlement: 3 listings</p>
+                    </div>
+                </div>
+                <div class="text-right">
+                    <span class="text-2xl font-extrabold text-[#0F3B3D]">₦2,000</span>
+                    <span class="block text-[10px] text-gray-400 font-bold uppercase">One-Time Fee</span>
+                </div>
+            </div>
 
-  <footer class="bg-[#0F3B3D] text-white py-12 mt-20">
-    <div class="max-w-7xl mx-auto px-6 text-center text-sm text-gray-400">
-      <p>&copy; 2025 Ụlọ Ọma. All rights reserved.</p>
-    </div>
-  </footer>
+            <!-- Payment Methods Switcher -->
+            <div class="flex border-b border-gray-200 mb-8">
+                <button class="py-3 px-6 font-bold text-sm text-[#20ACB3] border-b-2 border-[#20ACB3] flex items-center gap-2">
+                    <i class="bi bi-credit-card"></i> Pay Online (Card / USSD / Bank)
+                </button>
+                <a href="bank_transfer.html" class="py-3 px-6 font-bold text-sm text-gray-400 hover:text-gray-700 flex items-center gap-2 transition">
+                    <i class="bi bi-bank"></i> Manual Bank Transfer
+                </a>
+            </div>
 
-  <script>
-    // Fade in
-    document.addEventListener('DOMContentLoaded', () => {
-      document.getElementById('content').classList.remove('opacity-0');
-      document.getElementById('content').classList.add('opacity-100');
-    });
+            <form id="paymentForm" class="space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700 mb-2">Full Name</label>
+                        <input type="text" id="custName" required placeholder="e.g. Chinedu Okeke" class="w-full px-4 py-3.5 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#20ACB3] text-gray-800 text-sm">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700 mb-2">Email Address</label>
+                        <input type="email" id="custEmail" required placeholder="chinedu@example.com" class="w-full px-4 py-3.5 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#20ACB3] text-gray-800 text-sm">
+                    </div>
+                </div>
 
-    // Mobile Menu
-    const toggle = document.getElementById('menu-toggle');
-    const hamburger = document.getElementById('hamburger');
-    const closeX = document.getElementById('close-x');
-    const menu = document.getElementById('mobile-menu');
+                <div>
+                    <label class="block text-sm font-bold text-gray-700 mb-2">Phone Number</label>
+                    <input type="tel" id="custPhone" required placeholder="08012345678" class="w-full px-4 py-3.5 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#20ACB3] text-gray-800 text-sm">
+                </div>
 
-    toggle.addEventListener('click', () => {
-      menu.classList.toggle('hidden');
-      if (menu.classList.contains('hidden')) {
-        hamburger.classList.remove('hidden');
-        closeX.classList.add('hidden');
-        document.body.style.overflow = 'auto';
-      } else {
-        hamburger.classList.add('hidden');
-        closeX.classList.remove('hidden');
-        document.body.style.overflow = 'hidden';
-      }
-    });
+                <!-- Flutterwave Badge -->
+                <div class="p-4 bg-gray-50 rounded-2xl border border-gray-100 flex items-center justify-between">
+                    <span class="text-xs text-gray-600 flex items-center gap-2">
+                        <i class="bi bi-shield-lock-fill text-green-600 text-base"></i>
+                        <span>End-to-end encrypted 256-bit bank security</span>
+                    </span>
+                    <div class="flex items-center gap-2">
+                        <span class="text-xs font-bold text-[#0F3B3D]">Flutterwave</span>
+                        <img src="https://img.icons8.com/color/48/000000/visa.png" alt="Visa" class="h-4"/>
+                        <img src="https://img.icons8.com/color/48/000000/mastercard.png" alt="Mastercard" class="h-4"/>
+                    </div>
+                </div>
 
-    menu.addEventListener('click', (e) => {
-      if (e.target === menu) {
-        menu.classList.add('hidden');
-        hamburger.classList.remove('hidden');
-        closeX.classList.add('hidden');
-        document.body.style.overflow = 'auto';
-      }
-    });
+                <button type="submit" id="payButton" class="w-full bg-[#20ACB3] hover:bg-[#0F3B3D] text-white font-extrabold text-base py-4 rounded-2xl transition duration-200 shadow-xl cursor-pointer flex items-center justify-center gap-2">
+                    <i class="bi bi-lock-fill"></i>
+                    <span id="btnPayText">Pay ₦2,000 & Unlock 3 Properties</span>
+                    <i id="btnPaySpinner" class="bi bi-arrow-repeat animate-spin hidden text-xl"></i>
+                </button>
+            </form>
+        </div>
+    </main>
 
-    // Flutterwave Payment
-    document.getElementById('paymentForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const name = document.getElementById('custName').value.trim();
-      const email = document.getElementById('custEmail').value.trim();
-      const phone = document.getElementById('custPhone').value.trim();
-      const btnText = document.getElementById('btnPayText');
-      const btnSpinner = document.getElementById('btnPaySpinner');
-      const payBtn = document.getElementById('payButton');
+    <!-- Standard Rich Footer -->
+    <footer class="bg-[#0F3B3D] text-white pt-16 pb-12 border-t border-white/10 mt-16">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-white/10">
+                <!-- Col 1: Brand with Tagline under Logo -->
+                <div class="lg:col-span-2 space-y-4">
+                    <a href="index.html" class="inline-block group">
+                        <img src="./images/Logo-white.PNG" alt="Ụlọ Ọma" class="h-12 w-auto object-contain" />
+                        <span class="block text-xs text-[#82E4E9] font-normal italic tracking-tight mt-1">...your comfort, our priority.</span>
+                    </a>
+                    <p class="text-sm text-gray-300 leading-relaxed max-w-sm">
+                        Ụlọ Ọma is Nigeria's premier managed rental and relocation platform. Discover verified apartments, book accompanied inspections, and move in with our 100% free moving truck service.
+                    </p>
+                    <div class="flex items-center gap-3 text-xs text-gray-300">
+                        <span class="px-2.5 py-1 rounded-md bg-white/10 text-[#82E4E9] font-bold">RC: 7894120</span>
+                        <span>Ụlọ Ọma Technologies Ltd</span>
+                    </div>
+                </div>
 
-      btnText.textContent = 'Processing...';
-      btnSpinner.classList.remove('hidden');
-      payBtn.disabled = true;
+                <!-- Col 2: Navigation -->
+                <div class="space-y-3">
+                    <h4 class="text-[#82E4E9] font-bold text-sm uppercase tracking-wider">Explore</h4>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li><a href="explore.html" class="hover:text-white transition">Verified Listings</a></li>
+                        <li><a href="how-it-works.html" class="hover:text-white transition">How It Works</a></li>
+                        <li><a href="about.html" class="hover:text-white transition">About Us</a></li>
+                        <li><a href="moving-out.html" class="hover:text-white transition">₦20,000 Moving Reward</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition">Help & Support</a></li>
+                    </ul>
+                </div>
 
-      const txRef = 'ulo_acc_' + Date.now();
-      const publicKey = window.__ENV?.FLUTTERWAVE_PUBLIC_KEY || 'FLWPUBK_TEST-SANDBOXDEMOKEY-X';
+                <!-- Col 3: Trust & Legal -->
+                <div class="space-y-3">
+                    <h4 class="text-[#82E4E9] font-bold text-sm uppercase tracking-wider">Trust & Legal</h4>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li><a href="about.html#cac-section" class="hover:text-white transition">CAC Incorporation</a></li>
+                        <li><a href="how-it-works.html#verification" class="hover:text-white transition">6-Point Verification</a></li>
+                        <li><a href="card-payment.html" class="hover:text-white transition">Flutterwave Escrow</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition">Privacy Policy</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition">Terms of Service</a></li>
+                    </ul>
+                </div>
 
-      if (typeof FlutterwaveCheckout === 'function') {
-        FlutterwaveCheckout({
-          public_key: publicKey,
-          tx_ref: txRef,
-          amount: 2000,
-          currency: "NGN",
-          payment_options: "card, banktransfer, ussd",
-          customer: {
-            email: email,
-            phone_number: phone,
-            name: name
-          },
-          customizations: {
-            title: "Ụlọ Ọma Platform Access",
-            description: "Access to 3 verified property viewings",
-            logo: "https://ulooma01.vercel.app/images/Logo.PNG"
-          },
-          callback: async function(data) {
-            console.log("Flutterwave callback:", data);
-            try {
-              // Call server-side verification endpoint
-              const verifyRes = await fetch('/api/payments/verify', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                  transactionId: data.transaction_id || txRef,
-                  type: 'access',
-                  amount: 2000
-                })
-              });
-              
-              // Set entitlement
-              localStorage.setItem('ulooma_properties_remaining', '3');
-              localStorage.setItem('ulooma_access_active', 'true');
-              window.location.href = `successful.html?purpose=access&amount=2000&tx_id=${data.transaction_id || txRef}`;
-            } catch (err) {
-              console.warn("Verification API returned error, activating local entitlement for development:", err);
-              localStorage.setItem('ulooma_properties_remaining', '3');
-              localStorage.setItem('ulooma_access_active', 'true');
-              window.location.href = `successful.html?purpose=access&amount=2000&tx_id=${txRef}`;
+                <!-- Col 4: Contact & Office -->
+                <div class="space-y-3">
+                    <h4 class="text-[#82E4E9] font-bold text-sm uppercase tracking-wider">Headquarters</h4>
+                    <div class="text-sm text-gray-300 space-y-2">
+                        <p class="flex items-start gap-2">
+                            <i class="bi bi-geo-alt text-[#20ACB3] mt-1"></i>
+                            <span>Aba, Abia State, Nigeria</span>
+                        </p>
+                        <p class="flex items-center gap-2">
+                            <i class="bi bi-telephone text-[#20ACB3]"></i>
+                            <span>+234 706 591 7720</span>
+                        </p>
+                        <p class="flex items-center gap-2">
+                            <i class="bi bi-whatsapp text-[#20ACB3]"></i>
+                            <a href="https://wa.me/2347065917720" target="_blank" class="hover:text-white underline">WhatsApp Helpdesk</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-400 gap-4">
+                <p>&copy; 2025 Ụlọ Ọma Technologies Ltd. All Rights Reserved. ...your comfort, our priority.</p>
+                <div class="flex gap-6 text-lg text-gray-300">
+                    <a href="https://wa.me/2347065917720" class="hover:text-[#20ACB3] transition"><i class="bi bi-whatsapp"></i></a>
+                    <a href="#" class="hover:text-[#20ACB3] transition"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="hover:text-[#20ACB3] transition"><i class="bi bi-instagram"></i></a>
+                    <a href="#" class="hover:text-[#20ACB3] transition"><i class="bi bi-twitter-x"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const toggle = document.getElementById('menu-toggle');
+        const menu = document.getElementById('mobile-menu');
+        const closeDrawer = document.getElementById('close-drawer');
+
+        function toggleMenu() {
+            menu.classList.toggle('hidden');
+            document.body.style.overflow = menu.classList.contains('hidden') ? 'auto' : 'hidden';
+        }
+
+        if (toggle) toggle.addEventListener('click', toggleMenu);
+        if (closeDrawer) closeDrawer.addEventListener('click', toggleMenu);
+
+        // Pre-fill user details if logged in
+        document.addEventListener('DOMContentLoaded', () => {
+            const storedUser = localStorage.getItem('ulooma_user');
+            if (storedUser) {
+                try {
+                    const u = JSON.parse(storedUser);
+                    if (u.name) document.getElementById('custName').value = u.name;
+                    if (u.email) document.getElementById('custEmail').value = u.email;
+                    if (u.phone) document.getElementById('custPhone').value = u.phone;
+                } catch(e) {}
             }
-          },
-          onclose: function() {
-            btnText.textContent = 'Pay ₦2,000 with Flutterwave';
-            btnSpinner.classList.add('hidden');
-            payBtn.disabled = false;
-          }
         });
-      } else {
-        // Fallback simulation when CDN is unreachable
-        setTimeout(() => {
-          localStorage.setItem('ulooma_properties_remaining', '3');
-          localStorage.setItem('ulooma_access_active', 'true');
-          window.location.href = `successful.html?purpose=access&amount=2000&tx_id=${txRef}`;
-        }, 1000);
-      }
-    });
-  </script>
+
+        document.getElementById('paymentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('custName').value;
+            const email = document.getElementById('custEmail').value;
+            const phone = document.getElementById('custPhone').value;
+            const btnPayText = document.getElementById('btnPayText');
+            const btnPaySpinner = document.getElementById('btnPaySpinner');
+            const payBtn = document.getElementById('payButton');
+
+            btnPayText.textContent = 'Initializing Flutterwave...';
+            btnPaySpinner.classList.remove('hidden');
+            payBtn.disabled = true;
+
+            const tx_ref = 'ULO-' + Date.now();
+
+            // Check if Flutterwave script is ready
+            if (typeof FlutterwaveCheckout === 'function') {
+                FlutterwaveCheckout({
+                    public_key: 'FLWPUBK_TEST-SANDBOXDEMO-X',
+                    tx_ref: tx_ref,
+                    amount: 2000,
+                    currency: 'NGN',
+                    payment_options: 'card,ussd,banktransfer',
+                    customer: {
+                        email: email,
+                        phone_number: phone,
+                        name: name
+                    },
+                    customizations: {
+                        title: 'Ụlọ Ọma Tenant Pass',
+                        description: '₦2,000 for 3 Verified Properties Access',
+                        logo: window.location.origin + '/images/Logo.PNG'
+                    },
+                    callback: function(data) {
+                        // Activate entitlement
+                        localStorage.setItem('ulooma_properties_remaining', '3');
+                        localStorage.setItem('ulooma_access_active', 'true');
+                        window.location.href = 'successful.html?tx_ref=' + tx_ref + '&amount=2000';
+                    },
+                    onclose: function() {
+                        btnPayText.textContent = 'Pay ₦2,000 & Unlock 3 Properties';
+                        btnPaySpinner.classList.add('hidden');
+                        payBtn.disabled = false;
+                    }
+                });
+            } else {
+                // Fallback simulation for offline/sandbox testing
+                setTimeout(() => {
+                    localStorage.setItem('ulooma_properties_remaining', '3');
+                    localStorage.setItem('ulooma_access_active', 'true');
+                    window.location.href = 'successful.html?tx_ref=' + tx_ref + '&amount=2000';
+                }, 1000);
+            }
+        });
+    </script>
 </body>
 </html>

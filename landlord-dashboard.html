@@ -3,130 +3,290 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Landlord Dashboard — Ụlọ Ọma</title>
+  <title>Landlord Portal — Ụlọ Ọma</title>
   <link rel="stylesheet" href="./src/output.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
   <link rel="icon" href="./images/image.png" type="image/png" />
 </head>
-<body class="bg-gray-50 font-sans text-[#5C6F70]">
+<body class="bg-[#F8FBFB] font-sans text-[#5C6F70]">
+
+  <!-- Top Announcement Bar -->
+  <div class="bg-[#0F3B3D] text-[#82E4E9] text-xs md:text-sm py-2 px-4 text-center font-medium border-b border-[#196366]/40 flex items-center justify-center gap-2">
+    <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-bold bg-[#20ACB3] text-white">LANDLORD PORTAL</span>
+    <span>Zero agent commission. 100% accompanied physical viewings with assigned Ụlọ Ọma representatives.</span>
+  </div>
+
   <!-- Header -->
-  <header class="sticky top-0 bg-white z-50 shadow-sm">
-    <div class="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
-      <div class="cursor-pointer" onclick="window.location.href='index.html'">
-        <img src="./images/Logo.PNG" alt="Ụlọ Ọma" class="h-12 md:h-14" />
-      </div>
-      <nav class="hidden md:flex gap-10 lg:gap-16 text-[19px] font-semibold text-black">
+  <header class="sticky top-0 bg-white z-50 shadow-sm border-b border-gray-100">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="flex flex-col items-start group">
+        <img src="./images/Logo.PNG" alt="Ụlọ Ọma Logo" class="h-10 md:h-12 w-auto object-contain" />
+      </a>
+
+      <nav class="hidden md:flex gap-8 lg:gap-12 text-[17px] font-semibold text-gray-800">
         <a href="index.html" class="hover:text-[#20ACB3] transition">Home</a>
         <a href="explore.html" class="hover:text-[#20ACB3] transition">Explore</a>
         <a href="how-it-works.html" class="hover:text-[#20ACB3] transition">How it works</a>
-        <a href="about.html" class="hover:text-[#20ACB3] transition">About Us</a>
-        <a href="contact.html" class="hover:text-[#20ACB3] transition">Contact Us</a>
+        <a href="landlord-dashboard.html" class="text-[#20ACB3] font-bold">Landlord Portal</a>
+        <a href="contact.html" class="hover:text-[#20ACB3] transition">Support</a>
       </nav>
+
       <div class="hidden md:flex items-center gap-4">
-        <span class="font-medium text-black">Landlord Jane</span>
-        <button onclick="window.location.href='index.html'" class="bg-gray-200 text-black rounded-[30px] py-[10px] px-[20px] hover:bg-gray-300 transition font-medium cursor-pointer">Logout</button>
+        <div class="flex items-center gap-2 text-right">
+          <div class="w-9 h-9 rounded-full bg-[#0F3B3D] text-white flex items-center justify-center font-bold text-sm">
+            EO
+          </div>
+          <div class="text-xs text-left">
+            <span class="font-bold text-gray-900 block">Engr. Okonkwo</span>
+            <span class="text-green-600 font-semibold flex items-center gap-1"><i class="bi bi-patch-check-fill"></i> Verified Landlord</span>
+          </div>
+        </div>
+        <button onclick="window.location.href='index.html'" class="text-xs font-semibold px-3 py-2 rounded-xl bg-gray-100 hover:bg-gray-200 text-gray-700 transition">
+          Log Out
+        </button>
       </div>
-      <button id="menu-toggle" class="md:hidden text-4xl text-[#20ACB3] z-50">
+
+      <!-- Mobile Toggle Button -->
+      <button id="menu-toggle" class="md:hidden text-3xl text-[#20ACB3] focus:outline-none p-1">
         <i id="hamburger" class="bi bi-list"></i>
         <i id="close-x" class="bi bi-x-lg hidden"></i>
       </button>
     </div>
-    <div id="mobile-menu" class="fixed inset-0 bg-white hidden z-40">
-      <div class="flex flex-col items-center justify-center h-full gap-12 text-2xl font-semibold text-black">
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobile-menu" class="fixed inset-0 bg-white hidden z-40 flex flex-col justify-between p-8">
+      <div class="flex items-center justify-between border-b pb-4">
+        <img src="./images/Logo.PNG" alt="Ụlọ Ọma" class="h-10 w-auto" />
+        <button id="close-drawer" class="text-3xl text-gray-700"><i class="bi bi-x-lg"></i></button>
+      </div>
+      <div class="flex flex-col gap-6 text-xl font-semibold text-gray-800 my-auto text-center">
         <a href="index.html" class="hover:text-[#20ACB3] transition">Home</a>
-        <a href="explore.html" class="hover:text-[#20ACB3] transition">Explore</a>
-        <a href="how-it-works.html" class="hover:text-[#20ACB3] transition">How it works</a>
-        <a href="about.html" class="hover:text-[#20ACB3] transition">About Us</a>
+        <a href="explore.html" class="hover:text-[#20ACB3] transition">Explore Properties</a>
+        <a href="landlord-dashboard.html" class="text-[#20ACB3]">Landlord Dashboard</a>
+        <a href="list-property.html" class="hover:text-[#20ACB3] transition">List New Property</a>
         <a href="contact.html" class="hover:text-[#20ACB3] transition">Contact Us</a>
-        <button onclick="window.location.href='index.html'" class="bg-gray-200 text-black rounded-[30px] py-4 px-12 hover:bg-gray-300 cursor-pointer transition text-xl font-medium">Logout</button>
+      </div>
+      <div class="space-y-3">
+        <button onclick="window.location.href='list-property.html'" class="w-full bg-[#20ACB3] text-white rounded-full py-4 font-bold text-lg">
+          + List Property
+        </button>
+        <button onclick="window.location.href='index.html'" class="w-full border border-gray-300 text-gray-800 rounded-full py-3.5 font-bold text-lg">
+          Log Out
+        </button>
       </div>
     </div>
   </header>
 
-  <main id="content" class="max-w-7xl mx-auto px-6 py-12 opacity-0 transition-opacity duration-500 ease-in-out min-h-screen">
-    <!-- Welcome Banner -->
+  <!-- Main Portal Content -->
+  <main class="max-w-7xl mx-auto px-6 py-10">
+    <!-- Welcome Header -->
     <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 gap-4">
       <div>
-        <h1 class="text-4xl font-bold text-[#0F3B3D]">Landlord Portal</h1>
-        <p class="text-lg mt-2">Manage your listings, view enquiries, and track verifications.</p>
+        <h1 class="text-3xl md:text-4xl font-extrabold text-[#0F3B3D]">Landlord Management Portal</h1>
+        <p class="text-sm md:text-base text-gray-600 mt-1">Manage listings, approve viewing schedules, and track rent settlements.</p>
       </div>
-      <button onclick="window.location.href='moving-out.html'" class="bg-[#20ACB3] text-white rounded-[30px] py-[15px] px-[30px] hover:bg-black transition font-medium cursor-pointer flex items-center gap-2">
-        <i class="bi bi-plus-lg"></i> Add New Property
-      </button>
+      <div class="flex items-center gap-3">
+        <button onclick="window.location.href='list-property.html'" class="bg-[#20ACB3] hover:bg-[#0F3B3D] text-white rounded-full py-3.5 px-7 transition font-bold text-sm flex items-center gap-2 shadow-lg cursor-pointer">
+          <i class="bi bi-plus-circle-fill"></i> List New Property
+        </button>
+      </div>
     </div>
 
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+    <!-- Quick Stats Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+      <div class="bg-white p-6 rounded-3xl shadow-sm border border-gray-100">
+        <div class="flex items-center justify-between mb-3">
+          <span class="text-xs font-bold text-gray-400 uppercase tracking-wider">Total Properties</span>
+          <div class="w-10 h-10 rounded-2xl bg-[#0F3B3D]/10 text-[#0F3B3D] flex items-center justify-center text-lg">
+            <i class="bi bi-buildings"></i>
+          </div>
+        </div>
+        <div class="text-3xl font-extrabold text-[#0F3B3D]">3 Listings</div>
+        <span class="text-xs text-green-600 font-semibold flex items-center gap-1 mt-1">
+          <i class="bi bi-check-circle"></i> 2 Published & Active
+        </span>
+      </div>
+
+      <div class="bg-white p-6 rounded-3xl shadow-sm border border-gray-100">
+        <div class="flex items-center justify-between mb-3">
+          <span class="text-xs font-bold text-gray-400 uppercase tracking-wider">Scheduled Inspections</span>
+          <div class="w-10 h-10 rounded-2xl bg-[#20ACB3]/10 text-[#20ACB3] flex items-center justify-center text-lg">
+            <i class="bi bi-calendar2-check"></i>
+          </div>
+        </div>
+        <div class="text-3xl font-extrabold text-[#0F3B3D]">4 Viewings</div>
+        <span class="text-xs text-teal-600 font-semibold flex items-center gap-1 mt-1">
+          <i class="bi bi-car-front-fill"></i> Rep transport arranged
+        </span>
+      </div>
+
+      <div class="bg-white p-6 rounded-3xl shadow-sm border border-gray-100">
+        <div class="flex items-center justify-between mb-3">
+          <span class="text-xs font-bold text-gray-400 uppercase tracking-wider">Escrow Balance</span>
+          <div class="w-10 h-10 rounded-2xl bg-green-50 text-green-700 flex items-center justify-center text-lg">
+            <i class="bi bi-cash-coin"></i>
+          </div>
+        </div>
+        <div class="text-3xl font-extrabold text-[#0F3B3D]">₦650,000</div>
+        <span class="text-xs text-green-600 font-semibold flex items-center gap-1 mt-1">
+          <i class="bi bi-shield-check"></i> Direct payout on agreement
+        </span>
+      </div>
+
+      <div class="bg-white p-6 rounded-3xl shadow-sm border border-gray-100">
+        <div class="flex items-center justify-between mb-3">
+          <span class="text-xs font-bold text-gray-400 uppercase tracking-wider">Verification Tier</span>
+          <div class="w-10 h-10 rounded-2xl bg-blue-50 text-blue-700 flex items-center justify-center text-lg">
+            <i class="bi bi-patch-check"></i>
+          </div>
+        </div>
+        <div class="text-2xl font-extrabold text-[#0F3B3D]">Tier 1 Verified</div>
+        <span class="text-xs text-blue-600 font-semibold flex items-center gap-1 mt-1">
+          <i class="bi bi-file-earmark-check"></i> Title & ID confirmed
+        </span>
+      </div>
+    </div>
+
+    <!-- Main Content Area: Left Listings + Right Inspections -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
       
-      <!-- Left Column (Main Content) -->
-      <div class="lg:col-span-2 space-y-8">
+      <!-- Left Column (Listings) -->
+      <div class="lg:col-span-8 space-y-8">
         
-        <!-- My Properties -->
-        <div class="bg-white shadow-lg p-7 rounded-4xl border border-gray-100">
-          <h2 class="text-2xl font-bold text-[#0F3B3D] mb-6">My Properties</h2>
-          
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Property Listings Table / Cards -->
+        <div class="bg-white shadow-xl rounded-4xl p-6 md:p-8 border border-gray-100">
+          <div class="flex items-center justify-between mb-6">
+            <div>
+              <h2 class="text-xl md:text-2xl font-extrabold text-[#0F3B3D]">My Listed Properties</h2>
+              <p class="text-xs text-gray-500 mt-0.5">Physical inspection status and occupancy records</p>
+            </div>
+            <button onclick="window.location.href='list-property.html'" class="text-xs font-bold text-[#20ACB3] hover:underline flex items-center gap-1">
+              Add Property <i class="bi bi-arrow-right"></i>
+            </button>
+          </div>
+
+          <div class="space-y-4">
             <!-- Property 1 -->
-            <div class="border border-gray-100 rounded-2xl overflow-hidden hover:shadow-md transition">
-              <div class="relative h-40">
-                <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=500&h=300&fit=crop" alt="Property" class="w-full h-full object-cover" />
-                <span class="absolute top-3 right-3 bg-green-500 text-white px-3 py-1 rounded-full text-xs font-bold">Published</span>
-              </div>
-              <div class="p-5">
-                <h3 class="font-bold text-black text-lg">3 Bedroom Flat</h3>
-                <p class="text-sm mb-2">Victoria Island, Lagos</p>
-                <p class="font-bold text-[#20ACB3] text-xl mb-4">₦4,500,000 / year</p>
-                <div class="flex gap-2">
-                  <button class="flex-1 border border-gray-300 text-black py-2 rounded-xl text-sm font-medium hover:bg-gray-50">Edit</button>
-                  <button class="flex-1 bg-[#20ACB3] text-white py-2 rounded-xl text-sm font-medium hover:bg-black transition">View</button>
+            <div class="border border-gray-100 rounded-3xl p-5 hover:shadow-md transition flex flex-col sm:flex-row gap-5 items-start sm:items-center justify-between bg-[#F8FBFB]">
+              <div class="flex items-center gap-4">
+                <img src="./images/1.jpg" alt="Executive 1 Bedroom Flat" class="w-20 h-20 rounded-2xl object-cover shadow-sm flex-shrink-0" />
+                <div>
+                  <div class="flex items-center gap-2">
+                    <span class="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-green-100 text-green-800">
+                      <i class="bi bi-check-circle-fill"></i> Verified & Published
+                    </span>
+                    <span class="text-xs text-gray-400">Ref: ULO-882</span>
+                  </div>
+                  <h3 class="font-extrabold text-gray-900 text-base mt-1">Executive 1-Bedroom Flat</h3>
+                  <p class="text-xs text-gray-500">Brass Junction, Aba, Abia State</p>
+                  <p class="font-bold text-[#20ACB3] text-sm mt-1">₦450,000 / year</p>
                 </div>
+              </div>
+              <div class="flex sm:flex-col gap-2 w-full sm:w-auto">
+                <button onclick="window.location.href='property-details.html'" class="flex-1 sm:flex-none px-4 py-2 rounded-xl bg-white border border-gray-200 text-xs font-bold text-gray-700 hover:bg-gray-100 transition">
+                  View Public Page
+                </button>
+                <button class="flex-1 sm:flex-none px-4 py-2 rounded-xl bg-[#20ACB3] text-white text-xs font-bold hover:bg-[#0F3B3D] transition">
+                  Manage Viewings (2)
+                </button>
               </div>
             </div>
 
             <!-- Property 2 -->
-            <div class="border border-gray-100 rounded-2xl overflow-hidden hover:shadow-md transition">
-              <div class="relative h-40 bg-gray-200 flex items-center justify-center">
-                <i class="bi bi-image text-4xl text-gray-400"></i>
-                <span class="absolute top-3 right-3 bg-yellow-500 text-white px-3 py-1 rounded-full text-xs font-bold">Under Review</span>
-              </div>
-              <div class="p-5">
-                <h3 class="font-bold text-black text-lg">Self Contain</h3>
-                <p class="text-sm mb-2">Surulere, Lagos</p>
-                <p class="font-bold text-[#20ACB3] text-xl mb-4">₦500,000 / year</p>
-                <div class="flex gap-2">
-                  <button class="flex-1 border border-gray-300 text-black py-2 rounded-xl text-sm font-medium hover:bg-gray-50">Edit</button>
-                  <button class="flex-1 bg-gray-200 text-gray-500 py-2 rounded-xl text-sm font-medium cursor-not-allowed">View</button>
+            <div class="border border-gray-100 rounded-3xl p-5 hover:shadow-md transition flex flex-col sm:flex-row gap-5 items-start sm:items-center justify-between bg-[#F8FBFB]">
+              <div class="flex items-center gap-4">
+                <img src="./images/2.jpg" alt="Modern 2 Bedroom Flat" class="w-20 h-20 rounded-2xl object-cover shadow-sm flex-shrink-0" />
+                <div>
+                  <div class="flex items-center gap-2">
+                    <span class="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-teal-100 text-teal-800">
+                      <i class="bi bi-people-fill"></i> Viewing Active
+                    </span>
+                    <span class="text-xs text-gray-400">Ref: ULO-883</span>
+                  </div>
+                  <h3 class="font-extrabold text-gray-900 text-base mt-1">Modern 2-Bedroom Apartment</h3>
+                  <p class="text-xs text-gray-500">Ogbor Hill, Aba, Abia State</p>
+                  <p class="font-bold text-[#20ACB3] text-sm mt-1">₦650,000 / year</p>
                 </div>
+              </div>
+              <div class="flex sm:flex-col gap-2 w-full sm:w-auto">
+                <button onclick="window.location.href='property-details.html'" class="flex-1 sm:flex-none px-4 py-2 rounded-xl bg-white border border-gray-200 text-xs font-bold text-gray-700 hover:bg-gray-100 transition">
+                  View Public Page
+                </button>
+                <button class="flex-1 sm:flex-none px-4 py-2 rounded-xl bg-[#20ACB3] text-white text-xs font-bold hover:bg-[#0F3B3D] transition">
+                  Manage Viewings (2)
+                </button>
+              </div>
+            </div>
+
+            <!-- Property 3 -->
+            <div class="border border-gray-100 rounded-3xl p-5 hover:shadow-md transition flex flex-col sm:flex-row gap-5 items-start sm:items-center justify-between bg-yellow-50/40">
+              <div class="flex items-center gap-4">
+                <div class="w-20 h-20 rounded-2xl bg-yellow-100 text-yellow-700 flex items-center justify-center text-3xl flex-shrink-0">
+                  <i class="bi bi-camera"></i>
+                </div>
+                <div>
+                  <div class="flex items-center gap-2">
+                    <span class="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-yellow-100 text-yellow-800">
+                      <i class="bi bi-clock-history"></i> Verification Scheduled
+                    </span>
+                    <span class="text-xs text-gray-400">Ref: ULO-884</span>
+                  </div>
+                  <h3 class="font-extrabold text-gray-900 text-base mt-1">Self-Contained Studio</h3>
+                  <p class="text-xs text-gray-500">Faulks Road, Aba, Abia State</p>
+                  <p class="font-bold text-[#20ACB3] text-sm mt-1">₦320,000 / year</p>
+                </div>
+              </div>
+              <div class="flex sm:flex-col gap-2 w-full sm:w-auto">
+                <span class="text-xs text-yellow-800 font-medium bg-yellow-100 px-3 py-1.5 rounded-xl text-center">
+                  Rep visiting tomorrow
+                </span>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Enquiries -->
-        <div class="bg-white shadow-lg p-7 rounded-4xl border border-gray-100">
-          <h2 class="text-2xl font-bold text-[#0F3B3D] mb-6">Recent Enquiries</h2>
+        <!-- Scheduled Inspections Feed -->
+        <div class="bg-white shadow-xl rounded-4xl p-6 md:p-8 border border-gray-100">
+          <h2 class="text-xl md:text-2xl font-extrabold text-[#0F3B3D] mb-4">Accompanied Inspection Schedule</h2>
+          <p class="text-xs text-gray-500 mb-6">Each prospective tenant is accompanied by an assigned Ụlọ Ọma representative.</p>
           
           <div class="overflow-x-auto">
-            <table class="w-full text-left border-collapse">
+            <table class="w-full text-left border-collapse text-sm">
               <thead>
-                <tr class="border-b border-gray-200">
-                  <th class="py-3 px-4 text-black font-semibold">Property</th>
-                  <th class="py-3 px-4 text-black font-semibold">Tenant</th>
-                  <th class="py-3 px-4 text-black font-semibold">Status</th>
-                  <th class="py-3 px-4 text-black font-semibold">Date</th>
+                <tr class="border-b border-gray-200 text-xs font-bold text-gray-400 uppercase tracking-wider">
+                  <th class="py-3 px-3">Tenant</th>
+                  <th class="py-3 px-3">Property</th>
+                  <th class="py-3 px-3">Date & Time</th>
+                  <th class="py-3 px-3">Assigned Ụlọ Ọma Rep</th>
+                  <th class="py-3 px-3 text-right">Status</th>
                 </tr>
               </thead>
-              <tbody>
-                <tr class="border-b border-gray-100 hover:bg-gray-50">
-                  <td class="py-3 px-4">3 Bedroom Flat</td>
-                  <td class="py-3 px-4">Michael A.</td>
-                  <td class="py-3 px-4"><span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs font-medium">Viewing Requested</span></td>
-                  <td class="py-3 px-4 text-sm">Oct 10, 2024</td>
+              <tbody class="divide-y divide-gray-100">
+                <tr class="hover:bg-gray-50/70">
+                  <td class="py-3 px-3 font-bold text-gray-900">Michael A.</td>
+                  <td class="py-3 px-3 text-gray-600">Executive 1-Bedroom Flat</td>
+                  <td class="py-3 px-3 text-gray-600">Tomorrow, 10:00 AM</td>
+                  <td class="py-3 px-3 text-gray-600">
+                    <span class="inline-flex items-center gap-1.5 text-xs font-semibold text-[#0F3B3D]">
+                      <i class="bi bi-person-badge text-[#20ACB3]"></i> Emeka Nwankwo
+                    </span>
+                  </td>
+                  <td class="py-3 px-3 text-right">
+                    <span class="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-green-100 text-green-800">Confirmed</span>
+                  </td>
                 </tr>
-                <tr class="hover:bg-gray-50">
-                  <td class="py-3 px-4">3 Bedroom Flat</td>
-                  <td class="py-3 px-4">Sarah T.</td>
-                  <td class="py-3 px-4"><span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs font-medium">Proceeding</span></td>
-                  <td class="py-3 px-4 text-sm">Oct 08, 2024</td>
+                <tr class="hover:bg-gray-50/70">
+                  <td class="py-3 px-3 font-bold text-gray-900">Sarah T.</td>
+                  <td class="py-3 px-3 text-gray-600">Modern 2-Bedroom Apartment</td>
+                  <td class="py-3 px-3 text-gray-600">Friday, 2:30 PM</td>
+                  <td class="py-3 px-3 text-gray-600">
+                    <span class="inline-flex items-center gap-1.5 text-xs font-semibold text-[#0F3B3D]">
+                      <i class="bi bi-person-badge text-[#20ACB3]"></i> Emeka Nwankwo
+                    </span>
+                  </td>
+                  <td class="py-3 px-3 text-right">
+                    <span class="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-teal-100 text-teal-800">Scheduled</span>
+                  </td>
                 </tr>
               </tbody>
             </table>
@@ -135,101 +295,151 @@
 
       </div>
 
-      <!-- Right Column (Sidebar) -->
-      <div class="space-y-8">
+      <!-- Right Column: Verification & Title Documents -->
+      <div class="lg:col-span-4 space-y-6">
         
-        <!-- Verification Status -->
-        <div class="bg-white shadow-lg p-7 rounded-4xl border border-gray-100">
-          <h2 class="text-xl font-bold text-[#0F3B3D] mb-4">Verification Status</h2>
-          
-          <div class="flex items-center gap-4 mb-4 p-4 bg-green-50 rounded-2xl border border-green-100">
-            <i class="bi bi-shield-check text-3xl text-green-600"></i>
+        <!-- Verification Card -->
+        <div class="bg-white shadow-xl rounded-4xl p-6 md:p-8 border border-gray-100">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-2xl bg-green-100 text-green-600 flex items-center justify-center text-xl">
+              <i class="bi bi-shield-check"></i>
+            </div>
             <div>
-              <p class="font-bold text-green-800">Verified Landlord</p>
-              <p class="text-xs text-green-700">Your documents have been approved.</p>
+              <h3 class="font-extrabold text-[#0F3B3D] text-base">Landlord Verification</h3>
+              <p class="text-xs text-gray-500">Official ownership check</p>
             </div>
           </div>
-          
-          <div class="space-y-3">
-            <div class="flex justify-between items-center text-sm">
-              <span>Govt. ID</span>
-              <span class="text-green-600"><i class="bi bi-check-circle-fill"></i> Verified</span>
+
+          <div class="space-y-3 pt-2 border-t border-gray-100 text-xs">
+            <div class="flex items-center justify-between">
+              <span class="text-gray-600">Government Photo ID (NIN / Voter ID)</span>
+              <span class="text-green-600 font-bold flex items-center gap-1"><i class="bi bi-check-circle-fill"></i> Verified</span>
             </div>
-            <div class="flex justify-between items-center text-sm">
-              <span>Proof of Address</span>
-              <span class="text-green-600"><i class="bi bi-check-circle-fill"></i> Verified</span>
+            <div class="flex items-center justify-between">
+              <span class="text-gray-600">Proof of Ownership / Deed</span>
+              <span class="text-green-600 font-bold flex items-center gap-1"><i class="bi bi-check-circle-fill"></i> Verified</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-gray-600">Electricity Meter Number</span>
+              <span class="text-green-600 font-bold flex items-center gap-1"><i class="bi bi-check-circle-fill"></i> Verified</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-gray-600">Physical Compound Inspection</span>
+              <span class="text-green-600 font-bold flex items-center gap-1"><i class="bi bi-check-circle-fill"></i> Passed</span>
             </div>
           </div>
-          
-          <button class="mt-6 w-full border border-[#20ACB3] text-[#20ACB3] py-2 rounded-xl text-sm font-medium hover:bg-[#20ACB3] hover:text-white transition">Update Documents</button>
+
+          <div class="mt-6 p-4 rounded-2xl bg-teal-50 border border-teal-100 text-xs text-[#0F3B3D]">
+            <i class="bi bi-info-circle-fill text-[#20ACB3]"></i> Your properties carry the <strong>Ụlọ Ọma Verified Badge</strong>, ranking them higher in tenant searches.
+          </div>
         </div>
 
-        <!-- Notifications -->
-        <div class="bg-white shadow-lg p-7 rounded-4xl border border-gray-100">
-          <h2 class="text-xl font-bold text-[#0F3B3D] mb-4 flex items-center gap-2">
-            <i class="bi bi-bell"></i> Notifications
-          </h2>
-          <div class="space-y-4">
-            <div class="border-l-4 border-[#20ACB3] pl-3 py-1">
-              <p class="text-sm font-medium text-black">New Enquiry</p>
-              <p class="text-xs mt-1">Michael A. wants to view your 3 Bedroom Flat.</p>
-            </div>
-            <div class="border-l-4 border-[#196366] pl-3 py-1">
-              <p class="text-sm font-medium text-black">Listing Approved</p>
-              <p class="text-xs mt-1">Your 3 Bedroom Flat is now live on the platform.</p>
-            </div>
+        <!-- 100% Free Moving Fulfillment Notice -->
+        <div class="bg-gradient-to-br from-[#0F3B3D] to-[#196366] text-white shadow-xl rounded-4xl p-6 md:p-8">
+          <div class="w-12 h-12 rounded-2xl bg-white/10 text-[#82E4E9] flex items-center justify-center text-2xl mb-4">
+            <i class="bi bi-truck"></i>
+          </div>
+          <h3 class="font-bold text-lg mb-2">100% Free Moving Fulfillment</h3>
+          <p class="text-xs text-gray-200 leading-relaxed mb-4">
+            When a tenant pays for your apartment, Ụlọ Ọma provides complimentary moving logistics to transport them in safely without disturbing your compound.
+          </p>
+          <div class="text-[11px] text-[#82E4E9] font-medium flex items-center gap-1">
+            <i class="bi bi-check2-circle"></i> Zero cost to landlord or tenant
           </div>
         </div>
 
       </div>
+
     </div>
   </main>
 
-  <!-- Footer -->
-  <footer class="bg-[#0F3B3D] text-white pt-8 pb-8 mt-12">
+  <!-- Standard Rich Footer -->
+  <footer class="bg-[#0F3B3D] text-white pt-16 pb-12 border-t border-white/10 mt-16">
     <div class="max-w-7xl mx-auto px-6">
-      <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-400">
-        <p>&copy; 2024 Ụlọ Ọma. All rights reserved.</p>
-        <div class="flex gap-4">
-          <a href="#" class="hover:text-[#82E4E9] transition">Privacy Policy</a>
-          <a href="#" class="hover:text-[#82E4E9] transition">Terms of Service</a>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-white/10">
+        <!-- Col 1: Brand with Tagline under Logo -->
+        <div class="lg:col-span-2 space-y-4">
+          <a href="index.html" class="inline-block group">
+            <img src="./images/Logo-white.PNG" alt="Ụlọ Ọma" class="h-12 w-auto object-contain" />
+            <span class="block text-xs text-[#82E4E9] font-normal italic tracking-tight mt-1">...your comfort, our priority.</span>
+          </a>
+          <p class="text-sm text-gray-300 leading-relaxed max-w-sm">
+            Ụlọ Ọma is Nigeria's premier managed rental and relocation platform. Discover verified apartments, book accompanied inspections, and move in with our 100% free moving truck service.
+          </p>
+          <div class="flex items-center gap-3 text-xs text-gray-300">
+            <span class="px-2.5 py-1 rounded-md bg-white/10 text-[#82E4E9] font-bold">RC: 7894120</span>
+            <span>Ụlọ Ọma Technologies Ltd</span>
+          </div>
+        </div>
+
+        <!-- Col 2: Navigation -->
+        <div class="space-y-3">
+          <h4 class="text-[#82E4E9] font-bold text-sm uppercase tracking-wider">Explore</h4>
+          <ul class="space-y-2 text-sm text-gray-300">
+            <li><a href="explore.html" class="hover:text-white transition">Verified Listings</a></li>
+            <li><a href="how-it-works.html" class="hover:text-white transition">How It Works</a></li>
+            <li><a href="about.html" class="hover:text-white transition">About Us</a></li>
+            <li><a href="moving-out.html" class="hover:text-white transition">₦20,000 Moving Reward</a></li>
+            <li><a href="contact.html" class="hover:text-white transition">Help & Support</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Trust & Legal -->
+        <div class="space-y-3">
+          <h4 class="text-[#82E4E9] font-bold text-sm uppercase tracking-wider">Trust & Legal</h4>
+          <ul class="space-y-2 text-sm text-gray-300">
+            <li><a href="about.html#cac-section" class="hover:text-white transition">CAC Incorporation</a></li>
+            <li><a href="how-it-works.html#verification" class="hover:text-white transition">6-Point Verification</a></li>
+            <li><a href="card-payment.html" class="hover:text-white transition">Flutterwave Escrow</a></li>
+            <li><a href="contact.html" class="hover:text-white transition">Privacy Policy</a></li>
+            <li><a href="contact.html" class="hover:text-white transition">Terms of Service</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Contact & Office -->
+        <div class="space-y-3">
+          <h4 class="text-[#82E4E9] font-bold text-sm uppercase tracking-wider">Headquarters</h4>
+          <div class="text-sm text-gray-300 space-y-2">
+            <p class="flex items-start gap-2">
+              <i class="bi bi-geo-alt text-[#20ACB3] mt-1"></i>
+              <span>Aba, Abia State, Nigeria</span>
+            </p>
+            <p class="flex items-center gap-2">
+              <i class="bi bi-telephone text-[#20ACB3]"></i>
+              <span>+234 706 591 7720</span>
+            </p>
+            <p class="flex items-center gap-2">
+              <i class="bi bi-whatsapp text-[#20ACB3]"></i>
+              <a href="https://wa.me/2347065917720" target="_blank" class="hover:text-white underline">WhatsApp Helpdesk</a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-400 gap-4">
+        <p>&copy; 2025 Ụlọ Ọma Technologies Ltd. All Rights Reserved. ...your comfort, our priority.</p>
+        <div class="flex gap-6 text-lg text-gray-300">
+          <a href="https://wa.me/2347065917720" class="hover:text-[#20ACB3] transition"><i class="bi bi-whatsapp"></i></a>
+          <a href="#" class="hover:text-[#20ACB3] transition"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="hover:text-[#20ACB3] transition"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="hover:text-[#20ACB3] transition"><i class="bi bi-twitter-x"></i></a>
         </div>
       </div>
     </div>
   </footer>
 
   <script>
-    // Mobile Menu Toggle
     const toggle = document.getElementById('menu-toggle');
-    const hamburger = document.getElementById('hamburger');
-    const closeX = document.getElementById('close-x');
     const menu = document.getElementById('mobile-menu');
-    toggle.addEventListener('click', () => {
-      menu.classList.toggle('hidden');
-      if (menu.classList.contains('hidden')) {
-        hamburger.classList.remove('hidden');
-        closeX.classList.add('hidden');
-        document.body.style.overflow = 'auto';
-      } else {
-        hamburger.classList.add('hidden');
-        closeX.classList.remove('hidden');
-        document.body.style.overflow = 'hidden';
-      }
-    });
-    menu.addEventListener('click', (e) => {
-      if (e.target === menu) {
-        menu.classList.add('hidden');
-        hamburger.classList.remove('hidden');
-        closeX.classList.add('hidden');
-        document.body.style.overflow = 'auto';
-      }
-    });
+    const closeDrawer = document.getElementById('close-drawer');
 
-    // Page Fade In
-    document.addEventListener('DOMContentLoaded', () => {
-      const content = document.getElementById('content');
-      if (content) { content.classList.remove('opacity-0'); content.classList.add('opacity-100'); }
-    });
+    function toggleMenu() {
+      menu.classList.toggle('hidden');
+      document.body.style.overflow = menu.classList.contains('hidden') ? 'auto' : 'hidden';
+    }
+
+    if (toggle) toggle.addEventListener('click', toggleMenu);
+    if (closeDrawer) closeDrawer.addEventListener('click', toggleMenu);
   </script>
 </body>
 </html>

@@ -3,574 +3,600 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>1 Bedroom Apartment</title>
+  <title>Property Details — Ụlọ Ọma</title>
+  <link rel="stylesheet" href="./src/output.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-<link rel="stylesheet" href="./src/output.css">
+  <link rel="shortcut icon" href="./images/image.png" type="images/x-icon">
   <style>
     .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
     .scrollbar-hide::-webkit-scrollbar { display: none; }
   </style>
 </head>
-<body class="bg-white font-sans">
+<body class="bg-[#F8FBFB] text-[#0F3B3D] font-sans antialiased min-h-screen flex flex-col">
 
-  <script>
-    // Wait until the DOM is fully loaded
-    document.addEventListener('DOMContentLoaded', (event) => {
-        // Find the element by its ID
-        const content = document.getElementById('content');
-        
-        // Remove the opacity-0 class and add the opacity-100 class
-        if (content) {
-            content.classList.remove('opacity-0');
-            content.classList.add('opacity-100');
-        }
-    });
-</script>
+  <!-- Top Announcement Bar -->
+  <div class="bg-[#0F3B3D] text-white text-xs sm:text-sm py-2 px-4 text-center font-medium flex items-center justify-center gap-3">
+    <span class="bg-[#20ACB3] text-white text-[11px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">Free Moving</span>
+    <span>Find your home. We help you move in — <strong>100% Free moving truck</strong> on every rental payment!</span>
+    <a href="moving-out.html" class="underline text-[#82E4E9] hover:text-white hidden sm:inline">Earn ₦20,000 moving out &rarr;</a>
+  </div>
 
-  <div class=" mx-auto  rounded-3xl overflow-hidden p-10">
+  <!-- Header Navigation -->
+  <header class="sticky top-0 bg-white/95 backdrop-blur-md z-50 border-b border-gray-100 shadow-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3.5 flex items-center justify-between">
+      <!-- Brand Logo & Tagline -->
+      <div class="cursor-pointer flex flex-col" onclick="window.location.href='index.html'">
+        <img src="./images/Logo.PNG" alt="Ụlọ Ọma ...your comfort, our priority." class="h-11 md:h-13 w-auto object-contain" />
+      </div>
 
-<header class="sticky top-0 bg-white z-50">
-  <div class="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
+      <!-- Desktop Navigation -->
+      <nav class="hidden lg:flex items-center gap-8 text-[16px] font-semibold text-[#0F3B3D]">
+        <a href="index.html" class="hover:text-[#20ACB3] transition">Home</a>
+        <a href="explore.html" class="text-[#20ACB3] font-bold">Explore</a>
+        <a href="how-it-works.html" class="hover:text-[#20ACB3] transition">How It Works</a>
+        <a href="moving-out.html" class="hover:text-[#20ACB3] transition flex items-center gap-1.5 text-[#196366]">
+          <i class="bi bi-gift-fill text-[#20ACB3]"></i> ₦20,000 Reward
+        </a>
+        <a href="about.html" class="hover:text-[#20ACB3] transition">About Us</a>
+        <a href="contact.html" class="hover:text-[#20ACB3] transition">Contact</a>
+      </nav>
 
-    <!-- Logo -->
-    <div class="cursor-pointer" onclick="window.location.href='index.html'">
-      <img src="./images/Logo.PNG" alt="Ulo Oma" class="h-12 md:h-14" />
-    </div>
+      <!-- Desktop Actions -->
+      <div class="hidden sm:flex items-center gap-4">
+        <a href="list-property.html" class="text-sm font-semibold text-[#0F3B3D] hover:text-[#20ACB3] px-3 py-2 transition flex items-center gap-1.5">
+          <i class="bi bi-plus-circle-fill text-[#20ACB3]"></i> List Property
+        </a>
+        <a href="tenant-dashboard.html" class="bg-[#20ACB3] text-white px-5 py-2.5 rounded-[20px] hover:bg-black transition text-sm font-medium shadow-sm flex items-center gap-2">
+          <i class="bi bi-person-circle"></i> Dashboard
+        </a>
+      </div>
 
-    <!-- Desktop Navigation -->
-    <nav class="hidden md:flex gap-10 lg:gap-16 text-[19px] font-semibold text-black">
-      <a href="index.html" class="hover:text-[#20ACB3] transition">Home</a>
-      <a href="explore.html" class="hover:text-[#20ACB3] transition">Explore</a>
-      <a href="how-it-works.html" class="hover:text-[#20ACB3] transition">How it works</a>
-      <a href="about.html" class="hover:text-[#20ACB3] transition">About Us</a>
-      <a href="contact.html" class="hover:text-[#20ACB3] transition">Contact Us</a>
-    </nav>
-
-    <!-- Desktop Sign Up -->
-    <div class="hidden md:block">
-      <button onclick="window.location.href='signup.html'" class="bg-[#20ACB3] text-white rounded-[30px] py-[15px] px-[30px] hover:bg-black transition text-[19px] font-medium cursor-pointer">
-        Sign Up
+      <!-- Mobile Toggle -->
+      <button id="menu-toggle" class="lg:hidden text-3xl text-[#20ACB3] p-1 focus:outline-none" aria-label="Toggle menu">
+        <i id="hamburger" class="bi bi-list"></i>
+        <i id="close-x" class="bi bi-x-lg hidden"></i>
       </button>
     </div>
 
-    <!-- Mobile Toggle Button -->
-    <button id="menu-toggle" class="md:hidden text-4xl text-[#20ACB3] z-50">
-      <i id="hamburger" class="bi bi-list"></i>
-      <i id="close-x" class="bi bi-x-lg hidden"></i>
-    </button>
-  </div>
-
-  <!-- Mobile Full-Screen Menu (Vertical Only) -->
-  <div id="mobile-menu" class="fixed inset-0 bg-white hidden z-40">
-    <div class="flex flex-col items-center justify-center h-full gap-12 text-2xl font-semibold text-black">
-      <a href="index.html" class="hover:text-[#20ACB3] transition">Home</a>
-      <a href="explore.html" class="hover:text-[#20ACB3] transition">Explore</a>
-      <a href="how-it-works.html" class="hover:text-[#20ACB3] transition">How it works</a>
-      <a href="about.html" class="hover:text-[#20ACB3] transition">About Us</a>
-      <a href="contact.html" class="hover:text-[#20ACB3] transition">Contact Us</a>
-      <button onclick="window.location.href='signup.html'" class="bg-[#20ACB3] text-white rounded-[30px] py-4 px-12 hover:bg-black cursor-pointer transition text-xl font-medium">
-        Sign Up
-      </button>
+    <!-- Mobile Drawer -->
+    <div id="mobile-menu" class="fixed inset-0 top-[65px] bg-white hidden z-40 flex-col p-6 overflow-y-auto space-y-6 shadow-2xl lg:hidden">
+      <div class="flex flex-col space-y-4 text-lg font-semibold text-[#0F3B3D] border-b border-gray-100 pb-6">
+        <a href="index.html" class="hover:text-[#20ACB3]">Home</a>
+        <a href="explore.html" class="text-[#20ACB3]">Explore Properties</a>
+        <a href="how-it-works.html" class="hover:text-[#20ACB3]">How It Works</a>
+        <a href="moving-out.html" class="hover:text-[#20ACB3] text-[#196366] flex items-center gap-2">
+          <i class="bi bi-gift-fill text-[#20ACB3]"></i> ₦20,000 Relocation Reward
+        </a>
+        <a href="about.html" class="hover:text-[#20ACB3]">About Us & CAC Credentials</a>
+        <a href="contact.html" class="hover:text-[#20ACB3]">Contact Support</a>
+      </div>
+      <div class="flex flex-col gap-3">
+        <a href="list-property.html" class="w-full text-center py-3 rounded-2xl border-2 border-[#20ACB3] text-[#20ACB3] font-bold">
+          <i class="bi bi-plus-circle mr-1"></i> List a Property
+        </a>
+        <a href="tenant-dashboard.html" class="w-full text-center py-3 rounded-2xl bg-[#20ACB3] text-white font-bold shadow-md">
+          <i class="bi bi-person-circle mr-1"></i> My Dashboard
+        </a>
+      </div>
     </div>
-  </div>
-</header>
-    <br>
+  </header>
+
+  <!-- Main Container -->
+  <main class="max-w-5xl mx-auto px-4 sm:px-6 py-8 flex-1 w-full space-y-8">
     
-    <!-- Back Arrow-->
-    <div class="px-6 pt-4 text-gray-600 flex items-center gap-3 cursor-pointer ml-80 " onclick="window.location.href='index.html'">
-      <i class="bi bi-arrow-left-circle-fill cursor-pointer md:text-4xl text-lg"></i> <p class=" font-semibold md:text-2xl text-sm text-black"> Explore 1 Bedroom Apartment</p>
+    <!-- Breadcrumb & Back Link -->
+    <div class="flex items-center gap-3 text-sm text-[#5C6F70]">
+      <a href="explore.html" class="hover:text-[#20ACB3] flex items-center gap-1.5 font-semibold">
+        <i class="bi bi-arrow-left-circle-fill text-xl text-[#20ACB3]"></i> Back to Explore
+      </a>
+      <span>/</span>
+      <span class="text-[#0F3B3D] font-bold" id="breadcrumbTitle">Property Details</span>
     </div>
 
-    <section class="max-w-4xl mx-auto mt-6 mb-10 opacity-0 transition-opacity duration-500" id="content">
-    <!-- Main Picture -->
-    <div class="relative mt-5">
-      <div id="mainImg" class="relative bg-gray-200 rounded-3xl overflow-hidden aspect-video bg-cover bg-center md:cursor-default cursor-pointer" onclick="openFullscreen()"></div>
+    <!-- Media Carousel Card -->
+    <div class="bg-white rounded-4xl p-4 sm:p-6 shadow-xl border border-gray-100 space-y-4">
+      
+      <!-- Main Image Display -->
+      <div class="relative bg-gray-100 rounded-3xl overflow-hidden aspect-video bg-cover bg-center shadow-inner" id="mainImg">
+        
+        <!-- Verification Overlay Chip -->
+        <div class="absolute top-4 left-4 bg-green-500 text-white px-3.5 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5 shadow-md">
+          <i class="bi bi-patch-check-fill"></i> Ụlọ Ọma Verified
+        </div>
 
-      <!-- The Arrows for the Main Picture -->
-      <button id="prev" class="absolute left-8 top-1/2 -translate-y-1/2 w-10 h-10 bg-black/40 text-white rounded-full flex items-center justify-center text-2xl hover:bg-black/60">
-        <i class="bi bi-chevron-left"></i>
-      </button>
-      <button id="next" class="absolute right-8 top-1/2 -translate-y-1/2 w-10 h-10 bg-black/40 text-white rounded-full flex items-center justify-center text-2xl hover:bg-black/60">
-<i class="bi bi-chevron-right"></i>
-      </button>
+        <!-- Photo Counter -->
+        <div id="count" class="absolute top-4 right-4 bg-black/60 backdrop-blur-xs text-white px-3 py-1 rounded-full text-xs font-semibold">
+          1/8
+        </div>
 
-      <!-- Video Button -->
-      <button id="video" class="absolute bottom-4 right-8 bg-[#20ACB3] hover:bg-[#000000] text-white px-5 py-4 cursor-pointer rounded-full text-sm font-medium flex items-center gap-2 transition">
-        Play Video <i class="bi bi-camera-video"></i>
-      </button>
+        <!-- Nav Arrows -->
+        <button id="prev" class="absolute left-4 top-1/2 -translate-y-1/2 w-11 h-11 bg-black/40 hover:bg-black/70 text-white rounded-full flex items-center justify-center text-xl transition cursor-pointer" aria-label="Previous image">
+          <i class="bi bi-chevron-left"></i>
+        </button>
+        <button id="next" class="absolute right-4 top-1/2 -translate-y-1/2 w-11 h-11 bg-black/40 hover:bg-black/70 text-white rounded-full flex items-center justify-center text-xl transition cursor-pointer" aria-label="Next image">
+          <i class="bi bi-chevron-right"></i>
+        </button>
 
-      <!-- The Counters -->
-      <div id="count" class="absolute top-6 right-8 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-sm font-medium">
-        1/8
+        <!-- Video Tour Button -->
+        <button id="videoBtn" onclick="toggleVideoTour()" class="absolute bottom-4 right-4 bg-[#20ACB3] hover:bg-black text-white px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold flex items-center gap-2 transition shadow-lg cursor-pointer">
+          <i class="bi bi-camera-video-fill"></i> Watch Video Walkthrough
+        </button>
+      </div>
+
+      <!-- Thumbnail Strip -->
+      <div id="thumbs" class="flex gap-3 overflow-x-auto scrollbar-hide py-2">
+        <!-- populated via js -->
       </div>
     </div>
 
-    <!-- 8 Pictures-->
-    <div id="thumbs" class="flex gap-2 px-5 py-4 justify-between overflow-x-auto scrollbar-hide">
-     
-    </div>
-
-    <!-- Title and Price -->
-    <div class="px-6">
-      <h1 id="propertyTitle" class="text-2xl font-bold text-gray-900">1 Bedroom Flat In Aba</h1>
-      <p id="propertyLocation" class="text-gray-500 text-sm mt-1">Aba (Aba North) Aba State.</p>
-      <div class="mt-3 flex items-baseline gap-2">
-        <span id="propertyPrice" class="text-3xl font-bold text-[#20ACB3]">₦570,000</span>
-        <span class="text-gray-500">/ year</span>
-      </div>
-    </div>
-
-    <!-- Tags -->
-    <div class="flex flex-wrap gap-3 px-6 mt-5 bg-gray-300 p-10 rounded-2xl md:justify-around justify-start ">
-      <span class=" text-black px-4 py-2 rounded-full text-sm flex items-center md:items-center gap-2">
-        <div class="w-4 h-4 bg-cyan-100 rounded p-4 flex items-center justify-center"><i class="bi bi-people-fill text-[#20ACB3]"></i></div>Bedroom <br><span id="propertyRooms">1</span>
-      </span>
-      <span class=" text-black px-4 py-2 rounded-full text-sm flex items-center gap-2">
-        <div class="w-4 h-4 bg-cyan-100 rounded p-4 flex items-center justify-center"><i class="bi bi-rulers text-[#20ACB3]"></i></div>Size <br>85 sqm
-      </span>
-      <span class=" text-black px-4 py-2 rounded-full text-sm flex items-center gap-2">
-        <div class="w-4 h-4 bg-cyan-100 rounded p-4 flex items-center justify-center"><i class="bi bi-pen-fill text-[#20ACB3]"></i></div>Tenancy <br> Long-Term
-      </span>
-      <span class=" text-black px-4 py-2 rounded-full text-sm flex items-center gap-2">
-        <div class="w-4 h-4 bg-cyan-100 rounded p-4 flex items-center justify-center"><i class="bi bi-clock text-[#20ACB3]"></i></div>Status <br> Furnished
-      </span>
-    </div>
-<hr class="mt-10 md:hidden block">
-    <!-- About -->
-    <div class="px-6 mt-7">
-      <h2 class="text-lg font-semibold">About This Apartment</h2>
-      <p class="mt-3 text-gray-600 text-[15px] leading-relaxed">
-        This cozy 1-bedroom apartment is perfect for anyone seeking comfort and simplicity in a secure environment. The bedroom is spacious and airy, with natural light streaming through well-positioned windows. The living room is stylish yet compact, while the modern kitchen is fitted with cabinets and essential space for easy cooking. With 24/7 water supply, reliable electricity, and secure parking, this apartment offers a stress-free lifestyle for young professionals, students, or individuals who value convenience and peace of mind.
-      </p>
-    </div>
-
-    <!-- Amenities -->
-    <div class="px-6 mt-7">
-      <div class="flex justify-between gap-200">
-      <h2 class="md:text-lg text-sm font-semibold">Amenities This Apartment Offers </h2>
-      <a href="#" class="hidden md:text-[#20ACB3] md:text-sm md:mt-4">See All</a>
-            </div>
-      <div class="gap-6 mt-5 text-center md:flex md:flex-row md:justify-around justify-start flex flex-wrap">
-        <div><div class="w-12 h-12 rounded-xl mx-auto mb-2 flex items-center justify-center "><i class="bi bi-droplet-fill text-[#20ACB3]"></i></div><p class="text-sm text-gray-600">Water</p></div>
-        <div><div class="w-12 h-12 rounded-xl mx-auto mb-2 flex items-center justify-center"><i class="bi bi-shield-shaded text-[#20ACB3]"></i></div><p class="text-sm text-gray-600">Security</p></div>
-        <div><div class="w-12 h-12 rounded-xl mx-auto mb-2 flex items-center justify-center"><i class="bi bi-car-front-fill text-[#20ACB3]"></i></div><p class="text-sm text-gray-600">Parking Lot</p></div>
-        <div><div class="w-12 h-12 rounded-xl mx-auto mb-2 flex items-center justify-center"><i class="bi bi-wifi text-[#20ACB3]"></i></div><p class="text-sm text-gray-600">Free Wi-Fi</p></div>
-        <div><div class="w-12 h-12  rounded-xl mx-auto mb-2 flex items-center justify-center"><i class="bi bi-box2-fill text-[#20ACB3]"></i></div><p class="text-sm text-gray-600">Wardrobe</p></div>
-        <div><div class="w-12 h-12 rounded-xl mx-auto mb-2 flex items-center justify-center"><i class="bi bi-square-half text-[#20ACB3]"></i></div><p class="text-sm text-gray-600">Tiles</p></div>
-        <div><div class="w-12 h-12  rounded-xl mx-auto mb-2 flex items-center justify-center"><i class="bi bi-lightning-charge-fill text-[#20ACB3]"></i></div><p class="text-sm text-gray-600">24/7 Electricity</p></div>
-      </div>
-
-    </div>
-
-    <!-- Verification Status (Section 10) -->
-    <div class="px-6 mt-8">
-      <h2 class="text-lg font-semibold text-[#0F3B3D] mb-3 flex items-center gap-2">
-        <i class="bi bi-patch-check-fill text-[#20ACB3]"></i> Ụlọ Ọma Verification Status
-      </h2>
-      <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
-        <div class="flex items-center gap-2 bg-green-50 text-green-800 p-3 rounded-xl border border-green-200 text-sm font-medium">
-          <i class="bi bi-check-circle-fill text-green-600"></i> Property Verified
+    <!-- Free Moving Highlight Banner -->
+    <div class="bg-gradient-to-r from-[#0F3B3D] via-[#196366] to-[#0F3B3D] text-white p-5 rounded-3xl shadow-md flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <div class="w-12 h-12 rounded-2xl bg-[#20ACB3] text-white flex items-center justify-center text-2xl shrink-0">
+          <i class="bi bi-truck"></i>
         </div>
-        <div class="flex items-center gap-2 bg-green-50 text-green-800 p-3 rounded-xl border border-green-200 text-sm font-medium">
-          <i class="bi bi-check-circle-fill text-green-600"></i> Landlord Verified
-        </div>
-        <div class="flex items-center gap-2 bg-green-50 text-green-800 p-3 rounded-xl border border-green-200 text-sm font-medium">
-          <i class="bi bi-check-circle-fill text-green-600"></i> Address Verified
-        </div>
-        <div class="flex items-center gap-2 bg-green-50 text-green-800 p-3 rounded-xl border border-green-200 text-sm font-medium">
-          <i class="bi bi-check-circle-fill text-green-600"></i> Availability Confirmed
-        </div>
-        <div class="flex items-center gap-2 bg-green-50 text-green-800 p-3 rounded-xl border border-green-200 text-sm font-medium">
-          <i class="bi bi-check-circle-fill text-green-600"></i> Media Verified
-        </div>
-        <div class="flex items-center gap-2 bg-green-50 text-green-800 p-3 rounded-xl border border-green-200 text-sm font-medium">
-          <i class="bi bi-check-circle-fill text-green-600"></i> Inspection Completed
+        <div>
+          <h4 class="font-bold text-sm sm:text-base text-white">100% Free Relocation Included on this Home</h4>
+          <p class="text-xs text-gray-200">When you rent this apartment, Ụlọ Ọma provides a free moving truck & crew to move you in.</p>
         </div>
       </div>
+      <a href="tenant-dashboard.html" class="bg-white/10 hover:bg-white hover:text-[#0F3B3D] text-white border border-white/30 px-5 py-2 rounded-full text-xs font-bold transition shrink-0">
+        Moving Details
+      </a>
     </div>
 
-    <!-- Assigned Ụlọ Ọma Representative (Section 12) -->
-    <div class="px-6 mt-8">
-      <div class="bg-gray-50 border border-gray-200 rounded-3xl p-6">
-        <h3 class="text-sm uppercase tracking-wider font-semibold text-gray-500 mb-4">Assigned Ụlọ Ọma Property Representative</h3>
+    <!-- Title, Price & Key Facts -->
+    <div class="bg-white rounded-4xl p-6 sm:p-8 shadow-xl border border-gray-100 space-y-6">
+      
+      <div class="flex flex-col sm:flex-row justify-between items-start gap-4">
+        <div>
+          <h1 id="propertyTitle" class="text-2xl sm:text-3xl font-extrabold text-[#0F3B3D]">1 Bedroom Apartment</h1>
+          <p id="propertyLocation" class="text-[#5C6F70] text-sm sm:text-base flex items-center gap-1.5 mt-1.5">
+            <i class="bi bi-geo-alt-fill text-[#20ACB3]"></i> Aba, Abia State, Nigeria
+          </p>
+        </div>
+        <div class="text-left sm:text-right">
+          <span id="propertyPrice" class="text-3xl sm:text-4xl font-extrabold text-[#20ACB3]">₦570,000</span>
+          <span class="text-xs text-[#5C6F70] block font-semibold mt-0.5">/ annual lease • Zero Extra Agent Fees</span>
+        </div>
+      </div>
+
+      <!-- Key Spec Chips -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 p-5 bg-gray-50 rounded-2xl border border-gray-100 text-center">
+        <div>
+          <span class="text-xs text-gray-500 block uppercase font-bold tracking-wider">Bedrooms</span>
+          <span id="propertyRooms" class="text-lg font-extrabold text-[#0F3B3D]">1 Bed</span>
+        </div>
+        <div>
+          <span class="text-xs text-gray-500 block uppercase font-bold tracking-wider">Bathrooms</span>
+          <span class="text-lg font-extrabold text-[#0F3B3D]">1 Private Bath</span>
+        </div>
+        <div>
+          <span class="text-xs text-gray-500 block uppercase font-bold tracking-wider">Tenancy Type</span>
+          <span class="text-lg font-extrabold text-[#0F3B3D]">Annual Lease</span>
+        </div>
+        <div>
+          <span class="text-xs text-gray-500 block uppercase font-bold tracking-wider">Furnishing</span>
+          <span class="text-lg font-extrabold text-[#0F3B3D]">Semi-Furnished</span>
+        </div>
+      </div>
+
+      <!-- Description -->
+      <div class="space-y-3">
+        <h3 class="font-bold text-lg text-[#0F3B3D]">About This Apartment</h3>
+        <p class="text-sm sm:text-base text-[#5C6F70] leading-relaxed">
+          This fully verified apartment has been inspected in person by the Ụlọ Ọma area operations team. Featuring a modern layout, cross-ventilation, POP ceiling design, dedicated pre-paid electricity meter, uninterrupted borehole water supply, and gated perimeter fencing with 24/7 uniformed security. Move-in ready with our 100% free moving truck service.
+        </p>
+      </div>
+
+      <!-- Nigerian Amenities Grid -->
+      <div class="space-y-4 pt-4 border-t border-gray-100">
+        <h3 class="font-bold text-lg text-[#0F3B3D]">Verified Nigerian Amenities</h3>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs sm:text-sm">
+          <div class="flex items-center gap-2 p-3 bg-gray-50 rounded-xl">
+            <i class="bi bi-lightning-charge-fill text-amber-500 text-lg"></i>
+            <span>24/7 Power Support</span>
+          </div>
+          <div class="flex items-center gap-2 p-3 bg-gray-50 rounded-xl">
+            <i class="bi bi-droplet-fill text-blue-500 text-lg"></i>
+            <span>Clean Borehole Water</span>
+          </div>
+          <div class="flex items-center gap-2 p-3 bg-gray-50 rounded-xl">
+            <i class="bi bi-shield-lock-fill text-green-600 text-lg"></i>
+            <span>Gated Security Guard</span>
+          </div>
+          <div class="flex items-center gap-2 p-3 bg-gray-50 rounded-xl">
+            <i class="bi bi-car-front-fill text-purple-600 text-lg"></i>
+            <span>Dedicated Parking Space</span>
+          </div>
+          <div class="flex items-center gap-2 p-3 bg-gray-50 rounded-xl">
+            <i class="bi bi-box2-fill text-[#20ACB3] text-lg"></i>
+            <span>Fitted Wardrobes</span>
+          </div>
+          <div class="flex items-center gap-2 p-3 bg-gray-50 rounded-xl">
+            <i class="bi bi-square-half text-[#20ACB3] text-lg"></i>
+            <span>Polished Ceramic Tiles</span>
+          </div>
+          <div class="flex items-center gap-2 p-3 bg-gray-50 rounded-xl">
+            <i class="bi bi-wifi text-blue-500 text-lg"></i>
+            <span>Fiber Optic Ready</span>
+          </div>
+          <div class="flex items-center gap-2 p-3 bg-teal-50 text-[#0F3B3D] font-bold rounded-xl border border-teal-200">
+            <i class="bi bi-truck text-[#20ACB3] text-lg"></i>
+            <span>100% Free Moving In</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6-Point Verification Badges (Section 10) -->
+      <div class="space-y-4 pt-4 border-t border-gray-100">
+        <h3 class="font-bold text-lg text-[#0F3B3D] flex items-center gap-2">
+          <i class="bi bi-patch-check-fill text-[#20ACB3]"></i> 6-Point Verification Checklist
+        </h3>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-3 text-xs sm:text-sm">
+          <div class="flex items-center gap-2 bg-green-50 text-green-800 p-3 rounded-xl border border-green-200 font-semibold">
+            <i class="bi bi-check-circle-fill text-green-600"></i> Property Physically Verified
+          </div>
+          <div class="flex items-center gap-2 bg-green-50 text-green-800 p-3 rounded-xl border border-green-200 font-semibold">
+            <i class="bi bi-check-circle-fill text-green-600"></i> Landlord Ownership Confirmed
+          </div>
+          <div class="flex items-center gap-2 bg-green-50 text-green-800 p-3 rounded-xl border border-green-200 font-semibold">
+            <i class="bi bi-check-circle-fill text-green-600"></i> Address & Title Verified
+          </div>
+          <div class="flex items-center gap-2 bg-green-50 text-green-800 p-3 rounded-xl border border-green-200 font-semibold">
+            <i class="bi bi-check-circle-fill text-green-600"></i> Vacant Availability Confirmed
+          </div>
+          <div class="flex items-center gap-2 bg-green-50 text-green-800 p-3 rounded-xl border border-green-200 font-semibold">
+            <i class="bi bi-check-circle-fill text-green-600"></i> Photos & Video Authenticated
+          </div>
+          <div class="flex items-center gap-2 bg-green-50 text-green-800 p-3 rounded-xl border border-green-200 font-semibold">
+            <i class="bi bi-check-circle-fill text-green-600"></i> Ụlọ Ọma Staff Inspected
+          </div>
+        </div>
+      </div>
+
+      <!-- Assigned Representative Card (Section 12) -->
+      <div class="bg-gray-50 border border-gray-200 rounded-3xl p-6 space-y-4">
         <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div class="flex items-center gap-4">
-            <div class="w-14 h-14 rounded-full bg-[#20ACB3] text-white flex items-center justify-center font-bold text-xl shadow-md">
+            <div class="w-14 h-14 rounded-2xl bg-[#20ACB3] text-white flex items-center justify-center font-bold text-xl shadow-md">
               <i class="bi bi-person-badge"></i>
             </div>
             <div>
-              <h4 class="font-bold text-lg text-gray-900">Emeka Nwankwo</h4>
-              <p class="text-sm text-[#20ACB3] font-medium">Ụlọ Ọma Area Operations Lead (Aba)</p>
-              <p class="text-xs text-gray-500 mt-0.5">Available for accompanied viewing: Mon - Sat (9:00 AM - 5:00 PM)</p>
+              <span class="text-xs uppercase font-bold text-[#20ACB3] tracking-wider">Assigned Ụlọ Ọma Property Representative</span>
+              <h4 class="font-extrabold text-lg text-[#0F3B3D]">Emeka Nwankwo</h4>
+              <p class="text-xs text-gray-500 mt-0.5">Area Operations Lead (Aba North & South) • Free viewing transport escort</p>
             </div>
           </div>
-          <a href="tel:+2347065917720" class="inline-flex items-center gap-2 bg-white border border-[#20ACB3] text-[#20ACB3] hover:bg-[#20ACB3] hover:text-white px-5 py-2.5 rounded-full text-sm font-medium transition">
-            <i class="bi bi-telephone-fill"></i> Contact Representative
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Reserve for Inspection Button (Section 11) -->
-    <div class="px-6 mt-10 pb-8">
-      <div id="entitlementBanner" class="mb-4 p-4 rounded-2xl bg-teal-50 border border-teal-200 flex items-center justify-between">
-        <div class="flex items-center gap-3">
-          <i class="bi bi-shield-lock-fill text-2xl text-[#20ACB3]"></i>
-          <div>
-            <p class="font-bold text-sm text-[#0F3B3D]">Verified Properties Entitlement</p>
-            <p id="entitlementText" class="text-xs text-[#5C6F70]">Properties remaining: 3 (Included with your ₦2,000 Explorer Access)</p>
+          <div class="flex items-center gap-2 w-full sm:w-auto">
+            <a href="https://wa.me/2347065917720?text=Hello%20Emeka,%20I%20want%20to%20inspect%20the%20apartment%20on%20Ulo%20Oma" target="_blank" class="flex-1 sm:flex-initial text-center px-4 py-2.5 bg-green-600 hover:bg-green-700 text-white rounded-full text-xs font-bold transition flex items-center justify-center gap-1.5 shadow-sm">
+              <i class="bi bi-whatsapp"></i> WhatsApp Rep
+            </a>
+            <a href="tel:+2347065917720" class="flex-1 sm:flex-initial text-center px-4 py-2.5 border border-gray-300 hover:bg-white text-[#0F3B3D] rounded-full text-xs font-bold transition flex items-center justify-center gap-1.5">
+              <i class="bi bi-telephone-fill"></i> Call
+            </a>
           </div>
         </div>
-        <span class="inline-flex items-center gap-1 bg-[#20ACB3] text-white text-xs font-semibold px-3 py-1 rounded-full">Active</span>
       </div>
 
-      <button id="reserveButton" class="w-full bg-[#20ACB3] hover:bg-black cursor-pointer text-white font-semibold text-lg py-5 rounded-2xl transition flex items-center justify-center gap-3 shadow-lg">
-        <i class="bi bi-calendar-check"></i>
-        <span>Reserve for inspection</span>
-      </button>
-      <p class="text-center text-gray-500 text-xs mt-3">
-        Reserving schedules a viewing with your assigned Ụlọ Ọma representative. No payment commitment until after you inspect and decide to proceed.
-      </p>
-      
-      <!-- Explore More Apartments Button -->
-      <button onclick="window.location.href='explore.html'" class="w-full mt-4 border-2 border-[#20ACB3] text-[#20ACB3] hover:bg-[#20ACB3] hover:text-white cursor-pointer font-semibold text-lg py-5 rounded-2xl transition">
-        Explore More Apartments
-      </button>
+      <!-- Action Card: Reserve for Inspection (Section 11) -->
+      <div class="pt-4 space-y-4">
+        
+        <!-- Entitlement Counter Status -->
+        <div class="p-4 bg-teal-50 border border-teal-200 rounded-2xl flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <i class="bi bi-shield-lock-fill text-2xl text-[#20ACB3]"></i>
+            <div>
+              <p class="font-bold text-sm text-[#0F3B3D]">Verified Properties Entitlement</p>
+              <p id="entitlementStatusText" class="text-xs text-[#5C6F70]">Properties remaining: 3 (Included with your ₦2,000 Explorer Access)</p>
+            </div>
+          </div>
+          <span class="bg-[#20ACB3] text-white text-xs font-bold px-3 py-1 rounded-full">Pass Active</span>
+        </div>
+
+        <!-- Primary Action Button -->
+        <button id="reserveBtn" onclick="openInspectionModal()" class="w-full bg-[#20ACB3] hover:bg-black text-white font-extrabold text-lg py-4 rounded-2xl transition shadow-xl flex items-center justify-center gap-3 cursor-pointer">
+          <i class="bi bi-calendar-check-fill"></i>
+          <span>Reserve for inspection</span>
+        </button>
+        <p class="text-center text-xs text-[#5C6F70]">
+          Reserving schedules an in-person viewing with free transport. You do not pay rent until you inspect and decide to proceed.
+        </p>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- INSPECTION BOOKING MODAL -->
+  <div id="bookingModal" class="fixed inset-0 bg-black/60 backdrop-blur-xs z-50 hidden items-center justify-center p-4">
+    <div class="bg-white rounded-4xl shadow-2xl max-w-lg w-full p-6 sm:p-8 space-y-6 animate-scale-up">
+      <div class="flex items-center justify-between border-b border-gray-100 pb-4">
+        <div>
+          <span class="text-xs font-bold text-[#20ACB3] uppercase tracking-wider">Free Viewing Ride</span>
+          <h3 class="font-bold text-xl text-[#0F3B3D]">Schedule Your Inspection</h3>
+        </div>
+        <button onclick="closeInspectionModal()" class="text-gray-400 hover:text-black text-2xl">
+          <i class="bi bi-x-lg"></i>
+        </button>
+      </div>
+
+      <form id="inspectionForm" onsubmit="submitInspection(event)" class="space-y-4">
+        <div>
+          <label class="block text-xs font-bold text-[#5C6F70] uppercase mb-1">Full Name</label>
+          <input type="text" id="inspectName" required placeholder="Your full name" class="w-full p-3 bg-gray-50 border border-gray-200 rounded-xl text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-[#20ACB3]">
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-bold text-[#5C6F70] uppercase mb-1">Phone Number</label>
+            <input type="tel" id="inspectPhone" required placeholder="080 000 0000" class="w-full p-3 bg-gray-50 border border-gray-200 rounded-xl text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-[#20ACB3]">
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-[#5C6F70] uppercase mb-1">Preferred Date</label>
+            <input type="date" id="inspectDate" required class="w-full p-3 bg-gray-50 border border-gray-200 rounded-xl text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-[#20ACB3]">
+          </div>
+        </div>
+        <div>
+          <label class="block text-xs font-bold text-[#5C6F70] uppercase mb-1">Preferred Time Slot</label>
+          <select id="inspectTime" required class="w-full p-3 bg-gray-50 border border-gray-200 rounded-xl text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-[#20ACB3]">
+            <option value="Morning (9:00 AM - 12:00 PM)">Morning (9:00 AM - 12:00 PM)</option>
+            <option value="Afternoon (1:00 PM - 3:30 PM)">Afternoon (1:00 PM - 3:30 PM)</option>
+            <option value="Evening (4:00 PM - 5:30 PM)">Evening (4:00 PM - 5:30 PM)</option>
+          </select>
+        </div>
+        
+        <div class="p-4 bg-teal-50 rounded-2xl text-xs text-[#0F3B3D] space-y-1">
+          <p class="font-bold flex items-center gap-1.5"><i class="bi bi-car-front-fill text-[#20ACB3]"></i> Free Viewing Transport Guaranteed</p>
+          <p class="text-gray-600">Our representative Emeka will call you to confirm pickup and accompany you to the property inspection.</p>
+        </div>
+
+        <button type="submit" class="w-full bg-[#20ACB3] hover:bg-black text-white py-3.5 rounded-2xl font-bold transition shadow-lg flex items-center justify-center gap-2 cursor-pointer">
+          <i class="bi bi-check-circle-fill"></i> Confirm Inspection Booking
+        </button>
+      </form>
     </div>
   </div>
 
-  <!-- Fullscreen Image Modal -->
-  <div id="fullscreenModal" class="fixed inset-0 bg-black/95 z-50 hidden flex items-center justify-center">
-    <button id="closeFullscreen" class="absolute top-4 right-4 text-white text-4xl hover:text-gray-300 z-60">
-      <i class="bi bi-x-lg"></i>
-    </button>
-    <img id="fullscreenImg" class="max-w-full max-h-full object-contain">
-  </div>
-
-  <!-- Video Modal -->
-  <div id="modal" class="fixed inset-0 bg-black/90 z-50 hidden flex items-center justify-center">
-    <div class="relative w-11/12 max-w-3xl">
-      <button id="close" class="absolute -top-12 right-0 text-white text-5xl">×</button>
-      <div class="bg-gray-900 aspect-video rounded-2xl flex items-center justify-center text-white text-xl">
-        The Video
+  <!-- VIDEO MODAL -->
+  <div id="videoModal" class="fixed inset-0 bg-black/80 backdrop-blur-xs z-50 hidden items-center justify-center p-4">
+    <div class="bg-white rounded-3xl overflow-hidden max-w-2xl w-full p-6 text-center space-y-4">
+      <div class="flex justify-between items-center">
+        <h3 class="font-bold text-lg text-[#0F3B3D]">Video Walkthrough Tour</h3>
+        <button onclick="toggleVideoTour()" class="text-gray-400 hover:text-black text-2xl"><i class="bi bi-x-lg"></i></button>
       </div>
-    </div>
-  </div>
-
-  <!-- Inspection Schedule / Reservation Modal -->
-  <div id="paymentModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
-    <div class="relative w-full max-w-md bg-white rounded-3xl p-8 shadow-2xl">
-      <button id="paymentClose" class="absolute top-6 right-6 text-gray-400 hover:text-black text-2xl">
-        <i class="bi bi-x-lg"></i>
-      </button>
-      
-      <div id="reserveFormView">
-        <div class="flex items-center gap-3 mb-6">
-          <div class="w-10 h-10 rounded-full bg-[#20ACB3]/10 text-[#20ACB3] flex items-center justify-center text-xl">
-            <i class="bi bi-calendar-event"></i>
-          </div>
-          <div>
-            <h3 class="text-xl font-bold text-[#0F3B3D]">Schedule Inspection</h3>
-            <p class="text-xs text-gray-500">Pick your preferred viewing date & time</p>
-          </div>
-        </div>
-
-        <form id="inspectionScheduleForm" class="space-y-4">
-          <div>
-            <label class="block text-xs font-semibold text-gray-600 uppercase mb-1">Preferred Date</label>
-            <input type="date" id="inspectionDate" required class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#20ACB3]">
-          </div>
-          <div>
-            <label class="block text-xs font-semibold text-gray-600 uppercase mb-1">Preferred Time Slot</label>
-            <select id="inspectionTime" required class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#20ACB3]">
-              <option value="">Select a time slot</option>
-              <option value="10:00 AM">Morning (10:00 AM - 12:00 PM)</option>
-              <option value="02:00 PM">Afternoon (02:00 PM - 04:00 PM)</option>
-              <option value="04:30 PM">Late Afternoon (04:30 PM - 06:00 PM)</option>
-            </select>
-          </div>
-          <div>
-            <label class="block text-xs font-semibold text-gray-600 uppercase mb-1">Special Notes for Representative</label>
-            <textarea id="inspectionNotes" rows="2" class="w-full border border-gray-300 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#20ACB3]" placeholder="e.g. Please call before arriving"></textarea>
-          </div>
-
-          <div class="pt-2">
-            <button type="submit" id="confirmReserveBtn" class="w-full bg-[#20ACB3] text-white py-4 rounded-2xl font-bold hover:bg-black transition flex items-center justify-center gap-2 cursor-pointer shadow-md">
-              <i class="bi bi-check2-circle text-xl"></i> Confirm Inspection Reservation
-            </button>
-          </div>
-        </form>
-      </div>
-
-      <div id="reserveSuccessView" class="hidden text-center py-6 space-y-4">
-        <div class="w-16 h-16 rounded-full bg-green-100 text-green-600 flex items-center justify-center text-3xl mx-auto">
-          <i class="bi bi-check-lg"></i>
-        </div>
-        <h4 class="text-xl font-bold text-gray-900">Inspection Reserved!</h4>
-        <p class="text-sm text-gray-600">Your reservation has been recorded. Your assigned representative, <strong>Emeka Nwankwo</strong>, will contact you shortly to confirm logistics.</p>
-        <div class="pt-4">
-          <button onclick="window.location.href='tenant-dashboard.html'" class="w-full bg-[#20ACB3] text-white py-3.5 rounded-xl font-semibold hover:bg-black transition">
-            View in Dashboard
-          </button>
+      <div class="aspect-video bg-gray-900 rounded-2xl flex items-center justify-center text-white">
+        <div class="space-y-2">
+          <i class="bi bi-play-circle-fill text-5xl text-[#20ACB3]"></i>
+          <p class="text-sm font-semibold">Verified Property Walkthrough</p>
+          <p class="text-xs text-gray-400">Captured and verified by Ụlọ Ọma field officers</p>
         </div>
       </div>
     </div>
   </div>
 
-  
-  <script>
-    // 8 images
-    const images = [
-      "./images/explore.jpg",                 
-      "./images/first.jpg",                    
-      "./images/second.jpg",
-      "./images/third.png",
-      "./images/Hero.png",
-      "./images/Hero2.png",
-      "./images/Hero3.jpg",
-      "./images/explore.jpg"
-    ];
-
-    const main   = document.getElementById('mainImg');
-    const thumbs = document.getElementById('thumbs');
-    const count  = document.getElementById('count');
-    let i = 0;
-
-    function show() {
-      main.style.backgroundImage = `url(${images[i]})`;
-      count.textContent = `${i+1}/8`;
-      document.querySelectorAll('.thumb').forEach((t, idx) => {
-        t.classList.toggle('ring-4', idx===i);
-        t.classList.toggle('ring-cyan-500', idx===i);
-        t.classList.toggle('opacity-60', idx!==i);
-      });
-    }
-
-    // Create 8 thumbnails
-    images.forEach((src, idx) => {
-      const t = document.createElement('div');
-      t.className = `thumb w-20 h-20 rounded-2xl flex-shrink-0 cursor-pointer transition-all bg-cover bg-center ${idx===0 ? 'ring-4 ring-cyan-500' : 'opacity-60'}`;
-      t.style.backgroundImage = `url(${src})`;
-      t.onclick = () => { i = idx; show(); };
-      thumbs.appendChild(t);
-    });
-
-    document.getElementById('prev').onclick = () => { i = i > 0 ? i-1 : 7; show(); };
-    document.getElementById('next').onclick = () => { i = i < 7 ? i+1 : 0; show(); };
-
-    // Video modal
-    document.getElementById('video').onclick = () => document.getElementById('modal').classList.remove('hidden');
-    document.getElementById('close').onclick = () => document.getElementById('modal').classList.add('hidden');
-    document.getElementById('modal').onclick = e => { if(e.target === e.currentTarget) e.currentTarget.classList.add('hidden'); };
-
-    // Touch swipe
-    let startX = 0;
-    main.addEventListener('touchstart', e => startX = e.touches[0].clientX);
-    main.addEventListener('touchend', e => {
-      if (startX - e.changedTouches[0].clientX > 50) document.getElementById('next').click();
-      if (e.changedTouches[0].clientX - startX > 50) document.getElementById('prev').click();
-    });
-
-    show(); // first load
-
-    // Fullscreen image functionality (mobile only)
-    function openFullscreen() {
-      if (window.innerWidth >= 768) return; // Disable on larger screens
-      const currentImage = images[i];
-      document.getElementById('fullscreenImg').src = currentImage;
-      document.getElementById('fullscreenModal').classList.remove('hidden');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeFullscreen() {
-      document.getElementById('fullscreenModal').classList.add('hidden');
-      document.body.style.overflow = 'auto';
-    }
-
-    document.getElementById('closeFullscreen').onclick = closeFullscreen;
-    document.getElementById('fullscreenModal').onclick = (e) => {
-      if (e.target === e.currentTarget) closeFullscreen();
-    };
-  </script>
-
-  </section>
-  
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Update property details from URL parameters
-      const urlParams = new URLSearchParams(window.location.search);
-      const property = urlParams.get('property');
-      const price = urlParams.get('price');
-      const title = urlParams.get('title');
-      const location = urlParams.get('location');
-      const rooms = urlParams.get('rooms');
-
-      if (title) document.getElementById('propertyTitle').textContent = title;
-      if (location) document.getElementById('propertyLocation').textContent = location;
-      if (price) {
-        document.getElementById('propertyPrice').textContent = `₦${parseInt(price).toLocaleString()}`;
-        const reservationFee = Math.max(2000, Math.round(parseInt(price) * 0.0035));
-        document.getElementById('reservationFee').textContent = reservationFee.toLocaleString();
-      }
-      if (rooms) document.getElementById('propertyRooms').textContent = rooms;
-
-      // Inspection modal handlers
-      function openPaymentModal(){
-        document.getElementById('paymentModal').classList.remove('hidden');
-        document.getElementById('reserveFormView').classList.remove('hidden');
-        document.getElementById('reserveSuccessView').classList.add('hidden');
-        // Set min date to tomorrow
-        const tomorrow = new Date();
-        tomorrow.setDate(tomorrow.getDate() + 1);
-        const yyyy = tomorrow.getFullYear();
-        const mm = String(tomorrow.getMonth() + 1).padStart(2, '0');
-        const dd = String(tomorrow.getDate()).padStart(2, '0');
-        document.getElementById('inspectionDate').min = `${yyyy}-${mm}-${dd}`;
-        document.getElementById('inspectionDate').value = `${yyyy}-${mm}-${dd}`;
-      }
-      function closePaymentModal(){
-        document.getElementById('paymentModal').classList.add('hidden');
-      }
-
-      // Add event listener to reserve button
-      const reserveButton = document.getElementById('reserveButton');
-      if (reserveButton) {
-        reserveButton.addEventListener('click', function() {
-          openPaymentModal();
-        });
-      }
-
-      const paymentClose = document.getElementById('paymentClose');
-      if (paymentClose) paymentClose.onclick = closePaymentModal;
-      
-      // Inspection Form Submit
-      const inspectionForm = document.getElementById('inspectionScheduleForm');
-      if (inspectionForm) {
-        inspectionForm.addEventListener('submit', function(e) {
-          e.preventDefault();
-          const date = document.getElementById('inspectionDate').value;
-          const time = document.getElementById('inspectionTime').value;
-          const notes = document.getElementById('inspectionNotes').value;
-          const btn = document.getElementById('confirmReserveBtn');
-
-          btn.innerHTML = '<i class="bi bi-arrow-repeat animate-spin text-xl"></i> Scheduling...';
-          btn.disabled = true;
-
-          setTimeout(() => {
-            // Save reservation to local storage for demo/session persistence
-            const reservations = JSON.parse(localStorage.getItem('ulooma_reservations') || '[]');
-            reservations.push({
-              id: 'res_' + Date.now(),
-              propertyTitle: document.getElementById('propertyTitle').textContent,
-              propertyLocation: document.getElementById('propertyLocation').textContent,
-              price: document.getElementById('propertyPrice').textContent,
-              date: date,
-              time: time,
-              notes: notes,
-              representative: 'Emeka Nwankwo',
-              status: 'Viewing Scheduled',
-              created_at: new Date().toISOString()
-            });
-            localStorage.setItem('ulooma_reservations', JSON.stringify(reservations));
-
-            // Decrement entitlement count
-            let remaining = parseInt(localStorage.getItem('ulooma_properties_remaining') || '3');
-            if (remaining > 0) remaining -= 1;
-            localStorage.setItem('ulooma_properties_remaining', remaining.toString());
-            document.getElementById('entitlementText').textContent = `Properties remaining: ${remaining} (Included with your ₦2,000 Explorer Access)`;
-
-            document.getElementById('reserveFormView').classList.add('hidden');
-            document.getElementById('reserveSuccessView').classList.remove('hidden');
-          }, 800);
-        });
-      }
-
-      // Close when clicking outside modal content
-      const paymentModal = document.getElementById('paymentModal');
-      if (paymentModal) {
-        paymentModal.onclick = function(e){ 
-          if(e.target === e.currentTarget) closePaymentModal(); 
-        };
-      }
-
-      // Check stored entitlement
-      const storedRemaining = localStorage.getItem('ulooma_properties_remaining');
-      if (storedRemaining !== null) {
-        document.getElementById('entitlementText').textContent = `Properties remaining: ${storedRemaining} (Included with your ₦2,000 Explorer Access)`;
-      }
-    });
-  </script>
-
-  <!-- Branded Footer -->
-  <footer class="bg-[#0F3B3D] text-white pt-20 pb-16 relative overflow-hidden mt-20">
+  <!-- COMPREHENSIVE FOOTER -->
+  <footer class="bg-[#0F3B3D] text-white pt-16 pb-12 mt-auto relative overflow-hidden border-t-4 border-[#20ACB3]">
     <div class="max-w-7xl mx-auto px-6">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-16">
-        <div class="space-y-6">
-          <h3 class="text-2xl font-bold flex items-center gap-2">
-            <i class="bi bi-house-door-fill text-[#20ACB3]"></i> Ụlọ Ọma
-          </h3>
-          <p class="text-sm opacity-90 leading-relaxed">
-            Ụlọ Ọma makes finding your next home easy and transparent. From verified listings to free viewing transport and hassle-free moving.
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12 pb-12 border-b border-white/10">
+        <div class="space-y-4">
+          <div class="cursor-pointer" onclick="window.location.href='index.html'">
+            <img src="./images/Logo-white.PNG" alt="Ụlọ Ọma ...your comfort, our priority." class="h-12 w-auto object-contain" />
+          </div>
+          <p class="text-sm text-gray-300 leading-relaxed">
+            Nigeria's premier managed property platform. Verified listings, free inspection transport, escrow rental payments, and 100% free relocation fulfillment.
           </p>
+          <div class="inline-flex items-center gap-2 bg-white/5 border border-white/10 px-3 py-1.5 rounded-xl text-xs text-[#82E4E9]">
+            <i class="bi bi-shield-check text-base text-[#20ACB3]"></i>
+            <span>CAC Verified Entity — RC: 7894120</span>
+          </div>
         </div>
         <div class="space-y-4">
-          <h4 class="text-[#82E4E9] font-semibold text-lg">Navigation</h4>
-          <nav class="flex flex-col space-y-2 text-sm">
-            <a href="index.html" class="hover:text-[#20ACB3] transition">Home</a>
-            <a href="explore.html" class="hover:text-[#20ACB3] transition">Explore</a>
-            <a href="how-it-works.html" class="hover:text-[#20ACB3] transition">How It Works</a>
-            <a href="about.html" class="hover:text-[#20ACB3] transition">About Us</a>
-            <a href="contact.html" class="hover:text-[#20ACB3] transition">Contact Us</a>
-          </nav>
+          <h4 class="text-[#82E4E9] font-bold text-base tracking-wide uppercase">Marketplace</h4>
+          <ul class="space-y-2.5 text-sm text-gray-300">
+            <li><a href="explore.html" class="hover:text-white transition flex items-center gap-1.5"><i class="bi bi-chevron-right text-xs text-[#20ACB3]"></i> All Verified Homes</a></li>
+            <li><a href="explore.html?type=1" class="hover:text-white transition flex items-center gap-1.5"><i class="bi bi-chevron-right text-xs text-[#20ACB3]"></i> 1 Bedroom Flats</a></li>
+            <li><a href="explore.html?type=2" class="hover:text-white transition flex items-center gap-1.5"><i class="bi bi-chevron-right text-xs text-[#20ACB3]"></i> 2 Bedroom Flats</a></li>
+            <li><a href="list-property.html" class="hover:text-white transition flex items-center gap-1.5"><i class="bi bi-chevron-right text-xs text-[#20ACB3]"></i> List Property for Free</a></li>
+          </ul>
         </div>
         <div class="space-y-4">
-          <h4 class="text-[#82E4E9] font-semibold text-lg">Support</h4>
-          <nav class="flex flex-col space-y-2 text-sm">
-            <a href="contact.html" class="hover:text-[#20ACB3] transition">Contact Support</a>
-            <a href="how-it-works.html" class="hover:text-[#20ACB3] transition">FAQs</a>
-          </nav>
+          <h4 class="text-[#82E4E9] font-bold text-base tracking-wide uppercase">Programs</h4>
+          <ul class="space-y-2.5 text-sm text-gray-300">
+            <li><a href="moving-out.html" class="hover:text-white transition flex items-center gap-1.5"><i class="bi bi-gift text-xs text-[#20ACB3]"></i> ₦20,000 Relocation Reward</a></li>
+            <li><a href="how-it-works.html" class="hover:text-white transition flex items-center gap-1.5"><i class="bi bi-truck text-xs text-[#20ACB3]"></i> 100% Free Moving Service</a></li>
+            <li><a href="card-payment.html" class="hover:text-white transition flex items-center gap-1.5"><i class="bi bi-credit-card text-xs text-[#20ACB3]"></i> ₦2,000 Access Pass</a></li>
+            <li><a href="about.html#cac-section" class="hover:text-white transition flex items-center gap-1.5"><i class="bi bi-patch-check text-xs text-[#20ACB3]"></i> CAC Legal Credentials</a></li>
+          </ul>
         </div>
         <div class="space-y-4">
-          <h4 class="text-[#82E4E9] font-semibold text-lg">Platform Entitlement</h4>
-          <p class="text-xs text-gray-300">Each ₦2,000 Explorer Access unlocks 3 verified property inspections with accompanied transport.</p>
-          <button onclick="window.location.href='tenant-dashboard.html'" class="bg-[#20ACB3] text-white px-5 py-2.5 rounded-full text-xs font-semibold hover:bg-black transition">
-            View My Dashboard
-          </button>
+          <h4 class="text-[#82E4E9] font-bold text-base tracking-wide uppercase">Office & Contact</h4>
+          <ul class="space-y-3 text-sm text-gray-300">
+            <li class="flex items-start gap-2.5">
+              <i class="bi bi-geo-alt text-[#20ACB3] text-lg shrink-0 mt-0.5"></i>
+              <span>Brass Junction / Aba-Owerri Rd, Aba, Abia State</span>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <i class="bi bi-telephone text-[#20ACB3] text-base shrink-0"></i>
+              <span>+234 (0) 800 856 6621</span>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <i class="bi bi-envelope text-[#20ACB3] text-base shrink-0"></i>
+              <span>support@ulooma.com</span>
+            </li>
+          </ul>
         </div>
       </div>
-      <div class="mt-16 pt-8 border-t border-white/20 text-center text-sm opacity-80">
-        © 2025 Ụlọ Ọma. All Rights Reserved.
+      <div class="mt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-400 gap-4">
+        <p>&copy; 2026 Ụlọ Ọma. All rights reserved. ...your comfort, our priority.</p>
+        <div class="flex gap-6">
+          <a href="about.html" class="hover:text-white transition">Privacy Policy</a>
+          <a href="about.html" class="hover:text-white transition">Terms of Service</a>
+          <a href="contact.html" class="hover:text-white transition">Safety Standards</a>
+        </div>
       </div>
     </div>
   </footer>
 
+  <!-- Scripts -->
   <script>
-    const toggle = document.getElementById('menu-toggle');
+    // Mobile Drawer
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
     const hamburger = document.getElementById('hamburger');
     const closeX = document.getElementById('close-x');
-    const menu = document.getElementById('mobile-menu');
 
-    toggle.addEventListener('click', () => {
-      menu.classList.toggle('hidden');
-      if (menu.classList.contains('hidden')) {
-        hamburger.classList.remove('hidden');
-        closeX.classList.add('hidden');
-        document.body.style.overflow = 'auto';
-      } else {
-        hamburger.classList.remove('hidden');
-        closeX.classList.add('hidden');
-        document.body.style.overflow = 'hidden';
-      }
+    if (menuToggle && mobileMenu) {
+      menuToggle.addEventListener('click', () => {
+        const isHidden = mobileMenu.classList.contains('hidden');
+        if (isHidden) {
+          mobileMenu.classList.remove('hidden');
+          mobileMenu.classList.add('flex');
+          hamburger.classList.add('hidden');
+          closeX.classList.remove('hidden');
+          document.body.style.overflow = 'hidden';
+        } else {
+          mobileMenu.classList.add('hidden');
+          mobileMenu.classList.remove('flex');
+          hamburger.classList.remove('hidden');
+          closeX.classList.add('hidden');
+          document.body.style.overflow = '';
+        }
+      });
+    }
+
+    // Dynamic Photos and Carousel
+    const images = [
+      './images/first.jpg',
+      './images/second.jpg',
+      './images/third.png',
+      './images/first.jpg',
+      './images/second.jpg',
+      './images/third.png',
+      './images/first.jpg',
+      './images/pic-room.jpg'
+    ];
+
+    let currentPhotoIndex = 0;
+    const mainImg = document.getElementById('mainImg');
+    const countEl = document.getElementById('count');
+    const thumbsContainer = document.getElementById('thumbs');
+
+    function renderPhoto(index) {
+      currentPhotoIndex = index;
+      mainImg.style.backgroundImage = `url('${images[index]}')`;
+      countEl.innerText = `${index + 1}/${images.length}`;
+      
+      const thumbBtns = thumbsContainer.querySelectorAll('.thumb-btn');
+      thumbBtns.forEach((btn, i) => {
+        btn.classList.toggle('ring-4', i === index);
+        btn.classList.toggle('ring-[#20ACB3]', i === index);
+        btn.classList.toggle('opacity-50', i !== index);
+      });
+    }
+
+    // Build Thumbnails
+    images.forEach((src, idx) => {
+      const btn = document.createElement('button');
+      btn.className = `thumb-btn w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-cover bg-center shrink-0 transition cursor-pointer ${idx === 0 ? 'ring-4 ring-[#20ACB3]' : 'opacity-50'}`;
+      btn.style.backgroundImage = `url('${src}')`;
+      btn.onclick = () => renderPhoto(idx);
+      thumbsContainer.appendChild(btn);
     });
 
-    menu.addEventListener('click', (e) => {
-      if (e.target === menu) {
-        menu.classList.add('hidden');
-        hamburger.classList.remove('hidden');
-        closeX.classList.add('hidden');
-        document.body.style.overflow = 'auto';
+    renderPhoto(0);
+
+    document.getElementById('prev').onclick = () => {
+      const nextIdx = (currentPhotoIndex - 1 + images.length) % images.length;
+      renderPhoto(nextIdx);
+    };
+
+    document.getElementById('next').onclick = () => {
+      const nextIdx = (currentPhotoIndex + 1) % images.length;
+      renderPhoto(nextIdx);
+    };
+
+    // Parse URL params
+    const params = new URLSearchParams(window.location.search);
+    const titleParam = params.get('title');
+    const priceParam = params.get('price');
+    const locParam = params.get('location');
+    const roomsParam = params.get('rooms');
+
+    if (titleParam) {
+      document.getElementById('propertyTitle').innerText = titleParam;
+      document.getElementById('breadcrumbTitle').innerText = titleParam;
+    }
+    if (priceParam) {
+      document.getElementById('propertyPrice').innerText = '₦' + parseInt(priceParam, 10).toLocaleString();
+    }
+    if (locParam) {
+      document.getElementById('propertyLocation').innerHTML = `<i class="bi bi-geo-alt-fill text-[#20ACB3]"></i> ${locParam}`;
+    }
+    if (roomsParam) {
+      document.getElementById('propertyRooms').innerText = `${roomsParam} Bedroom${roomsParam === '1' ? '' : 's'}`;
+    }
+
+    // Modal Handlers
+    const bookingModal = document.getElementById('bookingModal');
+    const videoModal = document.getElementById('videoModal');
+
+    function openInspectionModal() {
+      bookingModal.classList.remove('hidden');
+      bookingModal.classList.add('flex');
+    }
+
+    function closeInspectionModal() {
+      bookingModal.classList.add('hidden');
+      bookingModal.classList.remove('flex');
+    }
+
+    function toggleVideoTour() {
+      videoModal.classList.toggle('hidden');
+      videoModal.classList.toggle('flex');
+    }
+
+    function submitInspection(e) {
+      e.preventDefault();
+      const name = document.getElementById('inspectName').value;
+      const phone = document.getElementById('inspectPhone').value;
+      const date = document.getElementById('inspectDate').value;
+      const time = document.getElementById('inspectTime').value;
+
+      // Save reservation to localStorage
+      const reservations = JSON.parse(localStorage.getItem('ulo_oma_reservations') || '[]');
+      reservations.unshift({
+        id: 'RES-' + Math.floor(100000 + Math.random() * 900000),
+        propertyTitle: titleParam || '1 Bedroom Apartment',
+        propertyLocation: locParam || 'Aba, Abia State',
+        date: date,
+        time: time,
+        representative: 'Emeka Nwankwo',
+        status: 'Viewing Scheduled',
+        created_at: new Date().toISOString()
+      });
+      localStorage.setItem('ulo_oma_reservations', JSON.stringify(reservations));
+
+      // Decrement entitlement
+      let remaining = parseInt(localStorage.getItem('ulo_oma_remaining_properties') || '3', 10);
+      if (remaining > 0) {
+        remaining -= 1;
+        localStorage.setItem('ulo_oma_remaining_properties', remaining.toString());
       }
-    });
+
+      alert(`Inspection Reserved!\n\nYour viewing has been scheduled for ${date} (${time}).\nOur representative Emeka Nwankwo has been assigned and will call you at ${phone} to arrange free viewing transport!`);
+      closeInspectionModal();
+      window.location.href = 'tenant-dashboard.html';
+    }
+
+    // Entitlement Status Update
+    function updateEntitlementText() {
+      const remaining = localStorage.getItem('ulo_oma_remaining_properties') || '3';
+      const el = document.getElementById('entitlementStatusText');
+      if (el) {
+        el.innerText = `Properties remaining: ${remaining} (Included with your ₦2,000 Explorer Access)`;
+      }
+    }
+    updateEntitlementText();
   </script>
 </body>
 </html>

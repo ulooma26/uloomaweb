@@ -3,276 +3,265 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Transfer Payment — Ụlọ Ọma</title>
     <link rel="stylesheet" href="./src/output.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=hotel" />
-    <title>Bank Transfer Payment</title>
+    <link rel="icon" href="./images/image.png" type="image/png">
 </head>
-<body>
-    <header class="sticky top-0 bg-white z-50">
-  <div class="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
+<body class="bg-[#F8FBFB] font-sans text-[#5C6F70]">
 
-    <!-- Logo -->
-    <div class="cursor-pointer" onclick="window.location.href='index.html'">
-      <img src="./images/Logo.PNG" alt="Ulo Oma" class="h-12 md:h-14" />
+    <!-- Top Announcement Bar -->
+    <div class="bg-[#0F3B3D] text-[#82E4E9] text-xs md:text-sm py-2 px-4 text-center font-medium border-b border-[#196366]/40 flex items-center justify-center gap-2">
+        <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-bold bg-[#20ACB3] text-white">DIRECT BANK TRANSFER</span>
+        <span>Instant manual bank verification for ₦2,000 tenant pass.</span>
     </div>
 
-    <!-- Desktop Navigation -->
-    <nav class="hidden md:flex gap-10 lg:gap-16 text-[19px] font-semibold text-black">
-      <a href="index.html" class="hover:text-[#20ACB3] transition">Home</a>
-      <a href="explore.html" class="hover:text-[#20ACB3] transition">Explore</a>
-      <a href="how-it-works.html" class="hover:text-[#20ACB3] transition">How it works</a>
-      <a href="about.html" class="hover:text-[#20ACB3] transition">About Us</a>
-      <a href="contact.html" class="hover:text-[#20ACB3] transition">Contact Us</a>
-    </nav>
+    <!-- Header -->
+    <header class="sticky top-0 bg-white z-50 shadow-sm border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="index.html" class="flex flex-col items-start group">
+                <img src="./images/Logo.PNG" alt="Ụlọ Ọma Logo" class="h-10 md:h-12 w-auto object-contain" />
+            </a>
 
-    <!-- Desktop Sign Up -->
-    <div class="hidden md:block">
-      <button onclick="window.location.href='signup.html'" class="bg-[#20ACB3] text-white rounded-[30px] py-[15px] px-[30px] hover:bg-black transition text-[19px] font-medium cursor-pointer">
-        Sign Up
-      </button>
-    </div>
+            <nav class="hidden md:flex gap-8 lg:gap-12 text-[17px] font-semibold text-gray-800">
+                <a href="index.html" class="hover:text-[#20ACB3] transition">Home</a>
+                <a href="explore.html" class="hover:text-[#20ACB3] transition">Explore</a>
+                <a href="how-it-works.html" class="hover:text-[#20ACB3] transition">How it works</a>
+                <a href="about.html" class="hover:text-[#20ACB3] transition">About Us</a>
+                <a href="contact.html" class="hover:text-[#20ACB3] transition">Contact Us</a>
+            </nav>
 
-    <!-- Mobile Toggle Button -->
-    <button id="menu-toggle" class="md:hidden text-4xl text-[#20ACB3] z-50">
-      <i id="hamburger" class="bi bi-list"></i>
-      <i id="close-x" class="bi bi-x-lg hidden"></i>
-    </button>
-  </div>
-
-  <!-- Mobile Full-Screen Menu (Vertical Only) -->
-  <div id="mobile-menu" class="fixed inset-0 bg-white hidden z-40">
-    <div class="flex flex-col items-center justify-center h-full gap-12 text-2xl font-semibold text-black">
-      <a href="index.html" class="hover:text-[#20ACB3] transition">Home</a>
-      <a href="explore.html" class="hover:text-[#20ACB3] transition">Explore</a>
-      <a href="how-it-works.html" class="hover:text-[#20ACB3] transition">How it works</a>
-      <a href="about.html" class="hover:text-[#20ACB3] transition">About Us</a>
-      <a href="contact.html" class="hover:text-[#20ACB3] transition">Contact Us</a>
-      <button onclick="window.location.href='signup.html'" class="bg-[#20ACB3] text-white rounded-[30px] py-4 px-12 hover:bg-black cursor-pointer transition text-xl font-medium">
-        Sign Up
-      </button>
-    </div>
-  </div>
-</header>
-    <main class="min-h-screen w-full p-10">
-        <div class="flex sm:mx-15 mb-10 items-center gap-2 text-[#2E3838]">
-            <i class="bi bi-arrow-left-short w-8 h-8 text-2xl text-center bg-gray-300 rounded-full cursor-pointer hover:bg-gray-400 transition" onclick="history.back()"></i>
-            <p class="text-[28px] font-bold ">Fund Your Wallet (Bank Transfer)</p>
-        </div>
-        <section class=" sm:mx-20 space-y-2 w-[80vw] px-5">
-           
-            <p class="text-[#5C6F70] text-[18px]">Secure your reservation by making a transfer of ₦2,000 (minimum) for one (this) apartment reservation, or up to ₦10,000 <br> (maximum) for 5 different apartments reservations. </p>
-            <p class="text-[#238B8F] text-[14px] font-semibold">NOTE: If you make a transfer above N2,000, the system will automatically add the balance to your wallet after reserving this apartment</p>
-            <p class="text-[#238B8F] text-[14px] font-semibold">NOTE: You can only have a maximum wallet account balance of ₦10,000 </p>
-
-            <section class="flex flex-col sm:flex-row w-[75vw] min-h-[242px] items-center space-x-10 bg-[#ffffff] drop-shadow-2xl rounded-[20px] mt-10 pb-3">
-                <img src="./images/pic-room.jpg" alt="" class="w-[90%] sm:w-[30%] h-[202px] rounded-[20px] sm:ml-7 ml-10 my-4">
-                <div class="w-[90%] sm:w-[60%] min-h-[188px] space-y-5">
-                    <div class="flex space-x-10 sm:justify-between ">
-                        <p class="flex text-[#5C6F70] text-[18px] sm:gap-2 w-[50%]"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#238B8F"><path d="M40-200v-600h80v400h320v-320h320q66 0 113 47t47 113v360h-80v-120H120v120H40Zm240-240q-50 0-85-35t-35-85q0-50 35-85t85-35q50 0 85 35t35 85q0 50-35 85t-85 35Zm240 40h320v-160q0-33-23.5-56.5T760-640H520v240ZM280-520q17 0 28.5-11.5T320-560q0-17-11.5-28.5T280-600q-17 0-28.5 11.5T240-560q0 17 11.5 28.5T280-520Zm0-40Zm240-80v240-240Z"/></svg>Apartment Type:</p>
-                        <p class="text-[#5C6F70] text-[18px] w-[50%]">1 Bedroom Apartment</p>
-                    </div>
-                    <div class="flex space-x-10 sm:justify-between">
-                        <p class="flex gap-1 text-[#5C6F70] text-[18px] w-[50%]"><i class="bi bi-geo-alt text-[#238B8F]"></i>City, LGA, State</p>
-                        <p class="text-[#5C6F70] text-[18px] w-[50%]">Aba, Aba North, Abia State</p>
-                    </div>
-                    <div class="flex space-x-10 sm:justify-between">
-                        <p class="flex gap-1 text-[#5C6F70] text-[18px] w-[50%]"><i class="bi bi-tags-fill transform scale-x-[-1] text-[#238B8F] "></i>Apartment Price:</p>
-                        <p class="text-[#5C6F70] text-[18px] w-[50%]">₦570,000 /year </p>
-                    </div>
-                    <div class="flex space-x-10 sm:justify-between">
-                        <p class="flex gap-1 text-[#5C6F70] text-[18px] w-[50%]"> <i class="bi bi-tags-fill transform scale-x-[-1] text-[#238B8F]"></i>Reservation Fee</p>
-                        <p class="text-[#5C6F70] text-[18px] w-[50%]">₦2000</p>
-                    </div>
-                </div>
-            </section>
-            <div class="space-y-5 mt-10">
-                <p class="font-semibold text-[24px]  text-[#2E3838]">Amount To Fund</p>
-                <div class="flex items-center  w-[75vw] h-[100px] shadow-sm bg-white shadow-gray-500 drop-shadow-2xl rounded-[20px] space-x-2 px-4 ">
-                    <select class="w-[15px] h-[15px]">
-                        <optgroup class="transform scale-y-[-1] font-semibold text-2xl text-[#2E3838]">^</optgroup>
-                        <option value="2000">₦2,000</option>
-                        <option value="3000">₦3,000</option>
-                        <option value="4000">₦4,000</option>
-                        <option value="5000">₦5,000</option>
-                        <option value="6000">₦6,000</option>
-                        <option value="7000">₦7,000</option>
-                        <option value="8000">₦8,000</option>
-                        <option value="9000">₦9,000</option>
-                        <option value="10000">₦10,000</option>
-                    </select>
-                    <input type="text" class="w-[316px] border-0 border-l border-black pl-2" placeholder="Enter amount (maximum  ₦10,000)  ">
-                </div>
-                <p class="text-end text-[#238B8F] w-[75vw]">Enter an amount between ₦2,000 and ₦10,000</p>
+            <div class="hidden md:flex items-center gap-3">
+                <button onclick="window.location.href='tenant-dashboard.html'" class="text-[#0F3B3D] font-semibold px-4 py-2 hover:text-[#20ACB3] transition text-base">
+                    Tenant Portal
+                </button>
             </div>
-            <section >
-                <p class="font-semibold text-[24px]  text-[#2E3838] my-10">Payment Type</p>
-                <div class="flex w-[75vw] h-[100px] justify-between items-center bg-[#ADEDF0] drop-shadow-2xl rounded-[20px] px-10 mt-5">
-                    <div class="flex gap-4 items-center ">
-                    <p class=" bg-[#E3ECED] rounded-full text-center p-3 "><i class="bi bi-arrow-left-right text-[#20ACB3]"></i></p>
-                    <div>
-                        <p class="text-[18px] font-semibold">Bank Transfer</p>
-                        <p class="text-[14px] font-medium">Transfer from any Nigerian bank</p>
-                    </div>
-                    </div>
-                    <input type="radio" class="accent-[#20ACB3] w-6 h-6 border-none" checked>
-                </div>
-            </section>
-            <section>
-            <p class="font-semibold text-[24px]  text-[#2E3838] my-10">Bank Details</p>
-            <div class=" space-y-7 w-[75vw] bg-white shadow drop-shadow-2xl p-5 rounded-[20px]">
-                <div class="flex justify-between space">
-                    <p class="text-[18px] font-semibold text-[#5C6F70]">Bank Name:</p>
-                    <p class="text-[18px] font-bold text-[#2E3838]">United Bank For Africa</p>
-                </div>
-                <div class="flex justify-between">
-                    <p class="text-[18px] font-semibold text-[#5C6F70]">Account Name:</p>
-                    <p class="text-[18px] font-bold text-[#2E3838]">Ulo Oma Housing Agency LTD.</p>
-                </div>
-                <div class="flex justify-between items-center">
-                    <p class="text-[18px] font-semibold text-[#5C6F70]">Account Number:</p>
-                    <div class="flex items-center gap-3">
-                        <span id="accountNumber" class="text-[24px] font-extrabold text-[#2E3838]">1234567890</span>
-                        <button id="copyBtn" onclick="copyAccountNumber()" class="p-2 rounded-lg bg-teal-50 text-teal-700 hover:bg-teal-100 transition cursor-pointer" title="Copy Account Number">
-                            <i class="bi bi-copy text-2xl"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div id="copyToast" class="hidden mt-3 text-sm text-green-700 bg-green-50 p-2.5 rounded-xl border border-green-200 text-center font-medium">
-                <i class="bi bi-check-circle-fill"></i> Account number copied to clipboard!
-            </div>
-        </section>
-        <section class="space-y-6">
-            <p class="my-10 text-[#2E3838] text-[24px] font-semibold">Instructions To Follow</p>
-            <p><span class="text-[#196366] font-bold text-3xl">—</span><span class="text-[#5C6F70] text-[18px] font-medium"> Send an exact amount</span> (₦2,000 for 3 verified property viewings) <span class="text-[#5C6F70] text-[18px] font-medium">to the account shown above.</span></p>
-            <p><span class="text-[#196366] font-bold text-3xl">—</span> <span class="text-[#5C6F70] text-[18px] font-medium">Use your phone number as transfer note or narration to speed up verification.</span></p>
-            <p><span class="text-[#196366] font-bold text-3xl">—</span><span class="text-[#5C6F70] text-[18px] font-medium"> Click “I Have Made The Transfer” after sending.</span></p>
-        </section>
-        <div>
-            <button onclick="handleTransferDone()" class="bg-[#196366] hover:bg-black transition w-[75vw] rounded-[20px] p-4 text-white text-[18px] font-semibold mt-10 cursor-pointer shadow-lg">
-                I Have Made The Transfer
+
+            <!-- Mobile Toggle Button -->
+            <button id="menu-toggle" class="md:hidden text-3xl text-[#20ACB3] focus:outline-none p-1">
+                <i id="hamburger" class="bi bi-list"></i>
+                <i id="close-x" class="bi bi-x-lg hidden"></i>
             </button>
         </div>
-        </section>
-        
-    </main>
-    <!-- ---------------------BELOW IS THE FOOTER SECTION------------------------------- -->
-    <footer>
-        <section class="bg-[#0F3B3D] text-white min-h-[737.1px] max-w-screen sm:pt-20 pt-5 flex flex-col items-center relative">
-        
-        <!-- upper side begins here -->
-        
-        <section class="sm:hidden hidden lg:flex min-w-[898.5] min-h-[80.4px] rounded-[21px] bg-[#196366]  items-center justify-between absolute top-[30px] p-[15.2px] drop-shadow-2xl drop-shadow-[rgba(0,0,0,0.25)] px-10">
-            <p class="w-[298.1px] h-[25.2px] gap-[10.5px]">Start creating your memories...</p>
-            <div class="flex min-w-[360px] min-h-[60px] gap-[34px]">
-            <button class="w-[150px] h-[60px] bg-[#20ACB3] rounded-3xl">Login</button>
-            <button class="w-44 h-[60px] bg-[#FFFFFF] rounded-3xl text-black">List Property</button>
-            </div>
-        </section>
 
-        <!-- end of upper side.. middle side begins here -->
-
-        <section class="flex flex-col sm:flex-col lg:flex-row bg-[rgba(0,0,0,0.1)] min-h-[90vh] sm:pt-[102.9px] max-w-[95vw] justify-around rounded-[42px] border-[1.05px] border-[rgba(255,255,255,0.1)] space-x-6 sm:px-[30px] mb-5 items-center">
-            <div class="md:w-[325.5px] sm:w-[200px] sm:space-y-[32.55px] h-[260.65px] flex flex-col items-center space-y-4 sm:px-0 px-4 mb-6">
-                <p class="w-[162px] h-[54px] gap-[9px] p-2.5 text-2xl font-semibold ml-4 sm:ml-0 "><span><i class="bi bi-camera-fill mr-1"></i></span>Ụlọ Ọma</p>
-                <p class="text-[14px] space-y-0.5 text-justify font-medium ml-7 sm:ml-0">Ụlọ Ọma makes finding your next home easy and transparent. From verified listings to free viewing transport and hassle-free moving, We are your trusted path to the front door</p>
-                <div class="flex gap-[15.75px] w-[283.5px] h-[44.1px] sm:justify-start justify-center">
-                    <i class="bi bi-facebook"></i>
-                    <i class="bi bi-instagram"></i>
-                    <i class="bi bi-twitter-x"></i>
-                    <i class="bi bi-linkedin"></i>
-                    <i class="bi bi-youtube"></i>
-                </div>
+        <!-- Mobile Drawer Menu -->
+        <div id="mobile-menu" class="fixed inset-0 bg-white hidden z-40 flex flex-col justify-between p-8">
+            <div class="flex items-center justify-between border-b pb-4">
+                <img src="./images/Logo.PNG" alt="Ụlọ Ọma" class="h-10 w-auto" />
+                <button id="close-drawer" class="text-3xl text-gray-700"><i class="bi bi-x-lg"></i></button>
             </div>
-            <div class="flex justify-center gap-5 px-10 ml-5">
-            <div class="w-[131.25px] min-h-[260.65px] space-y-[34.65px]">
-                <p class="text-[#82E4E9]">NAVIGATION</p>
-                <nav class="flex flex-col decoration-0 space-y-[34.65px]">
-                    <a href="">Home</a>
-                    <a href="">Explore</a>
-                    <a href="">How It Works</a>
-                    <a href="">About Us</a>
-                    <a href="">Help</a>
-                </nav>
+            <div class="flex flex-col gap-6 text-xl font-semibold text-gray-800 my-auto text-center">
+                <a href="index.html" class="hover:text-[#20ACB3] transition">Home</a>
+                <a href="explore.html" class="hover:text-[#20ACB3] transition">Explore Properties</a>
+                <a href="how-it-works.html" class="hover:text-[#20ACB3] transition">How It Works</a>
+                <a href="tenant-dashboard.html" class="text-[#20ACB3]">Tenant Dashboard</a>
+                <a href="contact.html" class="hover:text-[#20ACB3] transition">Contact Us</a>
             </div>
-            <div class="w-[156.1px] min-h-[215.45px] space-y-[34.65px]">
-                <p class="text-[#82E4E9]">HELP</p>
-                <nav class="flex flex-col space-y-[34.65px]">
-                    <a href=""> Contact Us</a>
-                    <a href="">FAQs</a>
-                    <a href="">Terms & Conditions</a>
-                    <a href="">Privacy Policy</a>
-                    <a href=""></a>
-                </nav>
+            <div class="space-y-3">
+                <button onclick="window.location.href='explore.html'" class="w-full bg-[#20ACB3] text-white rounded-full py-4 font-bold text-lg">
+                    Return to Explore
+                </button>
             </div>
-            </div>
-            <div class="w-[327.44px] h-[158.55px] space-y-[34.65px] my-6">
-                <p class="text-[#82E4E9] space-y-[34.65px]">SUBSCRIBE TO OUR NEWSLETTER</p>
-                <div class="flex flex-col space-y-[12.6px]">
-                    <input type="email" placeholder="Enter your email" class="bg-[#FFFFFF] w-[327.44px] h-[44.1px] rounded-[10.5px] text-[#90ADC6] pl-2">
-                    <button class="bg-[#2DB2B8] w-[142px] rounded-[10.5px] h-[44.1px]">Subscribe</button>
-                </div>
-            </div>
-        </section>
-
-        <!-- end of middle side... last side begins -->
-
-        <div class="lg:absolute lg:bottom-[50px]">
-            <hr class="w-[95vw]">
-            <p class="text-center mt-[30px]">&copy; 2025 Ụlọ Ọma. All Rights Reserved.  </p>
         </div>
-        </section>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto px-4 md:px-8 py-12">
+        <!-- Back Navigation -->
+        <div class="flex items-center gap-3 mb-8 cursor-pointer hover:opacity-80 transition" onclick="window.location.href='explore.html'">
+            <i class="bi bi-arrow-left-circle-fill text-[#20ACB3] text-3xl"></i>
+            <div>
+                <h1 class="font-extrabold text-2xl md:text-3xl text-[#0F3B3D]">
+                    Bank Transfer Payment
+                </h1>
+                <p class="text-xs md:text-sm text-gray-500">₦2,000 — Explore 3 Verified Properties</p>
+            </div>
+        </div>
+
+        <!-- Section 5 Clarity Note -->
+        <div class="bg-teal-50 border border-teal-200 rounded-3xl p-6 mb-8 text-[#0F3B3D]">
+            <p class="text-sm font-semibold leading-relaxed">
+                <i class="bi bi-info-circle-fill text-[#20ACB3] mr-1"></i>
+                Transfer <strong>₦2,000</strong> to the official corporate account below to unlock access to 3 verified property listings with accompanied inspection transport.
+            </p>
+        </div>
+
+        <!-- Card Container -->
+        <div class="bg-white rounded-4xl shadow-xl p-8 md:p-10 border border-gray-100 space-y-8">
+            
+            <!-- Switcher -->
+            <div class="flex border-b border-gray-200">
+                <a href="card-payment.html" class="py-3 px-6 font-bold text-sm text-gray-400 hover:text-gray-700 flex items-center gap-2 transition">
+                    <i class="bi bi-credit-card"></i> Pay Online (Card / Flutterwave)
+                </a>
+                <button class="py-3 px-6 font-bold text-sm text-[#20ACB3] border-b-2 border-[#20ACB3] flex items-center gap-2">
+                    <i class="bi bi-bank"></i> Manual Bank Transfer
+                </button>
+            </div>
+
+            <!-- Official Bank Account Details Box -->
+            <div class="bg-[#F8FBFB] border-2 border-dashed border-[#20ACB3]/30 rounded-3xl p-6 md:p-8 space-y-5">
+                <div class="flex items-center justify-between pb-4 border-b border-gray-200">
+                    <span class="text-sm font-semibold text-gray-500">Bank Name</span>
+                    <span class="text-base font-extrabold text-[#0F3B3D]">United Bank for Africa (UBA)</span>
+                </div>
+
+                <div class="flex items-center justify-between pb-4 border-b border-gray-200">
+                    <span class="text-sm font-semibold text-gray-500">Account Name</span>
+                    <span class="text-base font-extrabold text-[#0F3B3D]">Ụlọ Ọma Technologies Ltd</span>
+                </div>
+
+                <div class="flex items-center justify-between">
+                    <div>
+                        <span class="text-sm font-semibold text-gray-500 block">Account Number</span>
+                        <span id="accountNumber" class="text-2xl md:text-3xl font-mono font-extrabold text-[#20ACB3]">1025894120</span>
+                    </div>
+                    <button onclick="copyAccountNumber()" class="bg-[#20ACB3] hover:bg-[#0F3B3D] text-white px-5 py-2.5 rounded-xl font-bold text-xs flex items-center gap-2 transition cursor-pointer shadow-md">
+                        <i class="bi bi-copy"></i> Copy Number
+                    </button>
+                </div>
+            </div>
+
+            <!-- Copy Toast -->
+            <div id="copyToast" class="hidden p-3 rounded-xl bg-green-50 border border-green-200 text-green-800 text-xs font-bold text-center">
+                <i class="bi bi-check-circle-fill"></i> Account number 1025894120 copied to clipboard!
+            </div>
+
+            <!-- Instructions List -->
+            <div class="space-y-3 pt-2">
+                <h4 class="font-extrabold text-[#0F3B3D] text-base">Payment Instructions</h4>
+                <div class="space-y-2 text-xs md:text-sm text-gray-600">
+                    <p class="flex items-start gap-2">
+                        <span class="w-5 h-5 rounded-full bg-[#20ACB3]/10 text-[#20ACB3] flex items-center justify-center font-bold text-xs flex-shrink-0">1</span>
+                        <span>Open your bank app or dial USSD and transfer <strong>₦2,000</strong> to the UBA account above.</span>
+                    </p>
+                    <p class="flex items-start gap-2">
+                        <span class="w-5 h-5 rounded-full bg-[#20ACB3]/10 text-[#20ACB3] flex items-center justify-center font-bold text-xs flex-shrink-0">2</span>
+                        <span>In the transfer narration/remarks, enter your <strong>Full Name or Phone Number</strong>.</span>
+                    </p>
+                    <p class="flex items-start gap-2">
+                        <span class="w-5 h-5 rounded-full bg-[#20ACB3]/10 text-[#20ACB3] flex items-center justify-center font-bold text-xs flex-shrink-0">3</span>
+                        <span>Click the confirmation button below after completing your transfer.</span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Confirm Button -->
+            <button onclick="handleTransferDone()" class="w-full bg-[#20ACB3] hover:bg-[#0F3B3D] text-white font-extrabold text-base py-4 rounded-2xl transition duration-200 shadow-xl cursor-pointer flex items-center justify-center gap-2">
+                <i class="bi bi-check2-circle text-xl"></i>
+                <span>I Have Completed The Transfer (₦2,000)</span>
+            </button>
+        </div>
+    </main>
+
+    <!-- Standard Rich Footer -->
+    <footer class="bg-[#0F3B3D] text-white pt-16 pb-12 border-t border-white/10 mt-16">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-white/10">
+                <!-- Col 1: Brand with Tagline under Logo -->
+                <div class="lg:col-span-2 space-y-4">
+                    <a href="index.html" class="inline-block group">
+                        <img src="./images/Logo-white.PNG" alt="Ụlọ Ọma" class="h-12 w-auto object-contain" />
+                        <span class="block text-xs text-[#82E4E9] font-normal italic tracking-tight mt-1">...your comfort, our priority.</span>
+                    </a>
+                    <p class="text-sm text-gray-300 leading-relaxed max-w-sm">
+                        Ụlọ Ọma is Nigeria's premier managed rental and relocation platform. Discover verified apartments, book accompanied inspections, and move in with our 100% free moving truck service.
+                    </p>
+                    <div class="flex items-center gap-3 text-xs text-gray-300">
+                        <span class="px-2.5 py-1 rounded-md bg-white/10 text-[#82E4E9] font-bold">RC: 7894120</span>
+                        <span>Ụlọ Ọma Technologies Ltd</span>
+                    </div>
+                </div>
+
+                <!-- Col 2: Navigation -->
+                <div class="space-y-3">
+                    <h4 class="text-[#82E4E9] font-bold text-sm uppercase tracking-wider">Explore</h4>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li><a href="explore.html" class="hover:text-white transition">Verified Listings</a></li>
+                        <li><a href="how-it-works.html" class="hover:text-white transition">How It Works</a></li>
+                        <li><a href="about.html" class="hover:text-white transition">About Us</a></li>
+                        <li><a href="moving-out.html" class="hover:text-white transition">₦20,000 Moving Reward</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition">Help & Support</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Trust & Legal -->
+                <div class="space-y-3">
+                    <h4 class="text-[#82E4E9] font-bold text-sm uppercase tracking-wider">Trust & Legal</h4>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li><a href="about.html#cac-section" class="hover:text-white transition">CAC Incorporation</a></li>
+                        <li><a href="how-it-works.html#verification" class="hover:text-white transition">6-Point Verification</a></li>
+                        <li><a href="card-payment.html" class="hover:text-white transition">Flutterwave Escrow</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition">Privacy Policy</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition">Terms of Service</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Contact & Office -->
+                <div class="space-y-3">
+                    <h4 class="text-[#82E4E9] font-bold text-sm uppercase tracking-wider">Headquarters</h4>
+                    <div class="text-sm text-gray-300 space-y-2">
+                        <p class="flex items-start gap-2">
+                            <i class="bi bi-geo-alt text-[#20ACB3] mt-1"></i>
+                            <span>Aba, Abia State, Nigeria</span>
+                        </p>
+                        <p class="flex items-center gap-2">
+                            <i class="bi bi-telephone text-[#20ACB3]"></i>
+                            <span>+234 706 591 7720</span>
+                        </p>
+                        <p class="flex items-center gap-2">
+                            <i class="bi bi-whatsapp text-[#20ACB3]"></i>
+                            <a href="https://wa.me/2347065917720" target="_blank" class="hover:text-white underline">WhatsApp Helpdesk</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-400 gap-4">
+                <p>&copy; 2025 Ụlọ Ọma Technologies Ltd. All Rights Reserved. ...your comfort, our priority.</p>
+                <div class="flex gap-6 text-lg text-gray-300">
+                    <a href="https://wa.me/2347065917720" class="hover:text-[#20ACB3] transition"><i class="bi bi-whatsapp"></i></a>
+                    <a href="#" class="hover:text-[#20ACB3] transition"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="hover:text-[#20ACB3] transition"><i class="bi bi-instagram"></i></a>
+                    <a href="#" class="hover:text-[#20ACB3] transition"><i class="bi bi-twitter-x"></i></a>
+                </div>
+            </div>
+        </div>
     </footer>
-<!-- ---------------------FOOTER SECTION HAS ENDED------------------------------ -->
-<script>
-  const toggle = document.getElementById('menu-toggle');
-  const hamburger = document.getElementById('hamburger');
-  const closeX = document.getElementById('close-x');
-  const menu = document.getElementById('mobile-menu');
 
-  toggle.addEventListener('click', () => {
-    menu.classList.toggle('hidden');
-    if (menu.classList.contains('hidden')) {
-      hamburger.classList.remove('hidden');
-      closeX.classList.add('hidden');
-      document.body.style.overflow = 'auto';
-    } else {
-      hamburger.classList.add('hidden');
-      closeX.classList.remove('hidden');
-      document.body.style.overflow = 'hidden';
-    }
-  });
+    <script>
+        const toggle = document.getElementById('menu-toggle');
+        const menu = document.getElementById('mobile-menu');
+        const closeDrawer = document.getElementById('close-drawer');
 
-  menu.addEventListener('click', (e) => {
-    if (e.target === menu) {
-      menu.classList.add('hidden');
-      hamburger.classList.remove('hidden');
-      closeX.classList.add('hidden');
-      document.body.style.overflow = 'auto';
-    }
-  });
-
-  function copyAccountNumber() {
-    const acct = document.getElementById('accountNumber').textContent.trim();
-    if (navigator.clipboard) {
-      navigator.clipboard.writeText(acct).then(() => {
-        const toast = document.getElementById('copyToast');
-        if (toast) {
-          toast.classList.remove('hidden');
-          setTimeout(() => toast.classList.add('hidden'), 3000);
+        function toggleMenu() {
+            menu.classList.toggle('hidden');
+            document.body.style.overflow = menu.classList.contains('hidden') ? 'auto' : 'hidden';
         }
-      });
-    } else {
-      alert('Account Number: ' + acct);
-    }
-  }
 
-  function handleTransferDone() {
-    localStorage.setItem('ulooma_properties_remaining', '3');
-    localStorage.setItem('ulooma_access_active', 'true');
-    window.location.href = 'successful.html?purpose=bank_transfer&amount=2000';
-  }
-</script>
+        if (toggle) toggle.addEventListener('click', toggleMenu);
+        if (closeDrawer) closeDrawer.addEventListener('click', toggleMenu);
+
+        function copyAccountNumber() {
+            const acct = document.getElementById('accountNumber').textContent.trim();
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(acct).then(() => {
+                    const toast = document.getElementById('copyToast');
+                    if (toast) {
+                        toast.classList.remove('hidden');
+                        setTimeout(() => toast.classList.add('hidden'), 3500);
+                    }
+                });
+            } else {
+                alert('Account Number: ' + acct);
+            }
+        }
+
+        function handleTransferDone() {
+            localStorage.setItem('ulooma_properties_remaining', '3');
+            localStorage.setItem('ulooma_access_active', 'true');
+            window.location.href = 'successful.html?purpose=bank_transfer&amount=2000';
+        }
+    </script>
 </body>
 </html>

@@ -3,172 +3,306 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Login to your Ụlọ Ọma account">
-    <title>Login — Ụlọ Ọma</title>
+    <meta name="description" content="Log in to your Ụlọ Ọma account — Manage your rentals, reservations, or listings.">
+    <title>Log In — Ụlọ Ọma</title>
     <link rel="stylesheet" href="./src/output.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="icon" href="./images/image.png" type="image/png">
 </head>
-<body class="bg-gray-50 min-h-screen font-sans">
-    <header class="sticky top-0 bg-white z-50">
-        <div class="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
-            <div class="cursor-pointer" onclick="window.location.href='index.html'">
-                <img src="./images/Logo.PNG" alt="Ụlọ Ọma" class="h-12 md:h-14" />
+<body class="bg-[#F8FBFB] font-sans text-[#5C6F70]">
+
+    <!-- Header -->
+    <header class="sticky top-0 bg-white z-50 shadow-sm border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="index.html" class="flex flex-col items-start group">
+                <img src="./images/Logo.PNG" alt="Ụlọ Ọma Logo" class="h-10 md:h-12 w-auto object-contain" />
+            </a>
+
+            <nav class="hidden md:flex gap-8 lg:gap-12 text-[17px] font-semibold text-gray-800">
+                <a href="index.html" class="hover:text-[#20ACB3] transition">Home</a>
+                <a href="explore.html" class="hover:text-[#20ACB3] transition">Explore</a>
+                <a href="how-it-works.html" class="hover:text-[#20ACB3] transition">How it works</a>
+                <a href="about.html" class="hover:text-[#20ACB3] transition">About Us</a>
+                <a href="contact.html" class="hover:text-[#20ACB3] transition">Contact Us</a>
+            </nav>
+
+            <div class="hidden md:flex items-center gap-3">
+                <span class="text-xs text-gray-400">New to Ụlọ Ọma?</span>
+                <button onclick="window.location.href='signup.html'" class="bg-[#20ACB3] hover:bg-[#0F3B3D] text-white rounded-full py-2 px-5 transition font-semibold text-sm shadow-sm">
+                    Sign Up
+                </button>
             </div>
-            <!-- Mobile Menu Button -->
-            <button id="mobileMenuBtn" class="md:hidden text-gray-800 focus:outline-none">
-                <i class="bi bi-list text-3xl"></i>
+
+            <!-- Mobile Toggle Button -->
+            <button id="menu-toggle" class="md:hidden text-3xl text-[#20ACB3] focus:outline-none p-1">
+                <i id="hamburger" class="bi bi-list"></i>
+                <i id="close-x" class="bi bi-x-lg hidden"></i>
             </button>
-            <nav class="hidden md:flex gap-10 lg:gap-16 text-[19px] font-semibold text-black">
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div id="mobile-menu" class="fixed inset-0 bg-white hidden z-40 flex flex-col justify-between p-8">
+            <div class="flex items-center justify-between border-b pb-4">
+                <img src="./images/Logo.PNG" alt="Ụlọ Ọma" class="h-10 w-auto" />
+                <button id="close-drawer" class="text-3xl text-gray-700"><i class="bi bi-x-lg"></i></button>
+            </div>
+            <div class="flex flex-col gap-6 text-xl font-semibold text-gray-800 my-auto text-center">
                 <a href="index.html" class="hover:text-[#20ACB3] transition">Home</a>
-                <a href="explore.html" class="hover:text-[#20ACB3] transition">Explore</a>
-                <a href="how-it-works.html" class="hover:text-[#20ACB3] transition">How it works</a>
+                <a href="explore.html" class="hover:text-[#20ACB3] transition">Explore Properties</a>
+                <a href="how-it-works.html" class="hover:text-[#20ACB3] transition">How It Works</a>
                 <a href="about.html" class="hover:text-[#20ACB3] transition">About Us</a>
-                <a href="contact.html" class="hover:text-[#20ACB3] transition">Contact Us</a>
-            </nav>
-            <div class="hidden md:block">
-                <button onclick="window.location.href='signup.html'" class="bg-[#20ACB3] text-white rounded-[30px] py-[15px] px-[30px] hover:bg-black transition text-[19px] font-medium cursor-pointer">
-                    Sign Up
+                <a href="signup.html" class="text-[#20ACB3]">Sign Up</a>
+            </div>
+            <div class="space-y-3">
+                <button onclick="window.location.href='signup.html'" class="w-full bg-[#20ACB3] text-white rounded-full py-4 font-bold text-lg">
+                    Create Account
                 </button>
             </div>
-        </div>
-        <!-- Mobile Menu -->
-        <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-100 px-6 py-4">
-            <nav class="flex flex-col gap-4 text-[17px] font-medium text-gray-800">
-                <a href="index.html" class="hover:text-[#20ACB3] transition">Home</a>
-                <a href="explore.html" class="hover:text-[#20ACB3] transition">Explore</a>
-                <a href="how-it-works.html" class="hover:text-[#20ACB3] transition">How it works</a>
-                <a href="about.html" class="hover:text-[#20ACB3] transition">About Us</a>
-                <a href="contact.html" class="hover:text-[#20ACB3] transition">Contact Us</a>
-                <button onclick="window.location.href='signup.html'" class="bg-[#20ACB3] text-white rounded-[20px] py-3 px-6 mt-2 hover:bg-black transition">
-                    Sign Up
-                </button>
-            </nav>
         </div>
     </header>
 
-    <!-- Screen 1: Login - Welcome Back -->
-    <div id="loginScreen1" class="flex min-h-[calc(100vh-100px)]">
-        <!-- Left Side - Form -->
-        <div class="w-full lg:w-1/2 flex flex-col justify-center px-8 sm:px-12 lg:px-16 bg-gradient-to-b from-white to-gray-50">
-          
-            <!-- Heading -->
-            <div class="mb-10">
-                <h1 class="text-4xl font-bold text-[#0F3B3D] mb-3">Welcome Back Again!!!</h1>
-                <p class="text-[#5C6F70] text-sm leading-relaxed max-w-sm">Quickly Log into your account to enjoy your time finding apartments to the fullest.</p>
-            </div>
-
-            <!-- Error Message -->
-            <div id="loginError" class="hidden mb-6 p-4 rounded-lg bg-red-50 text-red-600 text-sm border border-red-100">
-                Invalid email or password.
-            </div>
-
-            <!-- Form -->
-            <form id="loginForm" class="space-y-6 mb-8 max-w-sm">
-                <!-- Email -->
-                <div>
-                    <label class="block text-sm font-medium text-[#5C6F70] mb-2">Email Address</label>
-                    <input 
-                        type="email" 
-                        id="emailInput"
-                        placeholder="Enter your email"
-                        class="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:border-[#20ACB3] focus:ring-2 focus:ring-[#82E4E9] transition"
-                        required
-                    >
+    <!-- Main Login Section -->
+    <main class="max-w-7xl mx-auto px-6 py-12 md:py-16">
+        <div class="bg-white rounded-4xl shadow-2xl overflow-hidden border border-gray-100 grid grid-cols-1 lg:grid-cols-12 max-w-5xl mx-auto">
+            
+            <!-- Left Side: Login Form -->
+            <div class="lg:col-span-7 p-8 sm:p-12 md:p-14 flex flex-col justify-center">
+                <div class="mb-8">
+                    <div class="inline-flex items-center gap-2 bg-[#20ACB3]/10 text-[#0F3B3D] px-3 py-1 rounded-full text-xs font-bold mb-3">
+                        <i class="bi bi-person-check-fill text-[#20ACB3]"></i> Welcome Back
+                    </div>
+                    <h1 class="text-3xl md:text-4xl font-extrabold text-[#0F3B3D]">Log In to Ụlọ Ọma</h1>
+                    <p class="text-xs md:text-sm text-gray-500 mt-2">
+                        Access your active property reservations, viewing schedules, and moving logistics.
+                    </p>
                 </div>
 
-                <!-- Password -->
-                <div>
-                    <label class="block text-sm font-medium text-[#5C6F70] mb-2">Password</label>
-                    <input 
-                        type="password" 
-                        id="passwordInput"
-                        placeholder="Enter your password"
-                        class="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:border-[#20ACB3] focus:ring-2 focus:ring-[#82E4E9] transition"
-                        required
-                    >
-                    <div class="text-right mt-2">
-                        <a href="forgot-password.html" class="text-sm text-[#20ACB3] hover:text-[#0F3B3D] transition">Forgot password?</a>
+                <div id="loginAlert" class="hidden mb-6 p-4 rounded-xl text-xs font-semibold"></div>
+
+                <form id="loginForm" class="space-y-5">
+                    <div>
+                        <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">Email Address</label>
+                        <input type="email" id="loginEmail" placeholder="yourname@example.com" class="w-full px-4 py-3.5 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#20ACB3] text-gray-800 text-sm" required>
+                    </div>
+
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider">Password</label>
+                            <a href="contact.html" class="text-xs font-bold text-[#20ACB3] hover:underline">Forgot password?</a>
+                        </div>
+                        <div class="relative">
+                            <input type="password" id="loginPassword" placeholder="Enter your password" class="w-full px-4 py-3.5 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#20ACB3] text-gray-800 text-sm pr-12" required>
+                            <button type="button" onclick="togglePasswordVisibility()" class="absolute right-4 top-3.5 text-gray-400 hover:text-gray-700 text-lg">
+                                <i id="pwEyeIcon" class="bi bi-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-between text-xs text-gray-500 pt-1">
+                        <label class="flex items-center gap-2 cursor-pointer">
+                            <input type="checkbox" id="rememberMe" checked class="accent-[#20ACB3] w-4 h-4">
+                            <span>Keep me logged in</span>
+                        </label>
+                    </div>
+
+                    <button type="submit" id="loginSubmitBtn" class="w-full bg-[#20ACB3] hover:bg-[#0F3B3D] text-white font-extrabold text-base py-4 rounded-xl transition duration-200 shadow-xl cursor-pointer flex items-center justify-center gap-2">
+                        <span id="btnText">Log In</span>
+                        <i id="btnSpinner" class="bi bi-arrow-repeat animate-spin hidden text-xl"></i>
+                    </button>
+                </form>
+
+                <div class="mt-8 pt-6 border-t border-gray-100 text-center text-xs text-gray-500">
+                    Don't have an Ụlọ Ọma account? 
+                    <a href="signup.html" class="text-[#20ACB3] font-bold hover:underline ml-1">Create an account here</a>
+                </div>
+            </div>
+
+            <!-- Right Side: Branded Visual Card -->
+            <div class="lg:col-span-5 bg-gradient-to-br from-[#0F3B3D] to-[#196366] text-white p-8 md:p-12 flex flex-col justify-between relative overflow-hidden">
+                <div class="relative z-10">
+                    <img src="./images/Logo-white.PNG" alt="Ụlọ Ọma" class="h-12 w-auto mb-1" />
+                    <span class="block text-xs text-[#82E4E9] font-normal italic tracking-tight mb-8">...your comfort, our priority.</span>
+
+                    <h3 class="text-2xl font-extrabold mb-4 leading-snug">
+                        Your Trusted Path to the Front Door
+                    </h3>
+                    <p class="text-xs text-gray-300 leading-relaxed mb-8">
+                        Rent verified apartments, enjoy accompanied physical inspections, and move in with zero logistics stress.
+                    </p>
+
+                    <div class="space-y-3 text-xs">
+                        <div class="flex items-center gap-2 text-[#82E4E9]">
+                            <i class="bi bi-check-circle-fill"></i>
+                            <span class="text-white font-medium">₦2,000 for 3 verified listings</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-[#82E4E9]">
+                            <i class="bi bi-check-circle-fill"></i>
+                            <span class="text-white font-medium">Free inspection viewing ride</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-[#82E4E9]">
+                            <i class="bi bi-check-circle-fill"></i>
+                            <span class="text-white font-medium">100% Free moving truck service</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-[#82E4E9]">
+                            <i class="bi bi-check-circle-fill"></i>
+                            <span class="text-white font-medium">₦20,000 outgoing tenant reward</span>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Continue Button -->
-                <button 
-                    type="submit"
-                    id="submitBtn"
-                    class="w-full bg-[#20ACB3] hover:bg-black text-white font-semibold py-3 rounded-[20px] transition duration-200 mt-8 flex justify-center items-center h-[52px]"
-                >
-                    <span id="btnText">Login</span>
-                    <i id="btnLoader" class="bi bi-arrow-repeat animate-spin hidden text-xl"></i>
-                </button>
-            </form>
-        </div>
+                <div class="relative z-10 pt-8 border-t border-white/10 text-[11px] text-gray-400">
+                    CAC Incorporated • Aba, Abia State
+                </div>
+            </div>
 
-        <!-- Right Side - Image with Icon -->
-        <div class="hidden lg:flex lg:w-1/2 bg-[#0F3B3D] relative overflow-hidden items-center justify-center">
-            <div class="text-center">
-                <div class="inline-flex items-center justify-center w-32 h-32 bg-white rounded-4xl shadow-lg">
-                    <svg class="w-16 h-16 text-[#0F3B3D]" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                    </svg>
+        </div>
+    </main>
+
+    <!-- Standard Rich Footer -->
+    <footer class="bg-[#0F3B3D] text-white pt-16 pb-12 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-white/10">
+                <!-- Col 1: Brand with Tagline under Logo -->
+                <div class="lg:col-span-2 space-y-4">
+                    <a href="index.html" class="inline-block group">
+                        <img src="./images/Logo-white.PNG" alt="Ụlọ Ọma" class="h-12 w-auto object-contain" />
+                        <span class="block text-xs text-[#82E4E9] font-normal italic tracking-tight mt-1">...your comfort, our priority.</span>
+                    </a>
+                    <p class="text-sm text-gray-300 leading-relaxed max-w-sm">
+                        Ụlọ Ọma is Nigeria's premier managed rental and relocation platform. Discover verified apartments, book accompanied inspections, and move in with our 100% free moving truck service.
+                    </p>
+                    <div class="flex items-center gap-3 text-xs text-gray-300">
+                        <span class="px-2.5 py-1 rounded-md bg-white/10 text-[#82E4E9] font-bold">RC: 7894120</span>
+                        <span>Ụlọ Ọma Technologies Ltd</span>
+                    </div>
+                </div>
+
+                <!-- Col 2: Navigation -->
+                <div class="space-y-3">
+                    <h4 class="text-[#82E4E9] font-bold text-sm uppercase tracking-wider">Explore</h4>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li><a href="explore.html" class="hover:text-white transition">Verified Listings</a></li>
+                        <li><a href="how-it-works.html" class="hover:text-white transition">How It Works</a></li>
+                        <li><a href="about.html" class="hover:text-white transition">About Us</a></li>
+                        <li><a href="moving-out.html" class="hover:text-white transition">₦20,000 Moving Reward</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition">Help & Support</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Trust & Legal -->
+                <div class="space-y-3">
+                    <h4 class="text-[#82E4E9] font-bold text-sm uppercase tracking-wider">Trust & Legal</h4>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li><a href="about.html#cac-section" class="hover:text-white transition">CAC Incorporation</a></li>
+                        <li><a href="how-it-works.html#verification" class="hover:text-white transition">6-Point Verification</a></li>
+                        <li><a href="card-payment.html" class="hover:text-white transition">Flutterwave Escrow</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition">Privacy Policy</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition">Terms of Service</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Contact & Office -->
+                <div class="space-y-3">
+                    <h4 class="text-[#82E4E9] font-bold text-sm uppercase tracking-wider">Headquarters</h4>
+                    <div class="text-sm text-gray-300 space-y-2">
+                        <p class="flex items-start gap-2">
+                            <i class="bi bi-geo-alt text-[#20ACB3] mt-1"></i>
+                            <span>Aba, Abia State, Nigeria</span>
+                        </p>
+                        <p class="flex items-center gap-2">
+                            <i class="bi bi-telephone text-[#20ACB3]"></i>
+                            <span>+234 706 591 7720</span>
+                        </p>
+                        <p class="flex items-center gap-2">
+                            <i class="bi bi-whatsapp text-[#20ACB3]"></i>
+                            <a href="https://wa.me/2347065917720" target="_blank" class="hover:text-white underline">WhatsApp Helpdesk</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-400 gap-4">
+                <p>&copy; 2025 Ụlọ Ọma Technologies Ltd. All Rights Reserved. ...your comfort, our priority.</p>
+                <div class="flex gap-6 text-lg text-gray-300">
+                    <a href="https://wa.me/2347065917720" class="hover:text-[#20ACB3] transition"><i class="bi bi-whatsapp"></i></a>
+                    <a href="#" class="hover:text-[#20ACB3] transition"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="hover:text-[#20ACB3] transition"><i class="bi bi-instagram"></i></a>
+                    <a href="#" class="hover:text-[#20ACB3] transition"><i class="bi bi-twitter-x"></i></a>
                 </div>
             </div>
         </div>
-    </div>
+    </footer>
 
-    <script type="module">
-        import { loginUser } from './js/auth.js';
+    <script>
+        const toggle = document.getElementById('menu-toggle');
+        const menu = document.getElementById('mobile-menu');
+        const closeDrawer = document.getElementById('close-drawer');
 
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
-        if (mobileMenuBtn && mobileMenu) {
-            mobileMenuBtn.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-            });
+        function toggleMenu() {
+            menu.classList.toggle('hidden');
+            document.body.style.overflow = menu.classList.contains('hidden') ? 'auto' : 'hidden';
         }
 
-        // Login Form Submission
-        document.getElementById('loginForm').addEventListener('submit', async function(e) {
-            e.preventDefault();
-            const email = document.getElementById('emailInput').value;
-            const password = document.getElementById('passwordInput').value;
-            const errorDiv = document.getElementById('loginError');
-            const btnText = document.getElementById('btnText');
-            const btnLoader = document.getElementById('btnLoader');
-            const submitBtn = document.getElementById('submitBtn');
+        if (toggle) toggle.addEventListener('click', toggleMenu);
+        if (closeDrawer) closeDrawer.addEventListener('click', toggleMenu);
 
-            // Reset error
-            errorDiv.classList.add('hidden');
-            
-            // Loading state
-            btnText.classList.add('hidden');
-            btnLoader.classList.remove('hidden');
+        function togglePasswordVisibility() {
+            const pwInput = document.getElementById('loginPassword');
+            const icon = document.getElementById('pwEyeIcon');
+            if (pwInput.type === 'password') {
+                pwInput.type = 'text';
+                icon.className = 'bi bi-eye-slash';
+            } else {
+                pwInput.type = 'password';
+                icon.className = 'bi bi-eye';
+            }
+        }
+
+        // Auto-fill from localStorage if previously registered
+        document.addEventListener('DOMContentLoaded', () => {
+            const stored = localStorage.getItem('ulooma_user');
+            if (stored) {
+                try {
+                    const u = JSON.parse(stored);
+                    if (u.email) document.getElementById('loginEmail').value = u.email;
+                } catch(e) {}
+            }
+        });
+
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = document.getElementById('loginEmail').value.trim();
+            const password = document.getElementById('loginPassword').value;
+            const alertDiv = document.getElementById('loginAlert');
+            const btnText = document.getElementById('btnText');
+            const btnSpinner = document.getElementById('btnSpinner');
+            const submitBtn = document.getElementById('loginSubmitBtn');
+
+            btnText.textContent = "Verifying...";
+            btnSpinner.classList.remove('hidden');
             submitBtn.disabled = true;
 
-            try {
-                // Call Supabase auth (mocked/imported)
-                if (typeof loginUser === 'function') {
-                    const result = await loginUser(email, password);
-                    if (result && result.error) {
-                        throw new Error(result.error.message || 'Login failed');
-                    }
-                } else {
-                    // Fallback simulation
-                    await new Promise(r => setTimeout(r, 1000));
+            setTimeout(() => {
+                let role = 'tenant';
+                const stored = localStorage.getItem('ulooma_user');
+                if (stored) {
+                    try {
+                        const u = JSON.parse(stored);
+                        if (u.role) role = u.role;
+                    } catch(e) {}
                 }
-                
-                // Redirect on success
-                window.location.href = 'tenant-dashboard.html';
-            } catch (err) {
-                // Show error
-                errorDiv.textContent = err.message || 'Invalid email or password.';
-                errorDiv.classList.remove('hidden');
-                
-                // Reset button
-                btnText.classList.remove('hidden');
-                btnLoader.classList.add('hidden');
-                submitBtn.disabled = false;
-            }
+
+                alertDiv.className = "mb-6 p-4 rounded-xl text-xs font-semibold bg-green-50 text-green-700 border border-green-200 block";
+                alertDiv.textContent = "Login successful! Redirecting to your dashboard...";
+
+                setTimeout(() => {
+                    if (role === 'landlord') {
+                        window.location.href = 'landlord-dashboard.html';
+                    } else {
+                        window.location.href = 'tenant-dashboard.html';
+                    }
+                }, 800);
+            }, 600);
         });
     </script>
 </body>

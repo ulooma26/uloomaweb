@@ -3,421 +3,377 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Ụlọ Ọma</title>
+    <title>About Us — Ụlọ Ọma</title>
     <link rel="stylesheet" href="./src/output.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="icon" href="./images/image.png" type="image/png">
 </head>
-<body class="bg-gray-50 font-sans">
-    <header class="sticky top-0 bg-white z-50 shadow-sm">
-        <div class="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
-            <div class="cursor-pointer" onclick="window.location.href='index.html'">
-                <img src="./images/Logo.PNG" alt="Ulo Oma" class="h-12 md:h-14" />
-            </div>
-            <nav class="hidden md:flex gap-10 lg:gap-16 text-[19px] font-semibold text-black">
+<body class="bg-[#F8FBFB] font-sans text-[#5C6F70]">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-[#0F3B3D] text-[#82E4E9] text-xs md:text-sm py-2 px-4 text-center font-medium border-b border-[#196366]/40 flex items-center justify-center gap-2">
+        <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-bold bg-[#20ACB3] text-white">CAC VERIFIED</span>
+        <span>Ụlọ Ọma Technologies Ltd (RC: 7894120) — The managed rental & moving platform.</span>
+    </div>
+
+    <!-- Header -->
+    <header class="sticky top-0 bg-white z-50 shadow-sm border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="index.html" class="flex flex-col items-start group">
+                <img src="./images/Logo.PNG" alt="Ụlọ Ọma Logo" class="h-10 md:h-12 w-auto object-contain" />
+            </a>
+
+            <nav class="hidden md:flex gap-8 lg:gap-12 text-[17px] font-semibold text-gray-800">
                 <a href="index.html" class="hover:text-[#20ACB3] transition">Home</a>
                 <a href="explore.html" class="hover:text-[#20ACB3] transition">Explore</a>
                 <a href="how-it-works.html" class="hover:text-[#20ACB3] transition">How it works</a>
-                <a href="about.html" class="text-[#20ACB3]">About Us</a>
+                <a href="about.html" class="text-[#20ACB3] font-bold">About Us</a>
                 <a href="contact.html" class="hover:text-[#20ACB3] transition">Contact Us</a>
             </nav>
-            <div class="hidden md:block">
-                <button onclick="window.location.href='signup.html'" class="bg-[#20ACB3] text-white rounded-[30px] py-[15px] px-[30px] hover:bg-black transition text-[19px] font-medium cursor-pointer">
+
+            <div class="hidden md:flex items-center gap-3">
+                <button onclick="window.location.href='login.html'" class="text-[#0F3B3D] font-semibold px-4 py-2 hover:text-[#20ACB3] transition text-base">
+                    Log In
+                </button>
+                <button onclick="window.location.href='signup.html'" class="bg-[#20ACB3] hover:bg-[#0F3B3D] text-white rounded-full py-2.5 px-6 transition font-semibold text-base shadow-sm">
                     Sign Up
                 </button>
             </div>
 
             <!-- Mobile Toggle Button -->
-            <button id="menu-toggle" class="md:hidden text-4xl text-[#20ACB3] z-50">
+            <button id="menu-toggle" class="md:hidden text-3xl text-[#20ACB3] focus:outline-none p-1">
                 <i id="hamburger" class="bi bi-list"></i>
                 <i id="close-x" class="bi bi-x-lg hidden"></i>
             </button>
         </div>
 
-        <!-- Mobile Full-Screen Menu -->
-        <div id="mobile-menu" class="fixed inset-0 bg-white hidden z-40">
-            <div class="flex flex-col items-center justify-center h-full gap-12 text-2xl font-semibold text-black">
+        <!-- Mobile Drawer Menu -->
+        <div id="mobile-menu" class="fixed inset-0 bg-white hidden z-40 flex flex-col justify-between p-8">
+            <div class="flex items-center justify-between border-b pb-4">
+                <img src="./images/Logo.PNG" alt="Ụlọ Ọma" class="h-10 w-auto" />
+                <button id="close-drawer" class="text-3xl text-gray-700"><i class="bi bi-x-lg"></i></button>
+            </div>
+            <div class="flex flex-col gap-6 text-xl font-semibold text-gray-800 my-auto text-center">
                 <a href="index.html" class="hover:text-[#20ACB3] transition">Home</a>
-                <a href="explore.html" class="hover:text-[#20ACB3] transition">Explore</a>
-                <a href="how-it-works.html" class="hover:text-[#20ACB3] transition">How it works</a>
+                <a href="explore.html" class="hover:text-[#20ACB3] transition">Explore Properties</a>
+                <a href="how-it-works.html" class="hover:text-[#20ACB3] transition">How It Works</a>
                 <a href="about.html" class="text-[#20ACB3]">About Us</a>
                 <a href="contact.html" class="hover:text-[#20ACB3] transition">Contact Us</a>
-                <button onclick="window.location.href='signup.html'" class="bg-[#20ACB3] text-white rounded-[30px] py-4 px-12 hover:bg-black cursor-pointer transition text-xl font-medium">
+            </div>
+            <div class="space-y-3">
+                <button onclick="window.location.href='signup.html'" class="w-full bg-[#20ACB3] text-white rounded-full py-4 font-bold text-lg">
                     Sign Up
+                </button>
+                <button onclick="window.location.href='login.html'" class="w-full border border-gray-300 text-gray-800 rounded-full py-3.5 font-bold text-lg">
+                    Log In
                 </button>
             </div>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="text-black">
-        <div class="max-w-7xl mx-auto px-6 mt-19 text-center">
-            <h1 class="text-7xl font-bold mb-8 text-black mt-10">About Ụlọ Ọma</h1>
-            <p class="text-2xl text-black max-w-4xl mx-auto leading-relaxed">
-                Revolutionizing the rental experience in Nigeria by connecting tenants directly with verified landlords
+    <section class="relative bg-gradient-to-b from-white to-[#F8FBFB] py-20 px-6 border-b border-gray-100">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="inline-flex items-center gap-2 bg-[#20ACB3]/10 text-[#0F3B3D] px-4 py-1.5 rounded-full text-xs md:text-sm font-semibold mb-6">
+                <i class="bi bi-shield-check text-[#20ACB3]"></i> Nigeria's Managed Property & Moving Ecosystem
+            </div>
+            <h1 class="text-4xl md:text-6xl font-extrabold text-[#0F3B3D] mb-6 tracking-tight leading-tight">
+                Find your home. <br class="hidden sm:inline" />
+                <span class="text-[#20ACB3]">We help you move in.</span>
+            </h1>
+            <p class="text-lg md:text-xl text-[#5C6F70] max-w-2xl mx-auto leading-relaxed">
+                Ụlọ Ọma is not just a listing board. We are an end-to-end relocation platform that eliminates unverified middlemen, provides free viewing transport, and delivers your belongings directly into your new home for free.
             </p>
         </div>
     </section>
 
-    <!-- Mission Section -->
-    <section class="py-32">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+    <!-- Mission & Vision Section -->
+    <section class="py-20 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <div>
-                    <h2 class="text-5xl font-bold text-[#0F3B3D] mb-8">Our Mission</h2>
-                    <p class="text-xl text-gray-600 mb-8 leading-relaxed">
-                        We're on a mission to eliminate the stress, hidden costs, and uncertainty from the rental process. 
-                        By connecting tenants directly with verified landlords, we create a transparent marketplace where 
-                        everyone wins.
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-[#0F3B3D] mb-6">
+                        Eliminating the Stress of Renting in Nigeria
+                    </h2>
+                    <p class="text-base md:text-lg text-[#5C6F70] leading-relaxed mb-6">
+                        In many Nigerian cities, finding a decent apartment is riddled with frustration: exorbitant agent "inspection fees" for dilapidated buildings, ghost listings, multiple middlemen taking cuts, and exorbitant relocation moving costs on moving day.
                     </p>
-                    <p class="text-lg text-gray-600 leading-relaxed">
-                        Our platform ensures that finding a home is no longer a daunting task filled with middlemen, 
-                        inflated prices, and questionable listings. We believe everyone deserves a safe, transparent, 
-                        and affordable path to their next home.
+                    <p class="text-base md:text-lg text-[#5C6F70] leading-relaxed mb-8">
+                        Ụlọ Ọma was built from the ground up to restore dignity and convenience to renting. We verify every compound in person, assign dedicated representatives to drive you to inspections, and cover the cost of moving logistics so you can step straight into comfort.
                     </p>
-                </div>
-                <div class="relative">
-                    <img src="./images/Hero2.png" alt="Our Mission" class="rounded-3xl shadow-2xl w-full h-96 object-cover">
-                                    </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Values Section -->
-    <section class="py-32 bg-white">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-20">
-                <h2 class="text-5xl font-bold text-[#0F3B3D] mb-8">Our Core Values</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">The principles that guide everything we do</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-16">
-                <div class="text-center group">
-                    <div class="w-24 h-24 bg-[#20ACB3] rounded-full flex items-center justify-center mx-auto mb-8 group-hover:scale-110 transition-transform duration-300">
-                        <i class="bi bi-shield-check text-4xl text-white"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-[#0F3B3D] mb-6">Transparency</h3>
-                    <p class="text-lg text-gray-600 leading-relaxed">
-                        No hidden fees, no surprise charges. What you see is exactly what you pay. 
-                        We believe in complete honesty in all our dealings.
-                    </p>
-                </div>
-                
-                <div class="text-center group">
-                    <div class="w-24 h-24 bg-[#20ACB3] rounded-full flex items-center justify-center mx-auto mb-8 group-hover:scale-110 transition-transform duration-300">
-                        <i class="bi bi-people-fill text-4xl text-white"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-[#0F3B3D] mb-6">Community</h3>
-                    <p class="text-lg text-gray-600 leading-relaxed">
-                        Building strong connections between landlords and tenants, creating lasting relationships 
-                        that benefit everyone in our community.
-                    </p>
-                </div>
-                
-                <div class="text-center group">
-                    <div class="w-24 h-24 bg-[#20ACB3] rounded-full flex items-center justify-center mx-auto mb-8 group-hover:scale-110 transition-transform duration-300">
-                        <i class="bi bi-lightning-charge text-4xl text-white"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-[#0F3B3D] mb-6">Innovation</h3>
-                    <p class="text-lg text-gray-600 leading-relaxed">
-                        Constantly improving our platform with cutting-edge technology to make 
-                        the rental process faster, easier, and more efficient.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Story Section -->
-    <section class="py-32 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-                <div class="relative">
-                    <img src="./images/Hero3.jpg" alt="Our Story" class="rounded-3xl shadow-2xl w-full h-96 object-cover">
-                    <div class="absolute -top-8 -right-8 bg-[#0F3B3D] text-white p-8 rounded-2xl">
-                        <h4 class="text-3xl font-bold">2025</h4>
-                        <p class="text-lg">Founded</p>
-                    </div>
-                </div>
-                <div>
-                    <h2 class="text-5xl font-bold text-[#0F3B3D] mb-8">Our Story</h2>
-                    <p class="text-xl text-gray-600 mb-8 leading-relaxed">
-                        Ụlọ Ọma was born from personal frustration with the traditional rental process in Nigeria. 
-                        Our founders experienced firsthand the challenges of finding quality housing - from dealing 
-                        with unreliable agents to paying excessive fees for substandard services.
-                    </p>
-                    <p class="text-xl text-gray-600 mb-8 leading-relaxed">
-                        We realized that technology could solve these problems by creating direct connections between 
-                        property owners and renters, eliminating unnecessary middlemen and creating a more efficient, 
-                        transparent marketplace.
-                    </p>
-                    <p class="text-xl text-gray-600 leading-relaxed">
-                        Today, we're proud to serve thousands of users across Nigeria, helping them find homes and 
-                        list properties with confidence and ease.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    
-    <!-- Features Section -->
-    <section class="py-32 bg-white">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-20">
-                <h2 class="text-5xl font-bold text-[#0F3B3D] mb-8">What Makes Us Different</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">The features that set us apart from traditional rental platforms</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-                <div class="bg-gray-50 p-8 rounded-2xl hover:shadow-xl transition-shadow duration-300">
-                    <div class="w-16 h-16 bg-[#20ACB3] rounded-full flex items-center justify-center mb-6">
-                        <i class="bi bi-shield-check text-2xl text-white"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-[#0F3B3D] mb-4">Verified Properties</h3>
-                    <p class="text-gray-600 leading-relaxed">
-                        Every listing is thoroughly verified by our team to ensure authenticity and quality standards.
-                    </p>
-                </div>
-                
-                <div class="bg-gray-50 p-8 rounded-2xl hover:shadow-xl transition-shadow duration-300">
-                    <div class="w-16 h-16 bg-[#20ACB3] rounded-full flex items-center justify-center mb-6">
-                        <i class="bi bi-currency-exchange text-2xl text-white"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-[#0F3B3D] mb-4">Transparent Pricing</h3>
-                    <p class="text-gray-600 leading-relaxed">
-                        No hidden fees or inflated costs. Direct transactions between landlords and tenants.
-                    </p>
-                </div>
-                
-                <div class="bg-gray-50 p-8 rounded-2xl hover:shadow-xl transition-shadow duration-300">
-                    <div class="w-16 h-16 bg-[#20ACB3] rounded-full flex items-center justify-center mb-6">
-                        <i class="bi bi-truck text-2xl text-white"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-[#0F3B3D] mb-4">Free Transport</h3>
-                    <p class="text-gray-600 leading-relaxed">
-                        Complimentary viewing transport and moving assistance within Aba and surrounding areas.
-                    </p>
-                </div>
-                
-                <div class="bg-gray-50 p-8 rounded-2xl hover:shadow-xl transition-shadow duration-300">
-                    <div class="w-16 h-16 bg-[#20ACB3] rounded-full flex items-center justify-center mb-6">
-                        <i class="bi bi-headset text-2xl text-white"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-[#0F3B3D] mb-4">24/7 Support</h3>
-                    <p class="text-gray-600 leading-relaxed">
-                        Round-the-clock customer support to assist you throughout your rental journey.
-                    </p>
-                </div>
-                
-                <div class="bg-gray-50 p-8 rounded-2xl hover:shadow-xl transition-shadow duration-300">
-                    <div class="w-16 h-16 bg-[#20ACB3] rounded-full flex items-center justify-center mb-6">
-                        <i class="bi bi-phone text-2xl text-white"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-[#0F3B3D] mb-4">Mobile Optimized</h3>
-                    <p class="text-gray-600 leading-relaxed">
-                        Fully responsive platform that works seamlessly on all devices and screen sizes.
-                    </p>
-                </div>
-                
-                <div class="bg-gray-50 p-8 rounded-2xl hover:shadow-xl transition-shadow duration-300">
-                    <div class="w-16 h-16 bg-[#20ACB3] rounded-full flex items-center justify-center mb-6">
-                        <i class="bi bi-geo-alt text-2xl text-white"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-[#0F3B3D] mb-4">Local Expertise</h3>
-                    <p class="text-gray-600 leading-relaxed">
-                        Deep understanding of local markets and neighborhoods across Nigeria.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Company Verification & CAC Credentials Section -->
-    <section class="py-24 bg-gray-50 border-t border-gray-200">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <div class="inline-flex items-center gap-2 bg-[#20ACB3]/10 text-[#0F3B3D] px-4 py-2 rounded-full text-sm font-semibold mb-4">
-                    <i class="bi bi-patch-check-fill text-[#20ACB3]"></i> Official Corporate Credentials
-                </div>
-                <h2 class="text-4xl md:text-5xl font-bold text-[#0F3B3D] mb-4">Company Verification</h2>
-                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Ụlọ Ọma operates with full legal incorporation and regulatory compliance in the Federal Republic of Nigeria.</p>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-                <div class="lg:col-span-6 space-y-6">
-                    <div class="bg-white p-8 rounded-3xl shadow-lg border border-gray-100">
-                        <div class="space-y-5">
-                            <div class="flex items-center justify-between border-b border-gray-100 pb-4">
-                                <span class="text-gray-500 font-medium">Registered Entity</span>
-                                <span class="text-[#0F3B3D] font-bold text-lg">Ụlọ Ọma Technologies Ltd</span>
-                            </div>
-                            <div class="flex items-center justify-between border-b border-gray-100 pb-4">
-                                <span class="text-gray-500 font-medium">Registration Status</span>
-                                <span class="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1 rounded-full bg-green-100 text-green-800">
-                                    <i class="bi bi-check-circle-fill"></i> Incorporated Under CAC
-                                </span>
-                            </div>
-                            <div class="flex items-center justify-between border-b border-gray-100 pb-4">
-                                <span class="text-gray-500 font-medium">Regulatory Body</span>
-                                <span class="text-gray-800 font-medium">Corporate Affairs Commission (CAC), Nigeria</span>
-                            </div>
-                            <div class="flex items-center justify-between">
-                                <span class="text-gray-500 font-medium">Operating Headquarters</span>
-                                <span class="text-gray-800 font-medium">Aba, Abia State, Nigeria</span>
-                            </div>
+                    <div class="grid grid-cols-2 gap-6 pt-4 border-t border-gray-200">
+                        <div>
+                            <div class="text-3xl font-extrabold text-[#20ACB3]">100%</div>
+                            <div class="text-sm font-semibold text-gray-700 mt-1">Physically Verified Listings</div>
                         </div>
-
-                        <div class="mt-8 p-4 bg-teal-50/60 rounded-2xl border border-teal-100 text-sm text-[#0F3B3D]">
-                            <p class="flex items-start gap-2">
-                                <i class="bi bi-info-circle-fill text-[#20ACB3] mt-0.5"></i>
-                                <span>Official documents and certificate files are maintained and verified via our administrative compliance layer. You can view or inspect the incorporation credentials below.</span>
-                            </p>
+                        <div>
+                            <div class="text-3xl font-extrabold text-[#0F3B3D]">Free</div>
+                            <div class="text-sm font-semibold text-gray-700 mt-1">Fulfillment Moving Truck</div>
                         </div>
                     </div>
                 </div>
+                <div class="relative">
+                    <div class="rounded-4xl overflow-hidden shadow-2xl border-4 border-white bg-white">
+                        <img src="./images/Hero2.png" alt="Ụlọ Ọma Representative" class="w-full h-[400px] object-cover">
+                    </div>
+                    <div class="absolute -bottom-6 -left-6 bg-[#0F3B3D] text-white p-6 rounded-3xl shadow-xl max-w-xs hidden sm:block">
+                        <div class="flex items-center gap-3 mb-2">
+                            <i class="bi bi-geo-alt-fill text-[#82E4E9] text-xl"></i>
+                            <h4 class="font-bold text-base text-white">Coverage Zone</h4>
+                        </div>
+                        <p class="text-xs text-gray-300">Headquartered in Aba, Abia State, expanding rapidly across Eastern Nigeria and beyond.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                <div class="lg:col-span-6">
-                    <div class="bg-white p-8 rounded-3xl shadow-xl border border-gray-100 text-center relative overflow-hidden group">
-                        <div class="aspect-[4/3] bg-gray-100 rounded-2xl border-2 border-dashed border-gray-300 flex flex-col items-center justify-center p-6 relative cursor-pointer" onclick="openCertificateModal()">
-                            <i class="bi bi-file-earmark-pdf text-6xl text-[#20ACB3] mb-3 group-hover:scale-110 transition-transform"></i>
-                            <h4 class="font-bold text-lg text-[#0F3B3D]">Official CAC Certificate Document</h4>
-                            <p class="text-xs text-gray-500 mt-1">Federal Republic of Nigeria — Certificate of Incorporation</p>
-                            <span class="mt-4 inline-flex items-center gap-2 bg-[#20ACB3] text-white text-xs font-semibold px-4 py-2 rounded-full hover:bg-black transition">
-                                <i class="bi bi-eye"></i> Inspect Certificate
+    <!-- The 4 Core Pillars -->
+    <section class="py-20 px-6 bg-white border-y border-gray-100">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-bold text-[#20ACB3] uppercase tracking-wider">The Ụlọ Ọma Advantage</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-[#0F3B3D] mt-2 mb-4">Four Pillars of Our Promise</h2>
+                <p class="text-base md:text-lg text-gray-600">Every feature on Ụlọ Ọma is built around real tenant peace of mind and landlord protection.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Pillar 1 -->
+                <div class="p-8 rounded-4xl bg-[#F8FBFB] border border-gray-100 hover:shadow-lg transition">
+                    <div class="w-14 h-14 rounded-2xl bg-[#20ACB3]/10 text-[#20ACB3] flex items-center justify-center text-2xl mb-6">
+                        <i class="bi bi-shield-check"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#0F3B3D] mb-3">₦2,000 Verified Pass</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                        One transparent ₦2,000 access fee unlocks 3 thoroughly verified properties with full addresses, video walkthroughs, and guaranteed landlord availability.
+                    </p>
+                </div>
+
+                <!-- Pillar 2 -->
+                <div class="p-8 rounded-4xl bg-[#F8FBFB] border border-gray-100 hover:shadow-lg transition">
+                    <div class="w-14 h-14 rounded-2xl bg-[#0F3B3D]/10 text-[#0F3B3D] flex items-center justify-center text-2xl mb-6">
+                        <i class="bi bi-car-front"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#0F3B3D] mb-3">Free Viewing Ride</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                        No wandering through unfamiliar streets. Your assigned Ụlọ Ọma representative coordinates viewing schedules and provides complimentary viewing transport.
+                    </p>
+                </div>
+
+                <!-- Pillar 3 -->
+                <div class="p-8 rounded-4xl bg-[#F8FBFB] border border-gray-100 hover:shadow-lg transition">
+                    <div class="w-14 h-14 rounded-2xl bg-[#20ACB3]/10 text-[#20ACB3] flex items-center justify-center text-2xl mb-6">
+                        <i class="bi bi-truck"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#0F3B3D] mb-3">100% Free Moving</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                        Rent through Ụlọ Ọma and we deploy a dedicated moving truck with trained loaders to transport all your furniture and belongings directly to your new home.
+                    </p>
+                </div>
+
+                <!-- Pillar 4 -->
+                <div class="p-8 rounded-4xl bg-[#F8FBFB] border border-gray-100 hover:shadow-lg transition">
+                    <div class="w-14 h-14 rounded-2xl bg-[#0F3B3D]/10 text-[#0F3B3D] flex items-center justify-center text-2xl mb-6">
+                        <i class="bi bi-cash-stack"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#0F3B3D] mb-3">₦20,000 Outgoing Reward</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                        Vacating your current apartment? List it with us. Once verified and rented to a new tenant, you receive an instant ₦20,000 direct bank cash transfer.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CAC Incorporation Section -->
+    <section id="cac-section" class="py-20 px-6 bg-[#F8FBFB]">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <div class="inline-flex items-center gap-2 bg-[#20ACB3]/10 text-[#0F3B3D] px-4 py-2 rounded-full text-xs font-semibold mb-3">
+                    <i class="bi bi-patch-check-fill text-[#20ACB3]"></i> Legal Compliance & Incorporation
+                </div>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-[#0F3B3D]">Corporate Accreditation</h2>
+                <p class="text-sm md:text-base text-gray-600 mt-2">
+                    Ụlọ Ọma is a registered legal entity incorporated with the Corporate Affairs Commission (CAC) under the Companies and Allied Matters Act 2020.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <div class="lg:col-span-7 bg-white p-8 md:p-10 rounded-4xl shadow-xl border border-gray-100">
+                    <div class="space-y-6">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-gray-100">
+                            <span class="text-gray-500 font-medium text-sm">Full Registered Entity</span>
+                            <span class="text-[#0F3B3D] font-extrabold text-lg">Ụlọ Ọma Technologies Ltd</span>
+                        </div>
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-gray-100">
+                            <span class="text-gray-500 font-medium text-sm">Registration Number (RC)</span>
+                            <span class="font-mono font-bold text-[#20ACB3] text-lg bg-[#20ACB3]/10 px-3 py-1 rounded-lg">RC: 7894120</span>
+                        </div>
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-gray-100">
+                            <span class="text-gray-500 font-medium text-sm">Statutory Authority</span>
+                            <span class="text-gray-800 font-semibold text-sm">Corporate Affairs Commission (CAC), Federal Republic of Nigeria</span>
+                        </div>
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-gray-100">
+                            <span class="text-gray-500 font-medium text-sm">Corporate Status</span>
+                            <span class="inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-full bg-green-100 text-green-800">
+                                <i class="bi bi-check-circle-fill"></i> Active & In Good Standing
                             </span>
                         </div>
-                        <p class="text-xs text-gray-400 mt-4">Document ref: CAC/RC/ULO-OMA-OFFICIAL</p>
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between">
+                            <span class="text-gray-500 font-medium text-sm">Operational Headquarters</span>
+                            <span class="text-gray-800 font-semibold text-sm">Aba, Abia State, Nigeria</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5">
+                    <div class="bg-gradient-to-br from-[#0F3B3D] to-[#196366] text-white p-8 md:p-10 rounded-4xl shadow-2xl relative overflow-hidden text-center">
+                        <div class="w-20 h-20 bg-white/10 rounded-3xl flex items-center justify-center mx-auto mb-6 text-3xl text-[#82E4E9]">
+                            <i class="bi bi-file-earmark-check"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2">Verified CAC Credential</h3>
+                        <p class="text-sm text-gray-300 leading-relaxed mb-8">
+                            Tenants, landlords, and institutional partners can inspect our certified incorporation record.
+                        </p>
+                        <button onclick="openCertificateModal()" class="w-full bg-[#20ACB3] hover:bg-white hover:text-[#0F3B3D] text-white font-bold py-4 rounded-2xl transition shadow-lg flex items-center justify-center gap-2 cursor-pointer">
+                            <i class="bi bi-eye"></i> Inspect Certificate Document
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Certificate Modal / Lightbox -->
+    <!-- Certificate Modal -->
     <div id="certModal" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-[100] hidden flex items-center justify-center p-4">
-        <div class="bg-white rounded-3xl max-w-2xl w-full p-8 relative shadow-2xl">
+        <div class="bg-white rounded-4xl max-w-2xl w-full p-8 md:p-10 relative shadow-2xl border border-gray-100">
             <button onclick="closeCertificateModal()" class="absolute top-6 right-6 text-gray-400 hover:text-black text-2xl">
                 <i class="bi bi-x-lg"></i>
             </button>
             <div class="flex items-center gap-3 mb-6">
-                <i class="bi bi-patch-check-fill text-2xl text-[#20ACB3]"></i>
+                <div class="w-12 h-12 rounded-2xl bg-[#20ACB3]/10 text-[#20ACB3] flex items-center justify-center text-2xl">
+                    <i class="bi bi-patch-check-fill"></i>
+                </div>
                 <div>
-                    <h3 class="text-xl font-bold text-[#0F3B3D]">Corporate Affairs Commission</h3>
-                    <p class="text-xs text-gray-500">Official Certificate of Incorporation Viewer</p>
+                    <h3 class="text-xl font-bold text-[#0F3B3D]">Federal Republic of Nigeria</h3>
+                    <p class="text-xs text-gray-500">Corporate Affairs Commission — Certificate of Incorporation</p>
                 </div>
             </div>
-            <div class="border border-gray-200 rounded-2xl p-8 bg-gray-50 text-center space-y-4">
+            <div class="border-2 border-dashed border-gray-200 rounded-3xl p-8 bg-gray-50 text-center space-y-4">
                 <div class="w-16 h-16 rounded-full bg-[#0F3B3D] text-[#82E4E9] flex items-center justify-center mx-auto text-2xl font-bold">
                     <i class="bi bi-building-check"></i>
                 </div>
-                <h4 class="text-lg font-bold text-gray-900">Ụlọ Ọma Technologies Ltd</h4>
-                <p class="text-sm text-gray-600 max-w-md mx-auto">
-                    Incorporated under the Companies and Allied Matters Act 2020 by the Corporate Affairs Commission, Federal Republic of Nigeria.
+                <h4 class="text-xl font-extrabold text-gray-900">Ụlọ Ọma Technologies Ltd</h4>
+                <p class="text-xs font-mono font-bold text-[#20ACB3] bg-teal-50 inline-block px-3 py-1 rounded-full border border-teal-200">RC: 7894120</p>
+                <p class="text-sm text-gray-600 max-w-md mx-auto leading-relaxed">
+                    This certifies that Ụlọ Ọma Technologies Ltd has been duly incorporated under the Companies and Allied Matters Act 2020 as a private company limited by shares.
                 </p>
-                <div class="inline-block bg-white px-6 py-3 rounded-xl border border-gray-200 shadow-sm">
-                    <span class="text-xs text-gray-500 block uppercase tracking-wider font-semibold">Status</span>
-                    <span class="text-[#20ACB3] font-bold text-sm">Verified & In Good Standing</span>
+                <div class="grid grid-cols-2 gap-4 pt-4 border-t border-gray-200 text-left text-xs">
+                    <div>
+                        <span class="text-gray-400 block font-medium">Date of Incorporation:</span>
+                        <span class="font-bold text-gray-800">14th January 2024</span>
+                    </div>
+                    <div>
+                        <span class="text-gray-400 block font-medium">Head Office:</span>
+                        <span class="font-bold text-gray-800">Aba, Abia State</span>
+                    </div>
                 </div>
             </div>
-            <div class="mt-6 flex justify-end gap-3">
-                <button onclick="closeCertificateModal()" class="px-6 py-2.5 rounded-full border border-gray-300 text-gray-700 hover:bg-gray-100 text-sm font-medium">Close</button>
+            <div class="mt-6 flex justify-end">
+                <button onclick="closeCertificateModal()" class="px-8 py-3 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-700 text-sm font-semibold transition">Close Viewer</button>
             </div>
         </div>
     </div>
 
     <!-- CTA Section -->
-    <section class="py-24 bg-gradient-to-r from-[#20ACB3] to-[#0F3B3D] text-white">
-        <div class="max-w-4xl mx-auto px-6 text-center">
-            <h2 class="text-4xl md:text-5xl font-bold mb-6">Join Our Community</h2>
-            <p class="text-xl mb-10 leading-relaxed opacity-95">
-                Be part of the platform that is making rental experiences transparent, reliable, and stress-free.
+    <section class="py-20 px-6 bg-gradient-to-r from-[#0F3B3D] to-[#196366] text-white text-center">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl md:text-5xl font-extrabold mb-6">Ready to Experience Transparent Renting?</h2>
+            <p class="text-lg md:text-xl text-gray-200 max-w-2xl mx-auto mb-10 leading-relaxed">
+                Browse verified properties, book your accompanied inspection, or list your apartment to claim your ₦20,000 relocation cash reward.
             </p>
-            <div class="flex flex-col sm:flex-row gap-6 justify-center">
-                <button onclick="window.location.href='explore.html'" class="bg-white text-[#20ACB3] font-bold py-4 px-12 rounded-full text-lg hover:bg-gray-100 transition shadow-lg">
-                    Find a Home <i class="bi bi-chevron-right"></i>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button onclick="window.location.href='explore.html'" class="bg-[#20ACB3] hover:bg-white hover:text-[#0F3B3D] text-white font-bold py-4 px-8 rounded-full text-base transition shadow-xl">
+                    Explore Verified Properties <i class="bi bi-arrow-right ml-1"></i>
                 </button>
-                <button onclick="window.location.href='list-property.html'" class="border-2 border-white text-white font-bold py-4 px-12 rounded-full text-lg hover:bg-white hover:text-[#20ACB3] transition">
-                    List Property <i class="bi bi-chevron-right"></i>
+                <button onclick="window.location.href='moving-out.html'" class="border-2 border-white/60 hover:border-white text-white font-bold py-4 px-8 rounded-full text-base transition">
+                    Outgoing Tenant ₦20,000 Reward <i class="bi bi-gift ml-1"></i>
                 </button>
             </div>
         </div>
     </section>
 
-    <!-- Branded Footer -->
-    <footer class="bg-[#0F3B3D] text-white pt-20 pb-16 relative overflow-hidden">
-        <div class="w-full max-w-4xl mx-auto px-6 mb-12">
-            <div class="bg-[#196366] rounded-2xl px-6 py-6 md:py-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl border border-white/10">
-                <p class="text-lg md:text-xl font-medium text-center md:text-left">
-                    Start creating your memories...
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
-                    <button onclick="window.location.href='login.html'" class="bg-[#20ACB3] hover:bg-[#1e9ea5] text-white font-semibold px-8 py-4 rounded-3xl transition">
-                        Login
-                    </button>
-                    <button onclick="window.location.href='list-property.html'" class="bg-white hover:bg-gray-100 text-[#0F3B3D] font-semibold px-8 py-4 rounded-3xl transition">
-                        List Property
-                    </button>
-                </div>
-            </div>
-        </div>
-
+    <!-- Standard Rich Footer -->
+    <footer class="bg-[#0F3B3D] text-white pt-16 pb-12 border-t border-white/10">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="bg-white/10 backdrop-blur-sm border border-white/10 rounded-3xl md:rounded-[42px] p-8 md:p-12 lg:p-16">
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-16">
-                    <div class="space-y-6 lg:space-y-8">
-                        <h3 class="text-2xl md:text-3xl font-bold flex items-center gap-2">
-                            <i class="bi bi-house-door-fill text-[#20ACB3] mr-2"></i>Ụlọ Ọma
-                        </h3>
-                        <p class="text-sm md:text-base leading-relaxed opacity-90">
-                            Ụlọ Ọma makes finding your next home easy and transparent. From verified listings to free viewing transport and hassle-free moving, we are your trusted path to the front door.
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-white/10">
+                <!-- Col 1: Brand with Tagline under Logo -->
+                <div class="lg:col-span-2 space-y-4">
+                    <a href="index.html" class="inline-block group">
+                        <img src="./images/Logo-white.PNG" alt="Ụlọ Ọma" class="h-12 w-auto object-contain" />
+                        <span class="block text-xs text-[#82E4E9] font-normal italic tracking-tight mt-1">...your comfort, our priority.</span>
+                    </a>
+                    <p class="text-sm text-gray-300 leading-relaxed max-w-sm">
+                        Ụlọ Ọma is Nigeria's premier managed rental and relocation platform. Discover verified apartments, book accompanied inspections, and move in with our 100% free moving truck service.
+                    </p>
+                    <div class="flex items-center gap-3 text-xs text-gray-300">
+                        <span class="px-2.5 py-1 rounded-md bg-white/10 text-[#82E4E9] font-bold">RC: 7894120</span>
+                        <span>Ụlọ Ọma Technologies Ltd</span>
+                    </div>
+                </div>
+
+                <!-- Col 2: Navigation -->
+                <div class="space-y-3">
+                    <h4 class="text-[#82E4E9] font-bold text-sm uppercase tracking-wider">Explore</h4>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li><a href="explore.html" class="hover:text-white transition">Verified Listings</a></li>
+                        <li><a href="how-it-works.html" class="hover:text-white transition">How It Works</a></li>
+                        <li><a href="about.html" class="hover:text-white transition">About Us</a></li>
+                        <li><a href="moving-out.html" class="hover:text-white transition">₦20,000 Moving Reward</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition">Help & Support</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Legal & Trust -->
+                <div class="space-y-3">
+                    <h4 class="text-[#82E4E9] font-bold text-sm uppercase tracking-wider">Trust & Legal</h4>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li><a href="#cac-section" class="hover:text-white transition">CAC Incorporation</a></li>
+                        <li><a href="how-it-works.html#verification" class="hover:text-white transition">6-Point Verification</a></li>
+                        <li><a href="card-payment.html" class="hover:text-white transition">Flutterwave Escrow</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition">Privacy Policy</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition">Terms of Service</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Contact & Office -->
+                <div class="space-y-3">
+                    <h4 class="text-[#82E4E9] font-bold text-sm uppercase tracking-wider">Headquarters</h4>
+                    <div class="text-sm text-gray-300 space-y-2">
+                        <p class="flex items-start gap-2">
+                            <i class="bi bi-geo-alt text-[#20ACB3] mt-1"></i>
+                            <span>Aba, Abia State, Nigeria</span>
                         </p>
-                        <div class="flex gap-5 text-xl">
-                            <a href="#" class="hover:text-[#20ACB3] transition"><i class="bi bi-facebook"></i></a>
-                            <a href="#" class="hover:text-[#20ACB3] transition"><i class="bi bi-instagram"></i></a>
-                            <a href="#" class="hover:text-[#20ACB3] transition"><i class="bi bi-twitter-x"></i></a>
-                            <a href="#" class="hover:text-[#20ACB3] transition"><i class="bi bi-linkedin"></i></a>
-                            <a href="#" class="hover:text-[#20ACB3] transition"><i class="bi bi-youtube"></i></a>
-                        </div>
-                    </div>
-
-                    <div class="space-y-6">
-                        <h4 class="text-[#82E4E9] font-semibold text-lg uppercase tracking-wider">Navigation</h4>
-                        <nav class="flex flex-col space-y-4 text-base">
-                            <a href="index.html" class="hover:text-[#20ACB3] transition">Home</a>
-                            <a href="explore.html" class="hover:text-[#20ACB3] transition">Explore</a>
-                            <a href="how-it-works.html" class="hover:text-[#20ACB3] transition">How It Works</a>
-                            <a href="about.html" class="hover:text-[#20ACB3] transition">About Us</a>
-                            <a href="contact.html" class="hover:text-[#20ACB3] transition">Contact Us</a>
-                        </nav>
-                    </div>
-
-                    <div class="space-y-6">
-                        <h4 class="text-[#82E4E9] font-semibold text-lg uppercase tracking-wider">Help</h4>
-                        <nav class="flex flex-col space-y-4 text-base">
-                            <a href="contact.html" class="hover:text-[#20ACB3] transition">Contact Us</a>
-                            <a href="how-it-works.html" class="hover:text-[#20ACB3] transition">FAQs</a>
-                            <a href="#" class="hover:text-[#20ACB3] transition">Terms & Conditions</a>
-                            <a href="#" class="hover:text-[#20ACB3] transition">Privacy Policy</a>
-                        </nav>
-                    </div>
-
-                    <div class="space-y-6">
-                        <h4 class="text-[#82E4E9] font-semibold text-lg uppercase tracking-wider">
-                            Subscribe to Our Newsletter
-                        </h4>
-                        <form class="space-y-4" onsubmit="event.preventDefault(); alert('Thank you for subscribing to Ụlọ Ọma updates!');">
-                            <input type="email" placeholder="Enter your email" required
-                                class="w-full px-4 py-3 bg-white text-gray-800 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#20ACB3]">
-                            <button type="submit" class="w-full sm:w-auto bg-[#2DB2B8] hover:bg-[#28a09e] px-10 py-3 rounded-xl font-medium transition cursor-pointer">
-                                Subscribe
-                            </button>
-                        </form>
+                        <p class="flex items-center gap-2">
+                            <i class="bi bi-telephone text-[#20ACB3]"></i>
+                            <span>+234 706 591 7720</span>
+                        </p>
+                        <p class="flex items-center gap-2">
+                            <i class="bi bi-whatsapp text-[#20ACB3]"></i>
+                            <a href="https://wa.me/2347065917720" target="_blank" class="hover:text-white underline">WhatsApp Helpdesk</a>
+                        </p>
                     </div>
                 </div>
             </div>
 
-            <div class="mt-16 pt-8 border-t border-white/20 text-center text-sm opacity-80">
-                © 2025 Ụlọ Ọma. All Rights Reserved.
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-400 gap-4">
+                <p>&copy; 2025 Ụlọ Ọma Technologies Ltd. All Rights Reserved. ...your comfort, our priority.</p>
+                <div class="flex gap-6 text-lg text-gray-300">
+                    <a href="https://wa.me/2347065917720" class="hover:text-[#20ACB3] transition"><i class="bi bi-whatsapp"></i></a>
+                    <a href="#" class="hover:text-[#20ACB3] transition"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="hover:text-[#20ACB3] transition"><i class="bi bi-instagram"></i></a>
+                    <a href="#" class="hover:text-[#20ACB3] transition"><i class="bi bi-twitter-x"></i></a>
+                </div>
             </div>
         </div>
     </footer>
@@ -427,35 +383,24 @@
         const hamburger = document.getElementById('hamburger');
         const closeX = document.getElementById('close-x');
         const menu = document.getElementById('mobile-menu');
+        const closeDrawer = document.getElementById('close-drawer');
 
-        toggle.addEventListener('click', () => {
+        function toggleMenu() {
             menu.classList.toggle('hidden');
-            if (menu.classList.contains('hidden')) {
-                hamburger.classList.remove('hidden');
-                closeX.classList.add('hidden');
-                document.body.style.overflow = 'auto';
-            } else {
-                hamburger.classList.add('hidden');
-                closeX.classList.remove('hidden');
-                document.body.style.overflow = 'hidden';
-            }
-        });
+            document.body.style.overflow = menu.classList.contains('hidden') ? 'auto' : 'hidden';
+        }
 
-        menu.addEventListener('click', (e) => {
-            if (e.target === menu) {
-                menu.classList.add('hidden');
-                hamburger.classList.remove('hidden');
-                closeX.classList.add('hidden');
-                document.body.style.overflow = 'auto';
-            }
-        });
+        if (toggle) toggle.addEventListener('click', toggleMenu);
+        if (closeDrawer) closeDrawer.addEventListener('click', toggleMenu);
 
         function openCertificateModal() {
             document.getElementById('certModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
         }
 
         function closeCertificateModal() {
             document.getElementById('certModal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
         }
     </script>
 </body>

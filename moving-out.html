@@ -3,266 +3,389 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Moving Out? Earn ₦20,000 — Ụlọ Ọma</title>
+  <title>Moving Out? Earn ₦20,000 Cash — Ụlọ Ọma</title>
   <link rel="stylesheet" href="./src/output.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
-  <link rel="icon" href="./images/image.png" type="image/png" />
+  <link rel="shortcut icon" href="./images/image.png" type="images/x-icon" />
 </head>
-<body class="bg-gray-50 font-sans text-[#5C6F70]">
-  <!-- Header -->
-  <header class="sticky top-0 bg-white z-50 shadow-sm">
-    <div class="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
-      <div class="cursor-pointer" onclick="window.location.href='index.html'">
-        <img src="./images/Logo.PNG" alt="Ụlọ Ọma" class="h-12 md:h-14" />
+<body class="bg-[#F8FBFB] text-[#0F3B3D] font-sans antialiased min-h-screen flex flex-col">
+
+  <!-- Top Announcement Bar -->
+  <div class="bg-[#0F3B3D] text-white text-xs sm:text-sm py-2 px-4 text-center font-medium flex items-center justify-center gap-3">
+    <span class="bg-[#20ACB3] text-white text-[11px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">Free Moving</span>
+    <span>Find your home. We help you move in — <strong>100% Free moving truck</strong> on every rental payment!</span>
+    <a href="moving-out.html" class="underline text-[#82E4E9] hover:text-white hidden sm:inline">Earn ₦20,000 moving out &rarr;</a>
+  </div>
+
+  <!-- Header Navigation -->
+  <header class="sticky top-0 bg-white/95 backdrop-blur-md z-50 border-b border-gray-100 shadow-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3.5 flex items-center justify-between">
+      <!-- Brand Logo & Tagline -->
+      <div class="cursor-pointer flex flex-col" onclick="window.location.href='index.html'">
+        <img src="./images/Logo.PNG" alt="Ụlọ Ọma ...your comfort, our priority." class="h-11 md:h-13 w-auto object-contain" />
       </div>
-      <nav class="hidden md:flex gap-10 lg:gap-16 text-[19px] font-semibold text-black">
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden lg:flex items-center gap-8 text-[16px] font-semibold text-[#0F3B3D]">
         <a href="index.html" class="hover:text-[#20ACB3] transition">Home</a>
         <a href="explore.html" class="hover:text-[#20ACB3] transition">Explore</a>
-        <a href="how-it-works.html" class="hover:text-[#20ACB3] transition">How it works</a>
+        <a href="how-it-works.html" class="hover:text-[#20ACB3] transition">How It Works</a>
+        <a href="moving-out.html" class="text-[#20ACB3] font-bold flex items-center gap-1.5">
+          <i class="bi bi-gift-fill text-[#20ACB3]"></i> ₦20,000 Reward
+        </a>
         <a href="about.html" class="hover:text-[#20ACB3] transition">About Us</a>
-        <a href="contact.html" class="hover:text-[#20ACB3] transition">Contact Us</a>
+        <a href="contact.html" class="hover:text-[#20ACB3] transition">Contact</a>
       </nav>
-      <div class="hidden md:block">
-        <button onclick="window.location.href='signup.html'" class="bg-[#20ACB3] text-white rounded-[30px] py-[15px] px-[30px] hover:bg-black transition text-[19px] font-medium cursor-pointer">Sign Up</button>
+
+      <!-- Desktop Actions -->
+      <div class="hidden sm:flex items-center gap-4">
+        <a href="list-property.html" class="text-sm font-semibold text-[#0F3B3D] hover:text-[#20ACB3] px-3 py-2 transition flex items-center gap-1.5">
+          <i class="bi bi-plus-circle-fill text-[#20ACB3]"></i> List Property
+        </a>
+        <a href="tenant-dashboard.html" class="bg-[#20ACB3] text-white px-5 py-2.5 rounded-[20px] hover:bg-black transition text-sm font-medium shadow-sm flex items-center gap-2">
+          <i class="bi bi-person-circle"></i> Dashboard
+        </a>
       </div>
-      <button id="menu-toggle" class="md:hidden text-4xl text-[#20ACB3] z-50">
+
+      <!-- Mobile Toggle -->
+      <button id="menu-toggle" class="lg:hidden text-3xl text-[#20ACB3] p-1 focus:outline-none" aria-label="Toggle menu">
         <i id="hamburger" class="bi bi-list"></i>
         <i id="close-x" class="bi bi-x-lg hidden"></i>
       </button>
     </div>
-    <div id="mobile-menu" class="fixed inset-0 bg-white hidden z-40">
-      <div class="flex flex-col items-center justify-center h-full gap-12 text-2xl font-semibold text-black">
-        <a href="index.html" class="hover:text-[#20ACB3] transition">Home</a>
-        <a href="explore.html" class="hover:text-[#20ACB3] transition">Explore</a>
-        <a href="how-it-works.html" class="hover:text-[#20ACB3] transition">How it works</a>
-        <a href="about.html" class="hover:text-[#20ACB3] transition">About Us</a>
-        <a href="contact.html" class="hover:text-[#20ACB3] transition">Contact Us</a>
-        <button onclick="window.location.href='signup.html'" class="bg-[#20ACB3] text-white rounded-[30px] py-4 px-12 hover:bg-black cursor-pointer transition text-xl font-medium">Sign Up</button>
+
+    <!-- Mobile Drawer -->
+    <div id="mobile-menu" class="fixed inset-0 top-[65px] bg-white hidden z-40 flex-col p-6 overflow-y-auto space-y-6 shadow-2xl lg:hidden">
+      <div class="flex flex-col space-y-4 text-lg font-semibold text-[#0F3B3D] border-b border-gray-100 pb-6">
+        <a href="index.html" class="hover:text-[#20ACB3]">Home</a>
+        <a href="explore.html" class="hover:text-[#20ACB3]">Explore Properties</a>
+        <a href="how-it-works.html" class="hover:text-[#20ACB3]">How It Works</a>
+        <a href="moving-out.html" class="text-[#20ACB3] flex items-center gap-2">
+          <i class="bi bi-gift-fill"></i> ₦20,000 Relocation Reward
+        </a>
+        <a href="about.html" class="hover:text-[#20ACB3]">About Us & CAC Credentials</a>
+        <a href="contact.html" class="hover:text-[#20ACB3]">Contact Support</a>
+      </div>
+      <div class="flex flex-col gap-3">
+        <a href="#listing-form" class="w-full text-center py-3 rounded-2xl bg-[#20ACB3] text-white font-bold shadow-md">
+          List Your Current Apartment
+        </a>
       </div>
     </div>
   </header>
 
-  <main id="content" class="opacity-0 transition-opacity duration-500 ease-in-out">
+  <main class="flex-1 w-full">
     
-    <!-- Hero Section -->
-    <section class="bg-[#0F3B3D] text-white py-20 px-6">
-      <div class="max-w-4xl mx-auto text-center">
-        <h1 class="text-4xl md:text-6xl font-bold mb-6">Moving out? Earn <span class="text-[#82E4E9]">₦20,000.</span></h1>
-        <p class="text-lg md:text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
-          List your current apartment. When a new tenant moves in through Ụlọ Ọma, you earn ₦20,000. It's that simple.
+    <!-- Hero Banner -->
+    <section class="bg-gradient-to-r from-[#0F3B3D] via-[#196366] to-[#0F3B3D] text-white py-16 md:py-24 px-6 text-center">
+      <div class="max-w-4xl mx-auto space-y-6">
+        <div class="inline-flex items-center gap-2 bg-amber-400 text-black px-4 py-1.5 rounded-full text-xs font-extrabold uppercase tracking-wider shadow-md">
+          <i class="bi bi-gift-fill"></i> Outgoing Tenant Reward Program
+        </div>
+        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold leading-tight">
+          Moving out? Turn your old home into <span class="text-[#82E4E9]">₦20,000 Cash.</span>
+        </h1>
+        <p class="text-base sm:text-lg md:text-xl text-gray-200 max-w-2xl mx-auto font-light leading-relaxed">
+          Don't leave your apartment vacant for free. List it on Ụlọ Ọma for the incoming tenant. When verified and rented, <strong>₦20,000 is transferred directly to your bank account</strong>.
         </p>
-        <button onclick="document.getElementById('listing-form-section').scrollIntoView({behavior: 'smooth'})" class="bg-[#20ACB3] text-white rounded-[30px] py-[15px] px-[40px] hover:bg-black transition text-lg font-medium cursor-pointer inline-flex items-center gap-2">
-          List Your Apartment <i class="bi bi-arrow-down"></i>
-        </button>
-      </div>
-    </section>
-
-    <!-- How it works -->
-    <section class="py-20 px-6 bg-white">
-      <div class="max-w-7xl mx-auto">
-        <h2 class="text-3xl font-bold text-center text-[#0F3B3D] mb-16">How it works</h2>
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
-          <!-- Connector line -->
-          <div class="hidden md:block absolute top-8 left-1/8 right-1/8 h-0.5 bg-gray-200"></div>
-          
-          <!-- Step 1 -->
-          <div class="relative z-10 flex flex-col items-center text-center">
-            <div class="w-16 h-16 rounded-full bg-[#20ACB3] text-white flex items-center justify-center text-2xl font-bold mb-4 shadow-lg">1</div>
-            <h3 class="text-lg font-bold text-black mb-2">List details</h3>
-            <p class="text-sm">Provide photos and details of the apartment you're leaving.</p>
-          </div>
-          <!-- Step 2 -->
-          <div class="relative z-10 flex flex-col items-center text-center">
-            <div class="w-16 h-16 rounded-full bg-white border-4 border-[#20ACB3] text-[#20ACB3] flex items-center justify-center text-2xl font-bold mb-4 shadow-lg">2</div>
-            <h3 class="text-lg font-bold text-black mb-2">We verify</h3>
-            <p class="text-sm">We review your listing and publish it to thousands of renters.</p>
-          </div>
-          <!-- Step 3 -->
-          <div class="relative z-10 flex flex-col items-center text-center">
-            <div class="w-16 h-16 rounded-full bg-white border-4 border-[#20ACB3] text-[#20ACB3] flex items-center justify-center text-2xl font-bold mb-4 shadow-lg">3</div>
-            <h3 class="text-lg font-bold text-black mb-2">Tenant moves in</h3>
-            <p class="text-sm">A new tenant finds and moves into the apartment.</p>
-          </div>
-          <!-- Step 4 -->
-          <div class="relative z-10 flex flex-col items-center text-center">
-            <div class="w-16 h-16 rounded-full bg-[#0F3B3D] text-[#82E4E9] flex items-center justify-center text-2xl font-bold mb-4 shadow-lg"><i class="bi bi-cash-stack"></i></div>
-            <h3 class="text-lg font-bold text-black mb-2">You get paid</h3>
-            <p class="text-sm">You receive ₦20,000 directly to your bank account!</p>
-          </div>
+        <div class="pt-4 flex flex-wrap justify-center gap-4">
+          <a href="#listing-form" class="bg-[#20ACB3] hover:bg-black text-white px-8 py-4 rounded-full font-bold text-base transition shadow-xl flex items-center gap-2">
+            <i class="bi bi-plus-circle"></i> Submit Your Old Home (Free)
+          </a>
+          <a href="#how-it-works" class="bg-white/10 hover:bg-white hover:text-[#0F3B3D] text-white border border-white/30 px-7 py-4 rounded-full font-semibold text-base transition">
+            See How You Get Paid
+          </a>
         </div>
       </div>
     </section>
 
-    <!-- Form Section -->
-    <section id="listing-form-section" class="py-20 px-6">
-      <div class="max-w-3xl mx-auto bg-white shadow-lg p-8 md:p-12 rounded-4xl border border-gray-100">
-        <h2 class="text-3xl font-bold text-[#0F3B3D] mb-8">List Your Apartment</h2>
+    <!-- 4-Step How It Works -->
+    <section id="how-it-works" class="py-16 md:py-20 px-6 max-w-7xl mx-auto">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-xs font-bold text-[#20ACB3] uppercase tracking-wider">Simple 4-Step Process</span>
+        <h2 class="text-3xl md:text-4xl font-extrabold text-[#0F3B3D] mt-2">How You Receive Your ₦20,000</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
+        <div class="hidden md:block absolute top-10 left-12 right-12 h-0.5 bg-gray-200 -z-0"></div>
+
+        <div class="bg-white p-7 rounded-3xl border border-gray-100 shadow-md text-center relative z-10 space-y-3">
+          <div class="w-16 h-16 rounded-full bg-[#20ACB3] text-white flex items-center justify-center text-2xl font-extrabold mx-auto shadow-md">
+            1
+          </div>
+          <h3 class="font-bold text-lg text-[#0F3B3D]">1. Submit Details</h3>
+          <p class="text-xs text-[#5C6F70] leading-relaxed">
+            Fill the form below with the address, photos, rent amount, and your Nigerian payout bank account.
+          </p>
+        </div>
+
+        <div class="bg-white p-7 rounded-3xl border border-gray-100 shadow-md text-center relative z-10 space-y-3">
+          <div class="w-16 h-16 rounded-full bg-[#0F3B3D] text-white flex items-center justify-center text-2xl font-extrabold mx-auto shadow-md">
+            2
+          </div>
+          <h3 class="font-bold text-lg text-[#0F3B3D]">2. We Verify</h3>
+          <p class="text-xs text-[#5C6F70] leading-relaxed">
+            Our Ụlọ Ọma area officer confirms landlord consent and performs our 6-point physical check.
+          </p>
+        </div>
+
+        <div class="bg-white p-7 rounded-3xl border border-gray-100 shadow-md text-center relative z-10 space-y-3">
+          <div class="w-16 h-16 rounded-full bg-[#196366] text-white flex items-center justify-center text-2xl font-extrabold mx-auto shadow-md">
+            3
+          </div>
+          <h3 class="font-bold text-lg text-[#0F3B3D]">3. Tenant Rents</h3>
+          <p class="text-xs text-[#5C6F70] leading-relaxed">
+            We escort verified renters on accompanied inspections and finalize the rental contract in escrow.
+          </p>
+        </div>
+
+        <div class="bg-white p-7 rounded-3xl border border-amber-300 bg-amber-50/40 shadow-md text-center relative z-10 space-y-3">
+          <div class="w-16 h-16 rounded-full bg-amber-400 text-black flex items-center justify-center text-2xl font-extrabold mx-auto shadow-md">
+            <i class="bi bi-cash-stack"></i>
+          </div>
+          <h3 class="font-bold text-lg text-[#0F3B3D]">4. ₦20,000 Payout</h3>
+          <p class="text-xs text-[#5C6F70] leading-relaxed">
+            The instant the new tenant pays, ₦20,000 is sent directly to your bank account via instant bank transfer!
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Outgoing Apartment Submission Form -->
+    <section id="listing-form" class="py-12 px-6 max-w-4xl mx-auto mb-16">
+      <div class="bg-white rounded-4xl p-8 sm:p-12 shadow-2xl border border-gray-100 space-y-8">
         
-        <form id="apartment-form" class="space-y-6" onsubmit="submitForm(event)">
+        <div>
+          <span class="text-xs font-bold text-[#20ACB3] uppercase tracking-wider">Outgoing Tenant Portal</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#0F3B3D] mt-1">List Your Apartment & Bank Account</h2>
+          <p class="text-xs sm:text-sm text-[#5C6F70] mt-1">
+            Provide accurate details. Once verified and rented to a new tenant, your ₦20,000 reward will be transferred automatically.
+          </p>
+        </div>
+
+        <form id="rewardForm" onsubmit="handleRewardSubmit(event)" class="space-y-6">
           
-          <div>
-            <label class="block text-sm font-bold text-black mb-2">Property Address</label>
-            <input type="text" required placeholder="Full street address and area" class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:border-[#20ACB3]" />
-          </div>
-
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Property Basic Info -->
+          <div class="space-y-4">
+            <h4 class="font-bold text-sm text-[#0F3B3D] border-b border-gray-100 pb-2">1. Apartment Details</h4>
+            
             <div>
-              <label class="block text-sm font-bold text-black mb-2">Property Type</label>
-              <select required class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:border-[#20ACB3] bg-white">
-                <option value="">Select type</option>
-                <option value="apartment">Apartment</option>
-                <option value="house">House</option>
-                <option value="studio">Studio</option>
-                <option value="duplex">Duplex</option>
-                <option value="room">Room</option>
-              </select>
+              <label class="block text-xs font-bold text-[#5C6F70] uppercase mb-1">Full Street Address & City</label>
+              <input type="text" required placeholder="e.g. 14 River Layout, off Brass Junction, Aba" class="w-full p-3 bg-gray-50 border border-gray-200 rounded-xl text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-[#20ACB3]">
             </div>
-            <div>
-              <label class="block text-sm font-bold text-black mb-2">Current Rent (₦/year)</label>
-              <input type="number" required placeholder="e.g. 1500000" class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:border-[#20ACB3]" />
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-bold text-[#5C6F70] uppercase mb-1">Property Type</label>
+                <select required class="w-full p-3 bg-gray-50 border border-gray-200 rounded-xl text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-[#20ACB3]">
+                  <option value="">Select type</option>
+                  <option value="1bed">1 Bedroom Flat</option>
+                  <option value="2bed">2 Bedroom Flat</option>
+                  <option value="3bed">3+ Bedroom Flat</option>
+                  <option value="studio">Studio / Self-Contain</option>
+                  <option value="duplex">Duplex / Semi-Detached</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-[#5C6F70] uppercase mb-1">Current Annual Rent (₦)</label>
+                <input type="number" required placeholder="e.g. 600000" class="w-full p-3 bg-gray-50 border border-gray-200 rounded-xl text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-[#20ACB3]">
+              </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-bold text-[#5C6F70] uppercase mb-1">Bedrooms</label>
+                <input type="number" min="1" max="10" required value="1" class="w-full p-3 bg-gray-50 border border-gray-200 rounded-xl text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-[#20ACB3]">
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-[#5C6F70] uppercase mb-1">Date You Are Vacating</label>
+                <input type="date" required class="w-full p-3 bg-gray-50 border border-gray-200 rounded-xl text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-[#20ACB3]">
+              </div>
             </div>
           </div>
 
-          <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
-            <div>
-              <label class="block text-sm font-bold text-black mb-2">Bedrooms</label>
-              <input type="number" min="0" required class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:border-[#20ACB3]" />
-            </div>
-            <div>
-              <label class="block text-sm font-bold text-black mb-2">Bathrooms</label>
-              <input type="number" min="0" required class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:border-[#20ACB3]" />
-            </div>
-            <div class="col-span-2 md:col-span-1">
-              <label class="block text-sm font-bold text-black mb-2">Available Date</label>
-              <input type="date" required class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:border-[#20ACB3]" />
-            </div>
-          </div>
-
-          <div>
-            <label class="block text-sm font-bold text-black mb-2">Features & Amenities</label>
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
-              <label class="flex items-center gap-2"><input type="checkbox" class="accent-[#20ACB3] w-4 h-4" /> Electricity</label>
-              <label class="flex items-center gap-2"><input type="checkbox" class="accent-[#20ACB3] w-4 h-4" /> Water</label>
-              <label class="flex items-center gap-2"><input type="checkbox" class="accent-[#20ACB3] w-4 h-4" /> Parking</label>
-              <label class="flex items-center gap-2"><input type="checkbox" class="accent-[#20ACB3] w-4 h-4" /> Security</label>
-              <label class="flex items-center gap-2"><input type="checkbox" class="accent-[#20ACB3] w-4 h-4" /> Furnished</label>
-              <label class="flex items-center gap-2"><input type="checkbox" class="accent-[#20ACB3] w-4 h-4" /> Gated Estate</label>
-              <label class="flex items-center gap-2"><input type="checkbox" class="accent-[#20ACB3] w-4 h-4" /> Internet</label>
+          <!-- Amenities Checklist -->
+          <div class="space-y-3 pt-4 border-t border-gray-100">
+            <h4 class="font-bold text-sm text-[#0F3B3D]">2. Nigerian Amenities in Compound</h4>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 text-xs font-semibold">
+              <label class="flex items-center gap-2 p-2.5 bg-gray-50 rounded-xl cursor-pointer">
+                <input type="checkbox" checked class="accent-[#20ACB3] w-4 h-4"> 24/7 Grid Power
+              </label>
+              <label class="flex items-center gap-2 p-2.5 bg-gray-50 rounded-xl cursor-pointer">
+                <input type="checkbox" checked class="accent-[#20ACB3] w-4 h-4"> Borehole Running Water
+              </label>
+              <label class="flex items-center gap-2 p-2.5 bg-gray-50 rounded-xl cursor-pointer">
+                <input type="checkbox" checked class="accent-[#20ACB3] w-4 h-4"> Gated Security Guard
+              </label>
+              <label class="flex items-center gap-2 p-2.5 bg-gray-50 rounded-xl cursor-pointer">
+                <input type="checkbox" checked class="accent-[#20ACB3] w-4 h-4"> Dedicated Parking
+              </label>
+              <label class="flex items-center gap-2 p-2.5 bg-gray-50 rounded-xl cursor-pointer">
+                <input type="checkbox" class="accent-[#20ACB3] w-4 h-4"> Pre-paid Meter
+              </label>
+              <label class="flex items-center gap-2 p-2.5 bg-gray-50 rounded-xl cursor-pointer">
+                <input type="checkbox" class="accent-[#20ACB3] w-4 h-4"> Tarred Access Road
+              </label>
             </div>
           </div>
 
-          <div>
-            <label class="block text-sm font-bold text-black mb-2">Photos (Up to 10)</label>
-            <div class="border-2 border-dashed border-gray-300 rounded-xl p-8 text-center hover:bg-gray-50 transition cursor-pointer">
-              <i class="bi bi-camera text-4xl text-gray-400"></i>
-              <p class="mt-2 text-sm text-gray-500">Click to upload photos or drag and drop</p>
-              <input type="file" multiple accept="image/*" class="hidden" />
+          <!-- Landlord / Caretaker Contact -->
+          <div class="space-y-4 pt-4 border-t border-gray-100">
+            <h4 class="font-bold text-sm text-[#0F3B3D]">3. Landlord / Caretaker Contact</h4>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-bold text-[#5C6F70] uppercase mb-1">Landlord / Caretaker Name</label>
+                <input type="text" required placeholder="Name of landlord or caretaker" class="w-full p-3 bg-gray-50 border border-gray-200 rounded-xl text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-[#20ACB3]">
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-[#5C6F70] uppercase mb-1">Landlord / Caretaker Phone</label>
+                <input type="tel" required placeholder="080 0000 0000" class="w-full p-3 bg-gray-50 border border-gray-200 rounded-xl text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-[#20ACB3]">
+              </div>
             </div>
           </div>
 
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
-              <label class="block text-sm font-bold text-black mb-2">Landlord Name (Optional)</label>
-              <input type="text" placeholder="For verification purposes" class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:border-[#20ACB3]" />
+          <!-- YOUR NIGERIAN BANK DETAILS FOR ₦20,000 PAYOUT -->
+          <div class="space-y-4 pt-4 border-t border-gray-100 bg-amber-50/50 p-6 rounded-3xl border border-amber-200">
+            <div class="flex items-center gap-2 text-amber-800">
+              <i class="bi bi-bank2 text-xl"></i>
+              <h4 class="font-bold text-sm">4. Your Payout Bank Details (For ₦20,000 Direct Transfer)</h4>
             </div>
-            <div>
-              <label class="block text-sm font-bold text-black mb-2">Landlord Phone (Optional)</label>
-              <input type="tel" class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:border-[#20ACB3]" />
+            <p class="text-xs text-gray-600">Enter where you want Ụlọ Ọma to transfer your ₦20,000 reward upon confirmed rental:</p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              <div>
+                <label class="block text-xs font-bold text-[#5C6F70] uppercase mb-1">Bank Name</label>
+                <select required class="w-full p-3 bg-white border border-gray-200 rounded-xl text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-[#20ACB3]">
+                  <option value="">Select Bank</option>
+                  <option value="GTBank">Guaranty Trust Bank (GTBank)</option>
+                  <option value="Access">Access Bank</option>
+                  <option value="Zenith">Zenith Bank</option>
+                  <option value="FirstBank">First Bank of Nigeria</option>
+                  <option value="UBA">United Bank for Africa (UBA)</option>
+                  <option value="Opay">Opay</option>
+                  <option value="Palmpay">Palmpay</option>
+                  <option value="Kuda">Kuda Microfinance Bank</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-[#5C6F70] uppercase mb-1">Account Number</label>
+                <input type="text" maxlength="10" required placeholder="10-digit NUBAN" class="w-full p-3 bg-white border border-gray-200 rounded-xl text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-[#20ACB3]">
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-[#5C6F70] uppercase mb-1">Account Name</label>
+                <input type="text" required placeholder="Account Holder Name" class="w-full p-3 bg-white border border-gray-200 rounded-xl text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-[#20ACB3]">
+              </div>
             </div>
           </div>
 
-          <div>
-            <label class="block text-sm font-bold text-black mb-2">Description</label>
-            <textarea rows="4" required placeholder="Describe the apartment and neighborhood..." class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:border-[#20ACB3]"></textarea>
-          </div>
-
-          <div class="bg-blue-50 p-4 rounded-xl border border-blue-100">
+          <!-- Legal Consent -->
+          <div class="p-4 bg-teal-50 rounded-2xl border border-teal-200 text-xs text-[#0F3B3D]">
             <label class="flex items-start gap-3 cursor-pointer">
-              <input type="checkbox" required class="accent-[#20ACB3] w-5 h-5 mt-0.5" />
-              <span class="text-sm font-medium text-black">I confirm that I currently live here or have permission to list this property. I understand that false listings will result in a ban.</span>
+              <input type="checkbox" required class="accent-[#20ACB3] w-5 h-5 mt-0.5 shrink-0">
+              <span class="leading-relaxed">
+                I declare that I am the legitimate outgoing tenant of this property, that my tenancy is coming to an end, and that I authorize Ụlọ Ọma to market this unit to prospective incoming tenants.
+              </span>
             </label>
           </div>
 
-          <button id="submit-btn" type="submit" class="w-full bg-[#20ACB3] text-white rounded-[30px] py-[15px] px-[30px] hover:bg-black transition text-lg font-medium cursor-pointer">
-            Submit Listing
+          <button type="submit" class="w-full bg-[#20ACB3] hover:bg-black text-white py-4 rounded-2xl font-extrabold text-base transition shadow-xl flex items-center justify-center gap-2 cursor-pointer">
+            <i class="bi bi-gift-fill"></i> Submit Apartment & Claim ₦20,000 Reward
           </button>
-          
-          <div id="success-msg" class="hidden bg-green-100 text-green-800 p-4 rounded-xl text-center font-medium">
-            Listing submitted successfully! We will review it shortly.
-          </div>
         </form>
+
       </div>
     </section>
 
   </main>
 
-  <!-- Footer -->
-  <footer class="bg-[#0F3B3D] text-white pt-16 pb-8">
+  <!-- COMPREHENSIVE FOOTER -->
+  <footer class="bg-[#0F3B3D] text-white pt-16 pb-12 mt-auto relative overflow-hidden border-t-4 border-[#20ACB3]">
     <div class="max-w-7xl mx-auto px-6">
-      <div class="bg-[#196366] rounded-3xl p-8 md:p-12 mb-16 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
-        <div>
-          <h2 class="text-2xl md:text-3xl font-bold mb-2">Ready to find your next home?</h2>
-          <p class="text-[#82E4E9]">Join thousands of Nigerians using Ụlọ Ọma.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12 pb-12 border-b border-white/10">
+        <div class="space-y-4">
+          <div class="cursor-pointer" onclick="window.location.href='index.html'">
+            <img src="./images/Logo-white.PNG" alt="Ụlọ Ọma ...your comfort, our priority." class="h-12 w-auto object-contain" />
+          </div>
+          <p class="text-sm text-gray-300 leading-relaxed">
+            Nigeria's premier managed property platform. Verified listings, free inspection transport, escrow rental payments, and 100% free relocation fulfillment.
+          </p>
+          <div class="inline-flex items-center gap-2 bg-white/5 border border-white/10 px-3 py-1.5 rounded-xl text-xs text-[#82E4E9]">
+            <i class="bi bi-shield-check text-base text-[#20ACB3]"></i>
+            <span>CAC Verified Entity — RC: 7894120</span>
+          </div>
         </div>
-        <button onclick="window.location.href='explore.html'" class="bg-[#20ACB3] text-white rounded-[30px] py-[15px] px-[30px] hover:bg-black transition text-lg font-medium whitespace-nowrap">Explore Properties</button>
+        <div class="space-y-4">
+          <h4 class="text-[#82E4E9] font-bold text-base tracking-wide uppercase">Marketplace</h4>
+          <ul class="space-y-2.5 text-sm text-gray-300">
+            <li><a href="explore.html" class="hover:text-white transition flex items-center gap-1.5"><i class="bi bi-chevron-right text-xs text-[#20ACB3]"></i> Verified Homes</a></li>
+            <li><a href="how-it-works.html" class="hover:text-white transition flex items-center gap-1.5"><i class="bi bi-chevron-right text-xs text-[#20ACB3]"></i> How It Works</a></li>
+            <li><a href="list-property.html" class="hover:text-white transition flex items-center gap-1.5"><i class="bi bi-chevron-right text-xs text-[#20ACB3]"></i> Landlord Portal</a></li>
+          </ul>
+        </div>
+        <div class="space-y-4">
+          <h4 class="text-[#82E4E9] font-bold text-base tracking-wide uppercase">Core Programs</h4>
+          <ul class="space-y-2.5 text-sm text-gray-300">
+            <li><a href="moving-out.html" class="hover:text-white transition flex items-center gap-1.5"><i class="bi bi-gift text-xs text-[#20ACB3]"></i> ₦20,000 Reward Program</a></li>
+            <li><a href="tenant-dashboard.html" class="hover:text-white transition flex items-center gap-1.5"><i class="bi bi-truck text-xs text-[#20ACB3]"></i> 100% Free Moving Service</a></li>
+            <li><a href="card-payment.html" class="hover:text-white transition flex items-center gap-1.5"><i class="bi bi-credit-card text-xs text-[#20ACB3]"></i> ₦2,000 Access Pass</a></li>
+            <li><a href="about.html#cac-section" class="hover:text-white transition flex items-center gap-1.5"><i class="bi bi-patch-check text-xs text-[#20ACB3]"></i> CAC Legal Credentials</a></li>
+          </ul>
+        </div>
+        <div class="space-y-4">
+          <h4 class="text-[#82E4E9] font-bold text-base tracking-wide uppercase">Contact Us</h4>
+          <ul class="space-y-3 text-sm text-gray-300">
+            <li class="flex items-start gap-2.5">
+              <i class="bi bi-geo-alt text-[#20ACB3] text-lg shrink-0 mt-0.5"></i>
+              <span>Brass Junction / Aba-Owerri Rd, Aba, Abia State</span>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <i class="bi bi-telephone text-[#20ACB3] text-base shrink-0"></i>
+              <span>+234 (0) 800 856 6621</span>
+            </li>
+          </ul>
+        </div>
       </div>
-      <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-400">
-        <p>&copy; 2024 Ụlọ Ọma. All rights reserved.</p>
-        <div class="flex gap-4">
-          <a href="#" class="hover:text-[#82E4E9] transition">Privacy Policy</a>
-          <a href="#" class="hover:text-[#82E4E9] transition">Terms of Service</a>
+      <div class="mt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-400 gap-4">
+        <p>&copy; 2026 Ụlọ Ọma. All rights reserved. ...your comfort, our priority.</p>
+        <div class="flex gap-6">
+          <a href="about.html" class="hover:text-white transition">Privacy Policy</a>
+          <a href="about.html" class="hover:text-white transition">Terms of Service</a>
         </div>
       </div>
     </div>
   </footer>
 
+  <!-- Submission Script -->
   <script>
-    // Mobile Menu Toggle
-    const toggle = document.getElementById('menu-toggle');
+    // Menu Toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
     const hamburger = document.getElementById('hamburger');
     const closeX = document.getElementById('close-x');
-    const menu = document.getElementById('mobile-menu');
-    toggle.addEventListener('click', () => {
-      menu.classList.toggle('hidden');
-      if (menu.classList.contains('hidden')) {
-        hamburger.classList.remove('hidden');
-        closeX.classList.add('hidden');
-        document.body.style.overflow = 'auto';
-      } else {
-        hamburger.classList.add('hidden');
-        closeX.classList.remove('hidden');
-        document.body.style.overflow = 'hidden';
-      }
-    });
-    menu.addEventListener('click', (e) => {
-      if (e.target === menu) {
-        menu.classList.add('hidden');
-        hamburger.classList.remove('hidden');
-        closeX.classList.add('hidden');
-        document.body.style.overflow = 'auto';
-      }
-    });
 
-    // Page Fade In
-    document.addEventListener('DOMContentLoaded', () => {
-      const content = document.getElementById('content');
-      if (content) { content.classList.remove('opacity-0'); content.classList.add('opacity-100'); }
-    });
+    if (menuToggle && mobileMenu) {
+      menuToggle.addEventListener('click', () => {
+        const isHidden = mobileMenu.classList.contains('hidden');
+        if (isHidden) {
+          mobileMenu.classList.remove('hidden');
+          mobileMenu.classList.add('flex');
+          hamburger.classList.add('hidden');
+          closeX.classList.remove('hidden');
+          document.body.style.overflow = 'hidden';
+        } else {
+          mobileMenu.classList.add('hidden');
+          mobileMenu.classList.remove('flex');
+          hamburger.classList.remove('hidden');
+          closeX.classList.add('hidden');
+          document.body.style.overflow = '';
+        }
+      });
+    }
 
-    // Form Submission Simulation
-    function submitForm(e) {
+    function handleRewardSubmit(e) {
       e.preventDefault();
-      const btn = document.getElementById('submit-btn');
-      const msg = document.getElementById('success-msg');
-      
-      btn.innerHTML = '<i class="bi bi-arrow-repeat animate-spin inline-block"></i> Submitting...';
-      btn.classList.add('opacity-75', 'cursor-not-allowed');
-      btn.disabled = true;
-      
-      setTimeout(() => {
-        btn.classList.add('hidden');
-        msg.classList.remove('hidden');
-      }, 1500);
+      alert("Submission Received!\n\nYour apartment details and payout bank information have been safely registered with Ụlọ Ọma.\n\nOur representative will contact your landlord and inspect the property. Once rented to an incoming verified tenant, ₦20,000 will be deposited directly into your bank account!");
+      window.location.href = 'tenant-dashboard.html';
     }
   </script>
 </body>

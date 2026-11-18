@@ -3,664 +3,692 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Explore Properties - Ụlọ Ọma</title>
+    <title>Explore Verified Properties — Ụlọ Ọma</title>
     <link rel="stylesheet" href="./src/output.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="shortcut icon" href="./images/image.png" type="images/x-icon">
 </head>
-<body class="bg-gray-50 font-sans">
-    <header class="sticky top-0 bg-white z-50 shadow-sm">
-        <div class="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
-            <div class="cursor-pointer" onclick="window.location.href='index.html'">
-                <img src="./images/Logo.PNG" alt="Ulo Oma" class="h-12 md:h-14" />
-            </div>
-            <nav class="hidden md:flex gap-10 lg:gap-16 text-[19px] font-semibold text-black">
-                <a href="index.html" class="hover:text-[#20ACB3] transition">Home</a>
-                <a href="explore.html" class="text-[#20ACB3]">Explore</a>
-                <a href="how-it-works.html" class="hover:text-[#20ACB3] transition">How it works</a>
-                <a href="about.html" class="hover:text-[#20ACB3] transition">About Us</a>
-                <a href="contact.html" class="hover:text-[#20ACB3] transition">Contact Us</a>
-            </nav>
-            <div class="hidden md:block">
-                <button onclick="window.location.href='signup.html'" class="bg-[#20ACB3] text-white rounded-[30px] py-[15px] px-[30px] hover:bg-black transition text-[19px] font-medium cursor-pointer">
-                    Sign Up
-                </button>
+<body class="bg-[#F8FBFB] text-[#0F3B3D] font-sans antialiased min-h-screen flex flex-col">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-[#0F3B3D] text-white text-xs sm:text-sm py-2 px-4 text-center font-medium flex items-center justify-center gap-3">
+        <span class="bg-[#20ACB3] text-white text-[11px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">Free Moving</span>
+        <span>Find your home. We help you move in — <strong>100% Free moving truck</strong> on every rental payment!</span>
+        <a href="moving-out.html" class="underline text-[#82E4E9] hover:text-white hidden sm:inline">Earn ₦20,000 moving out &rarr;</a>
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="sticky top-0 bg-white/95 backdrop-blur-md z-50 border-b border-gray-100 shadow-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3.5 flex items-center justify-between">
+            <!-- Brand Logo & Tagline -->
+            <div class="cursor-pointer flex flex-col" onclick="window.location.href='index.html'">
+                <img src="./images/Logo.PNG" alt="Ụlọ Ọma ...your comfort, our priority." class="h-11 md:h-13 w-auto object-contain" />
             </div>
 
-            <!-- Mobile Toggle Button -->
-            <button id="menu-toggle" class="md:hidden text-4xl text-[#20ACB3] z-50">
+            <!-- Desktop Navigation -->
+            <nav class="hidden lg:flex items-center gap-8 text-[16px] font-semibold text-[#0F3B3D]">
+                <a href="index.html" class="hover:text-[#20ACB3] transition">Home</a>
+                <a href="explore.html" class="text-[#20ACB3] font-bold">Explore</a>
+                <a href="how-it-works.html" class="hover:text-[#20ACB3] transition">How It Works</a>
+                <a href="moving-out.html" class="hover:text-[#20ACB3] transition flex items-center gap-1.5 text-[#196366]">
+                    <i class="bi bi-gift-fill text-[#20ACB3]"></i> ₦20,000 Reward
+                </a>
+                <a href="about.html" class="hover:text-[#20ACB3] transition">About Us</a>
+                <a href="contact.html" class="hover:text-[#20ACB3] transition">Contact</a>
+            </nav>
+
+            <!-- Actions -->
+            <div class="hidden sm:flex items-center gap-4">
+                <a href="list-property.html" class="text-sm font-semibold text-[#0F3B3D] hover:text-[#20ACB3] px-3 py-2 transition flex items-center gap-1.5">
+                    <i class="bi bi-plus-circle-fill text-[#20ACB3]"></i> List Property
+                </a>
+                <a href="tenant-dashboard.html" class="bg-[#20ACB3] text-white px-5 py-2.5 rounded-[20px] hover:bg-black transition text-sm font-medium shadow-sm flex items-center gap-2">
+                    <i class="bi bi-person-circle"></i> Dashboard
+                </a>
+            </div>
+
+            <!-- Mobile Toggle -->
+            <button id="menu-toggle" class="lg:hidden text-3xl text-[#20ACB3] p-1 focus:outline-none" aria-label="Toggle menu">
                 <i id="hamburger" class="bi bi-list"></i>
                 <i id="close-x" class="bi bi-x-lg hidden"></i>
             </button>
         </div>
 
-        <!-- Mobile Full-Screen Menu -->
-        <div id="mobile-menu" class="fixed inset-0 bg-white hidden z-40">
-            <div class="flex flex-col items-center justify-center h-full gap-12 text-2xl font-semibold text-black">
-                <a href="index.html" class="hover:text-[#20ACB3] transition">Home</a>
-                <a href="explore.html" class="text-[#20ACB3]">Explore</a>
-                <a href="how-it-works.html" class="hover:text-[#20ACB3] transition">How it works</a>
-                <a href="about.html" class="hover:text-[#20ACB3] transition">About Us</a>
-                <a href="contact.html" class="hover:text-[#20ACB3] transition">Contact Us</a>
-                <button onclick="window.location.href='signup.html'" class="bg-[#20ACB3] text-white rounded-[30px] py-4 px-12 hover:bg-black cursor-pointer transition text-xl font-medium">
-                    Sign Up
-                </button>
+        <!-- Mobile Drawer -->
+        <div id="mobile-menu" class="fixed inset-0 top-[65px] bg-white hidden z-40 flex-col p-6 overflow-y-auto space-y-6 shadow-2xl lg:hidden">
+            <div class="flex flex-col space-y-4 text-lg font-semibold text-[#0F3B3D] border-b border-gray-100 pb-6">
+                <a href="index.html" class="hover:text-[#20ACB3]">Home</a>
+                <a href="explore.html" class="text-[#20ACB3]">Explore Properties</a>
+                <a href="how-it-works.html" class="hover:text-[#20ACB3]">How It Works</a>
+                <a href="moving-out.html" class="hover:text-[#20ACB3] text-[#196366] flex items-center gap-2">
+                    <i class="bi bi-gift-fill text-[#20ACB3]"></i> ₦20,000 Relocation Reward
+                </a>
+                <a href="about.html" class="hover:text-[#20ACB3]">About Us & CAC Credentials</a>
+                <a href="contact.html" class="hover:text-[#20ACB3]">Contact Support</a>
+            </div>
+            <div class="flex flex-col gap-3">
+                <a href="list-property.html" class="w-full text-center py-3 rounded-2xl border-2 border-[#20ACB3] text-[#20ACB3] font-bold">
+                    <i class="bi bi-plus-circle mr-1"></i> List a Property
+                </a>
+                <a href="tenant-dashboard.html" class="w-full text-center py-3 rounded-2xl bg-[#20ACB3] text-white font-bold shadow-md">
+                    <i class="bi bi-person-circle mr-1"></i> My Dashboard
+                </a>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="bg-[#0F3B3D] text-white py-20">
-        <div class="max-w-7xl mx-auto px-6 text-center">
-            <h1 class="text-5xl md:text-6xl font-bold mb-6">Find Your Perfect Home</h1>
-            <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-12">
-                Discover verified properties from trusted landlords across Nigeria
+    <!-- Page Header & Search Banner -->
+    <section class="bg-gradient-to-b from-[#0F3B3D] to-[#196366] text-white py-12 md:py-16 px-6">
+        <div class="max-w-7xl mx-auto text-center space-y-4">
+            <div class="inline-flex items-center gap-2 bg-[#20ACB3]/30 border border-[#82E4E9]/30 px-3.5 py-1.5 rounded-full text-xs text-[#82E4E9] font-bold uppercase tracking-wider">
+                <i class="bi bi-patch-check-fill"></i> 100% Inspected & Physically Verified
+            </div>
+            <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight">Verified Property Marketplace</h1>
+            <p class="text-gray-200 text-sm sm:text-base max-w-2xl mx-auto">
+                Explore authentic rentals in Aba, Owerri, Enugu, and beyond. Every listing includes free inspection transport with an assigned representative and 100% free moving.
             </p>
-            
-            <!-- Search Bar -->
-            <div class="bg-white rounded-2xl p-6 max-w-4xl mx-auto shadow-2xl">
-                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+
+            <!-- Search Inputs -->
+            <div class="bg-white rounded-3xl p-4 max-w-5xl mx-auto shadow-2xl mt-8 text-[#0F3B3D]">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
                     <div class="relative">
-                        <i class="bi bi-geo-alt absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
-                        <input type="text" placeholder="Location" class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#20ACB3] focus:border-transparent text-black">
+                        <i class="bi bi-geo-alt-fill absolute left-3.5 top-1/2 -translate-y-1/2 text-[#20ACB3]"></i>
+                        <input type="text" id="filter-location" placeholder="Location (e.g. Aba, Owerri)" class="w-full pl-10 pr-3 py-2.5 bg-gray-50 rounded-xl border border-gray-200 text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-[#20ACB3]">
                     </div>
                     <div class="relative">
-                        <i class="bi bi-house absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
-                        <select class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#20ACB3] focus:border-transparent text-black">
-                            <option>Property Type</option>
-                            <option>Apartment</option>
-                            <option>House</option>
-                            <option>Studio</option>
-                            <option>Duplex</option>
+                        <i class="bi bi-house-door-fill absolute left-3.5 top-1/2 -translate-y-1/2 text-[#20ACB3]"></i>
+                        <select id="filter-type" class="w-full pl-10 pr-3 py-2.5 bg-gray-50 rounded-xl border border-gray-200 text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-[#20ACB3]">
+                            <option value="">All Types</option>
+                            <option value="1">1 Bedroom Flat</option>
+                            <option value="2">2 Bedroom Flat</option>
+                            <option value="3">3+ Bedroom Flat</option>
+                            <option value="studio">Studio Flat</option>
+                            <option value="duplex">Duplex / House</option>
                         </select>
                     </div>
                     <div class="relative">
-                        <i class="bi bi-currency-dollar absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
-                        <select class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#20ACB3] focus:border-transparent text-black">
-                            <option>Price Range</option>
-                            <option>₦50,000 - ₦100,000</option>
-                            <option>₦100,000 - ₦200,000</option>
-                            <option>₦200,000 - ₦500,000</option>
-                            <option>₦500,000+</option>
-                        </select>
+                        <i class="bi bi-cash-stack absolute left-3.5 top-1/2 -translate-y-1/2 text-[#20ACB3]"></i>
+                        <input type="number" id="filter-max-price" placeholder="Max Price (₦)" class="w-full pl-10 pr-3 py-2.5 bg-gray-50 rounded-xl border border-gray-200 text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-[#20ACB3]">
                     </div>
-                    <button class="bg-[#20ACB3] text-white py-3 px-6 rounded-lg hover:bg-[#1e9ea5] transition font-semibold">
-                        <i class="bi bi-search mr-2"></i>Search
+                    <button onclick="applyFilters()" class="bg-[#20ACB3] hover:bg-black text-white py-2.5 px-6 rounded-xl font-bold transition flex items-center justify-center gap-2 text-sm shadow-md cursor-pointer">
+                        <i class="bi bi-search"></i> Filter Properties
                     </button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Filters Section -->
-    <section class="py-8 bg-white border-b">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="flex flex-wrap items-center gap-4">
-                <h3 class="text-lg font-semibold text-gray-800">Filter by:</h3>
-                <button class="px-4 py-2 bg-gray-100 text-gray-700 rounded-full hover:bg-[#20ACB3] hover:text-white transition">
-                    <i class="bi bi-bed mr-1"></i>Bedrooms
+    <!-- Essential Nigerian Amenity Quick Filters -->
+    <section class="bg-white border-b border-gray-200 py-4 px-6 sticky top-[65px] z-30 shadow-xs">
+        <div class="max-w-7xl mx-auto flex items-center justify-between gap-4 overflow-x-auto scrollbar-hide py-1">
+            <div class="flex items-center gap-2 text-xs font-bold shrink-0 text-[#0F3B3D]">
+                <i class="bi bi-funnel-fill text-[#20ACB3]"></i> Amenities:
+            </div>
+            <div class="flex items-center gap-2 shrink-0">
+                <button onclick="toggleAmenity(this, 'light')" class="amenity-chip px-3.5 py-1.5 rounded-full border border-gray-200 text-xs font-semibold hover:border-[#20ACB3] transition flex items-center gap-1.5 bg-gray-50">
+                    <i class="bi bi-lightning-charge-fill text-amber-500"></i> 24/7 Power
                 </button>
-                <button class="px-4 py-2 bg-gray-100 text-gray-700 rounded-full hover:bg-[#20ACB3] hover:text-white transition">
-                    <i class="bi bi-droplet mr-1"></i>Bathrooms
+                <button onclick="toggleAmenity(this, 'water')" class="amenity-chip px-3.5 py-1.5 rounded-full border border-gray-200 text-xs font-semibold hover:border-[#20ACB3] transition flex items-center gap-1.5 bg-gray-50">
+                    <i class="bi bi-droplet-fill text-blue-500"></i> Borehole Water
                 </button>
-                <button class="px-4 py-2 bg-gray-100 text-gray-700 rounded-full hover:bg-[#20ACB3] hover:text-white transition">
-                    <i class="bi bi-car-front mr-1"></i>Parking
+                <button onclick="toggleAmenity(this, 'security')" class="amenity-chip px-3.5 py-1.5 rounded-full border border-gray-200 text-xs font-semibold hover:border-[#20ACB3] transition flex items-center gap-1.5 bg-gray-50">
+                    <i class="bi bi-shield-lock-fill text-green-600"></i> Gated Security
                 </button>
-                <button class="px-4 py-2 bg-gray-100 text-gray-700 rounded-full hover:bg-[#20ACB3] hover:text-white transition">
-                    <i class="bi bi-wifi mr-1"></i>Furnished
+                <button onclick="toggleAmenity(this, 'parking')" class="amenity-chip px-3.5 py-1.5 rounded-full border border-gray-200 text-xs font-semibold hover:border-[#20ACB3] transition flex items-center gap-1.5 bg-gray-50">
+                    <i class="bi bi-car-front-fill text-purple-600"></i> Parking Space
                 </button>
-                <button class="px-4 py-2 bg-gray-100 text-gray-700 rounded-full hover:bg-[#20ACB3] hover:text-white transition">
-                    <i class="bi bi-shield-check mr-1"></i>Verified Only
+                <button onclick="toggleAmenity(this, 'moving')" class="amenity-chip px-3.5 py-1.5 rounded-full border border-teal-300 text-xs font-semibold text-[#0F3B3D] bg-teal-50 flex items-center gap-1.5">
+                    <i class="bi bi-truck text-[#20ACB3]"></i> 100% Free Moving
                 </button>
+            </div>
+            <div class="shrink-0 hidden md:block text-xs text-[#5C6F70]">
+                <span id="properties-count">6 verified homes available</span>
             </div>
         </div>
     </section>
 
-    <!-- Results Section -->
-    <section class="py-12">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="flex justify-between items-center mb-8">
-                <h2 class="text-2xl font-bold text-gray-800">Available Properties</h2>
-                <div class="flex items-center gap-4">
-                    <span class="text-gray-600">Showing 24 of 156 properties <i class="bi bi-chevron-right"></i></span>
-                    <select class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#20ACB3] focus:border-transparent">
-                        <option>Sort by: Newest</option>
-                        <option>Price: Low to High</option>
-                        <option>Price: High to Low</option>
-                        <option>Most Popular</option>
-                    </select>
+    <!-- Main Marketplace Content -->
+    <main class="max-w-7xl mx-auto px-6 py-10 flex-1 w-full space-y-8">
+        
+        <!-- SECTION 5: TENANT ACCESS ENTITLEMENT BANNER -->
+        <div id="exploreEntitlement" class="p-6 bg-gradient-to-r from-teal-50 to-white border-2 border-teal-200 rounded-3xl shadow-sm flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-start gap-4">
+                <div class="w-12 h-12 rounded-2xl bg-[#20ACB3] text-white flex items-center justify-center text-2xl shrink-0 shadow-md">
+                    <i class="bi bi-key-fill"></i>
                 </div>
-            </div>
-
-            <!-- Access Entitlement Status Banner (Section 5) -->
-            <div id="exploreEntitlement" class="mb-8 p-5 bg-teal-50 border border-teal-200 rounded-3xl flex flex-col md:flex-row justify-between items-center gap-4">
-                <div class="flex items-center gap-3">
-                    <i class="bi bi-shield-check text-3xl text-[#20ACB3]"></i>
-                    <div>
-                        <p class="font-bold text-[#0F3B3D]">Verified Properties Access: <span id="exploreRemainingText" class="text-[#20ACB3]">Properties remaining: 3</span></p>
-                        <p class="text-xs text-gray-600">Your ₦2,000 Explorer Access pass lets you reserve 3 verified apartments with accompanied inspection transport.</p>
-                    </div>
-                </div>
-                <div class="flex gap-2">
-                    <button onclick="window.location.href='card-payment.html'" class="px-5 py-2.5 bg-[#20ACB3] text-white rounded-full text-xs font-semibold hover:bg-black transition cursor-pointer">
-                        Refresh Access (₦2,000)
-                    </button>
-                    <button onclick="window.location.href='tenant-dashboard.html'" class="px-5 py-2.5 border border-[#20ACB3] text-[#20ACB3] rounded-full text-xs font-semibold hover:bg-teal-50 transition cursor-pointer">
-                        My Dashboard
-                    </button>
-                </div>
-            </div>
-
-            <!-- Property Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Property Card 1 -->
-                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                    <div class="relative">
-                        <img src="./images/first.jpg" alt="Modern Apartment" class="w-full h-64 object-cover">
-                        <div class="absolute top-4 left-4 bg-[#20ACB3] text-white px-3 py-1 rounded-full text-sm font-semibold">
-                            <i class="bi bi-shield-check mr-1"></i>Verified
-                        </div>
-                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full p-2 cursor-pointer hover:bg-white transition">
-                            <i class="bi bi-heart text-gray-600"></i>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex justify-between items-start mb-3">
-                            <h3 class="text-xl font-bold text-gray-800">Modern 2BR Apartment</h3>
-                            <span class="text-2xl font-bold text-[#20ACB3]">₦150,000</span>
-                        </div>
-                        <p class="text-gray-600 mb-4 flex items-center">
-                            <i class="bi bi-geo-alt mr-2 text-[#20ACB3]"></i>
-                            Aba, Abia State
-                        </p>
-                        <div class="flex items-center gap-4 mb-4 text-sm text-gray-600">
-                            <span class="flex items-center">
-                                <i class="bi bi-bed mr-1"></i>2 Beds
-                            </span>
-                            <span class="flex items-center">
-                                <i class="bi bi-droplet mr-1"></i>2 Baths
-                            </span>
-                            <span class="flex items-center">
-                                <i class="bi bi-car-front mr-1"></i>1 Parking
-                            </span>
-                        </div>
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center gap-2">
-                                <img src="./images/Logo.PNG" alt="Landlord" class="w-8 h-8 rounded-full object-cover">
-                                <span class="text-sm text-gray-600">John Doe</span>
-                            </div>
-                            <button onclick="window.location.href='property-details.html?property=modern-2br&price=150000&title=Modern%202BR%20Apartment&location=Aba,%20Abia%20State&rooms=2'" class="bg-[#20ACB3] text-white px-4 py-2 rounded-lg hover:bg-black transition font-semibold cursor-pointer">
-                                View Details
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Property Card 2 -->
-                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                    <div class="relative">
-                        <img src="./images/second.jpg" alt="Luxury House" class="w-full h-64 object-cover">
-                        <div class="absolute top-4 left-4 bg-[#20ACB3] text-white px-3 py-1 rounded-full text-sm font-semibold">
-                            <i class="bi bi-shield-check mr-1"></i>Verified
-                        </div>
-                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full p-2 cursor-pointer hover:bg-white transition">
-                            <i class="bi bi-heart text-gray-600"></i>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex justify-between items-start mb-3">
-                            <h3 class="text-xl font-bold text-gray-800">Luxury 4BR House</h3>
-                            <span class="text-2xl font-bold text-[#20ACB3]">₦450,000</span>
-                        </div>
-                        <p class="text-gray-600 mb-4 flex items-center">
-                            <i class="bi bi-geo-alt mr-2 text-[#20ACB3]"></i>
-                            Umuahia, Abia State
-                        </p>
-                        <div class="flex items-center gap-4 mb-4 text-sm text-gray-600">
-                            <span class="flex items-center">
-                                <i class="bi bi-bed mr-1"></i>4 Beds
-                            </span>
-                            <span class="flex items-center">
-                                <i class="bi bi-droplet mr-1"></i>3 Baths
-                            </span>
-                            <span class="flex items-center">
-                                <i class="bi bi-car-front mr-1"></i>2 Parking
-                            </span>
-                        </div>
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center gap-2">
-                                <img src="./images/Logo.PNG" alt="Landlord" class="w-8 h-8 rounded-full object-cover">
-                                <span class="text-sm text-gray-600">Sarah Johnson</span>
-                            </div>
-                            <button onclick="window.location.href='property-details.html?property=luxury-4br&price=450000&title=Luxury%204BR%20House&location=Umuahia,%20Abia%20State&rooms=4'" class="bg-[#20ACB3] text-white px-4 py-2 rounded-lg hover:bg-black transition font-semibold cursor-pointer">
-                                View Details
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Property Card 3 -->
-                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                    <div class="relative">
-                        <img src="./images/third.png" alt="Cozy Studio" class="w-full h-64 object-cover">
-                        <div class="absolute top-4 left-4 bg-[#20ACB3] text-white px-3 py-1 rounded-full text-sm font-semibold">
-                            <i class="bi bi-shield-check mr-1"></i>Verified
-                        </div>
-                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full p-2 cursor-pointer hover:bg-white transition">
-                            <i class="bi bi-heart text-gray-600"></i>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex justify-between items-start mb-3">
-                            <h3 class="text-xl font-bold text-gray-800">Cozy Studio Apartment</h3>
-                            <span class="text-2xl font-bold text-[#20ACB3]">₦85,000</span>
-                        </div>
-                        <p class="text-gray-600 mb-4 flex items-center">
-                            <i class="bi bi-geo-alt mr-2 text-[#20ACB3]"></i>
-                            Arochukwu, Abia State
-                        </p>
-                        <div class="flex items-center gap-4 mb-4 text-sm text-gray-600">
-                            <span class="flex items-center">
-                                <i class="bi bi-bed mr-1"></i>Studio
-                            </span>
-                            <span class="flex items-center">
-                                <i class="bi bi-droplet mr-1"></i>1 Bath
-                            </span>
-                            <span class="flex items-center">
-                                <i class="bi bi-wifi mr-1"></i>Furnished
-                            </span>
-                        </div>
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center gap-2">
-                                <img src="./images/Logo.PNG" alt="Landlord" class="w-8 h-8 rounded-full object-cover">
-                                <span class="text-sm text-gray-600">Mike Chen</span>
-                            </div>
-                            <button onclick="window.location.href='property-details.html?property=cozy-studio&price=85000&title=Cozy%20Studio%20Apartment&location=Arochukwu,%20Abia%20State&rooms=1'" class="bg-[#20ACB3] text-white px-4 py-2 rounded-lg hover:bg-black transition font-semibold cursor-pointer">
-                                View Details
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Property Card 4 -->
-                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                    <div class="relative">
-                        <img src="./images/Hero2.png" alt="Family House" class="w-full h-64 object-cover">
-                        <div class="absolute top-4 left-4 bg-[#20ACB3] text-white px-3 py-1 rounded-full text-sm font-semibold">
-                            <i class="bi bi-shield-check mr-1"></i>Verified
-                        </div>
-                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full p-2 cursor-pointer hover:bg-white transition">
-                            <i class="bi bi-heart text-gray-600"></i>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex justify-between items-start mb-3">
-                            <h3 class="text-xl font-bold text-gray-800">Family 3BR House</h3>
-                            <span class="text-2xl font-bold text-[#20ACB3]">₦280,000</span>
-                        </div>
-                        <p class="text-gray-600 mb-4 flex items-center">
-                            <i class="bi bi-geo-alt mr-2 text-[#20ACB3]"></i>
-                            Ohafia, Abia State
-                        </p>
-                        <div class="flex items-center gap-4 mb-4 text-sm text-gray-600">
-                            <span class="flex items-center">
-                                <i class="bi bi-bed mr-1"></i>3 Beds
-                            </span>
-                            <span class="flex items-center">
-                                <i class="bi bi-droplet mr-1"></i>2 Baths
-                            </span>
-                            <span class="flex items-center">
-                                <i class="bi bi-car-front mr-1"></i>1 Parking
-                            </span>
-                        </div>
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center gap-2">
-                                <img src="./images/Logo.PNG" alt="Landlord" class="w-8 h-8 rounded-full object-cover">
-                                <span class="text-sm text-gray-600">Ada Okafor</span>
-                            </div>
-                            <button onclick="window.location.href='property-details.html?property=family-3br&price=280000&title=Family%203BR%20House&location=Ohafia,%20Abia%20State&rooms=3'" class="bg-[#20ACB3] text-white px-4 py-2 rounded-lg hover:bg-black transition font-semibold cursor-pointer">
-                                View Details
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Property Card 5 -->
-                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                    <div class="relative">
-                        <img src="./images/Hero3.jpg" alt="Executive Duplex" class="w-full h-64 object-cover">
-                        <div class="absolute top-4 left-4 bg-[#20ACB3] text-white px-3 py-1 rounded-full text-sm font-semibold">
-                            <i class="bi bi-shield-check mr-1"></i>Verified
-                        </div>
-                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full p-2 cursor-pointer hover:bg-white transition">
-                            <i class="bi bi-heart text-gray-600"></i>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex justify-between items-start mb-3">
-                            <h3 class="text-xl font-bold text-gray-800">Executive Duplex</h3>
-                            <span class="text-2xl font-bold text-[#20ACB3]">₦650,000</span>
-                        </div>
-                        <p class="text-gray-600 mb-4 flex items-center">
-                            <i class="bi bi-geo-alt mr-2 text-[#20ACB3]"></i>
-                            Bende, Abia State
-                        </p>
-                        <div class="flex items-center gap-4 mb-4 text-sm text-gray-600">
-                            <span class="flex items-center">
-                                <i class="bi bi-bed mr-1"></i>5 Beds
-                            </span>
-                            <span class="flex items-center">
-                                <i class="bi bi-droplet mr-1"></i>4 Baths
-                            </span>
-                            <span class="flex items-center">
-                                <i class="bi bi-car-front mr-1"></i>3 Parking
-                            </span>
-                        </div>
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center gap-2">
-                                <img src="./images/Logo.PNG" alt="Landlord" class="w-8 h-8 rounded-full object-cover">
-                                <span class="text-sm text-gray-600">Emeka Nwankwo</span>
-                            </div>
-                            <button onclick="window.location.href='property-details.html?property=executive-duplex&price=650000&title=Executive%20Duplex&location=Bende,%20Abia%20State&rooms=5'" class="bg-[#20ACB3] text-white px-4 py-2 rounded-lg hover:bg-black transition font-semibold cursor-pointer">
-                                View Details
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Property Card 6 -->
-                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                    <div class="relative">
-                        <img src="./images/explore.jpg" alt="Affordable Apartment" class="w-full h-64 object-cover">
-                        <div class="absolute top-4 left-4 bg-[#20ACB3] text-white px-3 py-1 rounded-full text-sm font-semibold">
-                            <i class="bi bi-shield-check mr-1"></i>Verified
-                        </div>
-                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full p-2 cursor-pointer hover:bg-white transition">
-                            <i class="bi bi-heart text-gray-600"></i>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex justify-between items-start mb-3">
-                            <h3 class="text-xl font-bold text-gray-800">Affordable 1BR Flat</h3>
-                            <span class="text-2xl font-bold text-[#20ACB3]">₦95,000</span>
-                        </div>
-                        <p class="text-gray-600 mb-4 flex items-center">
-                            <i class="bi bi-geo-alt mr-2 text-[#20ACB3]"></i>
-                            Ikwuano, Abia State
-                        </p>
-                        <div class="flex items-center gap-4 mb-4 text-sm text-gray-600">
-                            <span class="flex items-center">
-                                <i class="bi bi-bed mr-1"></i>1 Bed
-                            </span>
-                            <span class="flex items-center">
-                                <i class="bi bi-droplet mr-1"></i>1 Bath
-                            </span>
-                            <span class="flex items-center">
-                                <i class="bi bi-wifi mr-1"></i>Furnished
-                            </span>
-                        </div>
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center gap-2">
-                                <img src="./images/Logo.PNG" alt="Landlord" class="w-8 h-8 rounded-full object-cover">
-                                <span class="text-sm text-gray-600">Fatima Bello</span>
-                            </div>
-                            <button onclick="window.location.href='property-details.html?property=affordable-1br&price=95000&title=Affordable%201BR%20Flat&location=Ikwuano,%20Abia%20State&rooms=1'" class="bg-[#20ACB3] text-white px-4 py-2 rounded-lg hover:bg-black transition font-semibold cursor-pointer">
-                                View Details
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Pagination -->
-            <div class="flex justify-center items-center mt-12 gap-2">
-                <button class="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition">
-                    <i class="bi bi-chevron-left"></i>
-                </button>
-                <button class="px-4 py-2 bg-[#20ACB3] text-white rounded-lg">1</button>
-                <button class="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition">2</button>
-                <button class="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition">3</button>
-                <span class="px-2">...</span>
-                <button class="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition">7</button>
-                <button class="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition">
-                    <i class="bi bi-chevron-right"></i>
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="py-20 bg-[#0F3B3D] text-white">
-        <div class="max-w-7xl mx-auto px-6 text-center">
-            <h2 class="text-4xl font-bold mb-6">Can't Find What You're Looking For?</h2>
-            <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-                Set up alerts and we'll notify you when properties matching your criteria become available
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <button class="bg-[#20ACB3] text-white px-8 py-4 rounded-lg hover:bg-[#1e9ea5] transition font-semibold">
-                    <i class="bi bi-bell mr-2"></i>Set Up Alerts
-                </button>
-                <button class="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-[#0F3B3D] transition font-semibold">
-                    <i class="bi bi-plus-circle mr-2"></i>List Your Property
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-[#0F3B3D] text-white py-16">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div>
-                    <img src="./images/Logo.PNG" alt="Ulo Oma" class="h-12 mb-6" />
-                    <p class="text-gray-300 mb-6">
-                        Connecting tenants directly with verified landlords across Nigeria.
+                    <div class="flex items-center gap-3">
+                        <h3 class="font-bold text-lg text-[#0F3B3D]">Verified Exploration Access Pass</h3>
+                        <span id="access-badge" class="bg-green-100 text-green-800 text-xs font-extrabold px-2.5 py-0.5 rounded-full">Active</span>
+                    </div>
+                    <p class="text-sm font-semibold text-[#20ACB3] mt-1" id="exploreRemainingText">
+                        Properties remaining: 3
                     </p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-gray-300 hover:text-[#20ACB3] transition">
-                            <i class="bi bi-facebook text-xl"></i>
-                        </a>
-                        <a href="#" class="text-gray-300 hover:text-[#20ACB3] transition">
-                            <i class="bi bi-twitter text-xl"></i>
-                        </a>
-                        <a href="#" class="text-gray-300 hover:text-[#20ACB3] transition">
-                            <i class="bi bi-instagram text-xl"></i>
-                        </a>
-                        <a href="#" class="text-gray-300 hover:text-[#20ACB3] transition">
-                            <i class="bi bi-linkedin text-xl"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <div>
-                    <h4 class="text-lg font-semibold mb-6">Quick Links</h4>
-                    <ul class="space-y-3">
-                        <li><a href="index.html" class="text-gray-300 hover:text-[#20ACB3] transition">Home <i class="bi bi-chevron-right"></i></a></li>
-                        <li><a href="explore.html" class="text-gray-300 hover:text-[#20ACB3] transition">Explore <i class="bi bi-chevron-right"></i></a></li>
-                        <li><a href="how-it-works.html" class="text-gray-300 hover:text-[#20ACB3] transition">How it Works <i class="bi bi-chevron-right"></i></a></li>
-                        <li><a href="about.html" class="text-gray-300 hover:text-[#20ACB3] transition">About Us <i class="bi bi-chevron-right"></i></a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4 class="text-lg font-semibold mb-6">Support</h4>
-                    <ul class="space-y-3">
-                        <li><a href="contact.html" class="text-gray-300 hover:text-[#20ACB3] transition">Contact Us <i class="bi bi-chevron-right"></i></a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-[#20ACB3] transition">Help Center <i class="bi bi-chevron-right"></i></a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-[#20ACB3] transition">Privacy Policy <i class="bi bi-chevron-right"></i></a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-[#20ACB3] transition">Terms of Service <i class="bi bi-chevron-right"></i></a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4 class="text-lg font-semibold mb-6">Contact Info</h4>
-                    <div class="space-y-3 text-gray-300">
-                        <p class="flex items-center">
-                            <i class="bi bi-envelope mr-3 text-[#20ACB3]"></i>
-                            info@ulooma.com
-                        </p>
-                        <p class="flex items-center">
-                            <i class="bi bi-telephone mr-3 text-[#20ACB3]"></i>
-                            +234 800 123 4567
-                        </p>
-                        <p class="flex items-center">
-                            <i class="bi bi-geo-alt mr-3 text-[#20ACB3]"></i>
-                            Lagos, Nigeria
-                        </p>
-                    </div>
+                    <p class="text-xs text-gray-500 mt-1 max-w-xl">
+                        Your <strong>₦2,000 Access Pass</strong> grants access to 3 verified listings. Includes direct inspection booking with your assigned representative, free viewing transport, and 100% free moving upon lease completion.
+                    </p>
                 </div>
             </div>
+
+            <!-- Access Status Dots & CTA -->
+            <div class="flex flex-col sm:flex-row items-center gap-4 shrink-0">
+                <div class="flex items-center gap-2 bg-white px-3.5 py-2 rounded-2xl border border-gray-200 shadow-xs">
+                    <span class="text-xs font-bold text-gray-500 mr-1">Slots:</span>
+                    <span id="dot-1" class="w-3.5 h-3.5 rounded-full bg-[#20ACB3] shadow-xs" title="Slot 1 Available"></span>
+                    <span id="dot-2" class="w-3.5 h-3.5 rounded-full bg-[#20ACB3] shadow-xs" title="Slot 2 Available"></span>
+                    <span id="dot-3" class="w-3.5 h-3.5 rounded-full bg-[#20ACB3] shadow-xs" title="Slot 3 Available"></span>
+                </div>
+                <button onclick="window.location.href='card-payment.html'" class="px-6 py-2.5 bg-[#20ACB3] hover:bg-black text-white rounded-full text-xs font-bold transition shadow-md cursor-pointer flex items-center gap-1.5">
+                    <i class="bi bi-arrow-repeat"></i> Top-Up 3 Slots (₦2,000)
+                </button>
+            </div>
+        </div>
+
+        <!-- Property Grid -->
+        <div id="property-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             
-            <div class="border-t border-gray-700 mt-12 pt-8 text-center text-gray-300">
-                <p>&copy; 2025 Ụlọ Ọma. All rights reserved.</p>
+            <!-- LISTING 1 -->
+            <div class="property-card bg-white rounded-4xl shadow-lg overflow-hidden border border-gray-100 hover:border-[#20ACB3] transition-all hover:-translate-y-1 flex flex-col justify-between"
+                 data-location="aba" data-type="1" data-price="570000" data-amenities="light,water,security">
+                <div>
+                    <div class="relative h-60 bg-[url('./images/first.jpg')] bg-center bg-cover">
+                        <div class="absolute top-4 left-4 bg-green-500 text-white px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1 shadow-md">
+                            <i class="bi bi-patch-check-fill"></i> 6-Point Verified
+                        </div>
+                        <div class="absolute top-4 right-4 bg-[#0F3B3D]/80 backdrop-blur-xs text-white px-3 py-1 rounded-full text-xs font-semibold">
+                            1 Bed Apartment
+                        </div>
+                        <div class="absolute bottom-3 left-4 bg-[#20ACB3] text-white px-2.5 py-1 rounded-lg text-xs font-bold flex items-center gap-1">
+                            <i class="bi bi-truck"></i> Free Moving Included
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-[#0F3B3D]">Room in Aba</h3>
+                            <div class="text-right">
+                                <span class="text-2xl font-extrabold text-[#0F3B3D]">₦570,000</span>
+                                <span class="text-xs text-gray-500 block">/ year</span>
+                            </div>
+                        </div>
+                        <p class="text-sm text-[#5C6F70] flex items-center gap-1.5 mb-4">
+                            <i class="bi bi-geo-alt-fill text-[#20ACB3]"></i> Aba, Abia State
+                        </p>
+                        
+                        <!-- Nigerian Amenities Badges -->
+                        <div class="flex flex-wrap gap-2 text-xs text-[#5C6F70] py-3 border-y border-gray-100">
+                            <span class="flex items-center gap-1 bg-gray-50 px-2 py-1 rounded-md"><i class="bi bi-door-closed text-[#20ACB3]"></i> 1 Bedroom</span>
+                            <span class="flex items-center gap-1 bg-gray-50 px-2 py-1 rounded-md"><i class="bi bi-lightning-charge text-amber-500"></i> Dedicated Meter</span>
+                            <span class="flex items-center gap-1 bg-gray-50 px-2 py-1 rounded-md"><i class="bi bi-droplet text-blue-500"></i> Constant Water</span>
+                        </div>
+
+                        <!-- Assigned Rep Preview -->
+                        <div class="flex items-center justify-between mt-4 text-xs text-gray-600">
+                            <div class="flex items-center gap-2">
+                                <div class="w-7 h-7 rounded-full bg-[#20ACB3] text-white flex items-center justify-center font-bold text-xs">ỤỌ</div>
+                                <span>Assigned Rep: <strong>Emeka D.</strong></span>
+                            </div>
+                            <span class="text-green-600 font-bold flex items-center gap-1"><i class="bi bi-check-circle-fill"></i> Free Transport</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6 pt-0">
+                    <button onclick="handlePropertyAction('property-details.html?property=room-aba&price=570000&title=Room%20in%20Aba&location=Aba&rooms=1')" class="w-full bg-[#20ACB3] hover:bg-black text-white py-3 rounded-2xl font-bold transition flex items-center justify-center gap-2 cursor-pointer shadow-sm">
+                        <i class="bi bi-calendar2-check"></i> Reserve for Inspection
+                    </button>
+                </div>
+            </div>
+
+            <!-- LISTING 2 -->
+            <div class="property-card bg-white rounded-4xl shadow-lg overflow-hidden border border-gray-100 hover:border-[#20ACB3] transition-all hover:-translate-y-1 flex flex-col justify-between"
+                 data-location="river layout, aba" data-type="1" data-price="410000" data-amenities="security,parking">
+                <div>
+                    <div class="relative h-60 bg-[url('./images/third.png')] bg-center bg-cover">
+                        <div class="absolute top-4 left-4 bg-green-500 text-white px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1 shadow-md">
+                            <i class="bi bi-patch-check-fill"></i> 6-Point Verified
+                        </div>
+                        <div class="absolute top-4 right-4 bg-[#0F3B3D]/80 backdrop-blur-xs text-white px-3 py-1 rounded-full text-xs font-semibold">
+                            Loft in Abia
+                        </div>
+                        <div class="absolute bottom-3 left-4 bg-[#20ACB3] text-white px-2.5 py-1 rounded-lg text-xs font-bold flex items-center gap-1">
+                            <i class="bi bi-truck"></i> Free Moving Included
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-[#0F3B3D]">Loft in River Layout</h3>
+                            <div class="text-right">
+                                <span class="text-2xl font-extrabold text-[#0F3B3D]">₦410,000</span>
+                                <span class="text-xs text-gray-500 block">/ year</span>
+                            </div>
+                        </div>
+                        <p class="text-sm text-[#5C6F70] flex items-center gap-1.5 mb-4">
+                            <i class="bi bi-geo-alt-fill text-[#20ACB3]"></i> River Layout, Aba
+                        </p>
+                        
+                        <div class="flex flex-wrap gap-2 text-xs text-[#5C6F70] py-3 border-y border-gray-100">
+                            <span class="flex items-center gap-1 bg-gray-50 px-2 py-1 rounded-md"><i class="bi bi-door-closed text-[#20ACB3]"></i> 1 Bedroom</span>
+                            <span class="flex items-center gap-1 bg-gray-50 px-2 py-1 rounded-md"><i class="bi bi-shield-check text-green-500"></i> Gated Compound</span>
+                            <span class="flex items-center gap-1 bg-gray-50 px-2 py-1 rounded-md"><i class="bi bi-car-front text-purple-500"></i> Free Parking</span>
+                        </div>
+
+                        <div class="flex items-center justify-between mt-4 text-xs text-gray-600">
+                            <div class="flex items-center gap-2">
+                                <div class="w-7 h-7 rounded-full bg-[#196366] text-white flex items-center justify-center font-bold text-xs">ỤỌ</div>
+                                <span>Assigned Rep: <strong>Ngozi K.</strong></span>
+                            </div>
+                            <span class="text-green-600 font-bold flex items-center gap-1"><i class="bi bi-check-circle-fill"></i> Free Transport</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6 pt-0">
+                    <button onclick="handlePropertyAction('property-details.html?property=loft-abia&price=410000&title=Loft%20in%20Abia&location=River%20Layout,%20Aba&rooms=1')" class="w-full bg-[#20ACB3] hover:bg-black text-white py-3 rounded-2xl font-bold transition flex items-center justify-center gap-2 cursor-pointer shadow-sm">
+                        <i class="bi bi-calendar2-check"></i> Reserve for Inspection
+                    </button>
+                </div>
+            </div>
+
+            <!-- LISTING 3 -->
+            <div class="property-card bg-white rounded-4xl shadow-lg overflow-hidden border border-gray-100 hover:border-[#20ACB3] transition-all hover:-translate-y-1 flex flex-col justify-between"
+                 data-location="faulks road, aba" data-type="studio" data-price="550000" data-amenities="light,water,parking">
+                <div>
+                    <div class="relative h-60 bg-[url('./images/second.jpg')] bg-center bg-cover">
+                        <div class="absolute top-4 left-4 bg-green-500 text-white px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1 shadow-md">
+                            <i class="bi bi-patch-check-fill"></i> 6-Point Verified
+                        </div>
+                        <div class="absolute top-4 right-4 bg-[#0F3B3D]/80 backdrop-blur-xs text-white px-3 py-1 rounded-full text-xs font-semibold">
+                            Studio Flat
+                        </div>
+                        <div class="absolute bottom-3 left-4 bg-[#20ACB3] text-white px-2.5 py-1 rounded-lg text-xs font-bold flex items-center gap-1">
+                            <i class="bi bi-truck"></i> Free Moving Included
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-[#0F3B3D]">Studio Flat in Faulks Rd</h3>
+                            <div class="text-right">
+                                <span class="text-2xl font-extrabold text-[#0F3B3D]">₦550,000</span>
+                                <span class="text-xs text-gray-500 block">/ year</span>
+                            </div>
+                        </div>
+                        <p class="text-sm text-[#5C6F70] flex items-center gap-1.5 mb-4">
+                            <i class="bi bi-geo-alt-fill text-[#20ACB3]"></i> Faulks Road, Aba
+                        </p>
+                        
+                        <div class="flex flex-wrap gap-2 text-xs text-[#5C6F70] py-3 border-y border-gray-100">
+                            <span class="flex items-center gap-1 bg-gray-50 px-2 py-1 rounded-md"><i class="bi bi-door-closed text-[#20ACB3]"></i> Self-Contain</span>
+                            <span class="flex items-center gap-1 bg-gray-50 px-2 py-1 rounded-md"><i class="bi bi-lightning-charge text-amber-500"></i> Good Grid Light</span>
+                            <span class="flex items-center gap-1 bg-gray-50 px-2 py-1 rounded-md"><i class="bi bi-droplet text-blue-500"></i> Borehole</span>
+                        </div>
+
+                        <div class="flex items-center justify-between mt-4 text-xs text-gray-600">
+                            <div class="flex items-center gap-2">
+                                <div class="w-7 h-7 rounded-full bg-[#20ACB3] text-white flex items-center justify-center font-bold text-xs">ỤỌ</div>
+                                <span>Assigned Rep: <strong>Emeka D.</strong></span>
+                            </div>
+                            <span class="text-green-600 font-bold flex items-center gap-1"><i class="bi bi-check-circle-fill"></i> Free Transport</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6 pt-0">
+                    <button onclick="handlePropertyAction('property-details.html?property=studio-faulks&price=550000&title=Studio%20Flat%20in%20Faulks%20Road&location=Aba&rooms=1')" class="w-full bg-[#20ACB3] hover:bg-black text-white py-3 rounded-2xl font-bold transition flex items-center justify-center gap-2 cursor-pointer shadow-sm">
+                        <i class="bi bi-calendar2-check"></i> Reserve for Inspection
+                    </button>
+                </div>
+            </div>
+
+            <!-- LISTING 4 -->
+            <div class="property-card bg-white rounded-4xl shadow-lg overflow-hidden border border-gray-100 hover:border-[#20ACB3] transition-all hover:-translate-y-1 flex flex-col justify-between"
+                 data-location="umuahia" data-type="2" data-price="700000" data-amenities="light,water,security,parking">
+                <div>
+                    <div class="relative h-60 bg-[url('./images/pic-room.jpg')] bg-center bg-cover">
+                        <div class="absolute top-4 left-4 bg-green-500 text-white px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1 shadow-md">
+                            <i class="bi bi-patch-check-fill"></i> 6-Point Verified
+                        </div>
+                        <div class="absolute top-4 right-4 bg-[#0F3B3D]/80 backdrop-blur-xs text-white px-3 py-1 rounded-full text-xs font-semibold">
+                            2 Bed Flat
+                        </div>
+                        <div class="absolute bottom-3 left-4 bg-[#20ACB3] text-white px-2.5 py-1 rounded-lg text-xs font-bold flex items-center gap-1">
+                            <i class="bi bi-truck"></i> Free Moving Included
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-[#0F3B3D]">2-Bedroom Flat in Umuahia</h3>
+                            <div class="text-right">
+                                <span class="text-2xl font-extrabold text-[#0F3B3D]">₦700,000</span>
+                                <span class="text-xs text-gray-500 block">/ year</span>
+                            </div>
+                        </div>
+                        <p class="text-sm text-[#5C6F70] flex items-center gap-1.5 mb-4">
+                            <i class="bi bi-geo-alt-fill text-[#20ACB3]"></i> Near MOUAU, Umuahia
+                        </p>
+                        
+                        <div class="flex flex-wrap gap-2 text-xs text-[#5C6F70] py-3 border-y border-gray-100">
+                            <span class="flex items-center gap-1 bg-gray-50 px-2 py-1 rounded-md"><i class="bi bi-door-closed text-[#20ACB3]"></i> 2 Bedrooms</span>
+                            <span class="flex items-center gap-1 bg-gray-50 px-2 py-1 rounded-md"><i class="bi bi-droplet text-blue-500"></i> Treated Water</span>
+                            <span class="flex items-center gap-1 bg-gray-50 px-2 py-1 rounded-md"><i class="bi bi-shield-check text-green-500"></i> Uniformed Guard</span>
+                        </div>
+
+                        <div class="flex items-center justify-between mt-4 text-xs text-gray-600">
+                            <div class="flex items-center gap-2">
+                                <div class="w-7 h-7 rounded-full bg-[#0F3B3D] text-white flex items-center justify-center font-bold text-xs">ỤỌ</div>
+                                <span>Assigned Rep: <strong>Chidi O.</strong></span>
+                            </div>
+                            <span class="text-green-600 font-bold flex items-center gap-1"><i class="bi bi-check-circle-fill"></i> Free Transport</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6 pt-0">
+                    <button onclick="handlePropertyAction('property-details.html?property=flat-umuahia&price=700000&title=Flat%20in%20Umuahia&location=Umuahia&rooms=2')" class="w-full bg-[#20ACB3] hover:bg-black text-white py-3 rounded-2xl font-bold transition flex items-center justify-center gap-2 cursor-pointer shadow-sm">
+                        <i class="bi bi-calendar2-check"></i> Reserve for Inspection
+                    </button>
+                </div>
+            </div>
+
+            <!-- LISTING 5 -->
+            <div class="property-card bg-white rounded-4xl shadow-lg overflow-hidden border border-gray-100 hover:border-[#20ACB3] transition-all hover:-translate-y-1 flex flex-col justify-between"
+                 data-location="aba" data-type="3" data-price="950000" data-amenities="light,water,security,parking">
+                <div>
+                    <div class="relative h-60 bg-[url('./images/explore.jpg')] bg-center bg-cover">
+                        <div class="absolute top-4 left-4 bg-green-500 text-white px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1 shadow-md">
+                            <i class="bi bi-patch-check-fill"></i> 6-Point Verified
+                        </div>
+                        <div class="absolute top-4 right-4 bg-[#0F3B3D]/80 backdrop-blur-xs text-white px-3 py-1 rounded-full text-xs font-semibold">
+                            3 Bed Duplex
+                        </div>
+                        <div class="absolute bottom-3 left-4 bg-[#20ACB3] text-white px-2.5 py-1 rounded-lg text-xs font-bold flex items-center gap-1">
+                            <i class="bi bi-truck"></i> Free Moving Included
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-[#0F3B3D]">3 Bedroom Semi-Detached</h3>
+                            <div class="text-right">
+                                <span class="text-2xl font-extrabold text-[#0F3B3D]">₦950,000</span>
+                                <span class="text-xs text-gray-500 block">/ year</span>
+                            </div>
+                        </div>
+                        <p class="text-sm text-[#5C6F70] flex items-center gap-1.5 mb-4">
+                            <i class="bi bi-geo-alt-fill text-[#20ACB3]"></i> Osisioma Layout, Aba
+                        </p>
+                        
+                        <div class="flex flex-wrap gap-2 text-xs text-[#5C6F70] py-3 border-y border-gray-100">
+                            <span class="flex items-center gap-1 bg-gray-50 px-2 py-1 rounded-md"><i class="bi bi-door-closed text-[#20ACB3]"></i> 3 Bedrooms</span>
+                            <span class="flex items-center gap-1 bg-gray-50 px-2 py-1 rounded-md"><i class="bi bi-car-front text-purple-500"></i> 2 Car Garage</span>
+                            <span class="flex items-center gap-1 bg-gray-50 px-2 py-1 rounded-md"><i class="bi bi-lightning-charge text-amber-500"></i> Inverter Pre-wired</span>
+                        </div>
+
+                        <div class="flex items-center justify-between mt-4 text-xs text-gray-600">
+                            <div class="flex items-center gap-2">
+                                <div class="w-7 h-7 rounded-full bg-[#20ACB3] text-white flex items-center justify-center font-bold text-xs">ỤỌ</div>
+                                <span>Assigned Rep: <strong>Emeka D.</strong></span>
+                            </div>
+                            <span class="text-green-600 font-bold flex items-center gap-1"><i class="bi bi-check-circle-fill"></i> Free Transport</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6 pt-0">
+                    <button onclick="handlePropertyAction('property-details.html?property=duplex-osisioma&price=950000&title=3%20Bedroom%20Semi-Detached&location=Osisioma,%20Aba&rooms=3')" class="w-full bg-[#20ACB3] hover:bg-black text-white py-3 rounded-2xl font-bold transition flex items-center justify-center gap-2 cursor-pointer shadow-sm">
+                        <i class="bi bi-calendar2-check"></i> Reserve for Inspection
+                    </button>
+                </div>
+            </div>
+
+            <!-- LISTING 6 -->
+            <div class="property-card bg-white rounded-4xl shadow-lg overflow-hidden border border-gray-100 hover:border-[#20ACB3] transition-all hover:-translate-y-1 flex flex-col justify-between"
+                 data-location="aba" data-type="short" data-price="25000" data-amenities="light,water,security,parking">
+                <div>
+                    <div class="relative h-60 bg-[url('./images/second.jpg')] bg-center bg-cover">
+                        <div class="absolute top-4 left-4 bg-green-500 text-white px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1 shadow-md">
+                            <i class="bi bi-patch-check-fill"></i> 6-Point Verified
+                        </div>
+                        <div class="absolute top-4 right-4 bg-amber-500 text-white px-3 py-1 rounded-full text-xs font-semibold">
+                            Short-Let Executive
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-[#0F3B3D]">Executive Short-Let Studio</h3>
+                            <div class="text-right">
+                                <span class="text-2xl font-extrabold text-[#0F3B3D]">₦25,000</span>
+                                <span class="text-xs text-gray-500 block">/ day</span>
+                            </div>
+                        </div>
+                        <p class="text-sm text-[#5C6F70] flex items-center gap-1.5 mb-4">
+                            <i class="bi bi-geo-alt-fill text-[#20ACB3]"></i> Glass Industry Rd, Aba
+                        </p>
+                        
+                        <div class="flex flex-wrap gap-2 text-xs text-[#5C6F70] py-3 border-y border-gray-100">
+                            <span class="flex items-center gap-1 bg-gray-50 px-2 py-1 rounded-md"><i class="bi bi-tv text-[#20ACB3]"></i> Fully Furnished</span>
+                            <span class="flex items-center gap-1 bg-gray-50 px-2 py-1 rounded-md"><i class="bi bi-wifi text-blue-500"></i> High-Speed Wifi</span>
+                            <span class="flex items-center gap-1 bg-gray-50 px-2 py-1 rounded-md"><i class="bi bi-lightning-charge text-amber-500"></i> 24/7 Generator</span>
+                        </div>
+
+                        <div class="flex items-center justify-between mt-4 text-xs text-gray-600">
+                            <div class="flex items-center gap-2">
+                                <div class="w-7 h-7 rounded-full bg-[#196366] text-white flex items-center justify-center font-bold text-xs">ỤỌ</div>
+                                <span>Assigned Rep: <strong>Ngozi K.</strong></span>
+                            </div>
+                            <span class="text-green-600 font-bold flex items-center gap-1"><i class="bi bi-check-circle-fill"></i> Instant Check-in</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6 pt-0">
+                    <button onclick="handlePropertyAction('property-details.html?property=shortlet-aba&price=25000&title=Executive%20Short-Let%20Studio&location=Aba&rooms=1')" class="w-full bg-[#20ACB3] hover:bg-black text-white py-3 rounded-2xl font-bold transition flex items-center justify-center gap-2 cursor-pointer shadow-sm">
+                        <i class="bi bi-calendar2-check"></i> Reserve for Inspection
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- COMPREHENSIVE FOOTER -->
+    <footer class="bg-[#0F3B3D] text-white pt-16 pb-12 mt-auto relative overflow-hidden border-t-4 border-[#20ACB3]">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12 pb-12 border-b border-white/10">
+                <div class="space-y-4">
+                    <div class="cursor-pointer" onclick="window.location.href='index.html'">
+                        <img src="./images/Logo-white.PNG" alt="Ụlọ Ọma ...your comfort, our priority." class="h-12 w-auto object-contain" />
+                    </div>
+                    <p class="text-sm text-gray-300 leading-relaxed">
+                        Nigeria's premier managed property platform. Verified listings, free inspection transport, escrow rental payments, and 100% free relocation fulfillment.
+                    </p>
+                    <div class="inline-flex items-center gap-2 bg-white/5 border border-white/10 px-3 py-1.5 rounded-xl text-xs text-[#82E4E9]">
+                        <i class="bi bi-shield-check text-base text-[#20ACB3]"></i>
+                        <span>CAC Verified Entity — RC: 7894120</span>
+                    </div>
+                </div>
+                <div class="space-y-4">
+                    <h4 class="text-[#82E4E9] font-bold text-base tracking-wide uppercase">Marketplace</h4>
+                    <ul class="space-y-2.5 text-sm text-gray-300">
+                        <li><a href="explore.html" class="hover:text-white transition flex items-center gap-1.5"><i class="bi bi-chevron-right text-xs text-[#20ACB3]"></i> All Verified Homes</a></li>
+                        <li><a href="explore.html?type=1" class="hover:text-white transition flex items-center gap-1.5"><i class="bi bi-chevron-right text-xs text-[#20ACB3]"></i> 1 Bedroom Flats</a></li>
+                        <li><a href="explore.html?type=2" class="hover:text-white transition flex items-center gap-1.5"><i class="bi bi-chevron-right text-xs text-[#20ACB3]"></i> 2 Bedroom Flats</a></li>
+                        <li><a href="list-property.html" class="hover:text-white transition flex items-center gap-1.5"><i class="bi bi-chevron-right text-xs text-[#20ACB3]"></i> List Property for Free</a></li>
+                    </ul>
+                </div>
+                <div class="space-y-4">
+                    <h4 class="text-[#82E4E9] font-bold text-base tracking-wide uppercase">Programs</h4>
+                    <ul class="space-y-2.5 text-sm text-gray-300">
+                        <li><a href="moving-out.html" class="hover:text-white transition flex items-center gap-1.5"><i class="bi bi-gift text-xs text-[#20ACB3]"></i> ₦20,000 Relocation Reward</a></li>
+                        <li><a href="how-it-works.html" class="hover:text-white transition flex items-center gap-1.5"><i class="bi bi-truck text-xs text-[#20ACB3]"></i> 100% Free Moving Service</a></li>
+                        <li><a href="card-payment.html" class="hover:text-white transition flex items-center gap-1.5"><i class="bi bi-credit-card text-xs text-[#20ACB3]"></i> ₦2,000 Access Pass</a></li>
+                        <li><a href="about.html#cac-section" class="hover:text-white transition flex items-center gap-1.5"><i class="bi bi-patch-check text-xs text-[#20ACB3]"></i> CAC Legal Credentials</a></li>
+                    </ul>
+                </div>
+                <div class="space-y-4">
+                    <h4 class="text-[#82E4E9] font-bold text-base tracking-wide uppercase">Office & Contact</h4>
+                    <ul class="space-y-3 text-sm text-gray-300">
+                        <li class="flex items-start gap-2.5">
+                            <i class="bi bi-geo-alt text-[#20ACB3] text-lg shrink-0 mt-0.5"></i>
+                            <span>Brass Junction / Aba-Owerri Rd, Aba, Abia State</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <i class="bi bi-telephone text-[#20ACB3] text-base shrink-0"></i>
+                            <span>+234 (0) 800 856 6621</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <i class="bi bi-envelope text-[#20ACB3] text-base shrink-0"></i>
+                            <span>support@ulooma.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-400 gap-4">
+                <p>&copy; 2026 Ụlọ Ọma. All rights reserved. ...your comfort, our priority.</p>
+                <div class="flex gap-6">
+                    <a href="about.html" class="hover:text-white transition">Privacy Policy</a>
+                    <a href="about.html" class="hover:text-white transition">Terms of Service</a>
+                    <a href="contact.html" class="hover:text-white transition">Safety Standards</a>
+                </div>
             </div>
         </div>
     </footer>
-<script>
-// Filter functionality
-const properties = document.querySelectorAll('.grid > div');
-const filterButtons = document.querySelectorAll('section button');
-const searchButton = document.querySelector('.bg-white button');
-const locationInput = document.querySelector('input[placeholder="Location"]');
-const propertyTypeSelect = document.querySelector('select');
-const priceRangeSelect = document.querySelectorAll('select')[1];
-const sortSelect = document.querySelector('select:last-of-type');
 
-// Property data for filtering
-const propertyData = [
-  { element: properties[0], bedrooms: 2, bathrooms: 2, parking: true, furnished: false, verified: true, price: 150000, type: 'apartment', location: 'aba' },
-  { element: properties[1], bedrooms: 4, bathrooms: 3, parking: true, furnished: false, verified: true, price: 450000, type: 'house', location: 'umuahia' },
-  { element: properties[2], bedrooms: 0, bathrooms: 1, parking: false, furnished: true, verified: true, price: 85000, type: 'studio', location: 'arochukwu' },
-  { element: properties[3], bedrooms: 3, bathrooms: 2, parking: true, furnished: false, verified: true, price: 280000, type: 'house', location: 'ohafia' },
-  { element: properties[4], bedrooms: 5, bathrooms: 4, parking: true, furnished: false, verified: true, price: 650000, type: 'duplex', location: 'bende' },
-  { element: properties[5], bedrooms: 1, bathrooms: 1, parking: false, furnished: true, verified: true, price: 95000, type: 'apartment', location: 'ikwuano' }
-];
+    <!-- Scripts -->
+    <script>
+        // Menu Toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const hamburger = document.getElementById('hamburger');
+        const closeX = document.getElementById('close-x');
 
-let activeFilters = { bedrooms: null, bathrooms: null, parking: null, furnished: null, verified: null };
+        if (menuToggle && mobileMenu) {
+            menuToggle.addEventListener('click', () => {
+                const isHidden = mobileMenu.classList.contains('hidden');
+                if (isHidden) {
+                    mobileMenu.classList.remove('hidden');
+                    mobileMenu.classList.add('flex');
+                    hamburger.classList.add('hidden');
+                    closeX.classList.remove('hidden');
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenu.classList.remove('flex');
+                    hamburger.classList.remove('hidden');
+                    closeX.classList.add('hidden');
+                    document.body.style.overflow = '';
+                }
+            });
+        }
 
-// Filter button handlers
-filterButtons.forEach(button => {
-  if (button.textContent.includes('Bedrooms')) {
-    button.onclick = () => toggleFilter('bedrooms', button);
-  } else if (button.textContent.includes('Bathrooms')) {
-    button.onclick = () => toggleFilter('bathrooms', button);
-  } else if (button.textContent.includes('Parking')) {
-    button.onclick = () => toggleFilter('parking', button);
-  } else if (button.textContent.includes('Furnished')) {
-    button.onclick = () => toggleFilter('furnished', button);
-  } else if (button.textContent.includes('Verified')) {
-    button.onclick = () => toggleFilter('verified', button);
-  }
-});
+        // Section 5 Entitlement Counter Management
+        function updateEntitlementUI() {
+            let remaining = localStorage.getItem('ulo_oma_remaining_properties');
+            if (remaining === null) {
+                remaining = 3;
+                localStorage.setItem('ulo_oma_remaining_properties', '3');
+            } else {
+                remaining = parseInt(remaining, 10);
+            }
 
-function toggleFilter(type, button) {
-  if (activeFilters[type]) {
-    activeFilters[type] = null;
-    button.classList.remove('bg-[#20ACB3]', 'text-white');
-    button.classList.add('bg-gray-100', 'text-gray-700');
-  } else {
-    activeFilters[type] = true;
-    button.classList.remove('bg-gray-100', 'text-gray-700');
-    button.classList.add('bg-[#20ACB3]', 'text-white');
-  }
-  applyFilters();
-}
+            const textEl = document.getElementById('exploreRemainingText');
+            if (textEl) {
+                textEl.innerText = `Properties remaining: ${remaining}`;
+            }
 
-// Search functionality
-searchButton.onclick = applyFilters;
+            const dot1 = document.getElementById('dot-1');
+            const dot2 = document.getElementById('dot-2');
+            const dot3 = document.getElementById('dot-3');
 
-function applyFilters() {
-  const location = locationInput.value.toLowerCase();
-  const type = propertyTypeSelect.value.toLowerCase();
-  const priceRange = priceRangeSelect.value;
-  
-  let visibleCount = 0;
-  
-  propertyData.forEach(property => {
-    let show = true;
-    
-    // Location filter
-    if (location && !property.location.includes(location)) show = false;
-    
-    // Property type filter
-    if (type !== 'property type' && property.type !== type) show = false;
-    
-    // Price range filter
-    if (priceRange !== 'Price Range') {
-      const price = property.price;
-      if (priceRange === '₦50,000 - ₦100,000' && (price < 50000 || price > 100000)) show = false;
-      if (priceRange === '₦100,000 - ₦200,000' && (price < 100000 || price > 200000)) show = false;
-      if (priceRange === '₦200,000 - ₦500,000' && (price < 200000 || price > 500000)) show = false;
-      if (priceRange === '₦500,000+' && price < 500000) show = false;
-    }
-    
-    // Active filters
-    if (activeFilters.bedrooms && property.bedrooms === 0) show = false;
-    if (activeFilters.bathrooms && property.bathrooms < 2) show = false;
-    if (activeFilters.parking && !property.parking) show = false;
-    if (activeFilters.furnished && !property.furnished) show = false;
-    if (activeFilters.verified && !property.verified) show = false;
-    
-    property.element.style.display = show ? 'block' : 'none';
-    if (show) visibleCount++;
-  });
-  
-  // Update results count
-  const resultSpan = document.querySelector('.flex.justify-between span');
-  if (resultSpan) resultSpan.textContent = `Showing ${visibleCount} of ${propertyData.length} properties`;
-}
+            if (dot1 && dot2 && dot3) {
+                dot1.className = remaining >= 1 ? 'w-3.5 h-3.5 rounded-full bg-[#20ACB3]' : 'w-3.5 h-3.5 rounded-full bg-gray-300';
+                dot2.className = remaining >= 2 ? 'w-3.5 h-3.5 rounded-full bg-[#20ACB3]' : 'w-3.5 h-3.5 rounded-full bg-gray-300';
+                dot3.className = remaining >= 3 ? 'w-3.5 h-3.5 rounded-full bg-[#20ACB3]' : 'w-3.5 h-3.5 rounded-full bg-gray-300';
+            }
 
-// Sort functionality
-sortSelect.onchange = function() {
-  const sortBy = this.value;
-  const container = document.querySelector('.grid');
-  const sortedProperties = [...propertyData];
-  
-  if (sortBy === 'Price: Low to High') {
-    sortedProperties.sort((a, b) => a.price - b.price);
-  } else if (sortBy === 'Price: High to Low') {
-    sortedProperties.sort((a, b) => b.price - a.price);
-  }
-  
-  sortedProperties.forEach(property => {
-    container.appendChild(property.element);
-  });
-};
+            const badge = document.getElementById('access-badge');
+            if (badge) {
+                badge.innerText = remaining > 0 ? `${remaining} Available` : 'Exhausted';
+                badge.className = remaining > 0 ? 'bg-green-100 text-green-800 text-xs font-extrabold px-2.5 py-0.5 rounded-full' : 'bg-red-100 text-red-700 text-xs font-extrabold px-2.5 py-0.5 rounded-full';
+            }
+        }
 
-// Mobile menu toggle
-const toggle = document.getElementById('menu-toggle');
-const hamburger = document.getElementById('hamburger');
-const closeX = document.getElementById('close-x');
-const menu = document.getElementById('mobile-menu');
+        function handlePropertyAction(targetUrl) {
+            let remaining = parseInt(localStorage.getItem('ulo_oma_remaining_properties') || '3', 10);
+            if (remaining > 0) {
+                remaining -= 1;
+                localStorage.setItem('ulo_oma_remaining_properties', remaining.toString());
+            }
+            window.location.href = targetUrl;
+        }
 
-toggle.addEventListener('click', () => {
-  menu.classList.toggle('hidden');
-  if (menu.classList.contains('hidden')) {
-    hamburger.classList.remove('hidden');
-    closeX.classList.add('hidden');
-    document.body.style.overflow = 'auto';
-  } else {
-    hamburger.classList.add('hidden');
-    closeX.classList.remove('hidden');
-    document.body.style.overflow = 'hidden';
-  }
-});
+        // Dynamic Filtering
+        const selectedAmenities = new Set();
 
-menu.addEventListener('click', (e) => {
-  if (e.target === menu) {
-    menu.classList.add('hidden');
-    hamburger.classList.remove('hidden');
-    closeX.classList.add('hidden');
-    document.body.style.overflow = 'auto';
-  }
-});
+        function toggleAmenity(btn, key) {
+            if (selectedAmenities.has(key)) {
+                selectedAmenities.delete(key);
+                btn.classList.remove('bg-[#20ACB3]', 'text-white', 'border-[#20ACB3]');
+                btn.classList.add('bg-gray-50', 'text-[#0F3B3D]', 'border-gray-200');
+            } else {
+                selectedAmenities.add(key);
+                btn.classList.add('bg-[#20ACB3]', 'text-white', 'border-[#20ACB3]');
+                btn.classList.remove('bg-gray-50', 'text-[#0F3B3D]', 'border-gray-200');
+            }
+            applyFilters();
+        }
 
-document.addEventListener('DOMContentLoaded', () => {
-  const rem = localStorage.getItem('ulooma_properties_remaining');
-  if (rem !== null) {
-    const el = document.getElementById('exploreRemainingText');
-    if (el) el.textContent = `Properties remaining: ${rem}`;
-  }
-});
-</script>
+        function applyFilters() {
+            const loc = (document.getElementById('filter-location').value || '').trim().toLowerCase();
+            const type = (document.getElementById('filter-type').value || '').trim().toLowerCase();
+            const maxPrice = parseFloat(document.getElementById('filter-max-price').value || '0');
+
+            const cards = document.querySelectorAll('.property-card');
+            let visibleCount = 0;
+
+            cards.forEach(card => {
+                const cardLoc = (card.getAttribute('data-location') || '').toLowerCase();
+                const cardType = (card.getAttribute('data-type') || '').toLowerCase();
+                const cardPrice = parseFloat(card.getAttribute('data-price') || '0');
+                const cardAmenities = (card.getAttribute('data-amenities') || '').split(',');
+
+                let matchesLoc = !loc || cardLoc.includes(loc);
+                let matchesType = !type || cardType === type;
+                let matchesPrice = !maxPrice || cardPrice <= maxPrice;
+                let matchesAmenities = true;
+
+                for (let a of selectedAmenities) {
+                    if (a === 'moving') continue; // all have free moving
+                    if (!cardAmenities.includes(a)) {
+                        matchesAmenities = false;
+                        break;
+                    }
+                }
+
+                if (matchesLoc && matchesType && matchesPrice && matchesAmenities) {
+                    card.style.display = 'flex';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            const countEl = document.getElementById('properties-count');
+            if (countEl) {
+                countEl.innerText = `${visibleCount} verified home${visibleCount === 1 ? '' : 's'} available`;
+            }
+        }
+
+        // Parse initial URL search params
+        document.addEventListener('DOMContentLoaded', () => {
+            updateEntitlementUI();
+
+            const params = new URLSearchParams(window.location.search);
+            const locParam = params.get('location');
+            const typeParam = params.get('type');
+            const priceParam = params.get('max_price');
+
+            if (locParam) document.getElementById('filter-location').value = locParam;
+            if (typeParam) document.getElementById('filter-type').value = typeParam;
+            if (priceParam) document.getElementById('filter-max-price').value = priceParam;
+
+            if (locParam || typeParam || priceParam) {
+                applyFilters();
+            }
+        });
+    </script>
 </body>
 </html>

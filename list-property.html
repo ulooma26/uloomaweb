@@ -6,342 +6,347 @@
     <title>List Your Property — Ụlọ Ọma</title>
     <link rel="stylesheet" href="./src/output.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="icon" href="./images/image.png" type="image/png">
 </head>
-<body class="bg-gray-50 font-sans">
-    <header class="sticky top-0 bg-white z-50 shadow-sm">
-        <div class="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
-            <div class="cursor-pointer" onclick="window.location.href='index.html'">
-                <img src="./images/Logo.PNG" alt="Ụlọ Ọma" class="h-12 md:h-14" />
-            </div>
-            <!-- Desktop Navigation -->
-            <nav class="hidden md:flex gap-10 lg:gap-16 text-[19px] font-semibold text-black">
+<body class="bg-[#F8FBFB] font-sans text-[#5C6F70]">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-[#0F3B3D] text-[#82E4E9] text-xs md:text-sm py-2 px-4 text-center font-medium border-b border-[#196366]/40 flex items-center justify-center gap-2">
+        <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-bold bg-[#20ACB3] text-white">ZERO AGENT FEES</span>
+        <span>List your property directly with Ụlọ Ọma. We verify, take pro media, and accompany viewings.</span>
+    </div>
+
+    <!-- Header -->
+    <header class="sticky top-0 bg-white z-50 shadow-sm border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="index.html" class="flex flex-col items-start group">
+                <img src="./images/Logo.PNG" alt="Ụlọ Ọma Logo" class="h-10 md:h-12 w-auto object-contain" />
+            </a>
+
+            <nav class="hidden md:flex gap-8 lg:gap-12 text-[17px] font-semibold text-gray-800">
                 <a href="index.html" class="hover:text-[#20ACB3] transition">Home</a>
                 <a href="explore.html" class="hover:text-[#20ACB3] transition">Explore</a>
                 <a href="how-it-works.html" class="hover:text-[#20ACB3] transition">How it works</a>
                 <a href="about.html" class="hover:text-[#20ACB3] transition">About Us</a>
                 <a href="contact.html" class="hover:text-[#20ACB3] transition">Contact Us</a>
             </nav>
-            <div class="hidden md:block">
-                <button onclick="window.location.href='signup.html'" class="bg-[#20ACB3] text-white rounded-[30px] py-[15px] px-[30px] hover:bg-black transition text-[19px] font-medium cursor-pointer">
+
+            <div class="hidden md:flex items-center gap-3">
+                <button onclick="window.location.href='landlord-dashboard.html'" class="text-[#0F3B3D] font-semibold px-4 py-2 hover:text-[#20ACB3] transition text-base">
+                    Landlord Portal
+                </button>
+                <button onclick="window.location.href='signup.html'" class="bg-[#20ACB3] hover:bg-[#0F3B3D] text-white rounded-full py-2.5 px-6 transition font-semibold text-base shadow-sm">
                     Sign Up
                 </button>
             </div>
+
             <!-- Mobile Toggle Button -->
-            <button id="menu-toggle" class="md:hidden text-4xl text-[#20ACB3] z-50">
+            <button id="menu-toggle" class="md:hidden text-3xl text-[#20ACB3] focus:outline-none p-1">
                 <i id="hamburger" class="bi bi-list"></i>
                 <i id="close-x" class="bi bi-x-lg hidden"></i>
             </button>
         </div>
-        <!-- Mobile Full-Screen Menu -->
-        <div id="mobile-menu" class="fixed inset-0 bg-white hidden z-40">
-            <div class="flex flex-col items-center justify-center h-full gap-12 text-2xl font-semibold text-black">
+
+        <!-- Mobile Drawer Menu -->
+        <div id="mobile-menu" class="fixed inset-0 bg-white hidden z-40 flex flex-col justify-between p-8">
+            <div class="flex items-center justify-between border-b pb-4">
+                <img src="./images/Logo.PNG" alt="Ụlọ Ọma" class="h-10 w-auto" />
+                <button id="close-drawer" class="text-3xl text-gray-700"><i class="bi bi-x-lg"></i></button>
+            </div>
+            <div class="flex flex-col gap-6 text-xl font-semibold text-gray-800 my-auto text-center">
                 <a href="index.html" class="hover:text-[#20ACB3] transition">Home</a>
-                <a href="explore.html" class="hover:text-[#20ACB3] transition">Explore</a>
-                <a href="how-it-works.html" class="hover:text-[#20ACB3] transition">How it works</a>
-                <a href="about.html" class="hover:text-[#20ACB3] transition">About Us</a>
+                <a href="explore.html" class="hover:text-[#20ACB3] transition">Explore Properties</a>
+                <a href="how-it-works.html" class="hover:text-[#20ACB3] transition">How It Works</a>
+                <a href="landlord-dashboard.html" class="text-[#20ACB3]">Landlord Portal</a>
                 <a href="contact.html" class="hover:text-[#20ACB3] transition">Contact Us</a>
-                <button onclick="window.location.href='signup.html'" class="bg-[#20ACB3] text-white rounded-[30px] py-4 px-12 hover:bg-black cursor-pointer transition text-xl font-medium">
+            </div>
+            <div class="space-y-3">
+                <button onclick="window.location.href='signup.html'" class="w-full bg-[#20ACB3] text-white rounded-full py-4 font-bold text-lg">
                     Sign Up
+                </button>
+                <button onclick="window.location.href='login.html'" class="w-full border border-gray-300 text-gray-800 rounded-full py-3.5 font-bold text-lg">
+                    Log In
                 </button>
             </div>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="bg-[#0F3B3D] text-white py-20 px-6">
-        <div class="max-w-4xl mx-auto text-center">
-            <h1 class="text-4xl md:text-5xl font-bold mb-4">List Your Property</h1>
-            <p class="text-lg md:text-xl text-gray-300">
-                Connect directly with verified tenants. We handle viewings, verification, and moving logistics.
+    <section class="bg-gradient-to-b from-white to-[#F8FBFB] py-16 px-6 border-b border-gray-100 text-center">
+        <div class="max-w-3xl mx-auto">
+            <div class="inline-flex items-center gap-2 bg-[#20ACB3]/10 text-[#0F3B3D] px-4 py-1.5 rounded-full text-xs md:text-sm font-semibold mb-4">
+                <i class="bi bi-buildings-fill text-[#20ACB3]"></i> Verified Landlord & Outgoing Tenant Submission
+            </div>
+            <h1 class="text-4xl md:text-5xl font-extrabold text-[#0F3B3D] mb-4">List Your Property on Ụlọ Ọma</h1>
+            <p class="text-base md:text-lg text-gray-600 leading-relaxed">
+                Connect directly with pre-screened tenants. We handle physical verification, accompanied inspections, and 100% free moving truck logistics.
             </p>
+            <div class="mt-4 flex flex-wrap justify-center gap-4 text-xs font-semibold text-[#0F3B3D]">
+                <span class="flex items-center gap-1.5"><i class="bi bi-check-circle-fill text-[#20ACB3]"></i> Zero Commission</span>
+                <span class="flex items-center gap-1.5"><i class="bi bi-check-circle-fill text-[#20ACB3]"></i> Free Viewing Transport</span>
+                <span class="flex items-center gap-1.5"><i class="bi bi-check-circle-fill text-[#20ACB3]"></i> Free Moving Fulfillment</span>
+            </div>
         </div>
     </section>
 
     <!-- Form Section -->
     <section class="py-16 px-4 md:px-6">
         <div class="max-w-4xl mx-auto">
-            <div id="submissionSuccess" class="hidden bg-white rounded-3xl shadow-xl p-8 md:p-12 border border-gray-100 text-center mb-8">
-                <div class="w-16 h-16 rounded-full bg-green-100 text-green-600 flex items-center justify-center text-3xl mx-auto mb-4">
+            
+            <!-- Success Notice -->
+            <div id="submissionSuccess" class="hidden bg-white rounded-4xl shadow-2xl p-8 md:p-12 border border-gray-100 text-center mb-8">
+                <div class="w-20 h-20 rounded-3xl bg-green-100 text-green-600 flex items-center justify-center text-4xl mx-auto mb-6">
                     <i class="bi bi-check-lg"></i>
                 </div>
-                <h2 class="text-2xl font-bold text-[#0F3B3D] mb-2">Property Listing Submitted for Verification!</h2>
-                <p class="text-gray-600 max-w-lg mx-auto mb-6">
-                    Our verification team will review your property details, schedule a visit to take high-quality media, and publish your listing to thousands of active seekers.
+                <h2 class="text-3xl font-extrabold text-[#0F3B3D] mb-3">Property Submitted for Verification!</h2>
+                <p class="text-gray-600 max-w-lg mx-auto mb-8 text-sm md:text-base leading-relaxed">
+                    Thank you for listing with Ụlọ Ọma. Our physical verification team in Aba will review your details, schedule a visit to verify the compound, and publish your listing with our Verified Badge.
                 </p>
                 <div class="flex flex-col sm:flex-row justify-center gap-4">
-                    <button onclick="window.location.href='landlord-dashboard.html'" class="bg-[#20ACB3] hover:bg-black text-white px-8 py-3.5 rounded-full font-semibold transition">
-                        Go to Landlord Dashboard
+                    <button onclick="window.location.href='landlord-dashboard.html'" class="bg-[#20ACB3] hover:bg-[#0F3B3D] text-white px-8 py-3.5 rounded-full font-bold transition shadow-lg text-sm">
+                        Go to Landlord Portal
                     </button>
-                    <button onclick="window.location.href='explore.html'" class="border border-gray-300 text-gray-700 px-8 py-3.5 rounded-full font-semibold hover:bg-gray-100 transition">
+                    <button onclick="window.location.href='explore.html'" class="border border-gray-300 text-gray-700 px-8 py-3.5 rounded-full font-bold hover:bg-gray-100 transition text-sm">
                         Browse Marketplace
                     </button>
                 </div>
             </div>
 
-            <div id="formContainer" class="bg-white rounded-3xl shadow-xl p-8 md:p-12 border border-gray-100">
-                <form id="propertyListingForm" class="space-y-8">
-                    <!-- Property Details -->
+            <!-- Form Card -->
+            <div id="formContainer" class="bg-white rounded-4xl shadow-2xl p-8 md:p-12 border border-gray-100">
+                <form id="propertyListingForm" class="space-y-10">
+                    
+                    <!-- Section 1: Basic Information -->
                     <div>
-                        <h2 class="text-2xl font-bold text-[#0F3B3D] mb-6 flex items-center gap-2">
-                            <i class="bi bi-house-door text-[#20ACB3]"></i> Property Details
-                        </h2>
+                        <div class="flex items-center gap-3 pb-3 border-b border-gray-100 mb-6">
+                            <div class="w-10 h-10 rounded-2xl bg-[#20ACB3]/10 text-[#20ACB3] flex items-center justify-center text-xl font-bold">1</div>
+                            <h2 class="text-2xl font-extrabold text-[#0F3B3D]">Property Overview</h2>
+                        </div>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div>
-                                <label class="block text-sm font-semibold text-gray-700 mb-2">Property Title</label>
-                                <input type="text" id="propTitle" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#20ACB3]" placeholder="e.g., Executive 2 Bedroom Flat" required>
+                            <div class="md:col-span-2">
+                                <label class="block text-sm font-bold text-gray-700 mb-2">Property Listing Title</label>
+                                <input type="text" id="propTitle" class="w-full px-4 py-3.5 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#20ACB3] text-gray-800 text-sm" placeholder="e.g. Modern 1-Bedroom Flat at Brass Junction" required>
                             </div>
                             <div>
-                                <label class="block text-sm font-semibold text-gray-700 mb-2">Property Type</label>
-                                <select id="propType" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#20ACB3]" required>
+                                <label class="block text-sm font-bold text-gray-700 mb-2">Property Type</label>
+                                <select id="propType" class="w-full px-4 py-3.5 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#20ACB3] text-gray-800 text-sm bg-white" required>
                                     <option value="">Select Property Type</option>
-                                    <option value="apartment">Apartment / Flat</option>
-                                    <option value="house">Self-Contained Room</option>
-                                    <option value="studio">Studio Apartment</option>
-                                    <option value="duplex">Duplex</option>
-                                    <option value="commercial">Commercial Workspace</option>
+                                    <option value="1_bed">1-Bedroom Apartment</option>
+                                    <option value="2_bed">2-Bedroom Apartment</option>
+                                    <option value="3_bed">3-Bedroom Apartment</option>
+                                    <option value="self_con">Self-Contained Room</option>
+                                    <option value="duplex">Duplex / Detached House</option>
                                 </select>
                             </div>
                             <div>
-                                <label class="block text-sm font-semibold text-gray-700 mb-2">Bedrooms</label>
-                                <select id="propBeds" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#20ACB3]" required>
-                                    <option value="">Select Bedrooms</option>
-                                    <option value="1">1 Bedroom</option>
-                                    <option value="2">2 Bedrooms</option>
-                                    <option value="3">3 Bedrooms</option>
-                                    <option value="4">4+ Bedrooms</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label class="block text-sm font-semibold text-gray-700 mb-2">Bathrooms</label>
-                                <select id="propBaths" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#20ACB3]" required>
-                                    <option value="">Select Bathrooms</option>
-                                    <option value="1">1 Bathroom</option>
-                                    <option value="2">2 Bathrooms</option>
-                                    <option value="3">3 Bathrooms</option>
-                                    <option value="4">4+ Bathrooms</option>
-                                </select>
+                                <label class="block text-sm font-bold text-gray-700 mb-2">Annual Rent (₦)</label>
+                                <input type="number" id="propRent" class="w-full px-4 py-3.5 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#20ACB3] text-gray-800 text-sm" placeholder="e.g. 450000" required>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Location -->
+                    <!-- Section 2: Location Details -->
                     <div>
-                        <h2 class="text-2xl font-bold text-[#0F3B3D] mb-6 flex items-center gap-2">
-                            <i class="bi bi-geo-alt text-[#20ACB3]"></i> Location
-                        </h2>
+                        <div class="flex items-center gap-3 pb-3 border-b border-gray-100 mb-6">
+                            <div class="w-10 h-10 rounded-2xl bg-[#20ACB3]/10 text-[#20ACB3] flex items-center justify-center text-xl font-bold">2</div>
+                            <h2 class="text-2xl font-extrabold text-[#0F3B3D]">Location & Street Address</h2>
+                        </div>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
-                                <label class="block text-sm font-semibold text-gray-700 mb-2">State</label>
-                                <select id="propState" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#20ACB3]" required>
+                                <label class="block text-sm font-bold text-gray-700 mb-2">State</label>
+                                <select id="propState" class="w-full px-4 py-3.5 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#20ACB3] text-gray-800 text-sm bg-white" required>
                                     <option value="Abia">Abia State</option>
                                     <option value="Enugu">Enugu State</option>
                                     <option value="Imo">Imo State</option>
                                     <option value="Lagos">Lagos State</option>
+                                    <option value="Rivers">Rivers State</option>
                                     <option value="Abuja">Abuja (FCT)</option>
                                 </select>
                             </div>
                             <div>
-                                <label class="block text-sm font-semibold text-gray-700 mb-2">City / Area</label>
-                                <input type="text" id="propCity" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#20ACB3]" placeholder="e.g. Aba (Aba North), Umuahia" required>
+                                <label class="block text-sm font-bold text-gray-700 mb-2">City / Neighborhood</label>
+                                <input type="text" id="propCity" class="w-full px-4 py-3.5 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#20ACB3] text-gray-800 text-sm" placeholder="e.g. Aba (Ogbor Hill / Brass / GRA)" required>
                             </div>
-                        </div>
-                        <div class="mt-6">
-                            <label class="block text-sm font-semibold text-gray-700 mb-2">Full Street Address</label>
-                            <textarea id="propAddress" rows="2" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#20ACB3]" placeholder="Enter exact street address and landmark" required></textarea>
-                        </div>
-                    </div>
-
-                    <!-- Pricing -->
-                    <div>
-                        <h2 class="text-2xl font-bold text-[#0F3B3D] mb-6 flex items-center gap-2">
-                            <i class="bi bi-tag text-[#20ACB3]"></i> Pricing & Tenancy
-                        </h2>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div>
-                                <label class="block text-sm font-semibold text-gray-700 mb-2">Rent Amount (₦)</label>
-                                <input type="number" id="propRent" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#20ACB3]" placeholder="e.g. 600000" required>
-                            </div>
-                            <div>
-                                <label class="block text-sm font-semibold text-gray-700 mb-2">Payment Frequency</label>
-                                <select id="propFreq" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#20ACB3]" required>
-                                    <option value="Yearly">Yearly</option>
-                                    <option value="Monthly">Monthly</option>
-                                </select>
+                            <div class="md:col-span-2">
+                                <label class="block text-sm font-bold text-gray-700 mb-2">Exact Street Address & Prominent Landmark</label>
+                                <textarea id="propAddress" rows="2" class="w-full px-4 py-3.5 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#20ACB3] text-gray-800 text-sm" placeholder="e.g. 14 Okigwe Road, near Total Filling Station, Aba" required></textarea>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Property Features & Amenities (Section 9) -->
+                    <!-- Section 3: Compound Amenities -->
                     <div>
-                        <h2 class="text-2xl font-bold text-[#0F3B3D] mb-6 flex items-center gap-2">
-                            <i class="bi bi-stars text-[#20ACB3]"></i> Amenities & Features
-                        </h2>
-                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                            <label class="flex items-center gap-2 p-3 border border-gray-200 rounded-xl hover:bg-gray-50 cursor-pointer">
-                                <input type="checkbox" class="w-4 h-4 accent-[#20ACB3]">
-                                <span class="text-sm">24/7 Electricity</span>
+                        <div class="flex items-center gap-3 pb-3 border-b border-gray-100 mb-6">
+                            <div class="w-10 h-10 rounded-2xl bg-[#20ACB3]/10 text-[#20ACB3] flex items-center justify-center text-xl font-bold">3</div>
+                            <h2 class="text-2xl font-extrabold text-[#0F3B3D]">Verified Nigerian Amenities</h2>
+                        </div>
+                        <p class="text-xs text-gray-500 mb-4">Select all features verified present in this compound:</p>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-xs font-semibold text-gray-700">
+                            <label class="flex items-center gap-2 p-3 rounded-xl border border-gray-200 hover:border-[#20ACB3] cursor-pointer">
+                                <input type="checkbox" checked class="accent-[#20ACB3] w-4 h-4"> 24/7 Power / Gen
                             </label>
-                            <label class="flex items-center gap-2 p-3 border border-gray-200 rounded-xl hover:bg-gray-50 cursor-pointer">
-                                <input type="checkbox" class="w-4 h-4 accent-[#20ACB3]">
-                                <span class="text-sm">Clean Water</span>
+                            <label class="flex items-center gap-2 p-3 rounded-xl border border-gray-200 hover:border-[#20ACB3] cursor-pointer">
+                                <input type="checkbox" checked class="accent-[#20ACB3] w-4 h-4"> Borehole Running Water
                             </label>
-                            <label class="flex items-center gap-2 p-3 border border-gray-200 rounded-xl hover:bg-gray-50 cursor-pointer">
-                                <input type="checkbox" class="w-4 h-4 accent-[#20ACB3]">
-                                <span class="text-sm">Dedicated Parking</span>
+                            <label class="flex items-center gap-2 p-3 rounded-xl border border-gray-200 hover:border-[#20ACB3] cursor-pointer">
+                                <input type="checkbox" checked class="accent-[#20ACB3] w-4 h-4"> Gated Security Guard
                             </label>
-                            <label class="flex items-center gap-2 p-3 border border-gray-200 rounded-xl hover:bg-gray-50 cursor-pointer">
-                                <input type="checkbox" class="w-4 h-4 accent-[#20ACB3]">
-                                <span class="text-sm">24/7 Security</span>
+                            <label class="flex items-center gap-2 p-3 rounded-xl border border-gray-200 hover:border-[#20ACB3] cursor-pointer">
+                                <input type="checkbox" checked class="accent-[#20ACB3] w-4 h-4"> Dedicated Parking Space
                             </label>
-                            <label class="flex items-center gap-2 p-3 border border-gray-200 rounded-xl hover:bg-gray-50 cursor-pointer">
-                                <input type="checkbox" class="w-4 h-4 accent-[#20ACB3]">
-                                <span class="text-sm">Gated Estate</span>
+                            <label class="flex items-center gap-2 p-3 rounded-xl border border-gray-200 hover:border-[#20ACB3] cursor-pointer">
+                                <input type="checkbox" class="accent-[#20ACB3] w-4 h-4"> Prepaid Meter (Personal)
                             </label>
-                            <label class="flex items-center gap-2 p-3 border border-gray-200 rounded-xl hover:bg-gray-50 cursor-pointer">
-                                <input type="checkbox" class="w-4 h-4 accent-[#20ACB3]">
-                                <span class="text-sm">Furnished</span>
+                            <label class="flex items-center gap-2 p-3 rounded-xl border border-gray-200 hover:border-[#20ACB3] cursor-pointer">
+                                <input type="checkbox" checked class="accent-[#20ACB3] w-4 h-4"> Tarred / Paved Road
                             </label>
-                            <label class="flex items-center gap-2 p-3 border border-gray-200 rounded-xl hover:bg-gray-50 cursor-pointer">
-                                <input type="checkbox" class="w-4 h-4 accent-[#20ACB3]">
-                                <span class="text-sm">Free Wi-Fi</span>
+                            <label class="flex items-center gap-2 p-3 rounded-xl border border-gray-200 hover:border-[#20ACB3] cursor-pointer">
+                                <input type="checkbox" checked class="accent-[#20ACB3] w-4 h-4"> POP Ceiling & Tiles
                             </label>
-                            <label class="flex items-center gap-2 p-3 border border-gray-200 rounded-xl hover:bg-gray-50 cursor-pointer">
-                                <input type="checkbox" class="w-4 h-4 accent-[#20ACB3]">
-                                <span class="text-sm">Tiled Floors</span>
+                            <label class="flex items-center gap-2 p-3 rounded-xl border border-gray-200 hover:border-[#20ACB3] cursor-pointer">
+                                <input type="checkbox" checked class="accent-[#20ACB3] w-4 h-4"> 100% Free Moving Truck
                             </label>
                         </div>
                     </div>
 
-                    <!-- Landlord Contact -->
+                    <!-- Section 4: Photos & Verification Media -->
                     <div>
-                        <h2 class="text-2xl font-bold text-[#0F3B3D] mb-6 flex items-center gap-2">
-                            <i class="bi bi-person text-[#20ACB3]"></i> Landlord / Property Manager Contact
-                        </h2>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div>
-                                <label class="block text-sm font-semibold text-gray-700 mb-2">Full Name</label>
-                                <input type="text" id="propOwnerName" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#20ACB3]" placeholder="e.g. Chief O. Eze" required>
-                            </div>
-                            <div>
-                                <label class="block text-sm font-semibold text-gray-700 mb-2">Phone Number</label>
-                                <input type="tel" id="propOwnerPhone" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#20ACB3]" placeholder="e.g. 08012345678" required>
-                            </div>
+                        <div class="flex items-center gap-3 pb-3 border-b border-gray-100 mb-6">
+                            <div class="w-10 h-10 rounded-2xl bg-[#20ACB3]/10 text-[#20ACB3] flex items-center justify-center text-xl font-bold">4</div>
+                            <h2 class="text-2xl font-extrabold text-[#0F3B3D]">Media & Inspection Photos</h2>
                         </div>
-                    </div>
-
-                    <!-- Description -->
-                    <div>
-                        <label class="block text-sm font-semibold text-gray-700 mb-2">Property Description</label>
-                        <textarea id="propDesc" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#20ACB3]" placeholder="Describe your property, layout, accessibility, and unique features..." required></textarea>
-                    </div>
-
-                    <!-- Photo Upload -->
-                    <div>
-                        <h2 class="text-2xl font-bold text-[#0F3B3D] mb-4 flex items-center gap-2">
-                            <i class="bi bi-images text-[#20ACB3]"></i> Property Photos
-                        </h2>
-                        <div class="border-2 border-dashed border-gray-300 rounded-2xl p-8 text-center hover:border-[#20ACB3] transition cursor-pointer" onclick="document.getElementById('photoInput').click()">
+                        <div class="border-2 border-dashed border-gray-300 rounded-3xl p-8 text-center hover:border-[#20ACB3] transition cursor-pointer relative bg-gray-50/50" onclick="document.getElementById('photoInput').click()">
+                            <i class="bi bi-cloud-arrow-up text-4xl text-[#20ACB3] mb-2 inline-block"></i>
+                            <h4 class="font-bold text-gray-800 text-sm">Upload Photos of the Apartment</h4>
+                            <p class="text-xs text-gray-500 mt-1">Living room, bedroom, kitchen, compound, and toilet (JPG, PNG)</p>
                             <input type="file" id="photoInput" multiple accept="image/*" class="hidden" onchange="handlePhotoUpload(this)">
-                            <i class="bi bi-cloud-arrow-up text-4xl text-[#20ACB3] mb-3 block"></i>
-                            <p class="font-bold text-gray-700">Click to upload photos</p>
-                            <p class="text-xs text-gray-500 mt-1">PNG, JPG, or WEBP up to 10MB each</p>
-                            <div id="photoPreviewCount" class="mt-2 text-sm text-[#20ACB3] font-semibold hidden"></div>
+                            <div id="photoPreviewCount" class="hidden mt-3 inline-block bg-teal-100 text-[#0F3B3D] px-4 py-1.5 rounded-full text-xs font-bold"></div>
+                        </div>
+                        <p class="text-xs text-gray-400 mt-2">
+                            * Don't worry if your photos aren't studio quality. Our physical inspection representative will visit to capture high-res footage.
+                        </p>
+                    </div>
+
+                    <!-- Section 5: Landlord / Submitter Contact -->
+                    <div>
+                        <div class="flex items-center gap-3 pb-3 border-b border-gray-100 mb-6">
+                            <div class="w-10 h-10 rounded-2xl bg-[#20ACB3]/10 text-[#20ACB3] flex items-center justify-center text-xl font-bold">5</div>
+                            <h2 class="text-2xl font-extrabold text-[#0F3B3D]">Your Contact Information</h2>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-bold text-gray-700 mb-2">Full Name</label>
+                                <input type="text" id="contactName" class="w-full px-4 py-3.5 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#20ACB3] text-gray-800 text-sm" placeholder="e.g. Engr. Emeka Okonkwo" required>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-bold text-gray-700 mb-2">Phone Number</label>
+                                <input type="tel" id="contactPhone" class="w-full px-4 py-3.5 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#20ACB3] text-gray-800 text-sm" placeholder="e.g. 08012345678" required>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Authorization Checkbox (Section 10 & 20) -->
-                    <div class="p-4 bg-teal-50 border border-teal-200 rounded-2xl">
-                        <label class="flex items-start gap-3 cursor-pointer">
-                            <input type="checkbox" required class="w-5 h-5 mt-0.5 accent-[#20ACB3]">
-                            <span class="text-sm text-gray-700">
-                                I confirm that I am the legal owner or authorized property manager of this property, and I authorize Ụlọ Ọma to verify the property and facilitate inspections.
-                            </span>
-                        </label>
-                    </div>
-
-                    <!-- Submit Button -->
-                    <button type="submit" id="submitPropertyBtn" class="w-full bg-[#20ACB3] hover:bg-black text-white font-bold py-5 rounded-2xl transition text-lg shadow-lg flex items-center justify-center gap-2 cursor-pointer">
-                        <span id="btnText">Submit Property for Verification</span>
-                        <i id="btnSpinner" class="bi bi-arrow-repeat animate-spin hidden text-xl"></i>
+                    <button type="submit" id="submitPropertyBtn" class="w-full bg-[#20ACB3] hover:bg-[#0F3B3D] text-white font-extrabold text-base py-4 rounded-2xl transition duration-200 shadow-xl cursor-pointer flex items-center justify-center gap-2">
+                        <span id="btnText">Submit Property For Verification</span>
+                        <i id="btnSpinner" class="bi bi-arrow-repeat animate-spin hidden text-lg"></i>
                     </button>
                 </form>
             </div>
         </div>
     </section>
 
-    <!-- Standard Footer -->
-    <footer class="bg-[#0F3B3D] text-white pt-20 pb-16 relative overflow-hidden mt-16">
+    <!-- Standard Rich Footer -->
+    <footer class="bg-[#0F3B3D] text-white pt-16 pb-12 border-t border-white/10">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-16">
-                <div class="space-y-6">
-                    <h3 class="text-2xl font-bold flex items-center gap-2">
-                        <i class="bi bi-house-door-fill text-[#20ACB3]"></i> Ụlọ Ọma
-                    </h3>
-                    <p class="text-sm opacity-90 leading-relaxed">
-                        Ụlọ Ọma makes finding your next home easy and transparent. From verified listings to free viewing transport and hassle-free moving.
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-white/10">
+                <!-- Col 1: Brand with Tagline under Logo -->
+                <div class="lg:col-span-2 space-y-4">
+                    <a href="index.html" class="inline-block group">
+                        <img src="./images/Logo-white.PNG" alt="Ụlọ Ọma" class="h-12 w-auto object-contain" />
+                        <span class="block text-xs text-[#82E4E9] font-normal italic tracking-tight mt-1">...your comfort, our priority.</span>
+                    </a>
+                    <p class="text-sm text-gray-300 leading-relaxed max-w-sm">
+                        Ụlọ Ọma is Nigeria's premier managed rental and relocation platform. Discover verified apartments, book accompanied inspections, and move in with our 100% free moving truck service.
                     </p>
+                    <div class="flex items-center gap-3 text-xs text-gray-300">
+                        <span class="px-2.5 py-1 rounded-md bg-white/10 text-[#82E4E9] font-bold">RC: 7894120</span>
+                        <span>Ụlọ Ọma Technologies Ltd</span>
+                    </div>
                 </div>
-                <div class="space-y-4">
-                    <h4 class="text-[#82E4E9] font-semibold text-lg">Navigation</h4>
-                    <nav class="flex flex-col space-y-2 text-sm">
-                        <a href="index.html" class="hover:text-[#20ACB3] transition">Home</a>
-                        <a href="explore.html" class="hover:text-[#20ACB3] transition">Explore</a>
-                        <a href="how-it-works.html" class="hover:text-[#20ACB3] transition">How It Works</a>
-                        <a href="about.html" class="hover:text-[#20ACB3] transition">About Us</a>
-                        <a href="contact.html" class="hover:text-[#20ACB3] transition">Contact Us</a>
-                    </nav>
+
+                <!-- Col 2: Navigation -->
+                <div class="space-y-3">
+                    <h4 class="text-[#82E4E9] font-bold text-sm uppercase tracking-wider">Explore</h4>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li><a href="explore.html" class="hover:text-white transition">Verified Listings</a></li>
+                        <li><a href="how-it-works.html" class="hover:text-white transition">How It Works</a></li>
+                        <li><a href="about.html" class="hover:text-white transition">About Us</a></li>
+                        <li><a href="moving-out.html" class="hover:text-white transition">₦20,000 Moving Reward</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition">Help & Support</a></li>
+                    </ul>
                 </div>
-                <div class="space-y-4">
-                    <h4 class="text-[#82E4E9] font-semibold text-lg">Support</h4>
-                    <nav class="flex flex-col space-y-2 text-sm">
-                        <a href="contact.html" class="hover:text-[#20ACB3] transition">Contact Support</a>
-                        <a href="how-it-works.html" class="hover:text-[#20ACB3] transition">FAQs</a>
-                    </nav>
+
+                <!-- Col 3: Trust & Legal -->
+                <div class="space-y-3">
+                    <h4 class="text-[#82E4E9] font-bold text-sm uppercase tracking-wider">Trust & Legal</h4>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li><a href="about.html#cac-section" class="hover:text-white transition">CAC Incorporation</a></li>
+                        <li><a href="how-it-works.html#verification" class="hover:text-white transition">6-Point Verification</a></li>
+                        <li><a href="card-payment.html" class="hover:text-white transition">Flutterwave Escrow</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition">Privacy Policy</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition">Terms of Service</a></li>
+                    </ul>
                 </div>
-                <div class="space-y-4">
-                    <h4 class="text-[#82E4E9] font-semibold text-lg">For Landlords</h4>
-                    <p class="text-xs text-gray-300">We screen prospective tenants and accompany every property viewing.</p>
+
+                <!-- Col 4: Contact & Office -->
+                <div class="space-y-3">
+                    <h4 class="text-[#82E4E9] font-bold text-sm uppercase tracking-wider">Headquarters</h4>
+                    <div class="text-sm text-gray-300 space-y-2">
+                        <p class="flex items-start gap-2">
+                            <i class="bi bi-geo-alt text-[#20ACB3] mt-1"></i>
+                            <span>Aba, Abia State, Nigeria</span>
+                        </p>
+                        <p class="flex items-center gap-2">
+                            <i class="bi bi-telephone text-[#20ACB3]"></i>
+                            <span>+234 706 591 7720</span>
+                        </p>
+                        <p class="flex items-center gap-2">
+                            <i class="bi bi-whatsapp text-[#20ACB3]"></i>
+                            <a href="https://wa.me/2347065917720" target="_blank" class="hover:text-white underline">WhatsApp Helpdesk</a>
+                        </p>
+                    </div>
                 </div>
             </div>
-            <div class="mt-16 pt-8 border-t border-white/20 text-center text-sm opacity-80">
-                © 2025 Ụlọ Ọma. All Rights Reserved.
+
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-400 gap-4">
+                <p>&copy; 2025 Ụlọ Ọma Technologies Ltd. All Rights Reserved. ...your comfort, our priority.</p>
+                <div class="flex gap-6 text-lg text-gray-300">
+                    <a href="https://wa.me/2347065917720" class="hover:text-[#20ACB3] transition"><i class="bi bi-whatsapp"></i></a>
+                    <a href="#" class="hover:text-[#20ACB3] transition"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="hover:text-[#20ACB3] transition"><i class="bi bi-instagram"></i></a>
+                    <a href="#" class="hover:text-[#20ACB3] transition"><i class="bi bi-twitter-x"></i></a>
+                </div>
             </div>
         </div>
     </footer>
 
     <script>
         const toggle = document.getElementById('menu-toggle');
-        const hamburger = document.getElementById('hamburger');
-        const closeX = document.getElementById('close-x');
         const menu = document.getElementById('mobile-menu');
+        const closeDrawer = document.getElementById('close-drawer');
 
-        toggle.addEventListener('click', () => {
+        function toggleMenu() {
             menu.classList.toggle('hidden');
-            if (menu.classList.contains('hidden')) {
-                hamburger.classList.remove('hidden');
-                closeX.classList.add('hidden');
-                document.body.style.overflow = 'auto';
-            } else {
-                hamburger.classList.add('hidden');
-                closeX.classList.remove('hidden');
-                document.body.style.overflow = 'hidden';
-            }
-        });
+            document.body.style.overflow = menu.classList.contains('hidden') ? 'auto' : 'hidden';
+        }
 
-        menu.addEventListener('click', (e) => {
-            if (e.target === menu) {
-                menu.classList.add('hidden');
-                hamburger.classList.remove('hidden');
-                closeX.classList.add('hidden');
-                document.body.style.overflow = 'auto';
-            }
-        });
+        if (toggle) toggle.addEventListener('click', toggleMenu);
+        if (closeDrawer) closeDrawer.addEventListener('click', toggleMenu);
 
         function handlePhotoUpload(input) {
             const count = input.files.length;
             const preview = document.getElementById('photoPreviewCount');
             if (count > 0) {
-                preview.textContent = `${count} photo(s) selected for upload`;
+                preview.textContent = `${count} photo(s) selected for inspection upload`;
                 preview.classList.remove('hidden');
             }
         }
@@ -352,12 +357,11 @@
             const btnSpinner = document.getElementById('btnSpinner');
             const submitBtn = document.getElementById('submitPropertyBtn');
 
-            btnText.textContent = 'Submitting...';
+            btnText.textContent = 'Submitting Listing...';
             btnSpinner.classList.remove('hidden');
             submitBtn.disabled = true;
 
             setTimeout(() => {
-                // Save to local storage properties list
                 const properties = JSON.parse(localStorage.getItem('ulooma_landlord_properties') || '[]');
                 properties.push({
                     id: 'prop_' + Date.now(),

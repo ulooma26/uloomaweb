@@ -3,188 +3,324 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="How Ụlọ Ọma works for Tenants and Landlords" />
-  <title>How it Works — Ụlọ Ọma</title>
-  <link rel="stylesheet" href="src/output.css" />
+  <meta name="description" content="How Ụlọ Ọma works for Tenants, Landlords, and Outgoing Renters in Nigeria" />
+  <title>How It Works — Ụlọ Ọma</title>
+  <link rel="stylesheet" href="./src/output.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
+  <link rel="shortcut icon" href="./images/image.png" type="images/x-icon" />
 </head>
+<body class="bg-[#F8FBFB] text-[#0F3B3D] font-sans antialiased min-h-screen flex flex-col">
 
-<body class="font-sans">
-  <header class="sticky top-0 bg-white z-50">
-    <div class="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
-      <div class="cursor-pointer" onclick="window.location.href='index.html'">
-        <img src="./images/Logo.PNG" alt="Ụlọ Ọma" class="h-12 md:h-14" />
+  <!-- Top Announcement Bar -->
+  <div class="bg-[#0F3B3D] text-white text-xs sm:text-sm py-2 px-4 text-center font-medium flex items-center justify-center gap-3">
+    <span class="bg-[#20ACB3] text-white text-[11px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">Free Moving</span>
+    <span>Find your home. We help you move in — <strong>100% Free moving truck</strong> on every rental payment!</span>
+    <a href="moving-out.html" class="underline text-[#82E4E9] hover:text-white hidden sm:inline">Earn ₦20,000 moving out &rarr;</a>
+  </div>
+
+  <!-- Header Navigation -->
+  <header class="sticky top-0 bg-white/95 backdrop-blur-md z-50 border-b border-gray-100 shadow-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3.5 flex items-center justify-between">
+      <!-- Brand Logo & Tagline -->
+      <div class="cursor-pointer flex flex-col" onclick="window.location.href='index.html'">
+        <img src="./images/Logo.PNG" alt="Ụlọ Ọma ...your comfort, our priority." class="h-11 md:h-13 w-auto object-contain" />
       </div>
-      <nav class="hidden md:flex gap-10 lg:gap-16 text-[19px] font-semibold text-black">
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden lg:flex items-center gap-8 text-[16px] font-semibold text-[#0F3B3D]">
         <a href="index.html" class="hover:text-[#20ACB3] transition">Home</a>
         <a href="explore.html" class="hover:text-[#20ACB3] transition">Explore</a>
-        <a href="how-it-works.html" class="text-[#20ACB3]">How it works</a>
+        <a href="how-it-works.html" class="text-[#20ACB3] font-bold">How It Works</a>
+        <a href="moving-out.html" class="hover:text-[#20ACB3] transition flex items-center gap-1.5 text-[#196366]">
+          <i class="bi bi-gift-fill text-[#20ACB3]"></i> ₦20,000 Reward
+        </a>
         <a href="about.html" class="hover:text-[#20ACB3] transition">About Us</a>
-        <a href="contact.html" class="hover:text-[#20ACB3] transition">Contact Us</a>
+        <a href="contact.html" class="hover:text-[#20ACB3] transition">Contact</a>
       </nav>
-      <div class="hidden md:block">
-        <button onclick="window.location.href='signup.html'" class="bg-[#20ACB3] text-white rounded-[30px] py-[15px] px-[30px] hover:bg-black transition text-[19px] font-medium cursor-pointer">
-          Sign Up
-        </button>
+
+      <!-- Desktop Actions -->
+      <div class="hidden sm:flex items-center gap-4">
+        <a href="list-property.html" class="text-sm font-semibold text-[#0F3B3D] hover:text-[#20ACB3] px-3 py-2 transition flex items-center gap-1.5">
+          <i class="bi bi-plus-circle-fill text-[#20ACB3]"></i> List Property
+        </a>
+        <a href="tenant-dashboard.html" class="bg-[#20ACB3] text-white px-5 py-2.5 rounded-[20px] hover:bg-black transition text-sm font-medium shadow-sm flex items-center gap-2">
+          <i class="bi bi-person-circle"></i> Dashboard
+        </a>
       </div>
-      <button id="menu-toggle" class="md:hidden text-4xl text-[#20ACB3] z-50">
+
+      <!-- Mobile Toggle -->
+      <button id="menu-toggle" class="lg:hidden text-3xl text-[#20ACB3] p-1 focus:outline-none" aria-label="Toggle menu">
         <i id="hamburger" class="bi bi-list"></i>
         <i id="close-x" class="bi bi-x-lg hidden"></i>
       </button>
     </div>
-    <div id="mobile-menu" class="fixed inset-0 bg-white hidden z-40">
-      <div class="flex flex-col items-center justify-center h-full gap-12 text-2xl font-semibold text-black">
-        <a href="index.html" class="hover:text-[#20ACB3] transition">Home</a>
-        <a href="explore.html" class="hover:text-[#20ACB3] transition">Explore</a>
-        <a href="how-it-works.html" class="text-[#20ACB3]">How it works</a>
-        <a href="about.html" class="hover:text-[#20ACB3] transition">About Us</a>
-        <a href="contact.html" class="hover:text-[#20ACB3] transition">Contact Us</a>
-        <button onclick="window.location.href='signup.html'" class="bg-[#20ACB3] text-white rounded-[30px] py-4 px-12 hover:bg-black cursor-pointer transition text-xl font-medium">
-          Sign Up
-        </button>
+
+    <!-- Mobile Drawer -->
+    <div id="mobile-menu" class="fixed inset-0 top-[65px] bg-white hidden z-40 flex-col p-6 overflow-y-auto space-y-6 shadow-2xl lg:hidden">
+      <div class="flex flex-col space-y-4 text-lg font-semibold text-[#0F3B3D] border-b border-gray-100 pb-6">
+        <a href="index.html" class="hover:text-[#20ACB3]">Home</a>
+        <a href="explore.html" class="hover:text-[#20ACB3]">Explore Properties</a>
+        <a href="how-it-works.html" class="text-[#20ACB3]">How It Works</a>
+        <a href="moving-out.html" class="hover:text-[#20ACB3] text-[#196366] flex items-center gap-2">
+          <i class="bi bi-gift-fill"></i> ₦20,000 Relocation Reward
+        </a>
+        <a href="about.html" class="hover:text-[#20ACB3]">About Us & CAC Credentials</a>
+        <a href="contact.html" class="hover:text-[#20ACB3]">Contact Support</a>
+      </div>
+      <div class="flex flex-col gap-3">
+        <a href="explore.html" class="w-full text-center py-3 rounded-2xl bg-[#20ACB3] text-white font-bold shadow-md">
+          Explore Verified Homes
+        </a>
       </div>
     </div>
   </header>
 
-  <main class="relative w-10/12 h-8/12 overflow-hidden p-4 mt-4 mx-auto focus:outline-none shadow-lg rounded-4xl bg-[#0F3B3D]">
-    <section class="relative z-10 flex flex-col items-center justify-center h-80 text-center px-4 mt-5">
-      <h1 class="text-4xl font-bold mb-4 mt-8 text-white">How It Works</h1>
-      <p class="font-bold mb-6 text-gray-200 text-lg">Looking For A place? Or Renting One Out? Here's How We Bring Landlords & Tenants Together</p>
-    </section>
-    <section class="flex justify-center items-center font-bold mb-8">
-      <div class="relative border border-white rounded-[30px] p-2 flex">
-        <button id="tab-tenant" onclick="switchTab('tenant')" class="text-white bg-[#20ACB3] p-2 px-6 rounded-[20px] cursor-pointer transition-all">For Tenants</button>
-        <button id="tab-landlord" onclick="switchTab('landlord')" class="text-white p-2 px-6 cursor-pointer transition-all rounded-[20px]">For Landlords</button>
+  <main class="flex-1 w-full">
+    
+    <!-- Hero Banner with Tab Switcher -->
+    <section class="bg-gradient-to-r from-[#0F3B3D] via-[#196366] to-[#0F3B3D] text-white py-16 md:py-20 px-6 text-center">
+      <div class="max-w-4xl mx-auto space-y-6">
+        <span class="inline-block bg-[#20ACB3]/30 text-[#82E4E9] border border-[#82E4E9]/40 text-xs font-bold uppercase tracking-wider px-3.5 py-1.5 rounded-full">
+          The Ụlọ Ọma Blueprint
+        </span>
+        <h1 class="text-3xl sm:text-5xl font-extrabold leading-tight">
+          How Ụlọ Ọma Works
+        </h1>
+        <p class="text-base sm:text-lg text-gray-200 max-w-2xl mx-auto font-light leading-relaxed">
+          Looking for a home? Renting out an apartment? Or moving to another state? Here is how our managed ecosystem protects you at every step.
+        </p>
+
+        <!-- Segmented Tab Switcher -->
+        <div class="flex justify-center pt-2">
+          <div class="bg-white/10 p-1.5 rounded-full border border-white/20 inline-flex gap-2">
+            <button id="tab-tenant" onclick="switchTab('tenant')" class="px-6 py-2.5 rounded-full text-sm font-bold bg-[#20ACB3] text-white transition shadow-sm cursor-pointer">
+              <i class="bi bi-person-fill mr-1"></i> For Renters / Tenants
+            </button>
+            <button id="tab-landlord" onclick="switchTab('landlord')" class="px-6 py-2.5 rounded-full text-sm font-bold text-white hover:text-[#82E4E9] transition cursor-pointer">
+              <i class="bi bi-building mr-1"></i> For Property Landlords
+            </button>
+          </div>
+        </div>
       </div>
     </section>
+
+    <!-- CONTENT: FOR TENANTS -->
+    <div id="content-tenant" class="max-w-7xl mx-auto px-6 py-16 space-y-20">
+      
+      <!-- Stage 1 -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+        <div class="space-y-4">
+          <div class="w-12 h-12 rounded-2xl bg-teal-50 text-[#20ACB3] flex items-center justify-center font-bold text-xl">1</div>
+          <span class="text-xs font-bold text-[#20ACB3] uppercase tracking-wider">Step 1: Transparent Discovery</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#0F3B3D]">Explore 3 Verified Properties for ₦2,000</h2>
+          <p class="text-sm sm:text-base text-[#5C6F70] leading-relaxed">
+            Stop losing ₦10,000+ to fake street agents just to view houses. Our ₦2,000 Access Pass grants you full access to 3 physically inspected properties, complete with exact addresses, video tours, and verified landlord details.
+          </p>
+          <ul class="space-y-2 text-xs sm:text-sm font-semibold text-[#0F3B3D]">
+            <li class="flex items-center gap-2"><i class="bi bi-check-circle-fill text-[#20ACB3]"></i> Transparent entitlement counter: 3 &rarr; 2 &rarr; 1 &rarr; 0</li>
+            <li class="flex items-center gap-2"><i class="bi bi-check-circle-fill text-[#20ACB3]"></i> Zero duplicate registration fees</li>
+          </ul>
+        </div>
+        <div class="flex justify-center">
+          <img src="images/searchandreserve.png" alt="Search and Reserve" class="rounded-4xl shadow-2xl max-w-md w-full border border-gray-100 object-cover">
+        </div>
+      </div>
+
+      <!-- Stage 2 -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center md:flex-row-reverse">
+        <div class="order-2 md:order-1 flex justify-center">
+          <img src="images/freeinspection.png" alt="Free Inspection" class="rounded-4xl shadow-2xl max-w-md w-full border border-gray-100 object-cover">
+        </div>
+        <div class="order-1 md:order-2 space-y-4">
+          <div class="w-12 h-12 rounded-2xl bg-teal-50 text-[#20ACB3] flex items-center justify-center font-bold text-xl">2</div>
+          <span class="text-xs font-bold text-[#20ACB3] uppercase tracking-wider">Step 2: Free Viewing Transport</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#0F3B3D]">Accompanied House Tour with Assigned Representative</h2>
+          <p class="text-sm sm:text-base text-[#5C6F70] leading-relaxed">
+            Click <strong>"Reserve for inspection"</strong> on any property you like. An assigned Ụlọ Ọma area officer will contact you, schedule your preferred viewing time, and escort you to the property with <strong>100% free viewing transportation</strong>.
+          </p>
+          <ul class="space-y-2 text-xs sm:text-sm font-semibold text-[#0F3B3D]">
+            <li class="flex items-center gap-2"><i class="bi bi-check-circle-fill text-[#20ACB3]"></i> Pick up in Ụlọ Ọma inspection vehicle</li>
+            <li class="flex items-center gap-2"><i class="bi bi-check-circle-fill text-[#20ACB3]"></i> Professional area officer handles questions & neighborhood checks</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Stage 3 -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+        <div class="space-y-4">
+          <div class="w-12 h-12 rounded-2xl bg-teal-50 text-[#20ACB3] flex items-center justify-center font-bold text-xl">3</div>
+          <span class="text-xs font-bold text-[#20ACB3] uppercase tracking-wider">Step 3: Free Moving Fulfillment</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#0F3B3D]">Find Your Home. We Help You Move In.</h2>
+          <p class="text-sm sm:text-base text-[#5C6F70] leading-relaxed">
+            Love the home? Secure it via Ụlọ Ọma escrow. The moment your rent is confirmed, our professional relocation crew and dedicated moving truck are scheduled to transport your belongings to your new front door completely free of charge.
+          </p>
+          <div class="p-4 bg-teal-50 rounded-2xl border border-teal-200 text-xs text-[#0F3B3D] font-bold">
+            <i class="bi bi-truck text-base text-[#20ACB3] mr-1"></i> Covered truck, movers, and loading support included at ₦0 additional charge.
+          </div>
+        </div>
+        <div class="flex justify-center">
+          <img src="images/secure.png" alt="Secure and Move" class="rounded-4xl shadow-2xl max-w-md w-full border border-gray-100 object-cover">
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CONTENT: FOR LANDLORDS -->
+    <div id="content-landlord" class="max-w-7xl mx-auto px-6 py-16 space-y-20 hidden">
+      
+      <!-- Stage 1 -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+        <div class="space-y-4">
+          <div class="w-12 h-12 rounded-2xl bg-teal-50 text-[#20ACB3] flex items-center justify-center font-bold text-xl">1</div>
+          <span class="text-xs font-bold text-[#20ACB3] uppercase tracking-wider">Step 1: Direct Free Listing</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#0F3B3D]">List Your Property in 5 Minutes</h2>
+          <p class="text-sm sm:text-base text-[#5C6F70] leading-relaxed">
+            List your available apartments on Ụlọ Ọma with zero listing fees. Provide your terms, annual rent, electricity status, and water details.
+          </p>
+          <a href="list-property.html" class="inline-block bg-[#20ACB3] text-white px-6 py-2.5 rounded-full text-xs font-bold">List Property Now &rarr;</a>
+        </div>
+        <div class="flex justify-center">
+          <img src="images/getverified.png" alt="Get Verified" class="rounded-4xl shadow-2xl max-w-md w-full border border-gray-100 object-cover">
+        </div>
+      </div>
+
+      <!-- Stage 2 -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center md:flex-row-reverse">
+        <div class="order-2 md:order-1 flex justify-center">
+          <img src="images/wehandle.png" alt="We Handle Viewings" class="rounded-4xl shadow-2xl max-w-md w-full border border-gray-100 object-cover">
+        </div>
+        <div class="order-1 md:order-2 space-y-4">
+          <div class="w-12 h-12 rounded-2xl bg-teal-50 text-[#20ACB3] flex items-center justify-center font-bold text-xl">2</div>
+          <span class="text-xs font-bold text-[#20ACB3] uppercase tracking-wider">Step 2: Physical Verification</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#0F3B3D]">We Inspect & Handle All Viewings</h2>
+          <p class="text-sm sm:text-base text-[#5C6F70] leading-relaxed">
+            Our area representatives physically inspect the apartment, capture HD photos/video, and grant the 6 verification badges. We escort all interested prospective tenants to view the home. Zero disturbance to your schedule.
+          </p>
+        </div>
+      </div>
+
+      <!-- Stage 3 -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+        <div class="space-y-4">
+          <div class="w-12 h-12 rounded-2xl bg-teal-50 text-[#20ACB3] flex items-center justify-center font-bold text-xl">3</div>
+          <span class="text-xs font-bold text-[#20ACB3] uppercase tracking-wider">Step 3: Direct Guaranteed Payout</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#0F3B3D]">Immediate Payout Upon Tenant Confirmation</h2>
+          <p class="text-sm sm:text-base text-[#5C6F70] leading-relaxed">
+            Tenants pay through Ụlọ Ọma secure escrow via Flutterwave. Funds are cleared and deposited directly to your chosen bank account with clear documentation and tenancy agreements.
+          </p>
+        </div>
+        <div class="flex justify-center">
+          <img src="images/getpaid.png" alt="Get Paid" class="rounded-4xl shadow-2xl max-w-md w-full border border-gray-100 object-cover">
+        </div>
+      </div>
+
+    </div>
+
   </main>
 
-  <section id="content-tenant" class="py-10 my-14 max-w-7xl mx-auto">
-    <!-- Tenants Content -->
-    <section class="flex flex-wrap gap-8 justify-around items-center px-8 py-12 mb-16">
-      <div class="px-6 w-full md:w-5/12">
-        <h1 class="text-2xl font-bold mb-4 text-[#0F3B3D]">Search and Access</h1>
-        <p class="text-[#5C6F70] text-lg">Browse verified listings across your location. Use filters to find the right fit. Pay a small ₦2,000 access fee to unlock all property details and landlord direct contacts.</p>
-      </div>
-      <div class="w-full md:w-5/12 px-6 flex justify-center">
-        <img class="w-full max-w-md rounded-4xl shadow-lg" src="images/searchandreserve.png" alt="Search">
-      </div>
-    </section>
-
-    <section class="flex flex-wrap flex-row-reverse gap-8 justify-around items-center px-8 py-12 mb-16">
-      <div class="px-6 w-full md:w-5/12">
-        <h1 class="text-2xl font-bold mb-4 text-[#0F3B3D]">Free Inspection & Transport</h1>
-        <p class="text-[#5C6F70] text-lg">Get picked up by our agent for a scheduled house tour. No hidden fees, no pressure just real homes, real-time.</p>
-      </div>
-      <div class="w-full md:w-5/12 px-6 flex justify-center">
-        <img class="w-full max-w-md rounded-4xl shadow-lg" src="images/freeinspection.png" alt="Inspection">
-      </div>
-    </section>
-
-    <section class="flex flex-wrap gap-8 justify-around items-center px-8 py-12">
-      <div class="px-6 w-full md:w-5/12">
-        <h1 class="text-2xl font-bold mb-4 text-[#0F3B3D]">Secure Your New Home & Get Rewarded</h1>
-        <p class="text-[#5C6F70] text-lg mb-4">If what you see fits your preference, pay the landlord directly.</p>
-        <p class="text-[#5C6F70] text-lg mb-4">We'll handle free moving logistics within Aba or get a 50% discount if you're moving in from outside.</p>
-        <p class="text-[#20ACB3] font-bold text-lg">Plus, get a ₦20,000 cash reward when you successfully rent through Ụlọ Ọma!</p>
-      </div>
-      <div class="w-full md:w-5/12 px-6 flex justify-center">
-        <img class="w-full max-w-md rounded-4xl shadow-lg" src="images/secure.png" alt="Secure">
-      </div>
-    </section>
-  </section>
-
-  <section id="content-landlord" class="py-10 my-14 max-w-7xl mx-auto hidden">
-    <!-- Landlords Content -->
-    <section class="flex flex-wrap gap-5 justify-around items-center px-8 py-12 mb-16">
-      <div class="px-6 w-full md:w-5/12">
-        <h1 class="text-2xl font-bold mb-4 text-[#0F3B3D]">Get Verified and List</h1>
-        <p class="text-[#5C6F70] text-lg">Apply to list your property. We verify landlords for authenticity and send our team to take clean, professional photos.</p>
-      </div>
-      <div class="w-full md:w-5/12 px-6 flex justify-center">
-        <img class="w-full max-w-md rounded-4xl shadow-lg" src="images/getverified.png" alt="Get Verified">
-      </div>
-    </section>
-
-    <section class="flex flex-wrap flex-row-reverse gap-5 justify-around items-center px-8 py-12 mb-16">
-      <div class="px-6 w-full md:w-5/12">
-        <h1 class="text-2xl font-bold mb-4 text-[#0F3B3D]">We Handle The Viewings</h1>
-        <p class="text-[#5C6F70] text-lg">We schedule viewings with interested renters and send agents to handle all inspections. No stress for you.</p>
-      </div>
-      <div class="w-full md:w-5/12 px-6 flex justify-center">
-        <img class="w-full max-w-md rounded-4xl shadow-lg" src="images/wehandle.png" alt="Viewings">
-      </div>
-    </section>
-
-    <section class="flex flex-wrap gap-5 justify-around items-center px-8 py-12">
-      <div class="px-6 w-full md:w-5/12">
-        <h1 class="text-2xl font-bold mb-4 text-[#0F3B3D]">Get Paid Seamlessly</h1>
-        <p class="text-[#5C6F70] text-lg">Once a tenant confirms, payment is made directly to you. We keep things transparent, simple and fast.</p>
-      </div>
-      <div class="w-full md:w-5/12 px-6 flex justify-center">
-        <img class="w-full max-w-md rounded-4xl shadow-lg" src="images/getpaid.png" alt="Get Paid">
-      </div>
-    </section>
-  </section>
-
-  <footer class="bg-[#0F3B3D] text-white pt-20 pb-16 relative overflow-hidden">
+  <!-- COMPREHENSIVE FOOTER -->
+  <footer class="bg-[#0F3B3D] text-white pt-16 pb-12 mt-auto relative overflow-hidden border-t-4 border-[#20ACB3]">
     <div class="max-w-7xl mx-auto px-6">
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-        <div>
-          <img src="./images/Logo.PNG" alt="Ụlọ Ọma" class="h-12 mb-6" />
-          <p class="text-gray-300 mb-6">Connecting tenants directly with verified landlords across Nigeria.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12 pb-12 border-b border-white/10">
+        <div class="space-y-4">
+          <div class="cursor-pointer" onclick="window.location.href='index.html'">
+            <img src="./images/Logo-white.PNG" alt="Ụlọ Ọma ...your comfort, our priority." class="h-12 w-auto object-contain" />
+          </div>
+          <p class="text-sm text-gray-300 leading-relaxed">
+            Nigeria's premier managed property platform. Verified listings, free inspection transport, escrow rental payments, and 100% free relocation fulfillment.
+          </p>
+          <div class="inline-flex items-center gap-2 bg-white/5 border border-white/10 px-3 py-1.5 rounded-xl text-xs text-[#82E4E9]">
+            <i class="bi bi-shield-check text-base text-[#20ACB3]"></i>
+            <span>CAC Verified Entity — RC: 7894120</span>
+          </div>
         </div>
-        <div>
-          <h4 class="text-lg font-semibold mb-6">Quick Links</h4>
-          <ul class="space-y-3">
-            <li><a href="index.html" class="text-gray-300 hover:text-[#20ACB3] transition">Home</a></li>
-            <li><a href="explore.html" class="text-gray-300 hover:text-[#20ACB3] transition">Explore</a></li>
-            <li><a href="how-it-works.html" class="text-gray-300 hover:text-[#20ACB3] transition">How it Works</a></li>
-            <li><a href="about.html" class="text-gray-300 hover:text-[#20ACB3] transition">About Us</a></li>
+        <div class="space-y-4">
+          <h4 class="text-[#82E4E9] font-bold text-base tracking-wide uppercase">Marketplace</h4>
+          <ul class="space-y-2.5 text-sm text-gray-300">
+            <li><a href="explore.html" class="hover:text-white transition flex items-center gap-1.5"><i class="bi bi-chevron-right text-xs text-[#20ACB3]"></i> Verified Homes</a></li>
+            <li><a href="how-it-works.html" class="hover:text-white transition flex items-center gap-1.5"><i class="bi bi-chevron-right text-xs text-[#20ACB3]"></i> How It Works</a></li>
+            <li><a href="list-property.html" class="hover:text-white transition flex items-center gap-1.5"><i class="bi bi-chevron-right text-xs text-[#20ACB3]"></i> List Property for Free</a></li>
           </ul>
         </div>
-        <div>
-          <h4 class="text-lg font-semibold mb-6">Support</h4>
-          <ul class="space-y-3">
-            <li><a href="contact.html" class="text-gray-300 hover:text-[#20ACB3] transition">Contact Us</a></li>
+        <div class="space-y-4">
+          <h4 class="text-[#82E4E9] font-bold text-base tracking-wide uppercase">Programs</h4>
+          <ul class="space-y-2.5 text-sm text-gray-300">
+            <li><a href="moving-out.html" class="hover:text-white transition flex items-center gap-1.5"><i class="bi bi-gift text-xs text-[#20ACB3]"></i> ₦20,000 Relocation Reward</a></li>
+            <li><a href="tenant-dashboard.html" class="hover:text-white transition flex items-center gap-1.5"><i class="bi bi-truck text-xs text-[#20ACB3]"></i> 100% Free Moving Service</a></li>
+            <li><a href="card-payment.html" class="hover:text-white transition flex items-center gap-1.5"><i class="bi bi-credit-card text-xs text-[#20ACB3]"></i> ₦2,000 Access Pass</a></li>
+          </ul>
+        </div>
+        <div class="space-y-4">
+          <h4 class="text-[#82E4E9] font-bold text-base tracking-wide uppercase">Contact</h4>
+          <ul class="space-y-3 text-sm text-gray-300">
+            <li class="flex items-start gap-2.5">
+              <i class="bi bi-geo-alt text-[#20ACB3] text-lg shrink-0 mt-0.5"></i>
+              <span>Brass Junction / Aba-Owerri Rd, Aba, Abia State</span>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <i class="bi bi-telephone text-[#20ACB3] text-base shrink-0"></i>
+              <span>+234 (0) 800 856 6621</span>
+            </li>
           </ul>
         </div>
       </div>
-      <div class="border-t border-gray-700 mt-12 pt-8 text-center text-gray-300">
-        <p>&copy; 2025 Ụlọ Ọma. All rights reserved.</p>
+      <div class="mt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-400 gap-4">
+        <p>&copy; 2026 Ụlọ Ọma. All rights reserved. ...your comfort, our priority.</p>
+        <div class="flex gap-6">
+          <a href="about.html" class="hover:text-white transition">Privacy Policy</a>
+          <a href="about.html" class="hover:text-white transition">Terms of Service</a>
+        </div>
       </div>
     </div>
   </footer>
 
   <script>
     function switchTab(tab) {
-      document.getElementById('content-tenant').classList.add('hidden');
-      document.getElementById('content-landlord').classList.add('hidden');
-      
-      document.getElementById('tab-tenant').classList.remove('bg-[#20ACB3]');
-      document.getElementById('tab-landlord').classList.remove('bg-[#20ACB3]');
-      
-      document.getElementById(`content-${tab}`).classList.remove('hidden');
-      document.getElementById(`tab-${tab}`).classList.add('bg-[#20ACB3]');
+      const tenantContent = document.getElementById('content-tenant');
+      const landlordContent = document.getElementById('content-landlord');
+      const tabTenant = document.getElementById('tab-tenant');
+      const tabLandlord = document.getElementById('tab-landlord');
+
+      if (tab === 'tenant') {
+        tenantContent.classList.remove('hidden');
+        landlordContent.classList.add('hidden');
+        tabTenant.classList.add('bg-[#20ACB3]', 'text-white');
+        tabTenant.classList.remove('text-gray-200');
+        tabLandlord.classList.remove('bg-[#20ACB3]', 'text-white');
+        tabLandlord.classList.add('text-gray-200');
+      } else {
+        landlordContent.classList.remove('hidden');
+        tenantContent.classList.add('hidden');
+        tabLandlord.classList.add('bg-[#20ACB3]', 'text-white');
+        tabLandlord.classList.remove('text-gray-200');
+        tabTenant.classList.remove('bg-[#20ACB3]', 'text-white');
+        tabTenant.classList.add('text-gray-200');
+      }
     }
 
-    const toggle = document.getElementById('menu-toggle');
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
     const hamburger = document.getElementById('hamburger');
     const closeX = document.getElementById('close-x');
-    const menu = document.getElementById('mobile-menu');
 
-    toggle.addEventListener('click', () => {
-      menu.classList.toggle('hidden');
-      if (menu.classList.contains('hidden')) {
-        hamburger.classList.remove('hidden');
-        closeX.classList.add('hidden');
-        document.body.style.overflow = 'auto';
-      } else {
-        hamburger.classList.add('hidden');
-        closeX.classList.remove('hidden');
-        document.body.style.overflow = 'hidden';
-      }
-    });
+    if (menuToggle && mobileMenu) {
+      menuToggle.addEventListener('click', () => {
+        const isHidden = mobileMenu.classList.contains('hidden');
+        if (isHidden) {
+          mobileMenu.classList.remove('hidden');
+          mobileMenu.classList.add('flex');
+          hamburger.classList.add('hidden');
+          closeX.classList.remove('hidden');
+          document.body.style.overflow = 'hidden';
+        } else {
+          mobileMenu.classList.add('hidden');
+          mobileMenu.classList.remove('flex');
+          hamburger.classList.remove('hidden');
+          closeX.classList.add('hidden');
+          document.body.style.overflow = '';
+        }
+      });
+    }
   </script>
 </body>
 </html>
