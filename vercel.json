@@ -6,6 +6,19 @@
   ],
   "routes": [
     { "src": "/api/(.*)", "dest": "/api/$1" },
+    { "src": "/apartment%20details(\\.html)?", "dest": "/property-details.html", "status": 301 },
+    { "src": "/apartment details(\\.html)?", "dest": "/property-details.html", "status": 301 },
+    { "src": "/how%20it%20works(\\.html)?", "dest": "/how-it-works.html", "status": 301 },
+    { "src": "/how it works(\\.html)?", "dest": "/how-it-works.html", "status": 301 },
+    { "src": "/card%20payment%20reservation(\\.html)?", "dest": "/card-payment.html", "status": 301 },
+    { "src": "/card payment reservation(\\.html)?", "dest": "/card-payment.html", "status": 301 },
+    { "src": "/rent%20for%20apartment(\\.html)?", "dest": "/card-payment.html", "status": 301 },
+    { "src": "/rent for apartment(\\.html)?", "dest": "/card-payment.html", "status": 301 },
+    { "src": "/rent-apartment(\\.html)?", "dest": "/card-payment.html", "status": 301 },
+    { "src": "/tenant(\\.html)?", "dest": "/tenant-dashboard.html", "status": 301 },
+    { "src": "/landlord(\\.html)?", "dest": "/landlord-dashboard.html", "status": 301 },
+    { "src": "/description(\\.html)?", "dest": "/property-details.html", "status": 301 },
+    { "src": "/ameneties-details(.*)", "dest": "/list-property.html", "status": 301 },
     { "src": "/(.*)", "dest": "/$1" }
   ]
 }
